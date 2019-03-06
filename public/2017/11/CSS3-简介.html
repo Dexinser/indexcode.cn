@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>CSS3新增加的功能和属性方法--之选择器 | To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS3—选择器提供了更加强大且精准的选择器，提供多种背景填充方案，可以实现渐变颜色，可以改变元素的形状、角度等，可以加阴影效果，报纸布局，弹性盒子，ie6混杂模式的盒模型，新的计量单位，动画效果等等等…   在CSS3的一些新特性或方法还没正式使用之前，有一些浏览器商为了竞争用户使用人数或者说是为了一些商业目的，在CSS3还没有正式通过使用时就在自家的浏览器上实现了CSS3新出的功能。而这些浏览">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3新增加的功能和属性方法--之选择器">
+<meta property="og:url" content="http://indexcode.cn/2017/11/CSS3-简介.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="CSS3—选择器提供了更加强大且精准的选择器，提供多种背景填充方案，可以实现渐变颜色，可以改变元素的形状、角度等，可以加阴影效果，报纸布局，弹性盒子，ie6混杂模式的盒模型，新的计量单位，动画效果等等等…   在CSS3的一些新特性或方法还没正式使用之前，有一些浏览器商为了竞争用户使用人数或者说是为了一些商业目的，在CSS3还没有正式通过使用时就在自家的浏览器上实现了CSS3新出的功能。而这些浏览">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-20T09:38:44.293Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3新增加的功能和属性方法--之选择器">
+<meta name="twitter:description" content="CSS3—选择器提供了更加强大且精准的选择器，提供多种背景填充方案，可以实现渐变颜色，可以改变元素的形状、角度等，可以加阴影效果，报纸布局，弹性盒子，ie6混杂模式的盒模型，新的计量单位，动画效果等等等…   在CSS3的一些新特性或方法还没正式使用之前，有一些浏览器商为了竞争用户使用人数或者说是为了一些商业目的，在CSS3还没有正式通过使用时就在自家的浏览器上实现了CSS3新出的功能。而这些浏览">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2017/11/CSS3-简介" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/CSS3-简介.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.782Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3新增加的功能和属性方法--之选择器
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/必备知识/">必备知识</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="CSS3—选择器"><a href="#CSS3—选择器" class="headerlink" title="CSS3—选择器"></a>CSS3—选择器</h1><p>提供了更加强大且精准的选择器，提供多种背景填充方案，可以实现渐变颜色，可以改变元素的形状、角度等，可以加阴影效果，报纸布局，弹性盒子，ie6混杂模式的盒模型，新的计量单位，动画效果等等等…</p>
+<p>  在CSS3的一些新特性或方法还没正式使用之前，有一些浏览器商为了竞争用户使用人数或者说是为了一些商业目的，在CSS3还没有正式通过使用时就在自家的浏览器上实现了CSS3新出的功能。而这些浏览器商为了显示出这是自家的浏览器上实现的CSS3新功能，所以他们就在新实现的CSS3功能的属性之前加上了自家的标志。添加的前缀标志如下：<br>  在编写CSS3样式时，不同的浏览器可能需要不同的前缀。它表示该CSS属性或规则尚未成为W3C标准的一部分，是浏览器的私有属性，虽然目前较新版本的浏览器都是不需要前缀的，但为了更好的向前兼容前缀还是少不了的。</p>
+<h3 id="以CSS3新属性border-radius为例："><a href="#以CSS3新属性border-radius为例：" class="headerlink" title="以CSS3新属性border-radius为例："></a>以CSS3新属性border-radius为例：</h3><blockquote>
+<p>-webkit-border-radius<br>Chrome和Safari</p>
+<p>-moz-border-radius<br>Firefox</p>
+<p>-ms-border-radius<br>IE</p>
+<p>-o-border-radius<br>Opera</p>
+</blockquote>
+<p>CSS3新添加的属性方法有哪些?</p>
+<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>添加圆角 – border-radius 这是一个复合属性，分别为代表左上角、右上角、右下角、左下角；而且他们的所代表的左上角还是一个小的复合属性，又可以分成x轴和y轴的偏移量。 还有一种写法border-radius： 1em 2em 3em 4em / 2em 3em 4em 5em;</p>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>添加盒子阴影 –  box-shadow  这也是一个复合属性，是添加盒子阴影的方法。<br>box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];  []里面的属性代表可以省略的属性。需要注意的是最后的一个可选属性即投影方式默认是outset投影方式，如果想设置成默认向外投影方式的话，一定注意不要把这个属性值写上去，写上去的话就不好使了，就没有阴影了，但是如果想改变投影方式为其他的形式需要写上去的。同一盒子，可以同时加多个阴影，阴影之间用“,”隔开。</p>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p>添加文本阴影  text-shadow<br>语法<br>text-shadow:X-Offset Y-Offset blur color;<br>X-Offset：表示阴影的水平偏移距离，其值为正值时阴影向右偏移，反之向左偏移；<br>Y-Offset：是指阴影的垂直偏移距离，如果其值是正值时，阴影向下偏移，反之向上偏移<br>Blur：是指阴影的模糊程度，其值不能是负值，如果值越大，阴影越模糊，反之阴影越清晰，如果不需要阴影模糊可以将Blur值设置为0；<br>Color：是指阴影的颜色，其可以使用rgba色。</p>
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p>颜色值RGBA  再原先RGB的基础上添加了透明度这一参数。</p>
+<h2 id="5"><a href="#5" class="headerlink" title="5"></a>5</h2><p>CSS3的渐变分为两种<br>1）线性渐变（linear - to）<br>语法: linear-gradient([direction], color [percent], color [percent], …)<br>[] 内为选填<br>direction角度的单位为 “deg” 也可以用to bottom, to left, to top left等的方式来表达<br>2）径向渐变（radial - at）<br>语法:radial-gradient(shape at position, color [percent] , color, …)<br>shape:放射的形状，可以为原型circle，可以为椭圆ellipse<br>position: 圆心位置，可以两个值，也可以一个，如果为一个时，第二个值默认center 即 50%。值类型可以为，百分数，距离像素，也可以是方位值(left,top…); /<em>x 轴主半径 y轴次半径</em>/</p>
+<h2 id="6"><a href="#6" class="headerlink" title="6"></a>6</h2><p>文字边界换行<br>word-wrap:normal|break-word;</p>
+<h2 id="7"><a href="#7" class="headerlink" title="7"></a>7</h2><p>可以下载网上的好看的字体想要引入的话就用下面的方式把下载到包用到我们的网页上，字体的包有很多格式，有的浏览器不支持某一种格式的话就换一种：<br><code>font-face
+@font-face{
+font-family:”myFirstFont”;
+src:url(&#39;Sansation_Light.ttf&#39;),
+url(‘Sansation_Light.eot&#39;) format(‘eot’)；下载前面的优先选用
+}
+@font-face {
+    font-family: &#39;diyfont&#39;;
+    src: url(&#39;diyfont.eot&#39;); /* IE9+ */
+    src: url(&#39;diyfont.eot?#iefix&#39;) format(&#39;embedded-opentype&#39;), /* IE6-IE8 */
+         url(&#39;diyfont.woff&#39;) format(&#39;woff&#39;), /* chrome、firefox */
+         url(&#39;diyfont.ttf&#39;) format(&#39;truetype&#39;), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+         url(&#39;diyfont.svg#fontname&#39;) format(&#39;svg&#39;); /* iOS 4.1- */
+}</code><br><a href="http://www.w3cplus.com/content/css3-font-face">字体</a> (字体包下载地址)<br><a href="www.dafont.com">字体</a> (字体包下载地址)</p>
+<h2 id="8"><a href="#8" class="headerlink" title="8"></a>8</h2><p>border-image方法–边框应用背景<br>border-image: url(xxx.png)  number<br>               stretch 很好理解就是拉伸，有多长拉多长。有多远“滚”多远<br>               repeat (和4角上 同等大小图片进行平铺  当边框中间区域长度不是4角图片大小的整数倍时 会被切割)<br>               铺满(round)(4角上的图片 进行拉伸平铺  不会被切割)<br>（共三个参数）<br>number 为截取指定图片四周的宽度作为border的背景填充部分(截取图可按border-width 大小伸缩), number为一个数字时是复合写法。最后一个属性为border-image的展示策略</p>
+<h2 id="9"><a href="#9" class="headerlink" title="9"></a>9</h2><p>背景图片起始位置background-origin<br>语法：<br>background-origin ： border-box | padding-box | content-box;<br>参数分别表示背景图片是从边框，还是内边距（默认值），或者是内容区域开始显示。</p>
+<h2 id="10"><a href="#10" class="headerlink" title="10"></a>10</h2><p>裁剪背景图片background-clip<br>语法：<br>background-clip ： border-box | padding-box | content-box | no-clip<br>参数分别表示从边框、或内填充，或者内容区域向外裁剪背景。no-clip表示不裁切，和参数border-box显示同样的效果。background-clip默认值为border-box。<br>text : background-clip : text ;<br>从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果。这个很炫哦~~<br>注意：webkit独有属性，且必须配合text-fill-color属性<br><code>-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+text-fill-color:-webkit-background-clip;
+-webkit-background-clip: text;
+-webkit-text-fill-color:transparent;</code></p>
+<h2 id="11"><a href="#11" class="headerlink" title="11"></a>11</h2><p>背景图片尺寸background-size<br>设置背景图片的大小，以长度值或百分比显示，还可以通过cover和contain来对图片进行伸缩。<br>语法：<br>background-size: auto | &lt;长度值&gt; | &lt;百分比&gt; | cover | contain<br>取值说明：</p>
+<ol>
+<li>auto：默认值，不改变背景图片的原始高度和宽度；</li>
+<li>&lt;长度值&gt;：成对出现如200px 50px，将背景图片宽高依次设置为前面两个值，当设置一个值时，将其作为图片宽度值来等比缩放；</li>
+<li>&lt;百分比&gt;：0％~100％之间的任何值，将背景图片宽高依次设置为所在元素宽高乘以前面百分比得出的数值，当设置一个值时同上；</li>
+<li>cover：用一张图片铺满整个背景，如果比例不符，则截断图片</li>
+<li>contain：尽量让背景内，存在一整张图片</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2017/11/CSS3-简介.html">CSS3新增加的功能和属性方法--之选择器</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Dexinser 的个人博客">Dexinser</a></p>
+        <p><span>发布时间:</span>2017年11月09日 - 18时31分</p>
+        <p><span>最后更新:</span>2017年12月20日 - 17时38分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/11/CSS3-简介.html" title="CSS3新增加的功能和属性方法--之选择器">http://indexcode.cn/2017/11/CSS3-简介.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://indexcode.cn/2017/11/CSS3-简介.html　　作者: Dexinser" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2017/11/CSS3-选择器的使用.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CSS3选择器的使用方法
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2017/11/CSS3-动画的使用.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS3动画的使用方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS3—选择器"><span class="toc-number">1.</span> <span class="toc-text">CSS3—选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#以CSS3新属性border-radius为例："><span class="toc-number">1.0.1.</span> <span class="toc-text">以CSS3新属性border-radius为例：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1"><span class="toc-number">1.1.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2"><span class="toc-number">1.2.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3"><span class="toc-number">1.3.</span> <span class="toc-text">3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4"><span class="toc-number">1.4.</span> <span class="toc-text">4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5"><span class="toc-number">1.5.</span> <span class="toc-text">5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6"><span class="toc-number">1.6.</span> <span class="toc-text">6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7"><span class="toc-number">1.7.</span> <span class="toc-text">7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8"><span class="toc-number">1.8.</span> <span class="toc-text">8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9"><span class="toc-number">1.9.</span> <span class="toc-text">9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10"><span class="toc-number">1.10.</span> <span class="toc-text">10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11"><span class="toc-number">1.11.</span> <span class="toc-text">11</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+    <style>
+        .toc {
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $(".toc li a").mouseover(function() {
+                var title = $(this).attr('href');
+                $(this).attr("title", title);
+            });
+        })
+    </script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'cytgVLEw0',
+      conf: '3dd585905d0465ff1e65d0823df3763e'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2017/11/CSS3-选择器的使用.html" title="上一篇: CSS3选择器的使用方法">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2017/11/CSS3-动画的使用.html" title="下一篇: CSS3动画的使用方法">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.28 The Tipping Point.html">The Tipping Point</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.21 磁盘格式.html">磁盘格式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.08 Amour.html">Amour-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.05 js中一些方法的比较与区别.html">Js中一些相似方法/属性的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 彗星来的那一夜-影评.html">彗星来的那一夜-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 寂静岭-影评.html">寂静岭-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 狩猎-影评.html">狩猎-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.25 JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.22-变化-个人感悟.html">变化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.19-分享-幸存者偏见.html">幸存者偏见</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16 vue数据交互.html">Vue</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16-学习笔记.html">JavaScript学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.12-前端开发相关.html">前端开发相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.10-智力题总结.html">智力题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.9-前端面试.html">前端面试总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.09 诗与远方.html">诗与远方</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/练习题.html">前端练习题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/滕王阁的修建者--滕王李元婴.html">说说滕王阁的修建者——“混蛋王爷”李元婴</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/正则表达式.html">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/框架.html">框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/杂.html">杂记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/有感而记.html">有感而记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/星巴克.html">从星巴克的商业模式中看出几个问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/后端网络笔记.html">后端网络笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端基础题总结.html">前端基础题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/人生启迪发人深省.html">人生启迪</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/事件.html">绑定事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/专业必备技能.html">计算机发展+Git简单使用+markdown简单语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/What is the server.html">那年那器那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Webpack.html">Webpack学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/relative.html">编程相关-杂（Relative）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/npm.html">Npm相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Math.floor()方法.html">Math.floor()等方法的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js笔记.html">Js笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js模式-读书笔记.html">Js模式读书笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/jQuery.html">JQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/important Ideas.html">编程方法小汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/DOM.html">浏览器之DOM</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS技巧.html">CSS小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3中transform的加速问题.html">使用CSS3开启GPU硬件加速提升网站动画渲染性能</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-选择器的使用.html">CSS3选择器的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-简介.html">CSS3新增加的功能和属性方法--之选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-动画的使用.html">CSS3动画的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/code.html">Html标签举例</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/book.html">Book</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.3-This is us-TV.html">This Is Us</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.2-第一次就把事情做好.html">第一次就把事情做好！</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.1-CSS3-景深详解.html">CSS3---景深详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.29-科学上网.html">科学上网</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.28-win10系统相关.html">Win10计算机系统相关系列问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端算法代码实现.html">前端算法JavaScript代码实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.26今日事，古人的智慧.html">今日事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.17个人日记.html">个人日记</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

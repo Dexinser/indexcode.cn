@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>幸存者偏见 | To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="幸存者偏见    今天看编程随想大神的博客，又涨了点儿姿势，分享给大家吧~先说一个“股神”–巴菲特在1984年哥伦比亚大学的演讲，是为了纪念《证券分析》出版50周年的。  我要各位设想—场全国性的抛硬币大赛。让我们假定，全美国2.25亿人，在明天早晨起床时都掷一枚硬币，并猜硬币出现的正面或反面。如果猜对了，他们将从猜错者的手中赢得一美元。而猜错的人则被淘汰。每天都有输家遭到淘汰，奖金则不断地累积。">
+<meta name="keywords" content="认知提升">
+<meta property="og:type" content="article">
+<meta property="og:title" content="幸存者偏见">
+<meta property="og:url" content="http://indexcode.cn/2017/11/2017.11.19-分享-幸存者偏见.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="幸存者偏见    今天看编程随想大神的博客，又涨了点儿姿势，分享给大家吧~先说一个“股神”–巴菲特在1984年哥伦比亚大学的演讲，是为了纪念《证券分析》出版50周年的。  我要各位设想—场全国性的抛硬币大赛。让我们假定，全美国2.25亿人，在明天早晨起床时都掷一枚硬币，并猜硬币出现的正面或反面。如果猜对了，他们将从猜错者的手中赢得一美元。而猜错的人则被淘汰。每天都有输家遭到淘汰，奖金则不断地累积。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-20T09:41:12.979Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="幸存者偏见">
+<meta name="twitter:description" content="幸存者偏见    今天看编程随想大神的博客，又涨了点儿姿势，分享给大家吧~先说一个“股神”–巴菲特在1984年哥伦比亚大学的演讲，是为了纪念《证券分析》出版50周年的。  我要各位设想—场全国性的抛硬币大赛。让我们假定，全美国2.25亿人，在明天早晨起床时都掷一枚硬币，并猜硬币出现的正面或反面。如果猜对了，他们将从猜错者的手中赢得一美元。而猜错的人则被淘汰。每天都有输家遭到淘汰，奖金则不断地累积。">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2017/11/2017.11.19-分享-幸存者偏见" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/2017.11.19-分享-幸存者偏见.html" class="article-date">
+      <time datetime="2017-11-19T13:45:03.712Z" itemprop="datePublished">2017-11-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      幸存者偏见
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/资源分享/">资源分享</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/认知提升/">认知提升</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>幸存者偏见</strong>   <Excerpt in index | 首页摘要></p>
+<p>今天看<strong>编程随想</strong>大神的博客，又涨了点儿姿势，分享给大家吧~<br>先说一个“股神”–巴菲特在1984年哥伦比亚大学的演讲，是为了纪念《证券分析》出版50周年的。</p>
+<blockquote>
+<p>我要各位设想—场全国性的抛硬币大赛。让我们假定，全美国2.25亿人，在明天早晨起床时都掷一枚硬币，并猜硬币出现的正面或反面。如果猜对了，他们将从猜错者的手中赢得一美元。而猜错的人则被淘汰。每天都有输家遭到淘汰，奖金则不断地累积。经过十个早晨的十次投掷之后，全美国约有22万人连续十次猜对抛硬币的结果。每人所赢得的资金约1000多美元。现在，这群人可能会开始炫耀自己的战绩，此乃人的天性使然。即使他们仍保持谦虚的态度，但在鸡尾酒会中，他们偶尔会以此技巧吸引异性的注意，并炫耀他们对抛硬币的奇特洞察力。游戏继续进行，再经过十天，约有215个人连续20次猜对抛硬币的结果，并且每个人赢得大约100万美元的奖金。输家总共付出2.25亿美元，赢家则得到2.25亿美元。这时候，这群赢家会完全沉迷在自己的成就中——他们可能开始著书立说：“我如何每天早晨工作30秒，并在20天之内将—美元变成100万美元。”更糟的是，他们会在全国各地主办培训班，宣传如何有效地抛硬币。对那些持怀疑态度的学者，他们会反驳说：“如果你认为这是不可能的，该如何解释，为什么会有我们这215个人呢？”但是，某些商学院的教授可能会粗鲁地指出—个事实——假如让2.25亿只猩猩参加这场比赛，结果大致上也是如此——会有215只猩猩连续赢得20次的投掷。</p>
+<p>然而，我必须说明，前述事例和我即将提出的案例，两者之间存在着若干重大差异。首先，<br>(a)如果你所选择的2.25亿只猩猩的分布状况大致上和美国的人口分布相同；<br>(b)如果经过20天的竞赛，只剩下215只赢家；<br>(c)如果你发现其中有40只猩猩来自于奥马哈的某个动物园，则其中必有蹊跷。</p>
+<p>于是，你会询问该动物园的猩猩管理员，问此人各种问题。比如给这些猩猩吃什么饲料？这些猩猩是否做某些特殊的运动？是否看了什么书籍？……<br>换言之，如果你发现成功案例有非比寻常的集中现象，则你希望判定此异常的特色是否是成功的原因。</p>
+<p>科学的调查也遵循此一形态。如果你试图分析某种罕见癌症的原因——例如，美国每年只有1500个病例——而你发现蒙大拿州的某个矿区小镇便产生400个病例，则你必然对当地的饮水、病患的职业或其他种种变数产生兴趣。你知道，在—个小镇中发生400个病例，绝不是随机因素所造成。虽然你未必了解病因，但你知道从哪里着手调查。</p>
+<p>除了地理，还有其他方式可以界定起源。除了地理的起源，还有我所谓“智力的起源”。我认为各位将会在投资领域中发现——不成比例的抛硬币赢家来自于一个极小的智力村庄．它可以称为“格雷厄姆一多德都市”。这个特殊智力村存在着许多赢家．这种集中现象绝非巧合所能够解释。</p>
+<p>在某些情况下，即使非比寻常的集中现象也可能不重要。或许有100个只是模仿某一位极具说服力的领导者，而依其主张来猜测硬币的投掷结果。当他猜正面，这100个追随者也会自动地做相同的猜测。如果这一位领导者是属于最后215位赢家之一，则这100也便属于同一个智力起源，这项事实便不具有任何意义，因为100个案例实际上只代表一个案例。同理，假定你生活在一个父权结构极为严密的社会，而美国每一个家庭都恰好以父亲马首是瞻。20天之后，你将发现215位赢家是来自于21.5个家庭。若干天真的分析师可能因此而认为，成功地猜测硬币投掷的结果，其中具有高度的遗传因素。当然，这实际上不具有任何意义，因为你所拥有的不是215个独立的赢家，而只是21.5个随机分布的家庭。</p>
+<p>我所要考虑的这一群成功投资者，拥有一位共同的智力族长——本杰明·格雷厄姆。但是，这些离开此智力家族的孩童，都是依据非常不同的方法猜测他们自己的“硬币”。他们各自前往不同的地方，买卖不同的股票和企业，但他们的综合绩效绝对无法用随机因素加以解释。他们做相同的猜测，并不是因为领导者下达某一项指令，因此也无法用这种方式解释他们的表现。族长只提供了猜测硬币的智力理论，每位学生都必须自行决定如何运用这项理论。<br>……</p>
+</blockquote>
+<p>正好我最近也想学习一下股市相关的一些东西，说不定哪一天我头脑一热就载到炒股的世界里面成为一届股神了~在这儿就给大家分享一下这个演讲的背景吧~本文开头说了，这是为了纪念《证券分析》一书的。此书被誉为“价值投资领域的圣经”；作者是“本杰明·格雷厄姆”和“大卫·多德”，两人合著的这一经典。上世纪50年代，巴菲特曾经在哥伦比亚大学选修了格雷厄姆开设的“证券分析课程”，并得了A+的成绩。据传闻：格雷厄姆在哥伦比亚大学开设这门课程22年之后，才首次有学生（巴菲特）获得A+的成绩。</p>
+<p>好了，说完了股神巴菲特的故事，继续咱们的主题，幸存者偏差：所谓幸存者偏差就是只看到了 显示 出来的事实，而忽略了 隐式 的一些结果，错把 显示 的样本当成了总样本，而得出了错误的结论。在大神的博客中，介绍了几个非常典型的例子，在这里我就借鉴一下吧~</p>
+<h2 id="关于打仗的例子"><a href="#关于打仗的例子" class="headerlink" title="关于打仗的例子"></a>关于打仗的例子</h2><p>话说二战时的英国空军，经常派轰炸机去袭击德国。由于德国的防空火力较猛，轰炸机损失较惨重。为了降低飞机的损失，空军的领导们决定给飞机的机身进行装甲加固。由于当时条件所限，只能用装甲加固飞机上的少数部位。<br>　　然后，英国皇家空军就着手进行研究调查。他们对执行完轰炸任务返航的飞机进行仔细的观察、分析、统计。发现一个现象：大多数的弹孔，都集中在飞机的机翼上；只有少数弹孔位于驾驶舱。<br>　　假如你负责此事，你会用装甲加固哪个部位呢？估计很多同学会想当然地说：加固机翼（因为机翼的弹孔最多）。但是答案恰恰相反，【最不需要】加固就是机翼。为啥捏？<br>　　驾驶舱的弹孔最少，说明驾驶舱一旦中弹，飞机就载了，再也回不来。所以，它才是最应该加固的部位。</p>
+<h2 id="关于网站的例子"><a href="#关于网站的例子" class="headerlink" title="关于网站的例子"></a>关于网站的例子</h2><p>假设有2家网站A和B，都经营类似的业务，都有相当多的用户群。再假设它们都进行了类似的网站界面改版。结果改版之后，网站A没有得到用户的赞扬，反而遭到很多用户的臭骂；而网站B捏，既没有用户夸它，也没有用户骂它。现在，请你来判断一下，哪个网站得人心？<br>　　估计又有不少同学会想当然地认为，网站B更受欢迎，毕竟用户没骂它。但事实并非如此。<br>　　网站A虽然遭到很多用户痛骂，但至少说明，还有很多用户在乎它；而对于网站B，用户对它已经心灰意冷，无所谓了，所以啥反应也没有。<br>　　末了，俺悄悄告诉大伙儿：网站A指的是 Facebook，网站B影射微软旗下的 Live Spaces。这俩都属于 SNS 类网站。想当初，Facebook 稍微改动了隐私条款，差点被用户的口水淹死；反观 Live Spaces，界面越改越土鳖，功能越改越差劲（俺曾经使用 Live Spaces 搭建过镜像博客，对此深有体会）。但又有多少 Live Spaces 的用户去找微软投诉呢？</p>
+<p>知道这个道理容易，但是真正的应用到现实生活中就没有那么简单了。因为我们看到了一个显而易见的结果之后往往就不会往深处去琢磨了，是怕累死太多的脑细胞吗？所以当我们认识到一个显而易见的答案时，要想一下有没有“沉默证据”的存在，而不要当即断言这就是真实的结果，这个时候三思而行才是硬道理啊~如果你在分析某个案例时，不清楚属于上述哪一种情况，那么你需要尝试去排除“随机性”。如果无法排除，那么你就只好认可该案例是“随机性”驱动的。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2017/11/2017.11.19-分享-幸存者偏见.html">幸存者偏见</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Dexinser 的个人博客">Dexinser</a></p>
+        <p><span>发布时间:</span>2017年11月19日 - 21时45分</p>
+        <p><span>最后更新:</span>2017年12月20日 - 17时41分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/11/2017.11.19-分享-幸存者偏见.html" title="幸存者偏见">http://indexcode.cn/2017/11/2017.11.19-分享-幸存者偏见.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://indexcode.cn/2017/11/2017.11.19-分享-幸存者偏见.html　　作者: Dexinser" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2017/11/2017.11.22-变化-个人感悟.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          变化
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2017/11/2017.11.16 vue数据交互.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于打仗的例子"><span class="toc-number">1.</span> <span class="toc-text">关于打仗的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于网站的例子"><span class="toc-number">2.</span> <span class="toc-text">关于网站的例子</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+    <style>
+        .toc {
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $(".toc li a").mouseover(function() {
+                var title = $(this).attr('href');
+                $(this).attr("title", title);
+            });
+        })
+    </script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'cytgVLEw0',
+      conf: '3dd585905d0465ff1e65d0823df3763e'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2017/11/2017.11.22-变化-个人感悟.html" title="上一篇: 变化">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2017/11/2017.11.16 vue数据交互.html" title="下一篇: Vue">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.28 The Tipping Point.html">The Tipping Point</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.21 磁盘格式.html">磁盘格式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.08 Amour.html">Amour-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.05 js中一些方法的比较与区别.html">Js中一些相似方法/属性的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 彗星来的那一夜-影评.html">彗星来的那一夜-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 寂静岭-影评.html">寂静岭-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 狩猎-影评.html">狩猎-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.25 JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.22-变化-个人感悟.html">变化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.19-分享-幸存者偏见.html">幸存者偏见</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16 vue数据交互.html">Vue</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16-学习笔记.html">JavaScript学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.12-前端开发相关.html">前端开发相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.10-智力题总结.html">智力题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.9-前端面试.html">前端面试总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.09 诗与远方.html">诗与远方</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/练习题.html">前端练习题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/滕王阁的修建者--滕王李元婴.html">说说滕王阁的修建者——“混蛋王爷”李元婴</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/正则表达式.html">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/框架.html">框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/杂.html">杂记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/有感而记.html">有感而记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/星巴克.html">从星巴克的商业模式中看出几个问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/后端网络笔记.html">后端网络笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端基础题总结.html">前端基础题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/人生启迪发人深省.html">人生启迪</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/事件.html">绑定事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/专业必备技能.html">计算机发展+Git简单使用+markdown简单语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/What is the server.html">那年那器那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Webpack.html">Webpack学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/relative.html">编程相关-杂（Relative）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/npm.html">Npm相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Math.floor()方法.html">Math.floor()等方法的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js笔记.html">Js笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js模式-读书笔记.html">Js模式读书笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/jQuery.html">JQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/important Ideas.html">编程方法小汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/DOM.html">浏览器之DOM</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS技巧.html">CSS小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3中transform的加速问题.html">使用CSS3开启GPU硬件加速提升网站动画渲染性能</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-选择器的使用.html">CSS3选择器的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-简介.html">CSS3新增加的功能和属性方法--之选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-动画的使用.html">CSS3动画的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/code.html">Html标签举例</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/book.html">Book</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.3-This is us-TV.html">This Is Us</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.2-第一次就把事情做好.html">第一次就把事情做好！</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.1-CSS3-景深详解.html">CSS3---景深详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.29-科学上网.html">科学上网</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.28-win10系统相关.html">Win10计算机系统相关系列问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端算法代码实现.html">前端算法JavaScript代码实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.26今日事，古人的智慧.html">今日事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.17个人日记.html">个人日记</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

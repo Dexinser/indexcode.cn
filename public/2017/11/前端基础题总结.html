@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>前端基础题总结 | To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端基础题总结  1. 行内元素和快级元素inline： &amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;,&amp;lt;strong&amp;gt;&amp;lt;/strong&amp;gt;,&amp;lt;em&amp;gt;&amp;lt;/em&amp;gt;,&amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;,&amp;lt;del&amp;gt;&amp;lt;/del&amp;gt;;block:  &amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;,&amp;lt;ol&amp;gt;&amp;lt;/ol&amp;gt;">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端基础题总结">
+<meta property="og:url" content="http://indexcode.cn/2017/11/前端基础题总结.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="前端基础题总结  1. 行内元素和快级元素inline： &amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;,&amp;lt;strong&amp;gt;&amp;lt;/strong&amp;gt;,&amp;lt;em&amp;gt;&amp;lt;/em&amp;gt;,&amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;,&amp;lt;del&amp;gt;&amp;lt;/del&amp;gt;;block:  &amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;,&amp;lt;ol&amp;gt;&amp;lt;/ol&amp;gt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-18T05:21:51.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端基础题总结">
+<meta name="twitter:description" content="前端基础题总结  1. 行内元素和快级元素inline： &amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;,&amp;lt;strong&amp;gt;&amp;lt;/strong&amp;gt;,&amp;lt;em&amp;gt;&amp;lt;/em&amp;gt;,&amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;,&amp;lt;del&amp;gt;&amp;lt;/del&amp;gt;;block:  &amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;,&amp;lt;ol&amp;gt;&amp;lt;/ol&amp;gt;">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2017/11/前端基础题总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/前端基础题总结.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.990Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端基础题总结
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>前端基础题总结</strong> <Excerpt in index | 首页摘要></p>
+<h3 id="1-行内元素和快级元素"><a href="#1-行内元素和快级元素" class="headerlink" title="1. 行内元素和快级元素"></a>1. 行内元素和快级元素</h3><p>inline： <code>&lt;span&gt;&lt;/span&gt;,&lt;strong&gt;&lt;/strong&gt;,&lt;em&gt;&lt;/em&gt;,&lt;a&gt;&lt;/a&gt;,&lt;del&gt;&lt;/del&gt;</code>;<br>block:  <code>&lt;p&gt;&lt;/p&gt;,&lt;ol&gt;&lt;/ol&gt;,&lt;li&gt;&lt;/li&gt;,&lt;ul&gt;&lt;/ul&gt;,&lt;div&gt;&lt;/div&gt;,&lt;form&gt;&lt;/form&gt;,&lt;adress&gt;&lt;/adress&gt;&lt;table&gt;&lt;/table&gt;&lt;h1-6&gt;</code>;<br>行内元素转化为块级元素：display : block;</p>
+<h3 id="2-css代码三中引入方式："><a href="#2-css代码三中引入方式：" class="headerlink" title="2. css代码三中引入方式："></a>2. css代码三中引入方式：</h3><pre><code>行间样式
+页面级css
+引入css文件 link
+style标签下写 @import url();
+</code></pre><h3 id="3-web标准：行为、样式、结构相分离"><a href="#3-web标准：行为、样式、结构相分离" class="headerlink" title="3. web标准：行为、样式、结构相分离"></a>3. web标准：行为、样式、结构相分离</h3><h3 id="4-简化代码："><a href="#4-简化代码：" class="headerlink" title="4. 简化代码："></a>4. 简化代码：</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">	*&#123;</span><br><span class="line">		margin: 0 10px;</span><br><span class="line">		padding: 0;</span><br><span class="line">	&#125;</span><br><span class="line">	#content&#123;</span><br><span class="line">		background:#ffffff;</span><br><span class="line">	&#125;</span><br><span class="line">	#content div&#123;</span><br><span class="line">		font-size: 14px;</span><br><span class="line">		text-align: center;</span><br><span class="line">		color: #e9e9e9;</span><br><span class="line">	&#125;</span><br><span class="line">	#nav&#123;</span><br><span class="line">		background-color: #e0e0e0;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="5-浏览器中margin默认值为8px；"><a href="#5-浏览器中margin默认值为8px；" class="headerlink" title="5. 浏览器中margin默认值为8px；"></a>5. 浏览器中margin默认值为8px；</h3><h3 id="6-盒模型的计算："><a href="#6-盒模型的计算：" class="headerlink" title="6. 盒模型的计算："></a>6. 盒模型的计算：</h3><figure class="highlight plain"><figcaption><span>lang</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;liangxi&lt;/title&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">		body&#123;</span><br><span class="line">			padding: 0;</span><br><span class="line">			margin: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		#my-defined&#123;</span><br><span class="line">			width: 100px;</span><br><span class="line">			height: 100px;</span><br><span class="line">			padding: 0 100px;</span><br><span class="line">			margin: 10px 20px 30px 40px;</span><br><span class="line">			border: 1px solid orange;</span><br><span class="line">			background: orange;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;my-defined&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>html中orange颜色的区域宽度是302px<br>orange区域距离页面左边40px，上10px</p>
+<h3 id="7-用css、html编写一个两列布局的页面，要求右侧宽度为200px；左侧自动扩展。"><a href="#7-用css、html编写一个两列布局的页面，要求右侧宽度为200px；左侧自动扩展。" class="headerlink" title="7. 用css、html编写一个两列布局的页面，要求右侧宽度为200px；左侧自动扩展。"></a>7. 用css、html编写一个两列布局的页面，要求右侧宽度为200px；左侧自动扩展。</h3><figure class="highlight plain"><figcaption><span>lang</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;liangxi&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">	.right&#123;</span><br><span class="line">		float: right;</span><br><span class="line">		width: 200px;</span><br><span class="line">		height: 100px;</span><br><span class="line">		background:red; </span><br><span class="line">	&#125;</span><br><span class="line">	.left&#123;</span><br><span class="line">		height: 100px;</span><br><span class="line">		margin-right: 200px;</span><br><span class="line">		background: black;</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="8-居中一个浮动元素："><a href="#8-居中一个浮动元素：" class="headerlink" title="8. 居中一个浮动元素："></a>8. 居中一个浮动元素：</h3><div class='wrap'><br>    <div id='my-defined'></div><br></div>
+
+<figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">	&lt;!-- 第一种方法： --&gt;</span><br><span class="line">	.wrap &#123;</span><br><span class="line">		position: relative;</span><br><span class="line">		height: 1000px;</span><br><span class="line">		width: 100%;</span><br><span class="line">	&#125;</span><br><span class="line">	.wrap #my-defined&#123;</span><br><span class="line">		position: absolute;</span><br><span class="line">		width: 300px;</span><br><span class="line">		height: 500px;</span><br><span class="line">		left: 50%;</span><br><span class="line">		right: 50%;</span><br><span class="line">		margin-left: -150px;</span><br><span class="line">		margin-top: -250px;</span><br><span class="line">		background-color: #ccc;</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;!-- 第二种方法： --&gt;</span><br><span class="line">	.wrap&#123;</span><br><span class="line">		position: relative;</span><br><span class="line">		height: 1000px;</span><br><span class="line">		width: 100%;</span><br><span class="line">	&#125;</span><br><span class="line">	.wrap #my-defined&#123;</span><br><span class="line">		position: absolute;</span><br><span class="line">		width: 300px;</span><br><span class="line">		height: 500px;</span><br><span class="line">		top: 50%;</span><br><span class="line">		left: 50%;</span><br><span class="line">		transform: translate(-50%, -50%);</span><br><span class="line">		background-color: #ccc;</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;!-- 第三种方法： --&gt;</span><br><span class="line">	.wrap&#123;</span><br><span class="line">		display: flex;</span><br><span class="line">		width: 100%;</span><br><span class="line">		height: 1000px;</span><br><span class="line">		justify-content: center;</span><br><span class="line">		align-items: center;</span><br><span class="line">	&#125;</span><br><span class="line">	.wrap #my-defined&#123;</span><br><span class="line">		height: 500px;</span><br><span class="line">		width: 300px;</span><br><span class="line">		background-color: #ccc;		</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;!-- 第四种方法： --&gt;</span><br><span class="line">	.wrap&#123;</span><br><span class="line">		position: relative;</span><br><span class="line">		width: 100%;</span><br><span class="line">		height: 1000px;</span><br><span class="line">	&#125;</span><br><span class="line">	.wrap #my-defined&#123;</span><br><span class="line">		position: absolute;</span><br><span class="line">		top: 0;</span><br><span class="line">		left: 0;</span><br><span class="line">		bottom: 0;</span><br><span class="line">		right: 0;</span><br><span class="line">		margin: auto;</span><br><span class="line">		background-color: #ccc;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="9-画出下图示意图："><a href="#9-画出下图示意图：" class="headerlink" title="9. 画出下图示意图："></a>9. 画出下图示意图：</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>liangxi<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">			<span class="selector-id">#page</span>&#123;</span></span><br><span class="line"><span class="undefined">				width: 520px;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="css">			<span class="selector-class">.nav</span>&#123;</span></span><br><span class="line"><span class="css">				<span class="selector-tag">width</span><span class="selector-pseudo">:200px</span>;</span></span><br><span class="line"><span class="undefined">				float: right;</span></span><br><span class="line"><span class="undefined">				background: orange;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="css">			<span class="selector-class">.main</span>&#123;</span></span><br><span class="line"><span class="undefined">				width: 200px;</span></span><br><span class="line"><span class="undefined">				float: left;</span></span><br><span class="line"><span class="undefined">				padding-left: 110px;</span></span><br><span class="line"><span class="undefined">				background: black;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="css">			<span class="selector-class">.sub</span>&#123;</span></span><br><span class="line"><span class="undefined">				width: 100px;</span></span><br><span class="line"><span class="undefined">				float: left;</span></span><br><span class="line"><span class="css">				<span class="selector-tag">margin</span><span class="selector-pseudo">:10px</span> 0 10<span class="selector-tag">px</span> <span class="selector-tag">-100px</span>;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="css">			<span class="selector-class">.nav</span>,<span class="selector-class">.sub</span>&#123;</span></span><br><span class="line"><span class="css">				<span class="selector-tag">border</span>: 10<span class="selector-tag">px</span> <span class="selector-tag">deshed</span> <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">				height: 300px;</span></span><br><span class="line"><span class="undefined">				background: orange;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="css">			<span class="selector-class">.sub</span>&#123;</span></span><br><span class="line"><span class="undefined">				height: 280px;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"page"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sub"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="10-form表单中method属性值及其区别："><a href="#10-form表单中method属性值及其区别：" class="headerlink" title="10. form表单中method属性值及其区别："></a>10. form表单中method属性值及其区别：</h3><pre><code>GET 使用URL 或Cookie 传参，而POST将数据，放在BODY中。
+GET 的URL会有长度上的限制， POST可以传输很多数据。
+POST比GET安全。
+</code></pre><p>但其实HTTP协议里没有规定POST数据就要放在BODY里， 也没有要求GET数据就一定要放在URL中而不能放在BODY中。<br>HTTP协议对GET和POST 都没有对数据的长度进行限制，两方面原因造成数据限制的原因<br>    早起浏览器会对URL长度进行限制（浏览器URL输入框）<br>    浏览器会对Content-length进行限制，这是为了服务器安全和稳定。</p>
+<h3 id="11-去掉ul-gt-li结构中前面的圆点，并且解决li前面的空余"><a href="#11-去掉ul-gt-li结构中前面的圆点，并且解决li前面的空余" class="headerlink" title="11. 去掉ul&gt;li结构中前面的圆点，并且解决li前面的空余"></a>11. 去掉ul&gt;li结构中前面的圆点，并且解决li前面的空余</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>liangxi<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">			ul &#123;</span></span><br><span class="line"><span class="undefined">			height: 100px;</span></span><br><span class="line"><span class="undefined">			padding: 0;</span></span><br><span class="line"><span class="undefined">			list-style: none;</span></span><br><span class="line"><span class="undefined">			border: 1px solid black;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="12-JavaScript中typeof可能返回的结果：number-string-boolean-object-undefined-function-symbol"><a href="#12-JavaScript中typeof可能返回的结果：number-string-boolean-object-undefined-function-symbol" class="headerlink" title="12. JavaScript中typeof可能返回的结果：number,string,boolean,object,undefined,function,symbol;"></a>12. JavaScript中typeof可能返回的结果：number,string,boolean,object,undefined,function,symbol;</h3><h3 id="13-已知数组var-arr-“goole”-”microsoft”-”oracle”-”阿里”，”freewheel”-”IBM”-”爱立信”，”百度”，”企鹅”，”美团”，”去哪儿”，”58同城”，”新浪”，”搜狐”，”大众点评”，”360”-”汽车之家”，”巨人网络”，”携程”，”4399”-”凤凰网”，”人民网”-，亲们，如果你想进前十的公司，请用效率最高的方法将此数组按照顺序链接成字符。"><a href="#13-已知数组var-arr-“goole”-”microsoft”-”oracle”-”阿里”，”freewheel”-”IBM”-”爱立信”，”百度”，”企鹅”，”美团”，”去哪儿”，”58同城”，”新浪”，”搜狐”，”大众点评”，”360”-”汽车之家”，”巨人网络”，”携程”，”4399”-”凤凰网”，”人民网”-，亲们，如果你想进前十的公司，请用效率最高的方法将此数组按照顺序链接成字符。" class="headerlink" title="13. 已知数组var arr = [“goole”,”microsoft”,”oracle”,”阿里”，”freewheel”,”IBM”,”爱立信”，”百度”，”企鹅”，”美团”，”去哪儿”，”58同城”，”新浪”，”搜狐”，”大众点评”，”360”,”汽车之家”，”巨人网络”，”携程”，”4399”,”凤凰网”，”人民网”]，亲们，如果你想进前十的公司，请用效率最高的方法将此数组按照顺序链接成字符。"></a>13. 已知数组var arr = [“goole”,”microsoft”,”oracle”,”阿里”，”freewheel”,”IBM”,”爱立信”，”百度”，”企鹅”，”美团”，”去哪儿”，”58同城”，”新浪”，”搜狐”，”大众点评”，”360”,”汽车之家”，”巨人网络”，”携程”，”4399”,”凤凰网”，”人民网”]，亲们，如果你想进前十的公司，请用效率最高的方法将此数组按照顺序链接成字符。</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var arr = [&quot;goole&quot;,&quot;microsoft&quot;,&quot;oracle&quot;,&quot;阿里&quot;,&quot;freewheel&quot;,&quot;IBM&quot;,&quot;爱立信&quot;,&quot;百度&quot;,&quot;企鹅&quot;,&quot;美团&quot;,&quot;去哪儿&quot;,&quot;58同城&quot;,&quot;新浪&quot;,&quot;搜狐&quot;,&quot;大众点评&quot;,&quot;360&quot;,&quot;汽车之家&quot;,&quot;巨人网络&quot;,&quot;携程&quot;,&quot;4399&quot;,&quot;凤凰网&quot;,&quot;人民网&quot;];
+    console.log(arr.join(&#39;,&#39;));
+&lt;/script&gt;</code></p>
+<h3 id="14-写出html、css、JavaScript注释代码形式："><a href="#14-写出html、css、JavaScript注释代码形式：" class="headerlink" title="14. 写出html、css、JavaScript注释代码形式："></a>14. 写出html、css、JavaScript注释代码形式：</h3><pre><code>html：&lt;!--   --&gt;
+css:/*   */
+js://
+</code></pre><h3 id="15-编写一段JavaScript脚生成下面这段DOM结构。"><a href="#15-编写一段JavaScript脚生成下面这段DOM结构。" class="headerlink" title="15. 编写一段JavaScript脚生成下面这段DOM结构。"></a>15. 编写一段JavaScript脚生成下面这段DOM结构。</h3><p><code>&lt;div class=&quot;exmple&quot;&gt;
+    &lt;p class=&quot;slogan&quot;&gt;成哥，你最帅!&lt;/p&gt;
+&lt;/div&gt;</code></p>
+<p>JS代码如下：</p>
+<p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var $Div = document.createElement(&#39;div&#39;);
+    var $P = document.createElement(&#39;p&#39;);
+    $Div.className = &quot;exmple&quot;;
+    $P.className = &quot;slogan&quot;;
+    $Div.appendChild($P);
+    document.body.appendChild($div);
+    $P.innerHTML = &quot;成哥，你最帅！&quot;;
+&lt;/script&gt;</code></p>
+<h3 id="16-为html元素绑定一个事件，如点击事件。写出兼容各个浏览器的事件绑定方法。"><a href="#16-为html元素绑定一个事件，如点击事件。写出兼容各个浏览器的事件绑定方法。" class="headerlink" title="16. 为html元素绑定一个事件，如点击事件。写出兼容各个浏览器的事件绑定方法。"></a>16. 为html元素绑定一个事件，如点击事件。写出兼容各个浏览器的事件绑定方法。</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    &lt;!-- 兼容各个浏览器的绑定事件： --&gt;
+    function addEvent(elem, type, handle){
+        if(elem.addEventListener){
+            elem.addEventListener(type, handle, false);
+        }else if (elem.attachEvent) {
+            elem[&#39;temp&#39; + type + handle] = handle;
+            elem[type + handle]= function (){
+                elem[&#39;temp&#39; + type + handle].call(elem);
+            };
+            elem.attachEvent(&#39;on&#39; + type, elem[type + handle])
+        }else{
+            elem[&#39;on&#39;+type]=handle;
+        }
+    }
+    &lt;!-- 兼容各个浏览器的一处绑定事件： --&gt;
+    function removeEvent(elem, type, handle){
+        if(elem.removeEventListener) {
+            elem.removeEventListener(type, handle, false);
+        }else if(elem.detachEvent) {
+            elem.datachEvent(‘on’ + type, elem[type + handle]);
+        }else {
+            elem[‘on’ + type] = null; //  elem[‘on’ + type] = false;
+        }
+    }
+&lt;/script&gt;</code></p>
+<p>第二种方法：</p>
+<p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function addEvent(elem, type, handle){
+        if(elem.addEventListener){
+            elem.addEventListener(type, handle, false);
+        }else if (elem.attachEvent) {
+            elem[handle.name] = function () {
+                handle.call(elem);
+            };
+            elem.attachEvent(&#39;on&#39; + type, elem[handle.name]);
+        }else{
+            elem[&#39;on&#39;+type]=handle;
+        }
+    }
+    &lt;!-- 兼容各个浏览器的移除绑定事件： --&gt;
+    function removeEvent(elem, type, handle){
+        if(elem.removeEventListener) {
+            elem.removeEventListener(type, handle, false);
+        }else if(elem.detachEvent) {
+            elem.datachEvent(‘on’ + type, elem[handle.name]);
+        }else {
+            elem[‘on’ + type] = null; //  elem[‘on’ + type] = false;
+        }
+    }
+&lt;/script&gt;</code></p>
+<h3 id="17-Call-apply-作用都是改变this指向；"><a href="#17-Call-apply-作用都是改变this指向；" class="headerlink" title="17. Call,apply:作用都是改变this指向；"></a>17. Call,apply:作用都是改变this指向；</h3><p>区别：传参的方式不同，call直接传，apply利用数组的形式传参；</p>
+<h3 id="18-封装ajax-向服务器异步发送数据；"><a href="#18-封装ajax-向服务器异步发送数据；" class="headerlink" title="18. 封装ajax,向服务器异步发送数据；"></a>18. 封装ajax,向服务器异步发送数据；</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function ajax(method, url, flag, callback, data){
+        var xhr = null;
+        if(window.XMLHttpRequest){
+            xhr = new window.XMLHttpRequest();
+        }else{
+            xhr = new ActiveXObject(&#39;Mirosoft.XMLHTTP&#39;);
+        }
+        var method = method.toUpperCase();  //对应的是toLowerCase()方法;
+        if(method === &#39;GET&#39;){
+            xhr.open(&#39;GET&#39;, url + &#39;?&#39; + data, flag);
+            xhr.send();
+        }else if(method === &#39;POST&#39;){
+            xhr.open(&#39;POST&#39;, url, flag);
+            xhr.setRequestHeader(&#39;content-type&#39;, &#39;application/x-www-form-urlencoded&#39;);
+            xhr.send(data);
+        }
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState === 4){
+                if(xhr.status === 200){
+                    callback(xhr.responseText); 
+                }
+            }
+        }
+    }
+&lt;/script&gt;</code></p>
+<h3 id="19-数组去重-eg：var-arr-‘a’-’b’-234-23-’a’-’b’-3-1-234"><a href="#19-数组去重-eg：var-arr-‘a’-’b’-234-23-’a’-’b’-3-1-234" class="headerlink" title="19. 数组去重 eg：var arr = [‘a’,’b’,234,23,’a’,’b’,3,1,234];"></a>19. 数组去重 eg：var arr = [‘a’,’b’,234,23,’a’,’b’,3,1,234];</h3><p>第一种方法：</p>
+<p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function () {
+     var arr = [],
+        obj = {},
+        len = this.length;
+        for(var i = 0;i &lt; len;i++){
+            if(!obj[this[i]]){
+                obj[this[i]] = &quot;11&quot;;
+                arr.push(this[i]);
+            }
+        }
+        return arr;
+}
+    var arr = [1,1,2,2,2,3,3,33,4,4,5,45,45,];
+    [].unique(arr);    --&gt; 结果为：[1，2，3，33，4，5，45]
+&lt;/script&gt;</code><br>第二种方法：<br><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function (arr) {
+        return new Set(arr);
+    }
+    var arr = [1,1,2,2,2,3,3,33,4,4,5,45,45,];
+    [].unique(arr);    --&gt; 结果为：[1，2，3，33，4，5，45]
+&lt;/script&gt;</code><br>第三种方法：<br><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function (arr) {
+        var temp = [], len = arr.length;
+        for(let i = 0; i &lt; len; i++) {
+            if(temp.indexOf(arr[i]) === -1) {
+                temp.push(arr[i]);
+            }
+        }
+        return temp;
+    }
+    var arr = [1,1,2,2,2,3,3,33,4,4,5,45,45,];
+    [].unique(arr);    --&gt; 结果为：[1，2，3，33，3，4，45]
+&lt;/script&gt;</code><br>第四种方法：<br><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function (arr) {
+        var temp = [], len = arr.length;
+        for(let i = 0; i &lt; len; i++) {
+            if(arr.indexOf(arr[i]) === i) {
+                temp.push(arr[i]);
+            }
+        }
+        return temp;
+    }
+    var arr = [1,1,2,2,2,3,3,33,4,4,5,45,45,];
+    [].unique(arr);    --&gt; 结果为：[1，2，3，33，4，5，45]
+&lt;/script&gt;</code><br>第五种方法：<br><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function (arr) {
+        var temp = [],index = [], len = arr.length;
+        for(let i = 0; i &lt; len; i++) {
+            for(let j = i + 1; j &lt; len; j++) {
+                if(arr[i] === arr[j]) {
+                    i ++ ;
+                    j = i;
+                }
+            }
+            temp.push(arr[i]);
+            index.push(i);
+        }
+        console.log(index);
+        return temp;
+    }
+    var arr = [1,1,2,2,2,3,3,33,4,4,5,45,45,];
+    [].unique(arr);    --&gt; 结果为：[1，2，3，33，4，5，45]
+&lt;/script&gt;</code></p>
+<h3 id="20-如今有个ul，如果有十亿个li；要求点击li触发事件，弹出对应li的内容"><a href="#20-如今有个ul，如果有十亿个li；要求点击li触发事件，弹出对应li的内容" class="headerlink" title="20. 如今有个ul，如果有十亿个li；要求点击li触发事件，弹出对应li的内容"></a>20. 如今有个ul，如果有十亿个li；要求点击li触发事件，弹出对应li的内容</h3><p><code>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code><br><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var oUl = document.getElementsByTagName(&#39;ul&#39;)[0];
+    oUl.onclick = function  (e) {
+        var event = e || window.event;
+        var target = event.target || event.srcElement;
+        console.log(target.innerHTML);
+    }
+&lt;/script&gt;</code></p>
+<h3 id="21-阻止事件冒泡和事件默认时间"><a href="#21-阻止事件冒泡和事件默认时间" class="headerlink" title="21. 阻止事件冒泡和事件默认时间"></a>21. 阻止事件冒泡和事件默认时间</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    &lt;!-- //取消冒泡 --&gt;
+    function stopBubble(e) {
+        if(e.stopPropagation){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble = true;
+        }
+    }     
+    &lt;!-- //阻止默认事件 --&gt;
+    function  cancelHandler(e){
+        if(e.preventDefault){
+            e.preventDefault();
+        }else{
+            e.returnValue = false;
+        }
+    }
+&lt;/script&gt;</code></p>
+<h3 id="22-什么是DOM："><a href="#22-什么是DOM：" class="headerlink" title="22. 什么是DOM："></a>22. 什么是DOM：</h3><p>DOM是操作css，html的一套编程接口；<br>DOM对象即为宿主对象，浏览器厂商定义的；<br>DOM定义了表示和修改文档所需的方法。<br>对html和xml编程接口不是css</p>
+<h3 id="23-利用JavaScript取非行间样式，要求兼容性各个浏览器"><a href="#23-利用JavaScript取非行间样式，要求兼容性各个浏览器" class="headerlink" title="23. 利用JavaScript取非行间样式，要求兼容性各个浏览器"></a>23. 利用JavaScript取非行间样式，要求兼容性各个浏览器</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function getComputedStyle(obj,styleProp){
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(obj,false)[styleProp];
+        }else{
+            return obj.currentStyle[styleProp];
+        }
+    }
+&lt;/script&gt;</code></p>
+<h3 id="24-运行test-和new-test-的结果是什么："><a href="#24-运行test-和new-test-的结果是什么：" class="headerlink" title="24. 运行test()和new test()的结果是什么："></a>24. 运行test()和new test()的结果是什么：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var a = 5;
+    function test(){
+        a=0;
+        alert(a);
+        alert(this.a);
+        var a;
+        alert(a);
+    }
+&lt;/script&gt;</code><br>结果是：0 5 0    ,    0 undefined 0</p>
+<h3 id="25-有字符串”aaaaabbbccccddddeeefgaa”-转换为连续不重复的字符串"><a href="#25-有字符串”aaaaabbbccccddddeeefgaa”-转换为连续不重复的字符串" class="headerlink" title="25. 有字符串”aaaaabbbccccddddeeefgaa”,转换为连续不重复的字符串"></a>25. 有字符串”aaaaabbbccccddddeeefgaa”,转换为连续不重复的字符串</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str = &quot;aaaaabbbccccddddeeefgaa&quot;;
+    var reg = /(.)\1*/g;
+    console.log(str.replace(reg,&quot;$1&quot;));
+&lt;/script&gt;</code></p>
+<h3 id="26-一串连续数字实现打点功能：100000000转换成：1-000-000-000"><a href="#26-一串连续数字实现打点功能：100000000转换成：1-000-000-000" class="headerlink" title="26. 一串连续数字实现打点功能：100000000转换成：1.000.000.000"></a>26. 一串连续数字实现打点功能：100000000转换成：1.000.000.000</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str = &quot;1000000000&quot;;
+    var reg = /(?=(\B)(\d{3})+$)/g;
+    console.log(str.replace(reg,&quot;.&quot;));
+&lt;/script&gt;</code></p>
+<h3 id="27-写出运算结果："><a href="#27-写出运算结果：" class="headerlink" title="27. 写出运算结果："></a>27. 写出运算结果：</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">	alert(typeof(a))--undefined</span><br><span class="line">	alert(typeof(undefined))--undefined</span><br><span class="line">	alert(typeof(NaN))--number</span><br><span class="line">	alert(typeof(null))--object</span><br><span class="line"></span><br><span class="line">	var a = &quot;123abc&quot;;</span><br><span class="line">	alert(typeof(+a));--number</span><br><span class="line">	alert(typeof(!!a));--boolean</span><br><span class="line">	alert(typeof(a + &quot;&quot;));--string</span><br><span class="line"></span><br><span class="line">	alert(1 == &quot;1&quot;); --true</span><br><span class="line">	alert(NaN == NaN); --flase</span><br><span class="line">	alert(NaN == undefined);--flase</span><br><span class="line">	alert(&quot;11&quot; + 11);--1111</span><br><span class="line">	alert(1===&quot;1&quot;)--flase</span><br><span class="line">	alert(parseInt(&quot;123abc&quot;))--123</span><br><span class="line"></span><br><span class="line">	var num = 1232123.3456789;</span><br><span class="line">	alert(num.toFixed(3));--1232123.346</span><br><span class="line">	//toFixed只在number类型上可以用，保留几位有效数字，四舍五入</span><br><span class="line"></span><br><span class="line">	// typeof(typeof(a))--string</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="28-打印当前年月时分秒"><a href="#28-打印当前年月时分秒" class="headerlink" title="28. 打印当前年月时分秒"></a>28. 打印当前年月时分秒</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var date = new Date();
+  console.log(date.getFullYear + &quot;年&quot; + (date.getMonth() + 1) + &quot;月&quot; + date.getDate() + &quot;日&quot;+ date.getHours() + &quot;时&quot; + date.getMinutes() + &quot;分&quot; + date.getSeconds() + &quot;秒&quot;);
+&lt;/script&gt;</code></p>
+<h3 id="29-css中，font-size设置的是字体的高；单位是px，em是相对值。"><a href="#29-css中，font-size设置的是字体的高；单位是px，em是相对值。" class="headerlink" title="29. css中，font-size设置的是字体的高；单位是px，em是相对值。"></a>29. css中，font-size设置的是字体的高；单位是px，em是相对值。</h3><h3 id="30-有html结构："><a href="#30-有html结构：" class="headerlink" title="30. 有html结构："></a>30. 有html结构：</h3><pre><code>`&lt;div style=&quot;background-color:red;margin:0 0 100px 0;&quot;&gt;123&lt;/div&gt;
+&lt;div style=&quot;background-color:red;margin:200px 0 0 0;&quot;&gt;234&lt;/div&gt;`
+
+他们之间的间距是：200px
+</code></pre><h3 id="31-简单说说自定义构造函数创建对象的原理："><a href="#31-简单说说自定义构造函数创建对象的原理：" class="headerlink" title="31. 简单说说自定义构造函数创建对象的原理："></a>31. 简单说说自定义构造函数创建对象的原理：</h3><pre><code>在函数的最前面隐式的加上 this = {}；最后隐式的返回 return this；
+</code></pre><h3 id="32-写出一种原型链实现继承的方式：圣杯模式"><a href="#32-写出一种原型链实现继承的方式：圣杯模式" class="headerlink" title="32. 写出一种原型链实现继承的方式：圣杯模式"></a>32. 写出一种原型链实现继承的方式：圣杯模式</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	var inherit =(function()&#123;</span><br><span class="line"></span><br><span class="line">	var F = function()&#123;&#125;;</span><br><span class="line">		return function(P,C)&#123;</span><br><span class="line">			F.prototype = P.prototype;</span><br><span class="line">			C.prototype = new F();</span><br><span class="line">			C.prototype.constructor = C;</span><br><span class="line">			C.prototype.uber = P.prototype;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;());</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="33-深度克隆："><a href="#33-深度克隆：" class="headerlink" title="33. 深度克隆："></a>33. 深度克隆：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.deepClone = function (parent, child) {
+           var child = {} || child;
+           var toStr = Object.prototype.toString,
+               arrStr = &#39;[object Array]&#39;;
+           for(var prop in parent){
+               if(parent.hasOwnProperty(prop)){
+                   if(typeof(parent[prop]) === &quot;object&quot;){
+                    child[prop] = (toStr.call(parent[prop]) === arrStr) ? []:
+                    {};
+                    deepClone(parent[prop], child[prop]);
+                   }else{
+                       child[prop] = parent[prop];
+                   }
+               }
+           }
+      }
+&lt;/script&gt;</code></p>
+<h3 id="34-描述预编译过程："><a href="#34-描述预编译过程：" class="headerlink" title="34. 描述预编译过程："></a>34. 描述预编译过程：</h3><pre><code>（1）创建AO对象；
+（2）找形参和变量声明，将变量和形参作为AO对象的属性名，值为undefined；
+（3）将实参和形参相统一；
+（4）在函数体里找函数声明，将函数声明作为AO对象的属性名，将函数体作为赋值对象赋予函数名。
+</code></pre><h3 id="35-介绍js语言特点："><a href="#35-介绍js语言特点：" class="headerlink" title="35. 介绍js语言特点："></a>35. 介绍js语言特点：</h3><pre><code>单线程；脚本语言；解释性语言，解释一行执行一行；ECMA标注；弱数据类型语言；可以跨平台；
+</code></pre><h3 id="36-介绍主流浏览器以及他们相应的内核，介绍浏览器分为哪几部分，内核呢？"><a href="#36-介绍主流浏览器以及他们相应的内核，介绍浏览器分为哪几部分，内核呢？" class="headerlink" title="36. 介绍主流浏览器以及他们相应的内核，介绍浏览器分为哪几部分，内核呢？"></a>36. 介绍主流浏览器以及他们相应的内核，介绍浏览器分为哪几部分，内核呢？</h3><pre><code>浏览器分为：shell与内核（js引擎，渲染引擎，其他）
+</code></pre><p>  主流浏览器：IE（trident）；chrome（webkit/blink）；safari（webkit）；Firefox（Gecko）；Opera（presto）；</p>
+<h3 id="37-简述js时间线的顺序："><a href="#37-简述js时间线的顺序：" class="headerlink" title="37. 简述js时间线的顺序："></a>37. 简述js时间线的顺序：</h3><pre><code>1、创建Document对象，开始解析web页面。document.readyState = &apos;loading&apos;。
+2、遇到link外部css，创建线程加载，并继续解析文档。
+3、遇到script外部js，并且没有设置async、defer，浏览器加载，并阻塞，等待js加载完成并执行该脚本，然后继续解析文档。
+4、遇到script外部js，并且设置有async、defer，浏览器创建线程加载，并继续解析文档。对于async属性的脚本，脚本加载完成后立即执行。（异步禁止使用document.write()）
+5、遇到img等，先正常解析dom结构，然后浏览器异步加载src，并继续解析文档。
+6、当文档解析完成，document.readyState = &apos;interactive&apos;。
+7、文档解析完成后（就是所有dom节点都解析完），所有设置有defer的脚本会按照顺序执行。（注意与async的不同,但同样禁止使用document.write()）;
+8、document对象触发DOMContentLoaded事件，这也标志着程序执行从同步脚本执行阶段，转化为事件驱动阶段。
+9、当所有async的脚本加载完成并执行后、img等加载完成后，document.readyState = &apos;complete&apos;，window对象触发load事件。
+10、从此，以异步响应方式处理用户输入、网络事件等。
+</code></pre><h3 id="38-异步加载js的几种方案："><a href="#38-异步加载js的几种方案：" class="headerlink" title="38. 异步加载js的几种方案："></a>38. 异步加载js的几种方案：</h3><pre><code>defer async
+</code></pre><p>异步加载兼容性写法：</p>
+<figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  function asyncLoaded (url,callback) &#123;</span><br><span class="line">      var script = document.createElement(&apos;script&apos;);</span><br><span class="line">      script.type = &quot;text/javascript&quot;;</span><br><span class="line">      if (script.readySate) &#123;</span><br><span class="line">          script.onreadystatechange = function ()&#123;</span><br><span class="line">              if (script.readySate == &quot;complete&quot; || script.readySate == &quot;loaded&quot;) &#123;</span><br><span class="line">                  obj[callback]();</span><br><span class="line">                  script.onreadystatechange = null ;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;else&#123;</span><br><span class="line">          script.onload = function()&#123;</span><br><span class="line">              obj[callback]();</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      script.src = url ;</span><br><span class="line">      document.head.appendChild(script);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="39-打印结果："><a href="#39-打印结果：" class="headerlink" title="39. 打印结果："></a>39. 打印结果：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var a = (10*3-4/2 + 1)%2,
+        b = 3;
+    b %= a + 3;
+    console.log(a++);
+    console.log(--b);
+&lt;/script&gt;</code></p>
+<pre><code>结果：1   2
+</code></pre><h3 id="40-使用原生js，addEventListener-给每个li元素绑定一个click事件，输出他们的顺序。"><a href="#40-使用原生js，addEventListener-给每个li元素绑定一个click事件，输出他们的顺序。" class="headerlink" title="40. 使用原生js，addEventListener,给每个li元素绑定一个click事件，输出他们的顺序。"></a>40. 使用原生js，addEventListener,给每个li元素绑定一个click事件，输出他们的顺序。</h3><p><code>&lt;ul&gt;
+    &lt;li&gt;a&lt;/li&gt;
+    &lt;li&gt;a&lt;/li&gt;
+    &lt;li&gt;a&lt;/li&gt;
+    &lt;li&gt;a&lt;/li&gt;
+&lt;/ul&gt;</code></p>
+<p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var liCollection = document.getElementsByTagName(&#39;li&#39;),
+    len = liCollection.length;
+    for (var i = 0; i &lt; len; i++) {
+        (function(j){
+            liCollection[j].addEventListener(&#39;click&#39;,function(){
+                console.log(j);
+            }false);
+        }(i))
+    }
+&lt;/script&gt;</code></p>
+<h3 id="41-一个字符串由-a-z-组成，找出第一个只出现一次的字母"><a href="#41-一个字符串由-a-z-组成，找出第一个只出现一次的字母" class="headerlink" title="41. 一个字符串由[a-z]组成，找出第一个只出现一次的字母"></a>41. 一个字符串由[a-z]组成，找出第一个只出现一次的字母</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function() {
+     var len = this.length,
+         obj = {},
+         arr = [];
+     for(var i = 0; i &lt; len; i++){
+       if(!obj[this[i]]) {
+         obj[this[i]] = &quot;1&quot;;
+         arr.push(this[i]);
+       }
+     }
+     return arr;
+    }
+    var str = &quot;abaadf&quot;;
+    var arr = str.split(&quot;&quot;);
+    var arr1 = arr.unique();
+    console.log(arr1[0]);
+&lt;/script&gt;</code></p>
+<h3 id="42-打印结果："><a href="#42-打印结果：" class="headerlink" title="42. 打印结果："></a>42. 打印结果：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var name = &quot;222&quot;;
+    var a = {
+        name:&quot;111&quot;,
+        say:function(){
+            console.log(this.name);
+        }
+    }
+    var fun = a.say;
+    fun();
+    a.say();
+    var b = {
+        name:&quot;333&quot;,
+        say:function(fun){
+            fun();
+        }
+    }
+    b.say(a.say);
+    b.say=a.say;
+    b.say();
+&lt;/script&gt;</code></p>
+<p>结果： 222  111  222  333</p>
+<h3 id="43-原始值"><a href="#43-原始值" class="headerlink" title="43. 原始值"></a>43. 原始值</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str = &quot;你成哥很帅&quot;;
+    str.length = 3;
+    console.log(str);    
+&lt;/script&gt;</code></p>
+<p>执行结果为：你成哥很帅<br>原因：原始值不可改变</p>
+<h3 id="44-请用多种方法创造对象："><a href="#44-请用多种方法创造对象：" class="headerlink" title="44. 请用多种方法创造对象："></a>44. 请用多种方法创造对象：</h3><pre><code>字面量 var obj = {}；
+构造函数 var obj = new Object{};
+var obj = Object.create(原型)
+</code></pre><h3 id="45-解决污染全局变量"><a href="#45-解决污染全局变量" class="headerlink" title="45. 解决污染全局变量"></a>45. 解决污染全局变量</h3><pre><code>命名空间，闭包
+</code></pre><h3 id="46-枚举一个对象中所有自有属性："><a href="#46-枚举一个对象中所有自有属性：" class="headerlink" title="46. 枚举一个对象中所有自有属性："></a>46. 枚举一个对象中所有自有属性：</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  Person.prototype.lastName = &quot;ji&quot;;</span><br><span class="line"></span><br><span class="line">  function Person(name,age)&#123;</span><br><span class="line">    this.name  = name;</span><br><span class="line">    this.age = age ;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  var oPerson = new Person (&apos;cheng&apos;,123);</span><br><span class="line">  for(var prop in oPerson)&#123;</span><br><span class="line">    if(oPerson.hasOwnProperty(prop))&#123;</span><br><span class="line">    console.log(oPerson[prop]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="47-让数组里的数据从大到小排列："><a href="#47-让数组里的数据从大到小排列：" class="headerlink" title="47. 让数组里的数据从大到小排列："></a>47. 让数组里的数据从大到小排列：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    arr.sort(function(a,b){
+        return a - b;
+    }());
+&lt;/script&gt;</code></p>
+<h3 id="48-es5严格模式如何使用，应该注意些什么："><a href="#48-es5严格模式如何使用，应该注意些什么：" class="headerlink" title="48. es5严格模式如何使用，应该注意些什么："></a>48. es5严格模式如何使用，应该注意些什么：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+全局严格模式:直接加 字符串：&quot;use strict&quot;;
+局部函数内严格模式（推荐）
+function test(){
+    &quot;use strict&quot;;
+}
+注意：不支持with,arguments.callee,func.caller,变量赋值前必须声明，局部this必须被赋值(Person.call(null/undefined) 赋值什么就是什么),拒绝重复属性和参数
+&lt;/script&gt;</code></p>
+<h3 id="49-选择html元素节点几种方法，以及他们各自的兼容性问题及特点："><a href="#49-选择html元素节点几种方法，以及他们各自的兼容性问题及特点：" class="headerlink" title="49. 选择html元素节点几种方法，以及他们各自的兼容性问题及特点："></a>49. 选择html元素节点几种方法，以及他们各自的兼容性问题及特点：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+        getElementsByTagName()[0];
+        getElementById();
+        getElementsByName();
+        getElementByClassName(); interactive8及以下不兼容
+        querySelectorAll();非实时ie7及以下不兼容
+        querySelector();非实时ie7及以下不兼容
+    1.getElementById方法定义在Document.prototype上，即Element节点上不能使用。
+    2.getElementsByName方法定义在HTMLDocument.prototype上，即非html中的document以外不能使用(xml document,Element)
+    3.getElementsByTagName方法定义在Document.prototype 和 Element.prototype上
+    4.HTMLDocument.prototype定义了一些常用的属性，body,head,分别指代HTML文档中的&lt;body&gt;&lt;head&gt;标签。
+    5.Document.prototype上定义了documentElement属性，指代文档的根元素，在HTML文档中，他总是指代&lt;html&gt;元素
+    6.getElementsByClassName、querySelectorAll、querySelector在Document,Element类中均有定义
+&lt;/script&gt;</code></p>
+<h3 id="50-说出节点类型的值为1-2-3-8-9的值对应的节点是什么："><a href="#50-说出节点类型的值为1-2-3-8-9的值对应的节点是什么：" class="headerlink" title="50. 说出节点类型的值为1,2,3,8,9的值对应的节点是什么："></a>50. 说出节点类型的值为1,2,3,8,9的值对应的节点是什么：</h3><p>元素节点   —— 1<br>属性节点   —— 2<br>文本节点   —— 3<br>注释节点   —— 8<br>document  —— 9 单独成一类 文档节点<br><!-- DocumentFragment  ——  11 文档碎片 --><br><!-- 获取节点类型   nodeType  --></p>
+<h3 id="51-鼠标事件的触发顺序："><a href="#51-鼠标事件的触发顺序：" class="headerlink" title="51. 鼠标事件的触发顺序："></a>51. 鼠标事件的触发顺序：</h3><pre><code>mousedown; focus; mouseup; click;
+右键事件：
+
+`&lt;script type=&quot;text/javascript&quot;&gt;    
+elem.onmousedown = function (e) {
+    if(e.button == 2){
+        alert(&quot;右键点击&quot;)
+    }
+}
+&lt;/script&gt;`
+</code></pre><h3 id="52-数据格式JSON转换为字符串，以及把字符串转换为JSON的方法"><a href="#52-数据格式JSON转换为字符串，以及把字符串转换为JSON的方法" class="headerlink" title="52. 数据格式JSON转换为字符串，以及把字符串转换为JSON的方法"></a>52. 数据格式JSON转换为字符串，以及把字符串转换为JSON的方法</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    JSON.parse();  string — &gt; json字符串
+JSON.stringify();   json — &gt; string
+&lt;/script&gt;</code></p>
+<h3 id="53-BOM对象及其功能："><a href="#53-BOM对象及其功能：" class="headerlink" title="53. BOM对象及其功能："></a>53. BOM对象及其功能：</h3><pre><code>Window     JavaScript 层级中的顶层对象，表示浏览器窗口。
+    属性：
+        closed    返回窗口是否已被关闭。
+        document    对 Document 对象的只读引用。
+        history    对 History 对象的只读引用。
+        innerheight    返回窗口的文档显示区的高度。
+        innerwidth    返回窗口的文档显示区的宽度。
+    方法：
+        alert()    显示带有一段消息和一个确认按钮的警告框。
+        blur()    把键盘焦点从顶层窗口移开。
+        clearInterval()    取消由 setInterval() 设置的 timeout。 
+
+Navigator  包含客户端浏览器的信息。
+    属性：
+        appCodeName    返回浏览器的代码名。 
+    方法：
+        javaEnabled()    规定浏览器是否启用 Java。
+
+Screen     包含客户端显示屏的信息。 
+    属性：
+        availHeight    返回显示屏幕的高度 (除 Windows 任务栏之外)。
+        availWidth    返回显示屏幕的宽度 (除 Windows 任务栏之外)。
+        width    返回显示器屏幕的宽度。
+
+History    包含了浏览器窗口访问过的 URL。 
+    属性：
+        length    返回浏览器历史列表中的 URL 数量。
+    方法：
+        back()    加载 history 列表中的前一个 URL。
+        forward()    加载 history 列表中的下一个 URL。
+        go()    加载 history 列表中的某个具体页面。
+
+Location   包含了当前 URL 的信息。
+    属性：
+        href    设置或返回完整的 URL。
+    方法：
+        assign()    加载新的文档。
+        reload()    重新加载当前文档。
+        replace()    用新的文档替换当前文档。
+</code></pre><h3 id="54-说明position定位的值有什么区别，如果有不能兼容的问题，如何解决"><a href="#54-说明position定位的值有什么区别，如果有不能兼容的问题，如何解决" class="headerlink" title="54. 说明position定位的值有什么区别，如果有不能兼容的问题，如何解决"></a>54. 说明position定位的值有什么区别，如果有不能兼容的问题，如何解决</h3><pre><code>absolute 绝对定位
+relative 相对定位
+fixed     相对可视区定位，而且脱离原来位置 ie6不能用
+sticky回去查一查
+</code></pre><h3 id="55-添加css代码使得ul外观可以包住li："><a href="#55-添加css代码使得ul外观可以包住li：" class="headerlink" title="55. 添加css代码使得ul外观可以包住li："></a>55. 添加css代码使得ul外观可以包住li：</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	ul&#123;</span><br><span class="line">		list-style: none;</span><br><span class="line">		padding: 0;</span><br><span class="line">	&#125;</span><br><span class="line">	ul&gt;li&#123;</span><br><span class="line">		float: left;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	ul:after&#123;</span><br><span class="line">	content:&quot;&quot;;</span><br><span class="line">	display:inline-block;</span><br><span class="line">	clear:both;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><code>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></p>
+<h3 id="56-熟知的选择优先级关系（权重）"><a href="#56-熟知的选择优先级关系（权重）" class="headerlink" title="56. 熟知的选择优先级关系（权重）"></a>56. 熟知的选择优先级关系（权重）</h3><pre><code>！important            无穷大
+style（行间样式）    1000
+id                    100
+class/属性/伪类        10
+标签/伪元素            1
+通配符*                0
+</code></pre><h3 id="57-display值及含义"><a href="#57-display值及含义" class="headerlink" title="57. display值及含义"></a>57. display值及含义</h3><p>display值： inline—行级元素，不沾满整行，不可以改变宽高<br>            block—-块级元素 沾满整行 可以改变宽高<br>            inline-block—-行级块元素 不占满整行 可以改变宽高 </p>
+<h3 id="58-写一个输入框，带有js功能，鼠标聚焦提示消息信息，失去焦点显示提示信息"><a href="#58-写一个输入框，带有js功能，鼠标聚焦提示消息信息，失去焦点显示提示信息" class="headerlink" title="58. 写一个输入框，带有js功能，鼠标聚焦提示消息信息，失去焦点显示提示信息"></a>58. 写一个输入框，带有js功能，鼠标聚焦提示消息信息，失去焦点显示提示信息</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	input&#123;</span><br><span class="line">		border: 1px solid black;</span><br><span class="line">		color: #999;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	.fontGrey&#123;</span><br><span class="line">	color: #999;</span><br><span class="line">	&#125;</span><br><span class="line">	.fontNormal&#123;</span><br><span class="line">	color: #424242;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	username:&lt;input tyoe=&quot;text&quot; value=&quot;请输入用户名&quot;onfocus=&quot;if(this value=&apos;请输入用户名&apos;)&#123;this.value=&apos;&apos;;this.className=&apos;fontNormal&apos;&#125;&quot;onblur=&quot;if(this.value==&apos;&apos;)&#123;this.value=&apos;请输入用户名&apos;;this.className=&apos;fontGrey&apos;&#125;&quot; onchange=&quot;console.log(this.value)&quot;&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="59-写出打印结果并说明原因："><a href="#59-写出打印结果并说明原因：" class="headerlink" title="59. 写出打印结果并说明原因："></a>59. 写出打印结果并说明原因：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function fn(a,b){
+        arguments[0] = 1;
+        console.log(a);
+        fn(2,1);
+    }
+    打印：1;
+    原因：实参，形参相统一;
+&lt;/script&gt;</code></p>
+<h3 id="60-将下列变量转化为小驼峰形式：my-first-name-gt-myFirstName"><a href="#60-将下列变量转化为小驼峰形式：my-first-name-gt-myFirstName" class="headerlink" title="60. 将下列变量转化为小驼峰形式：my-first-name-&gt;myFirstName"></a>60. 将下列变量转化为小驼峰形式：my-first-name-&gt;myFirstName</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str = &quot;my-first-name&quot;;
+    var reg =/-(\w)/g;
+    var test = str.replace(reg,function($,$1){
+        return $1.toUpperCase();
+    });
+    console.log(test);
+&lt;/script&gt;</code></p>
+<h3 id="61-将aaaaabbbb字符串调换成bbbbaaaa形式"><a href="#61-将aaaaabbbb字符串调换成bbbbaaaa形式" class="headerlink" title="61. 将aaaaabbbb字符串调换成bbbbaaaa形式"></a>61. 将aaaaabbbb字符串调换成bbbbaaaa形式</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str = &quot;aaaabbbb&quot;;
+     var reg = /(\w{4})(\w{4})/g;
+     console.log(str.replace(reg,&quot;$2$1&quot;));
+&lt;/script&gt;</code></p>
+<p>说一下你对前端的理解.</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2017/11/前端基础题总结.html">前端基础题总结</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Dexinser 的个人博客">Dexinser</a></p>
+        <p><span>发布时间:</span>2017年11月09日 - 18时31分</p>
+        <p><span>最后更新:</span>2017年11月18日 - 13时21分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/11/前端基础题总结.html" title="前端基础题总结">http://indexcode.cn/2017/11/前端基础题总结.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://indexcode.cn/2017/11/前端基础题总结.html　　作者: Dexinser" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2017/11/后端网络笔记.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          后端网络笔记
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2017/11/人生启迪发人深省.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">人生启迪</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-行内元素和快级元素"><span class="toc-number">1.</span> <span class="toc-text">1. 行内元素和快级元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-css代码三中引入方式："><span class="toc-number">2.</span> <span class="toc-text">2. css代码三中引入方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-web标准：行为、样式、结构相分离"><span class="toc-number">3.</span> <span class="toc-text">3. web标准：行为、样式、结构相分离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-简化代码："><span class="toc-number">4.</span> <span class="toc-text">4. 简化代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-浏览器中margin默认值为8px；"><span class="toc-number">5.</span> <span class="toc-text">5. 浏览器中margin默认值为8px；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-盒模型的计算："><span class="toc-number">6.</span> <span class="toc-text">6. 盒模型的计算：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-用css、html编写一个两列布局的页面，要求右侧宽度为200px；左侧自动扩展。"><span class="toc-number">7.</span> <span class="toc-text">7. 用css、html编写一个两列布局的页面，要求右侧宽度为200px；左侧自动扩展。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-居中一个浮动元素："><span class="toc-number">8.</span> <span class="toc-text">8. 居中一个浮动元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-画出下图示意图："><span class="toc-number">9.</span> <span class="toc-text">9. 画出下图示意图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-form表单中method属性值及其区别："><span class="toc-number">10.</span> <span class="toc-text">10. form表单中method属性值及其区别：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-去掉ul-gt-li结构中前面的圆点，并且解决li前面的空余"><span class="toc-number">11.</span> <span class="toc-text">11. 去掉ul>li结构中前面的圆点，并且解决li前面的空余</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-JavaScript中typeof可能返回的结果：number-string-boolean-object-undefined-function-symbol"><span class="toc-number">12.</span> <span class="toc-text">12. JavaScript中typeof可能返回的结果：number,string,boolean,object,undefined,function,symbol;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-已知数组var-arr-“goole”-”microsoft”-”oracle”-”阿里”，”freewheel”-”IBM”-”爱立信”，”百度”，”企鹅”，”美团”，”去哪儿”，”58同城”，”新浪”，”搜狐”，”大众点评”，”360”-”汽车之家”，”巨人网络”，”携程”，”4399”-”凤凰网”，”人民网”-，亲们，如果你想进前十的公司，请用效率最高的方法将此数组按照顺序链接成字符。"><span class="toc-number">13.</span> <span class="toc-text">13. 已知数组var arr = [“goole”,”microsoft”,”oracle”,”阿里”，”freewheel”,”IBM”,”爱立信”，”百度”，”企鹅”，”美团”，”去哪儿”，”58同城”，”新浪”，”搜狐”，”大众点评”，”360”,”汽车之家”，”巨人网络”，”携程”，”4399”,”凤凰网”，”人民网”]，亲们，如果你想进前十的公司，请用效率最高的方法将此数组按照顺序链接成字符。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-写出html、css、JavaScript注释代码形式："><span class="toc-number">14.</span> <span class="toc-text">14. 写出html、css、JavaScript注释代码形式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-编写一段JavaScript脚生成下面这段DOM结构。"><span class="toc-number">15.</span> <span class="toc-text">15. 编写一段JavaScript脚生成下面这段DOM结构。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-为html元素绑定一个事件，如点击事件。写出兼容各个浏览器的事件绑定方法。"><span class="toc-number">16.</span> <span class="toc-text">16. 为html元素绑定一个事件，如点击事件。写出兼容各个浏览器的事件绑定方法。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-Call-apply-作用都是改变this指向；"><span class="toc-number">17.</span> <span class="toc-text">17. Call,apply:作用都是改变this指向；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-封装ajax-向服务器异步发送数据；"><span class="toc-number">18.</span> <span class="toc-text">18. 封装ajax,向服务器异步发送数据；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-数组去重-eg：var-arr-‘a’-’b’-234-23-’a’-’b’-3-1-234"><span class="toc-number">19.</span> <span class="toc-text">19. 数组去重 eg：var arr = [‘a’,’b’,234,23,’a’,’b’,3,1,234];</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-如今有个ul，如果有十亿个li；要求点击li触发事件，弹出对应li的内容"><span class="toc-number">20.</span> <span class="toc-text">20. 如今有个ul，如果有十亿个li；要求点击li触发事件，弹出对应li的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-阻止事件冒泡和事件默认时间"><span class="toc-number">21.</span> <span class="toc-text">21. 阻止事件冒泡和事件默认时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-什么是DOM："><span class="toc-number">22.</span> <span class="toc-text">22. 什么是DOM：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-利用JavaScript取非行间样式，要求兼容性各个浏览器"><span class="toc-number">23.</span> <span class="toc-text">23. 利用JavaScript取非行间样式，要求兼容性各个浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-运行test-和new-test-的结果是什么："><span class="toc-number">24.</span> <span class="toc-text">24. 运行test()和new test()的结果是什么：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-有字符串”aaaaabbbccccddddeeefgaa”-转换为连续不重复的字符串"><span class="toc-number">25.</span> <span class="toc-text">25. 有字符串”aaaaabbbccccddddeeefgaa”,转换为连续不重复的字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26-一串连续数字实现打点功能：100000000转换成：1-000-000-000"><span class="toc-number">26.</span> <span class="toc-text">26. 一串连续数字实现打点功能：100000000转换成：1.000.000.000</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#27-写出运算结果："><span class="toc-number">27.</span> <span class="toc-text">27. 写出运算结果：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#28-打印当前年月时分秒"><span class="toc-number">28.</span> <span class="toc-text">28. 打印当前年月时分秒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#29-css中，font-size设置的是字体的高；单位是px，em是相对值。"><span class="toc-number">29.</span> <span class="toc-text">29. css中，font-size设置的是字体的高；单位是px，em是相对值。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#30-有html结构："><span class="toc-number">30.</span> <span class="toc-text">30. 有html结构：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#31-简单说说自定义构造函数创建对象的原理："><span class="toc-number">31.</span> <span class="toc-text">31. 简单说说自定义构造函数创建对象的原理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-写出一种原型链实现继承的方式：圣杯模式"><span class="toc-number">32.</span> <span class="toc-text">32. 写出一种原型链实现继承的方式：圣杯模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-深度克隆："><span class="toc-number">33.</span> <span class="toc-text">33. 深度克隆：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#34-描述预编译过程："><span class="toc-number">34.</span> <span class="toc-text">34. 描述预编译过程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#35-介绍js语言特点："><span class="toc-number">35.</span> <span class="toc-text">35. 介绍js语言特点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#36-介绍主流浏览器以及他们相应的内核，介绍浏览器分为哪几部分，内核呢？"><span class="toc-number">36.</span> <span class="toc-text">36. 介绍主流浏览器以及他们相应的内核，介绍浏览器分为哪几部分，内核呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#37-简述js时间线的顺序："><span class="toc-number">37.</span> <span class="toc-text">37. 简述js时间线的顺序：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#38-异步加载js的几种方案："><span class="toc-number">38.</span> <span class="toc-text">38. 异步加载js的几种方案：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#39-打印结果："><span class="toc-number">39.</span> <span class="toc-text">39. 打印结果：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#40-使用原生js，addEventListener-给每个li元素绑定一个click事件，输出他们的顺序。"><span class="toc-number">40.</span> <span class="toc-text">40. 使用原生js，addEventListener,给每个li元素绑定一个click事件，输出他们的顺序。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#41-一个字符串由-a-z-组成，找出第一个只出现一次的字母"><span class="toc-number">41.</span> <span class="toc-text">41. 一个字符串由[a-z]组成，找出第一个只出现一次的字母</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-打印结果："><span class="toc-number">42.</span> <span class="toc-text">42. 打印结果：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-原始值"><span class="toc-number">43.</span> <span class="toc-text">43. 原始值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44-请用多种方法创造对象："><span class="toc-number">44.</span> <span class="toc-text">44. 请用多种方法创造对象：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#45-解决污染全局变量"><span class="toc-number">45.</span> <span class="toc-text">45. 解决污染全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#46-枚举一个对象中所有自有属性："><span class="toc-number">46.</span> <span class="toc-text">46. 枚举一个对象中所有自有属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#47-让数组里的数据从大到小排列："><span class="toc-number">47.</span> <span class="toc-text">47. 让数组里的数据从大到小排列：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#48-es5严格模式如何使用，应该注意些什么："><span class="toc-number">48.</span> <span class="toc-text">48. es5严格模式如何使用，应该注意些什么：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#49-选择html元素节点几种方法，以及他们各自的兼容性问题及特点："><span class="toc-number">49.</span> <span class="toc-text">49. 选择html元素节点几种方法，以及他们各自的兼容性问题及特点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#50-说出节点类型的值为1-2-3-8-9的值对应的节点是什么："><span class="toc-number">50.</span> <span class="toc-text">50. 说出节点类型的值为1,2,3,8,9的值对应的节点是什么：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#51-鼠标事件的触发顺序："><span class="toc-number">51.</span> <span class="toc-text">51. 鼠标事件的触发顺序：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#52-数据格式JSON转换为字符串，以及把字符串转换为JSON的方法"><span class="toc-number">52.</span> <span class="toc-text">52. 数据格式JSON转换为字符串，以及把字符串转换为JSON的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#53-BOM对象及其功能："><span class="toc-number">53.</span> <span class="toc-text">53. BOM对象及其功能：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#54-说明position定位的值有什么区别，如果有不能兼容的问题，如何解决"><span class="toc-number">54.</span> <span class="toc-text">54. 说明position定位的值有什么区别，如果有不能兼容的问题，如何解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#55-添加css代码使得ul外观可以包住li："><span class="toc-number">55.</span> <span class="toc-text">55. 添加css代码使得ul外观可以包住li：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#56-熟知的选择优先级关系（权重）"><span class="toc-number">56.</span> <span class="toc-text">56. 熟知的选择优先级关系（权重）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#57-display值及含义"><span class="toc-number">57.</span> <span class="toc-text">57. display值及含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#58-写一个输入框，带有js功能，鼠标聚焦提示消息信息，失去焦点显示提示信息"><span class="toc-number">58.</span> <span class="toc-text">58. 写一个输入框，带有js功能，鼠标聚焦提示消息信息，失去焦点显示提示信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#59-写出打印结果并说明原因："><span class="toc-number">59.</span> <span class="toc-text">59. 写出打印结果并说明原因：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#60-将下列变量转化为小驼峰形式：my-first-name-gt-myFirstName"><span class="toc-number">60.</span> <span class="toc-text">60. 将下列变量转化为小驼峰形式：my-first-name->myFirstName</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#61-将aaaaabbbb字符串调换成bbbbaaaa形式"><span class="toc-number">61.</span> <span class="toc-text">61. 将aaaaabbbb字符串调换成bbbbaaaa形式</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+    <style>
+        .toc {
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $(".toc li a").mouseover(function() {
+                var title = $(this).attr('href');
+                $(this).attr("title", title);
+            });
+        })
+    </script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'cytgVLEw0',
+      conf: '3dd585905d0465ff1e65d0823df3763e'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2017/11/后端网络笔记.html" title="上一篇: 后端网络笔记">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2017/11/人生启迪发人深省.html" title="下一篇: 人生启迪">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.28 The Tipping Point.html">The Tipping Point</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.21 磁盘格式.html">磁盘格式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.08 Amour.html">Amour-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.05 js中一些方法的比较与区别.html">Js中一些相似方法/属性的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 彗星来的那一夜-影评.html">彗星来的那一夜-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 寂静岭-影评.html">寂静岭-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 狩猎-影评.html">狩猎-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.25 JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.22-变化-个人感悟.html">变化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.19-分享-幸存者偏见.html">幸存者偏见</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16 vue数据交互.html">Vue</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16-学习笔记.html">JavaScript学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.12-前端开发相关.html">前端开发相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.10-智力题总结.html">智力题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.9-前端面试.html">前端面试总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.09 诗与远方.html">诗与远方</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/练习题.html">前端练习题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/滕王阁的修建者--滕王李元婴.html">说说滕王阁的修建者——“混蛋王爷”李元婴</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/正则表达式.html">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/框架.html">框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/杂.html">杂记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/有感而记.html">有感而记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/星巴克.html">从星巴克的商业模式中看出几个问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/后端网络笔记.html">后端网络笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端基础题总结.html">前端基础题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/人生启迪发人深省.html">人生启迪</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/事件.html">绑定事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/专业必备技能.html">计算机发展+Git简单使用+markdown简单语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/What is the server.html">那年那器那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Webpack.html">Webpack学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/relative.html">编程相关-杂（Relative）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/npm.html">Npm相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Math.floor()方法.html">Math.floor()等方法的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js笔记.html">Js笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js模式-读书笔记.html">Js模式读书笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/jQuery.html">JQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/important Ideas.html">编程方法小汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/DOM.html">浏览器之DOM</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS技巧.html">CSS小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3中transform的加速问题.html">使用CSS3开启GPU硬件加速提升网站动画渲染性能</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-选择器的使用.html">CSS3选择器的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-简介.html">CSS3新增加的功能和属性方法--之选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-动画的使用.html">CSS3动画的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/code.html">Html标签举例</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/book.html">Book</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.3-This is us-TV.html">This Is Us</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.2-第一次就把事情做好.html">第一次就把事情做好！</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.1-CSS3-景深详解.html">CSS3---景深详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.29-科学上网.html">科学上网</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.28-win10系统相关.html">Win10计算机系统相关系列问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端算法代码实现.html">前端算法JavaScript代码实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.26今日事，古人的智慧.html">今日事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.17个人日记.html">个人日记</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

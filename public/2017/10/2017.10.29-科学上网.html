@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>科学上网 | To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="科学上网   墙外的世界总是吸引我们啊~前几天也提了一下，就是最近因为十九大的原因，国内大大小小的翻墙工具都不能用了，就算有极个别的能用的速度也大大不如以前了。而我之前一直用的好好的蓝灯，居然也挂掉了！！！悲催啊~因为之前一直在用蓝灯，非常方便的可以在墙内墙外随意转，但是电脑里唯一的一个翻墙工具挂掉之后我就连备选方案都没有了。我能怎么办呢？只能去网上再找一条通往墙外的世界的通道咯！可是网上关于翻">
+<meta name="keywords" content="资源分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="科学上网">
+<meta property="og:url" content="http://indexcode.cn/2017/10/2017.10.29-科学上网.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="科学上网   墙外的世界总是吸引我们啊~前几天也提了一下，就是最近因为十九大的原因，国内大大小小的翻墙工具都不能用了，就算有极个别的能用的速度也大大不如以前了。而我之前一直用的好好的蓝灯，居然也挂掉了！！！悲催啊~因为之前一直在用蓝灯，非常方便的可以在墙内墙外随意转，但是电脑里唯一的一个翻墙工具挂掉之后我就连备选方案都没有了。我能怎么办呢？只能去网上再找一条通往墙外的世界的通道咯！可是网上关于翻">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-28T07:10:15.225Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="科学上网">
+<meta name="twitter:description" content="科学上网   墙外的世界总是吸引我们啊~前几天也提了一下，就是最近因为十九大的原因，国内大大小小的翻墙工具都不能用了，就算有极个别的能用的速度也大大不如以前了。而我之前一直用的好好的蓝灯，居然也挂掉了！！！悲催啊~因为之前一直在用蓝灯，非常方便的可以在墙内墙外随意转，但是电脑里唯一的一个翻墙工具挂掉之后我就连备选方案都没有了。我能怎么办呢？只能去网上再找一条通往墙外的世界的通道咯！可是网上关于翻">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2017/10/2017.10.29-科学上网" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/10/2017.10.29-科学上网.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.635Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      科学上网
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/others/">others</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/资源分享/">资源分享</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 科学上网 </strong> <Excerpt in index | 首页摘要></p>
+<h1 id="墙外的世界总是吸引我们啊"><a href="#墙外的世界总是吸引我们啊" class="headerlink" title="墙外的世界总是吸引我们啊~"></a>墙外的世界总是吸引我们啊~</h1><p>前几天也提了一下，就是最近因为十九大的原因，国内大大小小的翻墙工具都不能用了，就算有极个别的能用的速度也大大不如以前了。而我之前一直用的好好的蓝灯，居然也挂掉了！！！悲催啊~因为之前一直在用蓝灯，非常方便的可以在墙内墙外随意转，但是电脑里唯一的一个翻墙工具挂掉之后我就连备选方案都没有了。我能怎么办呢？只能去网上再找一条通往墙外的世界的通道咯！可是网上关于翻墙的东西居然都不见了，在知乎上搜索翻墙，被告知是敏感词汇，没有出现任何结果，百度搜索结果也是这样的，之前所有的关于翻墙的文章都被清理干净了！这一下让我慌了，看来这次禁网不简单啊！有人说十九大胜利闭幕之后11月份就能科学上网了，之前的翻墙软件就会恢复了…但是我看这架势估计够呛能再给你恢复了啊~理想很丰满，但是显示很骨感啊！有希望是好的，但是不要太过期望好结果哦~不然失望就越大咯！<br>好了，又说了一堆废话（哈哈哈）！接下来就讲一下现阶段如何科学上网吧。最好的方法就是尝试用I2P补种或者自己搭建SS/SSR；</p>
+<p>[id]:  ‘github address’</p>
+<p>今天看了一篇博文，里面提到了：</p>
+<blockquote>
+<p>强烈建议大家移除 CNNIC 根证书。方法在这：<a href="https://github.com/chengr28/RevokeChinaCerts">移除方法</a><br>CNNIC：中国互联网络信息中心（China Internet Network Information Center）</p>
+</blockquote>
+<h3 id="I2P"><a href="#I2P" class="headerlink" title="I2P"></a>I2P</h3><p>I2P（Invisible Internet Project即“隐形网计划”），是一项混和授权的匿名网络项目。I2P网络是由I2P路由器以大蒜路由方式组成的表层网络，建立于其上的应用程序可以安全匿名的相互通信。它可以同时使用UDP及TCP协议，支持UPnP映射。其应用包括匿名上网、聊天、撰写博客和档案传输。<br>大蒜路由（Garlic routing）是洋葱路由的一个变体。而洋葱路由（英语：Onion routing）为一种在电脑网络上匿名沟通的技术。在洋葱路由的网络中，消息一层一层的加密包装成像洋葱一样的数据包，并经由一系列被称作洋葱路由器的网络节点发送，每经过一个洋葱路由器会将数据包的最外层解密，直至目的地时将最后一层解密，目的地因而能获得原始消息。而因为通过这一系列的加密包装，每一个网络节点（包含目的地）都只能知道上一个节点的位置，但无法知道整个发送路径以及原发送者的地址。而洋葱路由是由洋葱路由器来发送的，简单的说洋葱路由器就是一个类似于P2P原理的代理服务器，所有安装了洋葱路由的用户既是代理服务器的使用者也是代理服务器的提供者。洋葱路由器是由志愿者，花费自己的带宽建立起来的。洋葱路由器是一个工具集，各类组织和个人可以用它来增强自己在互联网上的安全性。 洋葱路由器 能够匿名化你的 Web 浏览与发布、即时通讯、IRC、SSH 和其他使用 TCP 协议的应用。 洋葱路由器同时提供了一个平台，软件开发人员能够在上面构建具有内建匿名性、安全性与隐私保护特性的新的应用程序。洋葱路由器的目标是抵御流量分析，流量分析是一种对网络的监视行为，这种行为会威胁个人的匿名与隐私，商业活动与业务关系的保密和国家的安全。通信在一个由称作洋葱路由器的服务器所构建的分布式网络上传输， 保护你以避免网站收集你的兴趣爱好，本地的、甚至是洋葱路由器上的窃听者阅读你的数据、了解你所访问的站点。<br>我们现在已经知道了被称作洋葱路由的原因在于消息一层一层的加密包装成被称作洋葱数据包的数据结构，层数取决于到目的地中间会经过的节点数，每经过一个节点层会将数据包的最外层解密，因此任一个节点都无法同时知晓这个消息最初与最终的目的地，使发送者达到匿名的效果。为了发送洋葱数据包，发送消息者会从“目录节点”（directory node）提供的列表中选取一些节点，并以这些规划出一条被称作“链”（chain）或“线路”（circuit）的发送路径，这条路径将为传输数据包所用。为了确保发送者的匿名性，任一节点都无法知道在链中自己的前一个节点是发送者还是链上的另一节点；同理，任一节点也无法知道在链中自己的下一节点是目的地还是链上另一节点。只有链上的最后一个节点知道自己是链上最终节点，该节点被称作“出口节点”（exit node）。洋葱路由网络使用非对称加密，发送者从目录节点获得一把公开密钥，用之将要发送的消息加密并发送给链上的第一个节点，该节点又被称作入口节点（entry node）；其后与之创建连接和共享密钥。创建连接后发送者就可以通过这条连接发送加密过的消息至链上的第二个节点，该消息将只有第二个节点可以解密；当第二个节点收到此消息后，便会与前一个节点也就是入口节点同样的创建连接，使发送者的加密连接延伸到它，但第二个节点并不晓得前一个节点在链中的身份。之后按照同样原理，发送者通过入口节点和第二个节点的这条加密连接将只有第三个节点能解密的消息发送给第三个节点，第三节点同样的与第二个节点创建连接；借由重复相同的步骤，发送者能产生一条越来越长的连接，但在性能上仍有限制。当链上的连接都创建后，发送者就可以通过其发送数据并保持匿名性。当目的地回送数据时，链上的节点会通过同一条连接将数据回传，且一样对数据层层加密，但加密的顺序与发送者完全相反；原发送者收到目的地回传的数据时，将仅剩最内一层加密，此时对其解密就可拿到目的地回送的消息。<br>传统互联网不被认为具有匿名性的一个理由为互联网服务供应商具有纪录和追踪各电脑间的连接能力；例如当有人访问一个特定网站时，往来的信息内容如密码等，虽然能通过像是HTTPS等加密连接方式保护让其他人无法得知内容，但是连接本身却仍会有纪录，包含何时创建连接，多少数据量被发送等。洋葱路由虽然能创建并隐藏两电脑之间的连接，使两者之间并无一个可分辨的直接连接，但仍会有上述的连接纪录问题。流量分析可借由搜索连接纪录的连接时间和数据传输量来试图判别潜在的一对发送者与接收者；例如当有人发送51KB的数据到一个未知的电脑，三秒后另一未知的电脑发送51KB的数据给一个特定的网站，则可以推断此人可能与该网站曾创建连接。此外还有一些原因可以让流量分析更加有效，包含节点的损坏或离开网络，以及当链已经因为定期重建而改变，但有些链上节点却仍在追踪此前创建的会话等。<br>大蒜路由是洋葱路由的一种变体，其结合了I2P网络并将多份消息加密打包在一起，使其更难被攻击者以流量分析的方式破解。它将传输的原始数据拆散为加密数据包通过多条隧道交叉疏散传递，令攻击者的流量分析难上加难。在洋葱路由中一条或多条数据流的上传与下载共用一条隧道，而这种路由方式的上传与下载隧道相互独立而且两个方向上的隧道数量都可能&gt;1，所以被称为大蒜路由。<br>与洋葱路由的电路交换（Circuit Switching）相比，大蒜路由也称为封包交换（Packet Switching）方式。大蒜路由是I2P与Tor及其他隐私/加密网络的主要区别之一。</p>
+<p>I2P是可伸缩性强，具有自我组织与恢复能力的包切换匿名网络。其上运行有多种不同的匿名安全程序，各程序可以自行决定匿名性、延迟、流量平衡而不用考虑混淆式路由网络的具体实现。它们的数据活动可以与现有的I2P用户的匿名数据相混合。目前可用的程序包括全部典型的Internet应用 - 匿名网页浏览（Eepproxy），匿名网站（Eepsite），匿名博客与内容聚合（Syndie），匿名聊天（通过IRC、Jabber、I2P-QTMessanger），匿名文件传输（I2PSnark，Robert），匿名文件分享（I2Phex, iMule），匿名电子邮件（I2PMail+susiMail），匿名新闻组，及其他开发中的程序。与自由网或GNUnet上内容发布网络不同，I2P所提供的服务具有更强的交互性 - 从常规的Web搜索引擎，到论坛，博客，数据站点再到无需安装Tor / 自由网即可访问其中内容的网关。</p>
+<p>I2P做为消息机制为基础的中间件与这些匿名性程序协同工作 - 程序要求发送数据给某一加密标识（目标），I2P来处理并保证数据安全匿名的到达目标。I2P还带有易用的流封装库，可将I2P匿名消息转换为可靠有序的数据流传输，提供基于TCP协议的拥堵控制算法解决网络程序的宽带延迟问题。I2P同时有简易的SOCKS代理接口可以将现有的网络程序绑定于I2P网络中。这样做的意义并不大因为几乎所有普通应用程序都会向网络暴露有碍匿名性的敏感数据，除非对程序进行全面审计。为了方便使用，I2P为各种语言提供了一系列API，从而充分利用I2P的资源。</p>
+<p>I2P被设计为其他程序可以使用的匿名网络层。这些运行于I2P上的程序有的被捆绑在I2P的安装包中，有的需要自行下载。I2P控制台是一个Web界面，可以通过浏览器管理I2P路由器的运行，类似于现在大多数家用路由器的管理方式。</p>
+<p>接下来看一下另一种方法吧：自己搭建SS/SSR</p>
+<h3 id="自己搭建SS-SSR"><a href="#自己搭建SS-SSR" class="headerlink" title="自己搭建SS/SSR"></a>自己搭建SS/SSR</h3><p>这个就自己去网上找教程吧~这里就不赘述咯~哈哈哈。给大家推荐一个教程吧。讲的挺细的，小白应该都能看懂的~但是推荐购买国外的服务器，比较便宜哦~ <a href="http://www.wuzuowei.net/7998.html">搭建SS/SSR教程</a></p>
+<p><strong>另外给大家推荐一篇博文，里面福利多多哦~~~</strong><br><a href="https://www.bennythink.com/all-platform-scientific-internet-all-in-one.html">全平台科学上网工具集合</a><br>里面包括你知道的，你不知道的各个工具，真是大饱眼福咯~~<br>Lantern、XX-Net、VPNGate、Psiphon3、Tor、i2P、Shadowsocks/ShadowsocksR、v2ray、goproxy、firefly 等。</p>
+<p>好了，就分享这么多啦~睡了睡了！好困啊！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2017/10/2017.10.29-科学上网.html">科学上网</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Dexinser 的个人博客">Dexinser</a></p>
+        <p><span>发布时间:</span>2017年11月09日 - 18时31分</p>
+        <p><span>最后更新:</span>2017年11月28日 - 15时10分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/10/2017.10.29-科学上网.html" title="科学上网">http://indexcode.cn/2017/10/2017.10.29-科学上网.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://indexcode.cn/2017/10/2017.10.29-科学上网.html　　作者: Dexinser" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2017/11/2017.11.1-CSS3-景深详解.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CSS3---景深详解
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2017/10/2017.10.28-win10系统相关.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Win10计算机系统相关系列问题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#墙外的世界总是吸引我们啊"><span class="toc-number">1.</span> <span class="toc-text">墙外的世界总是吸引我们啊~</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#I2P"><span class="toc-number">1.0.1.</span> <span class="toc-text">I2P</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自己搭建SS-SSR"><span class="toc-number">1.0.2.</span> <span class="toc-text">自己搭建SS/SSR</span></a></li></ol></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+    <style>
+        .toc {
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $(".toc li a").mouseover(function() {
+                var title = $(this).attr('href');
+                $(this).attr("title", title);
+            });
+        })
+    </script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'cytgVLEw0',
+      conf: '3dd585905d0465ff1e65d0823df3763e'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2017/11/2017.11.1-CSS3-景深详解.html" title="上一篇: CSS3---景深详解">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2017/10/2017.10.28-win10系统相关.html" title="下一篇: Win10计算机系统相关系列问题">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.28 The Tipping Point.html">The Tipping Point</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.21 磁盘格式.html">磁盘格式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.08 Amour.html">Amour-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.05 js中一些方法的比较与区别.html">Js中一些相似方法/属性的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 彗星来的那一夜-影评.html">彗星来的那一夜-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 寂静岭-影评.html">寂静岭-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 狩猎-影评.html">狩猎-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.25 JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.22-变化-个人感悟.html">变化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.19-分享-幸存者偏见.html">幸存者偏见</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16 vue数据交互.html">Vue</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16-学习笔记.html">JavaScript学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.12-前端开发相关.html">前端开发相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.10-智力题总结.html">智力题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.9-前端面试.html">前端面试总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.09 诗与远方.html">诗与远方</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/练习题.html">前端练习题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/滕王阁的修建者--滕王李元婴.html">说说滕王阁的修建者——“混蛋王爷”李元婴</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/正则表达式.html">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/框架.html">框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/杂.html">杂记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/有感而记.html">有感而记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/星巴克.html">从星巴克的商业模式中看出几个问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/后端网络笔记.html">后端网络笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端基础题总结.html">前端基础题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/人生启迪发人深省.html">人生启迪</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/事件.html">绑定事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/专业必备技能.html">计算机发展+Git简单使用+markdown简单语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/What is the server.html">那年那器那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Webpack.html">Webpack学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/relative.html">编程相关-杂（Relative）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/npm.html">Npm相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Math.floor()方法.html">Math.floor()等方法的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js笔记.html">Js笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js模式-读书笔记.html">Js模式读书笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/jQuery.html">JQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/important Ideas.html">编程方法小汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/DOM.html">浏览器之DOM</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS技巧.html">CSS小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3中transform的加速问题.html">使用CSS3开启GPU硬件加速提升网站动画渲染性能</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-选择器的使用.html">CSS3选择器的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-简介.html">CSS3新增加的功能和属性方法--之选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-动画的使用.html">CSS3动画的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/code.html">Html标签举例</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/book.html">Book</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.3-This is us-TV.html">This Is Us</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.2-第一次就把事情做好.html">第一次就把事情做好！</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.1-CSS3-景深详解.html">CSS3---景深详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.29-科学上网.html">科学上网</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.28-win10系统相关.html">Win10计算机系统相关系列问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端算法代码实现.html">前端算法JavaScript代码实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.26今日事，古人的智慧.html">今日事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.17个人日记.html">个人日记</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

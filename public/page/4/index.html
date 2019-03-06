@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+<meta property="og:type" content="website">
+<meta property="og:title" content="To die or not to die, this is a question~">
+<meta property="og:url" content="http://indexcode.cn/page/4/index.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="To die or not to die, this is a question~">
+<meta name="twitter:description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-2017/11/后端网络笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/后端网络笔记.html" class="article-date">
+      <time datetime="2017-11-09T10:31:50.021Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/后端网络笔记.html">后端网络笔记</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 后端网络笔记：</strong> <Excerpt in index | 首页摘要></p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>浏览器也就是客户端，在浏览器中输入网址（URL）。浏览器会从输入的网址找相应的地址，而网站中所有存在的数据都在服务器中存着的。所以上网其实也就是从服务器中请求资源的过程，当然了具体的肯定不会这么简单的。<br>在网上搜索 萨德 。就会在网址的URL上出现wd=萨德的字样。<br>注册一个账号，账号就保存在每个对应公司的数据库。百度的就是百度的数据库。你用手机号注册新账号的时候，就会去公司的数据库里面查找看一下数据库里面有没有这个手机号，这就是数据交互的过程。</p>
+<p>浏览器–&gt;服务器–&gt;数据库       三位一体才形成了一体的系统。</p>
+<p>Ajax的发展史：是因为谷歌地图的横空出世造就了Ajax，不用刷新页面，这是因为异步，请求资源和数据交互同时进行，所以交互体验更加的好了。</p>
+<p>客户端向服务器发送一个请求，服务器端回应的叫响应。传统的是服务器直接返回整个页面；在Ajax模型中，数据在客户端与服务器之间独立传输，服务器不在返回整个页面。<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;form <span class="built_in">action</span>=<span class="string">'地址'</span> method=<span class="string">'方法'</span>&gt;</span><br><span class="line">  &lt;input <span class="built_in">type</span>=<span class="string">'test'</span> <span class="built_in">name</span>=<span class="string">'usrename'</span>&gt;</span><br><span class="line">  &lt;input <span class="built_in">type</span>=<span class="string">'password'</span> <span class="built_in">name</span>=<span class="string">'password'</span>&gt;</span><br><span class="line">  &lt;input <span class="built_in">type</span>=<span class="string">'submit'</span> value=<span class="string">'提交'</span>&gt;</span><br><span class="line"></span><br><span class="line">通过get方法点击提交按钮 浏览器就会在URL上返回这个数据，也就是地址栏，所以这个传递数据的大小也就有限制了，但是post方法返回的数据不会再地址栏上所以传递数据的大小就比get方法大好多了，大约为<span class="number">4</span>k左右。传递文件类型的需要设input的<span class="built_in">type</span>=<span class="string">'file'</span>;还有form表单的值enctype=<span class="string">'multipart/form-data</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/form&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>用JavaScript以异步的形式操作xml（现在操作的是json格式的，名值对的形式） 所以以前就叫Ajax（Asynchronous javascript and xml）</p>
+<p>Ajax不阻塞页面，体验好。</p>
+<p>Ajax对象上的方法：<br>abort()  停止当前请求<br>open(“method”,”url”,true)  建立对服务器的调用<br>send(content)  向服务器发送请求<br>getAllResponseHeaders()  把http请求的所有响应首部作为健/值对返回<br>getResponseHeaders(“headerLabel”)  返回值指定首部的串值<br>setRequestHeader(“label”,”value”)  把指定首部设置为所提供的值。在设置任何首部之前必须先调用open();</p>
+<p>Ajax对象上的属性：<br>onreadystatechange 状态改变的事件触发器,事件监听<br>readyState   对象状态（integer）值是数字类型的 0=未初始化 1=读取中 2=已读取 3=交互中 4=完成<br>status   服务器返回的状态码，如：404=“文件未找到”、200=“成功” 500=“服务器内部错误” 304=“资源未被修改”<br>responseText  服务器进程返回数据的文本版本<br>responseXML  服务器进程返回数据的兼容DOM的XML文档对象<br>statusText  服务器返回的状态文本信息</p>
+<p>封装一个属于我们的Ajax：<br>`var ajax = null;<br>if(window.XMLHttpRequest) {<br>  ajax = new XMLHttpRequest;<br>}else {<br>  ajax = new ActiveXObject(‘Microsoft.XMLHttp’);<br>}<br>ajax.open(‘method’,’getNews.php’,’true’);</p>
+<p>ajax.send();<br>ajax.onreadystatechange = function() {<br>  if(ajax.readyState == 4) {<br>  if(ajax.status == 200) {<br>    ajax.responseText<br>  }<br>  }<br>}`</p>
+<p>封装Ajax：<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ajax</span>(<span class="params">method, url, flag, data, callBack</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> app = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest) &#123;</span><br><span class="line">    app = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line">  &#125;<span class="title">else</span> &#123;</span><br><span class="line">    app = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHttp'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> method = method.toUpperCase();</span><br><span class="line">  <span class="keyword">if</span>(method == <span class="string">'GET'</span>) &#123;</span><br><span class="line">    app.open(<span class="string">'method'</span>, <span class="built_in">url</span> + <span class="string">'?'</span> + data, flag);</span><br><span class="line">    app.send();</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(method == <span class="string">'POST'</span>) &#123;</span><br><span class="line">    app.open(method, <span class="built_in">url</span>, flag);</span><br><span class="line">    app.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">    app.send(data);</span><br><span class="line">  &#125;</span><br><span class="line">  app.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(app.readyState == <span class="number">4</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(app.status == <span class="number">200</span>) &#123;</span><br><span class="line">    callBack(app.responseText);</span><br><span class="line">  &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/前端基础题总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/前端基础题总结.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.990Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/前端基础题总结.html">前端基础题总结</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>前端基础题总结</strong> <Excerpt in index | 首页摘要></p>
+<h3 id="1-行内元素和快级元素"><a href="#1-行内元素和快级元素" class="headerlink" title="1. 行内元素和快级元素"></a>1. 行内元素和快级元素</h3><p>inline： <code>&lt;span&gt;&lt;/span&gt;,&lt;strong&gt;&lt;/strong&gt;,&lt;em&gt;&lt;/em&gt;,&lt;a&gt;&lt;/a&gt;,&lt;del&gt;&lt;/del&gt;</code>;<br>block:  <code>&lt;p&gt;&lt;/p&gt;,&lt;ol&gt;&lt;/ol&gt;,&lt;li&gt;&lt;/li&gt;,&lt;ul&gt;&lt;/ul&gt;,&lt;div&gt;&lt;/div&gt;,&lt;form&gt;&lt;/form&gt;,&lt;adress&gt;&lt;/adress&gt;&lt;table&gt;&lt;/table&gt;&lt;h1-6&gt;</code>;<br>行内元素转化为块级元素：display : block;</p>
+<h3 id="2-css代码三中引入方式："><a href="#2-css代码三中引入方式：" class="headerlink" title="2. css代码三中引入方式："></a>2. css代码三中引入方式：</h3><pre><code>行间样式
+页面级css
+引入css文件 link
+style标签下写 @import url();
+</code></pre><h3 id="3-web标准：行为、样式、结构相分离"><a href="#3-web标准：行为、样式、结构相分离" class="headerlink" title="3. web标准：行为、样式、结构相分离"></a>3. web标准：行为、样式、结构相分离</h3><h3 id="4-简化代码："><a href="#4-简化代码：" class="headerlink" title="4. 简化代码："></a>4. 简化代码：</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">	*&#123;</span><br><span class="line">		margin: 0 10px;</span><br><span class="line">		padding: 0;</span><br><span class="line">	&#125;</span><br><span class="line">	#content&#123;</span><br><span class="line">		background:#ffffff;</span><br><span class="line">	&#125;</span><br><span class="line">	#content div&#123;</span><br><span class="line">		font-size: 14px;</span><br><span class="line">		text-align: center;</span><br><span class="line">		color: #e9e9e9;</span><br><span class="line">	&#125;</span><br><span class="line">	#nav&#123;</span><br><span class="line">		background-color: #e0e0e0;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="5-浏览器中margin默认值为8px；"><a href="#5-浏览器中margin默认值为8px；" class="headerlink" title="5. 浏览器中margin默认值为8px；"></a>5. 浏览器中margin默认值为8px；</h3><h3 id="6-盒模型的计算："><a href="#6-盒模型的计算：" class="headerlink" title="6. 盒模型的计算："></a>6. 盒模型的计算：</h3><figure class="highlight plain"><figcaption><span>lang</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;liangxi&lt;/title&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">		body&#123;</span><br><span class="line">			padding: 0;</span><br><span class="line">			margin: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		#my-defined&#123;</span><br><span class="line">			width: 100px;</span><br><span class="line">			height: 100px;</span><br><span class="line">			padding: 0 100px;</span><br><span class="line">			margin: 10px 20px 30px 40px;</span><br><span class="line">			border: 1px solid orange;</span><br><span class="line">			background: orange;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;my-defined&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>html中orange颜色的区域宽度是302px<br>orange区域距离页面左边40px，上10px</p>
+<h3 id="7-用css、html编写一个两列布局的页面，要求右侧宽度为200px；左侧自动扩展。"><a href="#7-用css、html编写一个两列布局的页面，要求右侧宽度为200px；左侧自动扩展。" class="headerlink" title="7. 用css、html编写一个两列布局的页面，要求右侧宽度为200px；左侧自动扩展。"></a>7. 用css、html编写一个两列布局的页面，要求右侧宽度为200px；左侧自动扩展。</h3><figure class="highlight plain"><figcaption><span>lang</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;liangxi&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">	.right&#123;</span><br><span class="line">		float: right;</span><br><span class="line">		width: 200px;</span><br><span class="line">		height: 100px;</span><br><span class="line">		background:red; </span><br><span class="line">	&#125;</span><br><span class="line">	.left&#123;</span><br><span class="line">		height: 100px;</span><br><span class="line">		margin-right: 200px;</span><br><span class="line">		background: black;</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="8-居中一个浮动元素："><a href="#8-居中一个浮动元素：" class="headerlink" title="8. 居中一个浮动元素："></a>8. 居中一个浮动元素：</h3><div class='wrap'><br>    <div id='my-defined'></div><br></div>
+
+<figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">	&lt;!-- 第一种方法： --&gt;</span><br><span class="line">	.wrap &#123;</span><br><span class="line">		position: relative;</span><br><span class="line">		height: 1000px;</span><br><span class="line">		width: 100%;</span><br><span class="line">	&#125;</span><br><span class="line">	.wrap #my-defined&#123;</span><br><span class="line">		position: absolute;</span><br><span class="line">		width: 300px;</span><br><span class="line">		height: 500px;</span><br><span class="line">		left: 50%;</span><br><span class="line">		right: 50%;</span><br><span class="line">		margin-left: -150px;</span><br><span class="line">		margin-top: -250px;</span><br><span class="line">		background-color: #ccc;</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;!-- 第二种方法： --&gt;</span><br><span class="line">	.wrap&#123;</span><br><span class="line">		position: relative;</span><br><span class="line">		height: 1000px;</span><br><span class="line">		width: 100%;</span><br><span class="line">	&#125;</span><br><span class="line">	.wrap #my-defined&#123;</span><br><span class="line">		position: absolute;</span><br><span class="line">		width: 300px;</span><br><span class="line">		height: 500px;</span><br><span class="line">		top: 50%;</span><br><span class="line">		left: 50%;</span><br><span class="line">		transform: translate(-50%, -50%);</span><br><span class="line">		background-color: #ccc;</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;!-- 第三种方法： --&gt;</span><br><span class="line">	.wrap&#123;</span><br><span class="line">		display: flex;</span><br><span class="line">		width: 100%;</span><br><span class="line">		height: 1000px;</span><br><span class="line">		justify-content: center;</span><br><span class="line">		align-items: center;</span><br><span class="line">	&#125;</span><br><span class="line">	.wrap #my-defined&#123;</span><br><span class="line">		height: 500px;</span><br><span class="line">		width: 300px;</span><br><span class="line">		background-color: #ccc;		</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;!-- 第四种方法： --&gt;</span><br><span class="line">	.wrap&#123;</span><br><span class="line">		position: relative;</span><br><span class="line">		width: 100%;</span><br><span class="line">		height: 1000px;</span><br><span class="line">	&#125;</span><br><span class="line">	.wrap #my-defined&#123;</span><br><span class="line">		position: absolute;</span><br><span class="line">		top: 0;</span><br><span class="line">		left: 0;</span><br><span class="line">		bottom: 0;</span><br><span class="line">		right: 0;</span><br><span class="line">		margin: auto;</span><br><span class="line">		background-color: #ccc;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="9-画出下图示意图："><a href="#9-画出下图示意图：" class="headerlink" title="9. 画出下图示意图："></a>9. 画出下图示意图：</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>liangxi<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">			<span class="selector-id">#page</span>&#123;</span></span><br><span class="line"><span class="undefined">				width: 520px;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="css">			<span class="selector-class">.nav</span>&#123;</span></span><br><span class="line"><span class="css">				<span class="selector-tag">width</span><span class="selector-pseudo">:200px</span>;</span></span><br><span class="line"><span class="undefined">				float: right;</span></span><br><span class="line"><span class="undefined">				background: orange;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="css">			<span class="selector-class">.main</span>&#123;</span></span><br><span class="line"><span class="undefined">				width: 200px;</span></span><br><span class="line"><span class="undefined">				float: left;</span></span><br><span class="line"><span class="undefined">				padding-left: 110px;</span></span><br><span class="line"><span class="undefined">				background: black;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="css">			<span class="selector-class">.sub</span>&#123;</span></span><br><span class="line"><span class="undefined">				width: 100px;</span></span><br><span class="line"><span class="undefined">				float: left;</span></span><br><span class="line"><span class="css">				<span class="selector-tag">margin</span><span class="selector-pseudo">:10px</span> 0 10<span class="selector-tag">px</span> <span class="selector-tag">-100px</span>;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="css">			<span class="selector-class">.nav</span>,<span class="selector-class">.sub</span>&#123;</span></span><br><span class="line"><span class="css">				<span class="selector-tag">border</span>: 10<span class="selector-tag">px</span> <span class="selector-tag">deshed</span> <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">				height: 300px;</span></span><br><span class="line"><span class="undefined">				background: orange;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="css">			<span class="selector-class">.sub</span>&#123;</span></span><br><span class="line"><span class="undefined">				height: 280px;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"page"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sub"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="10-form表单中method属性值及其区别："><a href="#10-form表单中method属性值及其区别：" class="headerlink" title="10. form表单中method属性值及其区别："></a>10. form表单中method属性值及其区别：</h3><pre><code>GET 使用URL 或Cookie 传参，而POST将数据，放在BODY中。
+GET 的URL会有长度上的限制， POST可以传输很多数据。
+POST比GET安全。
+</code></pre><p>但其实HTTP协议里没有规定POST数据就要放在BODY里， 也没有要求GET数据就一定要放在URL中而不能放在BODY中。<br>HTTP协议对GET和POST 都没有对数据的长度进行限制，两方面原因造成数据限制的原因<br>    早起浏览器会对URL长度进行限制（浏览器URL输入框）<br>    浏览器会对Content-length进行限制，这是为了服务器安全和稳定。</p>
+<h3 id="11-去掉ul-gt-li结构中前面的圆点，并且解决li前面的空余"><a href="#11-去掉ul-gt-li结构中前面的圆点，并且解决li前面的空余" class="headerlink" title="11. 去掉ul&gt;li结构中前面的圆点，并且解决li前面的空余"></a>11. 去掉ul&gt;li结构中前面的圆点，并且解决li前面的空余</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>liangxi<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">			ul &#123;</span></span><br><span class="line"><span class="undefined">			height: 100px;</span></span><br><span class="line"><span class="undefined">			padding: 0;</span></span><br><span class="line"><span class="undefined">			list-style: none;</span></span><br><span class="line"><span class="undefined">			border: 1px solid black;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="12-JavaScript中typeof可能返回的结果：number-string-boolean-object-undefined-function-symbol"><a href="#12-JavaScript中typeof可能返回的结果：number-string-boolean-object-undefined-function-symbol" class="headerlink" title="12. JavaScript中typeof可能返回的结果：number,string,boolean,object,undefined,function,symbol;"></a>12. JavaScript中typeof可能返回的结果：number,string,boolean,object,undefined,function,symbol;</h3><h3 id="13-已知数组var-arr-“goole”-”microsoft”-”oracle”-”阿里”，”freewheel”-”IBM”-”爱立信”，”百度”，”企鹅”，”美团”，”去哪儿”，”58同城”，”新浪”，”搜狐”，”大众点评”，”360”-”汽车之家”，”巨人网络”，”携程”，”4399”-”凤凰网”，”人民网”-，亲们，如果你想进前十的公司，请用效率最高的方法将此数组按照顺序链接成字符。"><a href="#13-已知数组var-arr-“goole”-”microsoft”-”oracle”-”阿里”，”freewheel”-”IBM”-”爱立信”，”百度”，”企鹅”，”美团”，”去哪儿”，”58同城”，”新浪”，”搜狐”，”大众点评”，”360”-”汽车之家”，”巨人网络”，”携程”，”4399”-”凤凰网”，”人民网”-，亲们，如果你想进前十的公司，请用效率最高的方法将此数组按照顺序链接成字符。" class="headerlink" title="13. 已知数组var arr = [“goole”,”microsoft”,”oracle”,”阿里”，”freewheel”,”IBM”,”爱立信”，”百度”，”企鹅”，”美团”，”去哪儿”，”58同城”，”新浪”，”搜狐”，”大众点评”，”360”,”汽车之家”，”巨人网络”，”携程”，”4399”,”凤凰网”，”人民网”]，亲们，如果你想进前十的公司，请用效率最高的方法将此数组按照顺序链接成字符。"></a>13. 已知数组var arr = [“goole”,”microsoft”,”oracle”,”阿里”，”freewheel”,”IBM”,”爱立信”，”百度”，”企鹅”，”美团”，”去哪儿”，”58同城”，”新浪”，”搜狐”，”大众点评”，”360”,”汽车之家”，”巨人网络”，”携程”，”4399”,”凤凰网”，”人民网”]，亲们，如果你想进前十的公司，请用效率最高的方法将此数组按照顺序链接成字符。</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var arr = [&quot;goole&quot;,&quot;microsoft&quot;,&quot;oracle&quot;,&quot;阿里&quot;,&quot;freewheel&quot;,&quot;IBM&quot;,&quot;爱立信&quot;,&quot;百度&quot;,&quot;企鹅&quot;,&quot;美团&quot;,&quot;去哪儿&quot;,&quot;58同城&quot;,&quot;新浪&quot;,&quot;搜狐&quot;,&quot;大众点评&quot;,&quot;360&quot;,&quot;汽车之家&quot;,&quot;巨人网络&quot;,&quot;携程&quot;,&quot;4399&quot;,&quot;凤凰网&quot;,&quot;人民网&quot;];
+    console.log(arr.join(&#39;,&#39;));
+&lt;/script&gt;</code></p>
+<h3 id="14-写出html、css、JavaScript注释代码形式："><a href="#14-写出html、css、JavaScript注释代码形式：" class="headerlink" title="14. 写出html、css、JavaScript注释代码形式："></a>14. 写出html、css、JavaScript注释代码形式：</h3><pre><code>html：&lt;!--   --&gt;
+css:/*   */
+js://
+</code></pre><h3 id="15-编写一段JavaScript脚生成下面这段DOM结构。"><a href="#15-编写一段JavaScript脚生成下面这段DOM结构。" class="headerlink" title="15. 编写一段JavaScript脚生成下面这段DOM结构。"></a>15. 编写一段JavaScript脚生成下面这段DOM结构。</h3><p><code>&lt;div class=&quot;exmple&quot;&gt;
+    &lt;p class=&quot;slogan&quot;&gt;成哥，你最帅!&lt;/p&gt;
+&lt;/div&gt;</code></p>
+<p>JS代码如下：</p>
+<p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var $Div = document.createElement(&#39;div&#39;);
+    var $P = document.createElement(&#39;p&#39;);
+    $Div.className = &quot;exmple&quot;;
+    $P.className = &quot;slogan&quot;;
+    $Div.appendChild($P);
+    document.body.appendChild($div);
+    $P.innerHTML = &quot;成哥，你最帅！&quot;;
+&lt;/script&gt;</code></p>
+<h3 id="16-为html元素绑定一个事件，如点击事件。写出兼容各个浏览器的事件绑定方法。"><a href="#16-为html元素绑定一个事件，如点击事件。写出兼容各个浏览器的事件绑定方法。" class="headerlink" title="16. 为html元素绑定一个事件，如点击事件。写出兼容各个浏览器的事件绑定方法。"></a>16. 为html元素绑定一个事件，如点击事件。写出兼容各个浏览器的事件绑定方法。</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    &lt;!-- 兼容各个浏览器的绑定事件： --&gt;
+    function addEvent(elem, type, handle){
+        if(elem.addEventListener){
+            elem.addEventListener(type, handle, false);
+        }else if (elem.attachEvent) {
+            elem[&#39;temp&#39; + type + handle] = handle;
+            elem[type + handle]= function (){
+                elem[&#39;temp&#39; + type + handle].call(elem);
+            };
+            elem.attachEvent(&#39;on&#39; + type, elem[type + handle])
+        }else{
+            elem[&#39;on&#39;+type]=handle;
+        }
+    }
+    &lt;!-- 兼容各个浏览器的一处绑定事件： --&gt;
+    function removeEvent(elem, type, handle){
+        if(elem.removeEventListener) {
+            elem.removeEventListener(type, handle, false);
+        }else if(elem.detachEvent) {
+            elem.datachEvent(‘on’ + type, elem[type + handle]);
+        }else {
+            elem[‘on’ + type] = null; //  elem[‘on’ + type] = false;
+        }
+    }
+&lt;/script&gt;</code></p>
+<p>第二种方法：</p>
+<p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function addEvent(elem, type, handle){
+        if(elem.addEventListener){
+            elem.addEventListener(type, handle, false);
+        }else if (elem.attachEvent) {
+            elem[handle.name] = function () {
+                handle.call(elem);
+            };
+            elem.attachEvent(&#39;on&#39; + type, elem[handle.name]);
+        }else{
+            elem[&#39;on&#39;+type]=handle;
+        }
+    }
+    &lt;!-- 兼容各个浏览器的移除绑定事件： --&gt;
+    function removeEvent(elem, type, handle){
+        if(elem.removeEventListener) {
+            elem.removeEventListener(type, handle, false);
+        }else if(elem.detachEvent) {
+            elem.datachEvent(‘on’ + type, elem[handle.name]);
+        }else {
+            elem[‘on’ + type] = null; //  elem[‘on’ + type] = false;
+        }
+    }
+&lt;/script&gt;</code></p>
+<h3 id="17-Call-apply-作用都是改变this指向；"><a href="#17-Call-apply-作用都是改变this指向；" class="headerlink" title="17. Call,apply:作用都是改变this指向；"></a>17. Call,apply:作用都是改变this指向；</h3><p>区别：传参的方式不同，call直接传，apply利用数组的形式传参；</p>
+<h3 id="18-封装ajax-向服务器异步发送数据；"><a href="#18-封装ajax-向服务器异步发送数据；" class="headerlink" title="18. 封装ajax,向服务器异步发送数据；"></a>18. 封装ajax,向服务器异步发送数据；</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function ajax(method, url, flag, callback, data){
+        var xhr = null;
+        if(window.XMLHttpRequest){
+            xhr = new window.XMLHttpRequest();
+        }else{
+            xhr = new ActiveXObject(&#39;Mirosoft.XMLHTTP&#39;);
+        }
+        var method = method.toUpperCase();  //对应的是toLowerCase()方法;
+        if(method === &#39;GET&#39;){
+            xhr.open(&#39;GET&#39;, url + &#39;?&#39; + data, flag);
+            xhr.send();
+        }else if(method === &#39;POST&#39;){
+            xhr.open(&#39;POST&#39;, url, flag);
+            xhr.setRequestHeader(&#39;content-type&#39;, &#39;application/x-www-form-urlencoded&#39;);
+            xhr.send(data);
+        }
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState === 4){
+                if(xhr.status === 200){
+                    callback(xhr.responseText); 
+                }
+            }
+        }
+    }
+&lt;/script&gt;</code></p>
+<h3 id="19-数组去重-eg：var-arr-‘a’-’b’-234-23-’a’-’b’-3-1-234"><a href="#19-数组去重-eg：var-arr-‘a’-’b’-234-23-’a’-’b’-3-1-234" class="headerlink" title="19. 数组去重 eg：var arr = [‘a’,’b’,234,23,’a’,’b’,3,1,234];"></a>19. 数组去重 eg：var arr = [‘a’,’b’,234,23,’a’,’b’,3,1,234];</h3><p>第一种方法：</p>
+<p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function () {
+     var arr = [],
+        obj = {},
+        len = this.length;
+        for(var i = 0;i &lt; len;i++){
+            if(!obj[this[i]]){
+                obj[this[i]] = &quot;11&quot;;
+                arr.push(this[i]);
+            }
+        }
+        return arr;
+}
+    var arr = [1,1,2,2,2,3,3,33,4,4,5,45,45,];
+    [].unique(arr);    --&gt; 结果为：[1，2，3，33，4，5，45]
+&lt;/script&gt;</code><br>第二种方法：<br><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function (arr) {
+        return new Set(arr);
+    }
+    var arr = [1,1,2,2,2,3,3,33,4,4,5,45,45,];
+    [].unique(arr);    --&gt; 结果为：[1，2，3，33，4，5，45]
+&lt;/script&gt;</code><br>第三种方法：<br><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function (arr) {
+        var temp = [], len = arr.length;
+        for(let i = 0; i &lt; len; i++) {
+            if(temp.indexOf(arr[i]) === -1) {
+                temp.push(arr[i]);
+            }
+        }
+        return temp;
+    }
+    var arr = [1,1,2,2,2,3,3,33,4,4,5,45,45,];
+    [].unique(arr);    --&gt; 结果为：[1，2，3，33，3，4，45]
+&lt;/script&gt;</code><br>第四种方法：<br><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function (arr) {
+        var temp = [], len = arr.length;
+        for(let i = 0; i &lt; len; i++) {
+            if(arr.indexOf(arr[i]) === i) {
+                temp.push(arr[i]);
+            }
+        }
+        return temp;
+    }
+    var arr = [1,1,2,2,2,3,3,33,4,4,5,45,45,];
+    [].unique(arr);    --&gt; 结果为：[1，2，3，33，4，5，45]
+&lt;/script&gt;</code><br>第五种方法：<br><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function (arr) {
+        var temp = [],index = [], len = arr.length;
+        for(let i = 0; i &lt; len; i++) {
+            for(let j = i + 1; j &lt; len; j++) {
+                if(arr[i] === arr[j]) {
+                    i ++ ;
+                    j = i;
+                }
+            }
+            temp.push(arr[i]);
+            index.push(i);
+        }
+        console.log(index);
+        return temp;
+    }
+    var arr = [1,1,2,2,2,3,3,33,4,4,5,45,45,];
+    [].unique(arr);    --&gt; 结果为：[1，2，3，33，4，5，45]
+&lt;/script&gt;</code></p>
+<h3 id="20-如今有个ul，如果有十亿个li；要求点击li触发事件，弹出对应li的内容"><a href="#20-如今有个ul，如果有十亿个li；要求点击li触发事件，弹出对应li的内容" class="headerlink" title="20. 如今有个ul，如果有十亿个li；要求点击li触发事件，弹出对应li的内容"></a>20. 如今有个ul，如果有十亿个li；要求点击li触发事件，弹出对应li的内容</h3><p><code>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code><br><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var oUl = document.getElementsByTagName(&#39;ul&#39;)[0];
+    oUl.onclick = function  (e) {
+        var event = e || window.event;
+        var target = event.target || event.srcElement;
+        console.log(target.innerHTML);
+    }
+&lt;/script&gt;</code></p>
+<h3 id="21-阻止事件冒泡和事件默认时间"><a href="#21-阻止事件冒泡和事件默认时间" class="headerlink" title="21. 阻止事件冒泡和事件默认时间"></a>21. 阻止事件冒泡和事件默认时间</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    &lt;!-- //取消冒泡 --&gt;
+    function stopBubble(e) {
+        if(e.stopPropagation){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble = true;
+        }
+    }     
+    &lt;!-- //阻止默认事件 --&gt;
+    function  cancelHandler(e){
+        if(e.preventDefault){
+            e.preventDefault();
+        }else{
+            e.returnValue = false;
+        }
+    }
+&lt;/script&gt;</code></p>
+<h3 id="22-什么是DOM："><a href="#22-什么是DOM：" class="headerlink" title="22. 什么是DOM："></a>22. 什么是DOM：</h3><p>DOM是操作css，html的一套编程接口；<br>DOM对象即为宿主对象，浏览器厂商定义的；<br>DOM定义了表示和修改文档所需的方法。<br>对html和xml编程接口不是css</p>
+<h3 id="23-利用JavaScript取非行间样式，要求兼容性各个浏览器"><a href="#23-利用JavaScript取非行间样式，要求兼容性各个浏览器" class="headerlink" title="23. 利用JavaScript取非行间样式，要求兼容性各个浏览器"></a>23. 利用JavaScript取非行间样式，要求兼容性各个浏览器</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function getComputedStyle(obj,styleProp){
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(obj,false)[styleProp];
+        }else{
+            return obj.currentStyle[styleProp];
+        }
+    }
+&lt;/script&gt;</code></p>
+<h3 id="24-运行test-和new-test-的结果是什么："><a href="#24-运行test-和new-test-的结果是什么：" class="headerlink" title="24. 运行test()和new test()的结果是什么："></a>24. 运行test()和new test()的结果是什么：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var a = 5;
+    function test(){
+        a=0;
+        alert(a);
+        alert(this.a);
+        var a;
+        alert(a);
+    }
+&lt;/script&gt;</code><br>结果是：0 5 0    ,    0 undefined 0</p>
+<h3 id="25-有字符串”aaaaabbbccccddddeeefgaa”-转换为连续不重复的字符串"><a href="#25-有字符串”aaaaabbbccccddddeeefgaa”-转换为连续不重复的字符串" class="headerlink" title="25. 有字符串”aaaaabbbccccddddeeefgaa”,转换为连续不重复的字符串"></a>25. 有字符串”aaaaabbbccccddddeeefgaa”,转换为连续不重复的字符串</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str = &quot;aaaaabbbccccddddeeefgaa&quot;;
+    var reg = /(.)\1*/g;
+    console.log(str.replace(reg,&quot;$1&quot;));
+&lt;/script&gt;</code></p>
+<h3 id="26-一串连续数字实现打点功能：100000000转换成：1-000-000-000"><a href="#26-一串连续数字实现打点功能：100000000转换成：1-000-000-000" class="headerlink" title="26. 一串连续数字实现打点功能：100000000转换成：1.000.000.000"></a>26. 一串连续数字实现打点功能：100000000转换成：1.000.000.000</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str = &quot;1000000000&quot;;
+    var reg = /(?=(\B)(\d{3})+$)/g;
+    console.log(str.replace(reg,&quot;.&quot;));
+&lt;/script&gt;</code></p>
+<h3 id="27-写出运算结果："><a href="#27-写出运算结果：" class="headerlink" title="27. 写出运算结果："></a>27. 写出运算结果：</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">	alert(typeof(a))--undefined</span><br><span class="line">	alert(typeof(undefined))--undefined</span><br><span class="line">	alert(typeof(NaN))--number</span><br><span class="line">	alert(typeof(null))--object</span><br><span class="line"></span><br><span class="line">	var a = &quot;123abc&quot;;</span><br><span class="line">	alert(typeof(+a));--number</span><br><span class="line">	alert(typeof(!!a));--boolean</span><br><span class="line">	alert(typeof(a + &quot;&quot;));--string</span><br><span class="line"></span><br><span class="line">	alert(1 == &quot;1&quot;); --true</span><br><span class="line">	alert(NaN == NaN); --flase</span><br><span class="line">	alert(NaN == undefined);--flase</span><br><span class="line">	alert(&quot;11&quot; + 11);--1111</span><br><span class="line">	alert(1===&quot;1&quot;)--flase</span><br><span class="line">	alert(parseInt(&quot;123abc&quot;))--123</span><br><span class="line"></span><br><span class="line">	var num = 1232123.3456789;</span><br><span class="line">	alert(num.toFixed(3));--1232123.346</span><br><span class="line">	//toFixed只在number类型上可以用，保留几位有效数字，四舍五入</span><br><span class="line"></span><br><span class="line">	// typeof(typeof(a))--string</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="28-打印当前年月时分秒"><a href="#28-打印当前年月时分秒" class="headerlink" title="28. 打印当前年月时分秒"></a>28. 打印当前年月时分秒</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var date = new Date();
+  console.log(date.getFullYear + &quot;年&quot; + (date.getMonth() + 1) + &quot;月&quot; + date.getDate() + &quot;日&quot;+ date.getHours() + &quot;时&quot; + date.getMinutes() + &quot;分&quot; + date.getSeconds() + &quot;秒&quot;);
+&lt;/script&gt;</code></p>
+<h3 id="29-css中，font-size设置的是字体的高；单位是px，em是相对值。"><a href="#29-css中，font-size设置的是字体的高；单位是px，em是相对值。" class="headerlink" title="29. css中，font-size设置的是字体的高；单位是px，em是相对值。"></a>29. css中，font-size设置的是字体的高；单位是px，em是相对值。</h3><h3 id="30-有html结构："><a href="#30-有html结构：" class="headerlink" title="30. 有html结构："></a>30. 有html结构：</h3><pre><code>`&lt;div style=&quot;background-color:red;margin:0 0 100px 0;&quot;&gt;123&lt;/div&gt;
+&lt;div style=&quot;background-color:red;margin:200px 0 0 0;&quot;&gt;234&lt;/div&gt;`
+
+他们之间的间距是：200px
+</code></pre><h3 id="31-简单说说自定义构造函数创建对象的原理："><a href="#31-简单说说自定义构造函数创建对象的原理：" class="headerlink" title="31. 简单说说自定义构造函数创建对象的原理："></a>31. 简单说说自定义构造函数创建对象的原理：</h3><pre><code>在函数的最前面隐式的加上 this = {}；最后隐式的返回 return this；
+</code></pre><h3 id="32-写出一种原型链实现继承的方式：圣杯模式"><a href="#32-写出一种原型链实现继承的方式：圣杯模式" class="headerlink" title="32. 写出一种原型链实现继承的方式：圣杯模式"></a>32. 写出一种原型链实现继承的方式：圣杯模式</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	var inherit =(function()&#123;</span><br><span class="line"></span><br><span class="line">	var F = function()&#123;&#125;;</span><br><span class="line">		return function(P,C)&#123;</span><br><span class="line">			F.prototype = P.prototype;</span><br><span class="line">			C.prototype = new F();</span><br><span class="line">			C.prototype.constructor = C;</span><br><span class="line">			C.prototype.uber = P.prototype;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;());</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="33-深度克隆："><a href="#33-深度克隆：" class="headerlink" title="33. 深度克隆："></a>33. 深度克隆：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.deepClone = function (parent, child) {
+           var child = {} || child;
+           var toStr = Object.prototype.toString,
+               arrStr = &#39;[object Array]&#39;;
+           for(var prop in parent){
+               if(parent.hasOwnProperty(prop)){
+                   if(typeof(parent[prop]) === &quot;object&quot;){
+                    child[prop] = (toStr.call(parent[prop]) === arrStr) ? []:
+                    {};
+                    deepClone(parent[prop], child[prop]);
+                   }else{
+                       child[prop] = parent[prop];
+                   }
+               }
+           }
+      }
+&lt;/script&gt;</code></p>
+<h3 id="34-描述预编译过程："><a href="#34-描述预编译过程：" class="headerlink" title="34. 描述预编译过程："></a>34. 描述预编译过程：</h3><pre><code>（1）创建AO对象；
+（2）找形参和变量声明，将变量和形参作为AO对象的属性名，值为undefined；
+（3）将实参和形参相统一；
+（4）在函数体里找函数声明，将函数声明作为AO对象的属性名，将函数体作为赋值对象赋予函数名。
+</code></pre><h3 id="35-介绍js语言特点："><a href="#35-介绍js语言特点：" class="headerlink" title="35. 介绍js语言特点："></a>35. 介绍js语言特点：</h3><pre><code>单线程；脚本语言；解释性语言，解释一行执行一行；ECMA标注；弱数据类型语言；可以跨平台；
+</code></pre><h3 id="36-介绍主流浏览器以及他们相应的内核，介绍浏览器分为哪几部分，内核呢？"><a href="#36-介绍主流浏览器以及他们相应的内核，介绍浏览器分为哪几部分，内核呢？" class="headerlink" title="36. 介绍主流浏览器以及他们相应的内核，介绍浏览器分为哪几部分，内核呢？"></a>36. 介绍主流浏览器以及他们相应的内核，介绍浏览器分为哪几部分，内核呢？</h3><pre><code>浏览器分为：shell与内核（js引擎，渲染引擎，其他）
+</code></pre><p>  主流浏览器：IE（trident）；chrome（webkit/blink）；safari（webkit）；Firefox（Gecko）；Opera（presto）；</p>
+<h3 id="37-简述js时间线的顺序："><a href="#37-简述js时间线的顺序：" class="headerlink" title="37. 简述js时间线的顺序："></a>37. 简述js时间线的顺序：</h3><pre><code>1、创建Document对象，开始解析web页面。document.readyState = &apos;loading&apos;。
+2、遇到link外部css，创建线程加载，并继续解析文档。
+3、遇到script外部js，并且没有设置async、defer，浏览器加载，并阻塞，等待js加载完成并执行该脚本，然后继续解析文档。
+4、遇到script外部js，并且设置有async、defer，浏览器创建线程加载，并继续解析文档。对于async属性的脚本，脚本加载完成后立即执行。（异步禁止使用document.write()）
+5、遇到img等，先正常解析dom结构，然后浏览器异步加载src，并继续解析文档。
+6、当文档解析完成，document.readyState = &apos;interactive&apos;。
+7、文档解析完成后（就是所有dom节点都解析完），所有设置有defer的脚本会按照顺序执行。（注意与async的不同,但同样禁止使用document.write()）;
+8、document对象触发DOMContentLoaded事件，这也标志着程序执行从同步脚本执行阶段，转化为事件驱动阶段。
+9、当所有async的脚本加载完成并执行后、img等加载完成后，document.readyState = &apos;complete&apos;，window对象触发load事件。
+10、从此，以异步响应方式处理用户输入、网络事件等。
+</code></pre><h3 id="38-异步加载js的几种方案："><a href="#38-异步加载js的几种方案：" class="headerlink" title="38. 异步加载js的几种方案："></a>38. 异步加载js的几种方案：</h3><pre><code>defer async
+</code></pre><p>异步加载兼容性写法：</p>
+<figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  function asyncLoaded (url,callback) &#123;</span><br><span class="line">      var script = document.createElement(&apos;script&apos;);</span><br><span class="line">      script.type = &quot;text/javascript&quot;;</span><br><span class="line">      if (script.readySate) &#123;</span><br><span class="line">          script.onreadystatechange = function ()&#123;</span><br><span class="line">              if (script.readySate == &quot;complete&quot; || script.readySate == &quot;loaded&quot;) &#123;</span><br><span class="line">                  obj[callback]();</span><br><span class="line">                  script.onreadystatechange = null ;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;else&#123;</span><br><span class="line">          script.onload = function()&#123;</span><br><span class="line">              obj[callback]();</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      script.src = url ;</span><br><span class="line">      document.head.appendChild(script);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="39-打印结果："><a href="#39-打印结果：" class="headerlink" title="39. 打印结果："></a>39. 打印结果：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var a = (10*3-4/2 + 1)%2,
+        b = 3;
+    b %= a + 3;
+    console.log(a++);
+    console.log(--b);
+&lt;/script&gt;</code></p>
+<pre><code>结果：1   2
+</code></pre><h3 id="40-使用原生js，addEventListener-给每个li元素绑定一个click事件，输出他们的顺序。"><a href="#40-使用原生js，addEventListener-给每个li元素绑定一个click事件，输出他们的顺序。" class="headerlink" title="40. 使用原生js，addEventListener,给每个li元素绑定一个click事件，输出他们的顺序。"></a>40. 使用原生js，addEventListener,给每个li元素绑定一个click事件，输出他们的顺序。</h3><p><code>&lt;ul&gt;
+    &lt;li&gt;a&lt;/li&gt;
+    &lt;li&gt;a&lt;/li&gt;
+    &lt;li&gt;a&lt;/li&gt;
+    &lt;li&gt;a&lt;/li&gt;
+&lt;/ul&gt;</code></p>
+<p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var liCollection = document.getElementsByTagName(&#39;li&#39;),
+    len = liCollection.length;
+    for (var i = 0; i &lt; len; i++) {
+        (function(j){
+            liCollection[j].addEventListener(&#39;click&#39;,function(){
+                console.log(j);
+            }false);
+        }(i))
+    }
+&lt;/script&gt;</code></p>
+<h3 id="41-一个字符串由-a-z-组成，找出第一个只出现一次的字母"><a href="#41-一个字符串由-a-z-组成，找出第一个只出现一次的字母" class="headerlink" title="41. 一个字符串由[a-z]组成，找出第一个只出现一次的字母"></a>41. 一个字符串由[a-z]组成，找出第一个只出现一次的字母</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    Array.prototype.unique = function() {
+     var len = this.length,
+         obj = {},
+         arr = [];
+     for(var i = 0; i &lt; len; i++){
+       if(!obj[this[i]]) {
+         obj[this[i]] = &quot;1&quot;;
+         arr.push(this[i]);
+       }
+     }
+     return arr;
+    }
+    var str = &quot;abaadf&quot;;
+    var arr = str.split(&quot;&quot;);
+    var arr1 = arr.unique();
+    console.log(arr1[0]);
+&lt;/script&gt;</code></p>
+<h3 id="42-打印结果："><a href="#42-打印结果：" class="headerlink" title="42. 打印结果："></a>42. 打印结果：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var name = &quot;222&quot;;
+    var a = {
+        name:&quot;111&quot;,
+        say:function(){
+            console.log(this.name);
+        }
+    }
+    var fun = a.say;
+    fun();
+    a.say();
+    var b = {
+        name:&quot;333&quot;,
+        say:function(fun){
+            fun();
+        }
+    }
+    b.say(a.say);
+    b.say=a.say;
+    b.say();
+&lt;/script&gt;</code></p>
+<p>结果： 222  111  222  333</p>
+<h3 id="43-原始值"><a href="#43-原始值" class="headerlink" title="43. 原始值"></a>43. 原始值</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str = &quot;你成哥很帅&quot;;
+    str.length = 3;
+    console.log(str);    
+&lt;/script&gt;</code></p>
+<p>执行结果为：你成哥很帅<br>原因：原始值不可改变</p>
+<h3 id="44-请用多种方法创造对象："><a href="#44-请用多种方法创造对象：" class="headerlink" title="44. 请用多种方法创造对象："></a>44. 请用多种方法创造对象：</h3><pre><code>字面量 var obj = {}；
+构造函数 var obj = new Object{};
+var obj = Object.create(原型)
+</code></pre><h3 id="45-解决污染全局变量"><a href="#45-解决污染全局变量" class="headerlink" title="45. 解决污染全局变量"></a>45. 解决污染全局变量</h3><pre><code>命名空间，闭包
+</code></pre><h3 id="46-枚举一个对象中所有自有属性："><a href="#46-枚举一个对象中所有自有属性：" class="headerlink" title="46. 枚举一个对象中所有自有属性："></a>46. 枚举一个对象中所有自有属性：</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  Person.prototype.lastName = &quot;ji&quot;;</span><br><span class="line"></span><br><span class="line">  function Person(name,age)&#123;</span><br><span class="line">    this.name  = name;</span><br><span class="line">    this.age = age ;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  var oPerson = new Person (&apos;cheng&apos;,123);</span><br><span class="line">  for(var prop in oPerson)&#123;</span><br><span class="line">    if(oPerson.hasOwnProperty(prop))&#123;</span><br><span class="line">    console.log(oPerson[prop]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="47-让数组里的数据从大到小排列："><a href="#47-让数组里的数据从大到小排列：" class="headerlink" title="47. 让数组里的数据从大到小排列："></a>47. 让数组里的数据从大到小排列：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    arr.sort(function(a,b){
+        return a - b;
+    }());
+&lt;/script&gt;</code></p>
+<h3 id="48-es5严格模式如何使用，应该注意些什么："><a href="#48-es5严格模式如何使用，应该注意些什么：" class="headerlink" title="48. es5严格模式如何使用，应该注意些什么："></a>48. es5严格模式如何使用，应该注意些什么：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+全局严格模式:直接加 字符串：&quot;use strict&quot;;
+局部函数内严格模式（推荐）
+function test(){
+    &quot;use strict&quot;;
+}
+注意：不支持with,arguments.callee,func.caller,变量赋值前必须声明，局部this必须被赋值(Person.call(null/undefined) 赋值什么就是什么),拒绝重复属性和参数
+&lt;/script&gt;</code></p>
+<h3 id="49-选择html元素节点几种方法，以及他们各自的兼容性问题及特点："><a href="#49-选择html元素节点几种方法，以及他们各自的兼容性问题及特点：" class="headerlink" title="49. 选择html元素节点几种方法，以及他们各自的兼容性问题及特点："></a>49. 选择html元素节点几种方法，以及他们各自的兼容性问题及特点：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+        getElementsByTagName()[0];
+        getElementById();
+        getElementsByName();
+        getElementByClassName(); interactive8及以下不兼容
+        querySelectorAll();非实时ie7及以下不兼容
+        querySelector();非实时ie7及以下不兼容
+    1.getElementById方法定义在Document.prototype上，即Element节点上不能使用。
+    2.getElementsByName方法定义在HTMLDocument.prototype上，即非html中的document以外不能使用(xml document,Element)
+    3.getElementsByTagName方法定义在Document.prototype 和 Element.prototype上
+    4.HTMLDocument.prototype定义了一些常用的属性，body,head,分别指代HTML文档中的&lt;body&gt;&lt;head&gt;标签。
+    5.Document.prototype上定义了documentElement属性，指代文档的根元素，在HTML文档中，他总是指代&lt;html&gt;元素
+    6.getElementsByClassName、querySelectorAll、querySelector在Document,Element类中均有定义
+&lt;/script&gt;</code></p>
+<h3 id="50-说出节点类型的值为1-2-3-8-9的值对应的节点是什么："><a href="#50-说出节点类型的值为1-2-3-8-9的值对应的节点是什么：" class="headerlink" title="50. 说出节点类型的值为1,2,3,8,9的值对应的节点是什么："></a>50. 说出节点类型的值为1,2,3,8,9的值对应的节点是什么：</h3><p>元素节点   —— 1<br>属性节点   —— 2<br>文本节点   —— 3<br>注释节点   —— 8<br>document  —— 9 单独成一类 文档节点<br><!-- DocumentFragment  ——  11 文档碎片 --><br><!-- 获取节点类型   nodeType  --></p>
+<h3 id="51-鼠标事件的触发顺序："><a href="#51-鼠标事件的触发顺序：" class="headerlink" title="51. 鼠标事件的触发顺序："></a>51. 鼠标事件的触发顺序：</h3><pre><code>mousedown; focus; mouseup; click;
+右键事件：
+
+`&lt;script type=&quot;text/javascript&quot;&gt;    
+elem.onmousedown = function (e) {
+    if(e.button == 2){
+        alert(&quot;右键点击&quot;)
+    }
+}
+&lt;/script&gt;`
+</code></pre><h3 id="52-数据格式JSON转换为字符串，以及把字符串转换为JSON的方法"><a href="#52-数据格式JSON转换为字符串，以及把字符串转换为JSON的方法" class="headerlink" title="52. 数据格式JSON转换为字符串，以及把字符串转换为JSON的方法"></a>52. 数据格式JSON转换为字符串，以及把字符串转换为JSON的方法</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    JSON.parse();  string — &gt; json字符串
+JSON.stringify();   json — &gt; string
+&lt;/script&gt;</code></p>
+<h3 id="53-BOM对象及其功能："><a href="#53-BOM对象及其功能：" class="headerlink" title="53. BOM对象及其功能："></a>53. BOM对象及其功能：</h3><pre><code>Window     JavaScript 层级中的顶层对象，表示浏览器窗口。
+    属性：
+        closed    返回窗口是否已被关闭。
+        document    对 Document 对象的只读引用。
+        history    对 History 对象的只读引用。
+        innerheight    返回窗口的文档显示区的高度。
+        innerwidth    返回窗口的文档显示区的宽度。
+    方法：
+        alert()    显示带有一段消息和一个确认按钮的警告框。
+        blur()    把键盘焦点从顶层窗口移开。
+        clearInterval()    取消由 setInterval() 设置的 timeout。 
+
+Navigator  包含客户端浏览器的信息。
+    属性：
+        appCodeName    返回浏览器的代码名。 
+    方法：
+        javaEnabled()    规定浏览器是否启用 Java。
+
+Screen     包含客户端显示屏的信息。 
+    属性：
+        availHeight    返回显示屏幕的高度 (除 Windows 任务栏之外)。
+        availWidth    返回显示屏幕的宽度 (除 Windows 任务栏之外)。
+        width    返回显示器屏幕的宽度。
+
+History    包含了浏览器窗口访问过的 URL。 
+    属性：
+        length    返回浏览器历史列表中的 URL 数量。
+    方法：
+        back()    加载 history 列表中的前一个 URL。
+        forward()    加载 history 列表中的下一个 URL。
+        go()    加载 history 列表中的某个具体页面。
+
+Location   包含了当前 URL 的信息。
+    属性：
+        href    设置或返回完整的 URL。
+    方法：
+        assign()    加载新的文档。
+        reload()    重新加载当前文档。
+        replace()    用新的文档替换当前文档。
+</code></pre><h3 id="54-说明position定位的值有什么区别，如果有不能兼容的问题，如何解决"><a href="#54-说明position定位的值有什么区别，如果有不能兼容的问题，如何解决" class="headerlink" title="54. 说明position定位的值有什么区别，如果有不能兼容的问题，如何解决"></a>54. 说明position定位的值有什么区别，如果有不能兼容的问题，如何解决</h3><pre><code>absolute 绝对定位
+relative 相对定位
+fixed     相对可视区定位，而且脱离原来位置 ie6不能用
+sticky回去查一查
+</code></pre><h3 id="55-添加css代码使得ul外观可以包住li："><a href="#55-添加css代码使得ul外观可以包住li：" class="headerlink" title="55. 添加css代码使得ul外观可以包住li："></a>55. 添加css代码使得ul外观可以包住li：</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	ul&#123;</span><br><span class="line">		list-style: none;</span><br><span class="line">		padding: 0;</span><br><span class="line">	&#125;</span><br><span class="line">	ul&gt;li&#123;</span><br><span class="line">		float: left;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	ul:after&#123;</span><br><span class="line">	content:&quot;&quot;;</span><br><span class="line">	display:inline-block;</span><br><span class="line">	clear:both;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><code>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></p>
+<h3 id="56-熟知的选择优先级关系（权重）"><a href="#56-熟知的选择优先级关系（权重）" class="headerlink" title="56. 熟知的选择优先级关系（权重）"></a>56. 熟知的选择优先级关系（权重）</h3><pre><code>！important            无穷大
+style（行间样式）    1000
+id                    100
+class/属性/伪类        10
+标签/伪元素            1
+通配符*                0
+</code></pre><h3 id="57-display值及含义"><a href="#57-display值及含义" class="headerlink" title="57. display值及含义"></a>57. display值及含义</h3><p>display值： inline—行级元素，不沾满整行，不可以改变宽高<br>            block—-块级元素 沾满整行 可以改变宽高<br>            inline-block—-行级块元素 不占满整行 可以改变宽高 </p>
+<h3 id="58-写一个输入框，带有js功能，鼠标聚焦提示消息信息，失去焦点显示提示信息"><a href="#58-写一个输入框，带有js功能，鼠标聚焦提示消息信息，失去焦点显示提示信息" class="headerlink" title="58. 写一个输入框，带有js功能，鼠标聚焦提示消息信息，失去焦点显示提示信息"></a>58. 写一个输入框，带有js功能，鼠标聚焦提示消息信息，失去焦点显示提示信息</h3><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	input&#123;</span><br><span class="line">		border: 1px solid black;</span><br><span class="line">		color: #999;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	.fontGrey&#123;</span><br><span class="line">	color: #999;</span><br><span class="line">	&#125;</span><br><span class="line">	.fontNormal&#123;</span><br><span class="line">	color: #424242;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	username:&lt;input tyoe=&quot;text&quot; value=&quot;请输入用户名&quot;onfocus=&quot;if(this value=&apos;请输入用户名&apos;)&#123;this.value=&apos;&apos;;this.className=&apos;fontNormal&apos;&#125;&quot;onblur=&quot;if(this.value==&apos;&apos;)&#123;this.value=&apos;请输入用户名&apos;;this.className=&apos;fontGrey&apos;&#125;&quot; onchange=&quot;console.log(this.value)&quot;&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="59-写出打印结果并说明原因："><a href="#59-写出打印结果并说明原因：" class="headerlink" title="59. 写出打印结果并说明原因："></a>59. 写出打印结果并说明原因：</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function fn(a,b){
+        arguments[0] = 1;
+        console.log(a);
+        fn(2,1);
+    }
+    打印：1;
+    原因：实参，形参相统一;
+&lt;/script&gt;</code></p>
+<h3 id="60-将下列变量转化为小驼峰形式：my-first-name-gt-myFirstName"><a href="#60-将下列变量转化为小驼峰形式：my-first-name-gt-myFirstName" class="headerlink" title="60. 将下列变量转化为小驼峰形式：my-first-name-&gt;myFirstName"></a>60. 将下列变量转化为小驼峰形式：my-first-name-&gt;myFirstName</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str = &quot;my-first-name&quot;;
+    var reg =/-(\w)/g;
+    var test = str.replace(reg,function($,$1){
+        return $1.toUpperCase();
+    });
+    console.log(test);
+&lt;/script&gt;</code></p>
+<h3 id="61-将aaaaabbbb字符串调换成bbbbaaaa形式"><a href="#61-将aaaaabbbb字符串调换成bbbbaaaa形式" class="headerlink" title="61. 将aaaaabbbb字符串调换成bbbbaaaa形式"></a>61. 将aaaaabbbb字符串调换成bbbbaaaa形式</h3><p><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str = &quot;aaaabbbb&quot;;
+     var reg = /(\w{4})(\w{4})/g;
+     console.log(str.replace(reg,&quot;$2$1&quot;));
+&lt;/script&gt;</code></p>
+<p>说一下你对前端的理解.</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/人生启迪发人深省" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/人生启迪发人深省.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.969Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/人生启迪发人深省.html">人生启迪</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="影视人生-人生启迪"><a href="#影视人生-人生启迪" class="headerlink" title="影视人生-人生启迪"></a>影视人生-人生启迪</h2><p><strong> 人生启迪：</strong> <Excerpt in index | 首页摘要><br>动情美剧：This Is Us</p>
+<p>启迪电影：Cloud Atlas （演员：汤姆汉克斯、哈利贝瑞、雨果维文、周迅  导演：汤姆提克威、拉娜沃卓斯基）</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人随笔/">个人随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/影视人生/">影视人生</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/事件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/事件.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.959Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/事件.html">绑定事件</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 绑定事件：</strong> <Excerpt in index | 首页摘要></p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="如何绑定事件："><a href="#如何绑定事件：" class="headerlink" title="如何绑定事件："></a>如何绑定事件：</h3><ol>
+<li>ele.onxxx = function (event) {}<br>兼容性很好，但是一个元素只能绑定一个处理程序<br>基本等同于写在HTML行间上</li>
+<li>obj.addEventListener(type, fn, false);<br>IE9以下不兼容，可以为一个事件绑定多个处理程序</li>
+<li>obj.attachEvent(‘on’ + type, fn);<br>IE独有，一个事件同样可以绑定多个处理程序</li>
+</ol>
+<h3 id="事件处理程序的运行环境："><a href="#事件处理程序的运行环境：" class="headerlink" title="事件处理程序的运行环境："></a>事件处理程序的运行环境：</h3><ol>
+<li>ele.onxxx = function (event){}<br>程序this指向是dom元素本身</li>
+<li>obj.addEventListener(type, fn, false);<br>程序this指向是dom元素本身</li>
+<li>obj.attachEvent(‘on’ + type, fn);<br>程序this指向window</li>
+</ol>
+<p>2有需要注意的地方：虽然这个方法可以绑定多个处理程序，但是也得看是怎么绑定的：<br> <code>var oDiv = document.getElementsByTagName(div)[0];
+ oDiv.addEventListener(&#39;click&#39;, function() {
+   alert(0);
+ }, false);
+ oDiv.addEventListener(&#39;click&#39;, function() {
+   alert(1);
+ }, false);</code><br>这样的结果就是：先弹窗为0，在弹窗为1；  因为绑定的事件处理函数不是同一个事件处理函数，绑定的事件处理函数是多个事件处理函数时，绑定多少个事件处理函数就会执行多少次这个所绑定的事件处理函数，并且无论这个是否是同一事件类型。 </p>
+<p> <code>var oDiv = document.getElementsByTagName(div)[0],
+     test = function(){
+    alert(0);
+     };</code><br> oDiv.addEventListener(‘click’, test, false);<br>这样的结果就是： 只弹窗一次0；  因为绑定的事件处理函数是同一个就是test处理函数。总结：同一dom元素绑定同一事件类型而且是同一个处理函数的时候，只执行所绑定的test处理函数一次！！！</p>
+<p>事件处理模型：事件冒泡和事件捕获（这两个方法的切换也就是addEventListener这个方法的第三个参数的false和true的切换）<br>事件冒泡：结构上的由于最内部的dom结构触发事件处理函数，但是这个处理函数会往上冒泡，直到冒泡到最祖先层次才会结束。但是必须要绑定这个事件的处理函数。往上冒泡就是必须是同一个事件处理函数才能自动往上触发父级或者更高级的同样绑定的同一事件类型的处理函数。<br>这俩个方法的区别就是触发事件的先后顺序发生了改变，事件冒泡是才从里往外，顾名思义也就像鱼儿从水底吐泡向水上冒泡一样，从dom结构上来说就是从子级往父级和更高级的父级关系上发生的事件处理模型。而捕获从事件发生的顺序上跟冒泡正好相反，这两个方法也就是事件发生顺序上的这点区别而已。如果这两个方法都有的话，是先捕获在冒泡的。与写代码的顺序无关，IE并没有捕获，只有冒泡。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/专业必备技能" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/专业必备技能.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.948Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/专业必备技能.html">计算机发展+Git简单使用+markdown简单语法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 计算机发展+Git简单使用+markdown简单语法：</strong> <Excerpt in index | 首页摘要></p>
+<h1 id="计算机的发展历程："><a href="#计算机的发展历程：" class="headerlink" title="计算机的发展历程："></a>计算机的发展历程：</h1><p>电子数字计算机是一种能够自行按照已设定的程序进行数据处理的电子设备；是软件与硬件相结合、面向系统、侧重应用的自动化求解工具。<br>世界上第一台电子数字计算机ENIAC在1946年诞生于美国；短短70年计算机技术迅猛发展，从科学计算、数据处理等应用领域，迅速扩展到实时控制、辅助设计、智能模拟等诸多领域。今天计算机无所不在~~</p>
+<p>1946年，我们使用电子真空管制造计算机，机器语言编程主要应用于科学计算。<br>1956年，出现了晶体管，制造出了第二代计算机，批处理控制成为一种操作计算机的主要方式，进而也出现了高级计算机语言Fortan语言用于科学计算/COBOL语言应用于数据处理；应用领域也扩展到数据处理领域。<br>1959年，集成电路的出现，多道程序的概念得以实施；进而操作系统/数据库管理系统/高级语言程序等一系列的系统软件成组产生；应用领域得到了进一步的扩展。<br>1976年，大规模集成电路/超大规模集成电路相继面世；计算机向快速化、小型化、系统化、网络化、智能化等方面快速发展。<br>1980年，微型计算机概念出现了；计算机的廉价化进一步促进了应用领域的快速膨胀。<br>1990年，图形化人机交互技术面世；计算机使用的友善化推动了应用人群的快速扩展。<br>2003年，移动计算机的出现，是的计算机进一步发展，使得现在计算机无处不在。</p>
+<h2 id="计算机系统的组成："><a href="#计算机系统的组成：" class="headerlink" title="计算机系统的组成："></a>计算机系统的组成：</h2><p>计算机系统：包括硬件子系统和软件子系统<br>硬件：借助光、电、磁、机械等原理构成的各种物理部件的有机组合，是系统工作的实体。 —CPU，主存储器，I/O控制系统，外围设备</p>
+<p>软件：各种程序和文件，用于指挥计算机系统按指定的要求进行协同工作。 包括系统软件、支撑软件和应用软件。  关键系统软件是：操作系统与语言处理程序。</p>
+<h2 id="计算机硬件系统："><a href="#计算机硬件系统：" class="headerlink" title="计算机硬件系统："></a>计算机硬件系统：</h2><p>中央处理器–运算单元、控制单元；<br>主存储器；<br>外围设备–输出设备、输入设备、存储设备、网络通信设备；<br>这些硬件是靠系统总线连接着相互作用的。</p>
+<p>今天的计算机绝大部分是由 冯诺依曼模型设计的存储程序计算机。</p>
+<ol>
+<li>以运算单元为中心，控制流由指令流产生</li>
+<li>采用存储程序原理，面向主存组织数据流</li>
+<li>主存是按地址访问、线性编址的空间</li>
+<li>指令由操作码和地址码组成</li>
+<li>数据以二进制编码</li>
+</ol>
+<h2 id="存储计算机的结构："><a href="#存储计算机的结构：" class="headerlink" title="存储计算机的结构："></a>存储计算机的结构：</h2><pre><code> &lt;-----控制器
+|&gt;
+</code></pre><p>数据程序–&gt;输入设备–&gt;存储器–&gt;输出设备–&gt;计算结果<br>                       |<br>                     运算器</p>
+<h2 id="总线及其组成："><a href="#总线及其组成：" class="headerlink" title="总线及其组成："></a>总线及其组成：</h2><p>总线（Bus）是计算机各种功能部件之间传送信息的公共通信干线，它是CPU、内存、输入输出设备传递信息的公用通道；<br>计算机的各个部件通过总线相连接，外围设备通过相应的接口电路在于总线相连接，从而形成了计算机硬件系统；<br>按照所传输的信息种类，总线包括一组控制线、一组数据线和一组地址线。</p>
+<p>内部总线：用于CPU芯片内部连接各元件；<br>系统总线：用于连接CPU、存储器和各种I/O模块等主要部件；<br>通信总线：用于计算机系统之间通信。</p>
+<h2 id="中央处理器（CPU）"><a href="#中央处理器（CPU）" class="headerlink" title="中央处理器（CPU）"></a>中央处理器（CPU）</h2><p>中央处理器是计算机的运算核心（Core）和控制单元（Control Unit），主要包括：<br>运算逻辑部件：一个或多个运算器；<br>寄存器部件：包括通用寄存器、控制与状态寄存器，以及高速缓冲存储器（Cache）；<br>控制部件：实现各部件间联系的数据、控制及状态的内部总线；负责对指令译码、发出为完成每条指令所要执行操作的控制信号、实现数据输出等功能的部件；</p>
+<h2 id="处理器与寄存器："><a href="#处理器与寄存器：" class="headerlink" title="处理器与寄存器："></a>处理器与寄存器：</h2><p>运算单元、控制单元、内部总线、PC/IR/Flag、MAR/MDR;<br>寄存器、Cache、IOAR/IODR</p>
+<h2 id="CPU："><a href="#CPU：" class="headerlink" title="CPU："></a>CPU：</h2><p>标志寄存器Flag、程序计数器PC、<br>控制单元：指令暂存器IR、指令译码器ID<br>内存地址寄存器MAR、内存数据寄存器MDR<br>     |<br>   主存储器</p>
+<p>存储器的组织层次：层级越小，容量更小，速度更快，价格更高；层级越高，容量更大，速度更慢，价格更低。<br>L0：寄存器<br>L1：L1 Cache（SRAM）<br>L2：L2 Cache（SRAM）<br>L3：L3 Cache（SRAM）<br>L4：主存（DRAM）<br>L5：SSD（本地固态硬盘）<br>L6：本地外存储器（本地硬盘）<br>L7：远程外存储器（分布式文件系统，Web服务器）</p>
+<h2 id="外围设备：输入设备、输出设备、存储设备、网络设备（机机通信设备）"><a href="#外围设备：输入设备、输出设备、存储设备、网络设备（机机通信设备）" class="headerlink" title="外围设备：输入设备、输出设备、存储设备、网络设备（机机通信设备）"></a>外围设备：输入设备、输出设备、存储设备、网络设备（机机通信设备）</h2><p>外围设备控制方式：轮询方式–CPU忙式控制，CPU执行内存数据交换；中断方式–CPU启动外设，外设中断CPU，CPU执行内存数据交换；DMA方式–CPU启动DMA，DMA执行输入输出与内存数据交换，DMA中断CPU。</p>
+<h2 id="计算机软件系统的组成：系统软件、支撑软件、应用软件；"><a href="#计算机软件系统的组成：系统软件、支撑软件、应用软件；" class="headerlink" title="计算机软件系统的组成：系统软件、支撑软件、应用软件；"></a>计算机软件系统的组成：系统软件、支撑软件、应用软件；</h2><h2 id="系统软件：操作系统、实用程序、语言处理程序、数据库管理系统；"><a href="#系统软件：操作系统、实用程序、语言处理程序、数据库管理系统；" class="headerlink" title="系统软件：操作系统、实用程序、语言处理程序、数据库管理系统；"></a>系统软件：操作系统、实用程序、语言处理程序、数据库管理系统；</h2><p>操作系统实施对各种软硬件资源的管理控制<br>实用程序为方便用户所设，如文本编辑等<br>语言处理程序把用汇编语言/该机语言编写的程序，翻译成可执行的及其语言程序；<br>支撑软件：有接口软件、工具软件、环境数据库，支持用户使用计算机的环境，提供开发工具；<br>应用软件：是用户按器需要自行编写的专用程序；</p>
+<h2 id="程序员的计算机系统视图："><a href="#程序员的计算机系统视图：" class="headerlink" title="程序员的计算机系统视图："></a>程序员的计算机系统视图：</h2><p>最开始的计算机是<br>程序员—&gt; 机器指令—-&gt; 计算机硬件系统<br>当操作系统与实用软件的出现扩展机器指令，可以着重于CPU的计算，增加了系统调用，注重再来计算上面；<br>增加了数据库管理系统之后，程序设计；<br>高级语言的形成，使得我们面向目标机器变成了面向目标解决；</p>
+<h2 id="软件开发的不同层次："><a href="#软件开发的不同层次：" class="headerlink" title="软件开发的不同层次："></a>软件开发的不同层次：</h2><p>计算机硬件系统：及其语言<br>操作系统质资源管理：机器语言+广义指令（扩充了硬件资源管理）<br>操作系统之文件系统：机器语言+系统调用（扩充了信息资源管理）<br>数据库管理系统：++数据库语言（扩充了功能更强的信息资源管理）<br>语言处理程序：面向问题的语言</p>
+<h2 id="计算机程序的执行过程："><a href="#计算机程序的执行过程：" class="headerlink" title="计算机程序的执行过程："></a>计算机程序的执行过程：</h2><p>一些高级语言一般会经过转换程序转换成另一种高级语言执行比如我们的第四代语言需要转换成C语言这样的第三代语言高级语言源程序，之后通过编译程序转换成目标代码程序或者通过解释程序编程目标代码程序；我们也可以通过汇编语言源程序通过汇编程序转换成目标代码程序；最后目标代码程序则需经过库函数通过连接程序变为可执行程序；可执行程序是在操作系统中可执行的程序；可执行程序最后装入程序装入内存，在操作系统下进行执行。</p>
+<h2 id="操作平台与操作系统"><a href="#操作平台与操作系统" class="headerlink" title="操作平台与操作系统"></a>操作平台与操作系统</h2><p>任何一台及其都有其操作平台与操作系统；<br>计算机的操作系统：<br>开关标示，按钮控制，亮灯显示；</p>
+<h1 id="Git有很多命令："><a href="#Git有很多命令：" class="headerlink" title="Git有很多命令："></a>Git有很多命令：</h1><p>git init （交给git来管理）<br>git add . （工作区上传到缓存区）<br>git commit -m ‘本次提交的注释信息’  （缓存区上传到仓库）<br>git reset –hard HEAD^  (回滚到上一个版本，一个尖角号就是后退一个版本)<br>git log  (获取当前的版本号和之前的版本)<br>git refolg (看我们真实的一些操作并且返回所有的id号)<br>git reset –hard ID号  (回滚到本ID号所在的版本)<br>git diff  (比较工作区与缓存区的区别)<br>git diff HEAD  (比较工作区与仓库的区别)<br>git diff –cached  (比较缓存区与仓库的区别)<br>git checkout HEAD <file>   (把仓库的代码覆盖到工作区和缓存区，如果写代码写错了，就可以这样啊)<br>git reset HEAD  (把仓库区覆盖缓存区)<br>git checkout – <file>   (缓存区覆盖工作区)</p>
+<h2 id="多人开发："><a href="#多人开发：" class="headerlink" title="多人开发："></a>多人开发：</h2><p>git branch dev  (新建一个dev分支)<br>git branch    （查看现在分支）<br>git branch -va  (查看远程和本地的所有分支)<br>git checkout dev  (从当前分支改到dev分支上，多人开发一般都会把master分支保护起来，一个人一个分支)<br>git merge dev  (把在dev上开发的代码合并到master分支上，此功能应该先回到master分支上，这样就是合并dev到master分支上)<br>要是dev分支上与我们master分支上互相都有不同，也就是master是别人在你上传到master上之前提交修改了，所以合并你的dev的时候就会出现冲突，冲突合并会出现HEAD上与你不同的内容，和你dev与master不同的内容之间会有分割线，所以你就要手动的进行合并。<br>git checkout remotes/origin/dev  (下载远程dev分支上的内容到本地)<br>多人开发首先应该拉取代码：<br>git pull origin master  (拉取远程代码到本地)<br>git push origin master:master  (把本地上的代码处理完冲突在推送到远程上)<br>一般公司里你自己并不能提交到master分支上，所以你应该提交一个提交请求并且@一下这个项目的主管（前端主管和后端主管），主管审核无误后，主管才会推送到master分支上。</p>
+<h2 id="github简单使用："><a href="#github简单使用：" class="headerlink" title="github简单使用："></a>github简单使用：</h2><p>1）git  init<br>初始化一个git<br>2) vim .gitignore 新增以及编写这个文件<br>node_modules/<br>意思就是上传的时候忽略这个文件夹以及里面的内容，因为我上传的是nodejs项目文件，所以不用把node_modules上传上去<br>3）git add .    添加代码到git<br>4)  git commit -m ‘第一个版本’<br>版本的备注信息<br>5) git remote add origin <a href="https://github.com/jasonzhangdong/auth2.0test.git">https://github.com/jasonzhangdong/auth2.0test.git</a><br>将代码关联到github上面，后面的url就是第二部拷贝下来的那个路径<br>6）git push -u origin master<br>     将代码推送上去</p>
+<h2 id="git一些问题："><a href="#git一些问题：" class="headerlink" title="git一些问题："></a>git一些问题：</h2><p>问题描述：<br>在使用gulp当中，自动生成的node_modules文件夹，因为文件目录层级太深，无法系统删除，用360粉碎工具也报错<br>解决方法：<br>使用npm中的插件rimraf，专门用于删除的模块插件<br>　　1、安装：npm install -g rimraf（全局安装）<br>　　2、使用：先定位目标文件夹的父级目录，然后命令行输入rimraf <strong><em>（</em></strong>为需要删除的文件夹名称）  eg：rimraf node_modules</p>
+<h1 id="MarkDown的简要规则："><a href="#MarkDown的简要规则：" class="headerlink" title="MarkDown的简要规则："></a>MarkDown的简要规则：</h1><p>标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加 # 号即可。<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure></p>
+<p>熟悉 HTML 的同学肯定知道有序列表与无序列表的区别，在 Markdown 下，列表的显示只需要在文字前加上 - 或 * 即可变为无序列表，有序列表则直接在文字前加1. 2. 3. 符号要和文字之间加上一个字符的空格。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>如果你需要引用一小段别处的句子，那么就要用引用的格式。只需要在文本前加入 &gt; 这种尖括号（大于号）即可，要注意符号和文本之间的空格。</p>
+<h2 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接:"></a>图片与链接:</h2><p>插入链接与插入图片的语法很像，区别在一个 !号<br>图片为：<img src="" alt="">{ImgCap}{/ImgCap}<br>链接为：<a href=""></a><br>插入图片的地址需要图床，这里推荐围脖图床修复计划 与 CloudApp 的服务，生成URL地址即可。<br>例子：<br>插入链接：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">Baidu</span>](<span class="link">http://baidu.com</span>)</span><br><span class="line">插入图片：</span><br><span class="line">![<span class="string">Mou icon</span>](<span class="link">http://mouapp.com/Mou_128.png</span>)</span><br></pre></td></tr></table></figure></p>
+<p>展示效果如下：<br><a href="http://baidu.com">Baidu</a><br>插入图片：<br><img src="http://mouapp.com/Mou_128.png" alt="Mou icon"></p>
+<h2 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体:"></a>粗体与斜体:</h2><p>Markdown 的粗体和斜体也非常简单，用两个 <em> 包含一段文本就是粗体的语法，用一个 </em> 包含一段文本就是斜体的语法。</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>表格是我觉得 Markdown 比较累人的地方，例子如下：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="params">| Tables        |</span> Are           <span class="params">| Cool  |</span></span><br><span class="line"></span><br><span class="line"><span class="params">| ------------- |</span><span class="symbol">:-------------</span><span class="symbol">:|</span> -----<span class="symbol">:|</span></span><br><span class="line"></span><br><span class="line"><span class="params">| col 3 is      |</span> right-aligned <span class="params">| $1600 |</span></span><br><span class="line"></span><br><span class="line"><span class="params">| col 2 is      |</span> centered      <span class="params">|   $12 |</span></span><br><span class="line"></span><br><span class="line"><span class="params">| zebra stripes |</span> are neat      <span class="params">|    $1 |</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框:"></a>代码框:</h2><p>如果你是个程序猿，需要在文章里优雅的引用代码框，在 Markdown下实现也非常简单，只需要用两个 ` 把中间的代码包裹起来。使用 tab 键即可缩进。</p>
+<p>分割线<br>分割线的语法只需要三个 * 号.<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">***</span></span><br><span class="line"><span class="emphasis">***</span></span><br><span class="line"><span class="emphasis">***</span></span><br><span class="line"><span class="emphasis">***</span></span><br></pre></td></tr></table></figure></p>
+<p>效果展示如下：</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<p>这是四条分割线吗？</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/资源分享/">资源分享</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/认知提升/">认知提升</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/What is the server" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/What is the server.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.938Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/What is the server.html">那年那器那些事</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="服务器的自白"><a href="#服务器的自白" class="headerlink" title="服务器的自白"></a>服务器的自白</h2><blockquote>
+<p>hello，大家好，我叫服务器，承载了全世界互联网行业的光荣与梦想。最近，听说居然有人敢质疑我的权威，说我会不会宕机？明确告诉你，你可以骂我卡，但就是不让你看见我宕机！</p>
+</blockquote>
+<h2 id="不是不想休息，而是不能宕机"><a href="#不是不想休息，而是不能宕机" class="headerlink" title="不是不想休息，而是不能宕机"></a>不是不想休息，而是不能宕机</h2><p>我们服务器是每一家互联网企业的支撑，如果支柱倒塌那会是怎样的灾难？所以我们不是不想休息，而是绝对不能宕机！服务器存在的目的是与家用电脑是完全不同的两种，家用电脑存在着不需要使用的时间点，而且这个时间点往往很长，因此家用电脑可以有很长的休眠时间。而服务器则不然，不同公司的服务器对使用时间段不同，这也就使得部分服务器根本不允许有休眠的时间。</p>
+<h2 id="夜深人静，依然奋斗的服务器"><a href="#夜深人静，依然奋斗的服务器" class="headerlink" title="夜深人静，依然奋斗的服务器"></a>夜深人静，依然奋斗的服务器</h2><p>  根据数据显示，金融企业每次宕机的平均损失约为1000万美金，这还不让无法统计的无形资产损失。一些大型的网站通常会有登录的高峰阶段，例如12306的春运、电商平台的购物街、新型电子产品的发布等都会给服务器带来巨大的压力，宕机对企业就是灾难性的打击。</p>
+<p><img src="http://outwcl4zh.bkt.clouddn.com/1.jpg" alt="f1"><br>               烧香拜佛难免服务器崩溃<br>  我们不是不想宕机，而是使命的存在让我们不能宕机。此外，又制定外部环境，过硬的自身素质和纯净的软件环境是保障我们稳定运行绝不宕机的条件。</p>
+<h2 id="只有住的好，才能不显老"><a href="#只有住的好，才能不显老" class="headerlink" title="只有住的好，才能不显老"></a>只有住的好，才能不显老</h2><p>  我们的服务器的触觉比你们人类更加挑剔，工作时间比人类更长，因为良好的工作环境是必要条件。</p>
+<h3 id="谷歌的数据中心"><a href="#谷歌的数据中心" class="headerlink" title="谷歌的数据中心"></a>谷歌的数据中心</h3><p>  在恒湿恒温准无尘的环境，没错，那就是我们最习惯的地方。我们这样挑剔的电子设备，工作环境必须常年保持在18℃到30℃之间，温度过高或者过低都将对我们的使用有所影响，加速我们的老化。空气的流通也是非常重要的，在我们所居住的地方，24小时空调是不能停。但是空调不能保障我们的体温的。每当我们服务器工作时间长了，浑身上下都会发热。因此大量的冷却水给我们进行贴身服务降温，保障服务器散热和机身温度的稳定。</p>
+<h2 id="谷歌数据中心，不同颜色的冷却水"><a href="#谷歌数据中心，不同颜色的冷却水" class="headerlink" title="谷歌数据中心，不同颜色的冷却水"></a>谷歌数据中心，不同颜色的冷却水</h2><p>  我们的工作运行环境，要求至少达到准无尘标准。一般来讲，经过长期正常维护的服务器运行十年以上，主板上的积尘比用几个月的家用电脑服务器少。只有这样才能最大限度避免静电灰对服务器工作可靠性的影响。</p>
+<h2 id="整洁、干净、无尘"><a href="#整洁、干净、无尘" class="headerlink" title="整洁、干净、无尘"></a>整洁、干净、无尘</h2><p>  更重要的是，我们的运维人员都非常专业，经常加班加点的对服务器的运行状况进行监测。以便于一旦发现任何问题，及时处理。否则，宕机也是在所难免。<br>  只为不宕机，硬件更专业，我们服务器的设计就是为了不宕机而出现的，这一点和家用电脑有着千差万别。<br>  没有完全不会坏的服务器，我们也会有故障。一次服务器在设计的时候做了大量的备份冗余，维护不会影响到正常工作。以谷歌的数据中心为例，大量的数据服务器都采取了即插即用模块化的方式设计。每个模块服务器有着自己的电源。如果某一模块发生故障，直接换上新的模块就可以，而不会影响到其他模块。</p>
+<h2 id="模块化设计都有独立的电源"><a href="#模块化设计都有独立的电源" class="headerlink" title="模块化设计都有独立的电源"></a>模块化设计都有独立的电源</h2><p>  而且，服务器大多数设计为集群架构，即以双机或者多机热备。同时运行一个业务时，一台或者多台服务器的离线并不会对整体业务造成严重的影响。而这也是平时一些人在玩网游是会感觉卡的原因之一，很可能就是某台服务器偷懒启用了备用服务器的原因。</p>
+<h2 id="模块维修，没想象的那么难"><a href="#模块维修，没想象的那么难" class="headerlink" title="模块维修，没想象的那么难"></a>模块维修，没想象的那么难</h2><p>  家用电脑可能会有生产商偷工减料节约成本，降低整体价格的现象存在。但是我们服务器领域却不会这样。CPU内置多种容错纠错机制；内存带有ECC校验芯片，数据干扰出错风险比非ECC内存低很多，采用优质方案是不宕机的关键所在。<br>  比家用服务器的商业级别的配件好太多，我们所有的零件都是工业级配件。而且从电子元件到电路板都经历了包括老化测试（高温高电压）、振动测试、高温高湿测试等几十项可靠性测试。经历了暴风雨的洗礼的我们却在温室中被供养，这就是常年不宕机的秘诀。</p>
+<h3 id="服务器出厂要经过各种测试"><a href="#服务器出厂要经过各种测试" class="headerlink" title="服务器出厂要经过各种测试"></a>服务器出厂要经过各种测试</h3><h2 id="一生只做一件事，软件更纯粹"><a href="#一生只做一件事，软件更纯粹" class="headerlink" title="一生只做一件事，软件更纯粹"></a>一生只做一件事，软件更纯粹</h2><p>  我们所运行的系统和普通的家用系统有着本质的区别。无论是windows server、Linux或者更强大的Unix，这些系统本身具有高精确度、简单化、稳定可靠等特点。</p>
+<p>  而这些服务器系统的精简程度简直令人发指。由于服务器不需要外接显示器，所以一些图形化的界面服务程序通通被砍掉，甚至连声卡都不要开启。</p>
+<p>  相比普通的家用操作系统，这些图形化的程序往往占用了大量的空间，计算量和复杂程度较高，导致电脑服务器运行缓慢。而大量多余运行项目排除，使得服务器级别操作系统的目的性更明确，甚至有的服务器穷其一生都是在运行一款Apache，压力比家用电脑小太多。</p>
+<h3 id="Unix系统没有图形化界面，这是搭配的CDE桌面"><a href="#Unix系统没有图形化界面，这是搭配的CDE桌面" class="headerlink" title="Unix系统没有图形化界面，这是搭配的CDE桌面"></a>Unix系统没有图形化界面，这是搭配的CDE桌面</h3><p>  而对于高端的服务器来讲，操作系统的容错性也是完爆家用级别服务器。在家用服务器运行时，一个error弹框就能让整台电脑重启。而服务器如果出现错误，后台自动生成详细的错误分析日志，寻求最佳解决方案保障程序继续运行下去。</p>
+<p><img src="http://outwcl4zh.bkt.clouddn.com/2.jpg" alt="f2"><br>   让人目眩的大规模集群架构</p>
+<p>   做单一的工作虽然简单，但是服务器的处理量是巨大的，这时，大型集群架构就可以发挥他的作用了。一旦服务器负载量增大，大规模集群会让负载均衡化，保障单个服务器不会过载崩溃，整个系统稳定运行。</p>
+<h2 id="其实我也宕机，只是不让你看见"><a href="#其实我也宕机，只是不让你看见" class="headerlink" title="其实我也宕机，只是不让你看见"></a>其实我也宕机，只是不让你看见</h2><p>  当然，我们服务器家族个头有高有矮，情况不一。一些比较低端的服务器只是针对小范围的受众，一旦超出了承载范畴，系统崩溃宕机的事情时有发生。而高端产品也不能完全例外，但是宕机几率和风险要小太多。</p>
+<p><img src="http://outwcl4zh.bkt.clouddn.com/3.jpg" alt="f3"><br>    不同类型的服务器</p>
+<p>  让服务器宕机的原因大致可以分为三种。一，天灾。服务器所处环境不良，维护不够及时，甚至供电不良等；二，人祸。各种应用的设置不当，人为操作失误和破坏以及最常见的大量访问超出了服务上限，导致服务器崩溃。 三，服务器本身原因。服务器质量的差距归根结底是投入的差距。也就是说，服务器的质量越好，成本越高，相应的价格也就越贵。比如，普通的商业级别服务器价格在3000到10万间，而Unix服务器的价格则在30万到3000万。</p>
+<p><img src="http://outwcl4zh.bkt.clouddn.com/4.jpg" alt="f4"><br>        戴尔Unix服务器</p>
+<p>  价格的提升带来的是服务器稳定性的提升。高端的Unix服务器已经达到了可用性99.99%的指标。即具备故障自动恢复能力，年停机时间不超过53分钟。但其超高成本和维护费用也使得很多企业望而却步。目前，也仅有银行、证券保险和电信等行业才会采用。</p>
+<p>  那么如此高端的服务器就可以永不宕机了么？事实恐怕并非如此，此类服务器中比较著名的当属IBM的Z系列服务器。这一款号称“永不宕机”的服务器在2013年也走下了神坛。中国银行所使用IBM的Z系列服务器出现了长达4小时的宕机，造成了巨大的损失。</p>
+<p><img src="http://outwcl4zh.bkt.clouddn.com/5.jpg" alt="f5"><br>    银行所用的IBM Z系列服务器</p>
+<p>  那么大型机也宕机，云服务器宕机么？也会有的。不久前谷歌云刚刚全面中断18分钟，而亚马逊云也曾在2013年出现了40分钟的宕机。而且相比普通的服务器宕机问题，云服务器会显得更为严重。由于公有云用户并不具有控制权，所以能做到就只剩下等待和祈祷了。</p>
+<p>  世界上真的完全没有不宕机的服务器吗？也是有的，美国2004年发射的机遇号火星探测器，从登陆火星到现在已经十余年，从未发生任何故障。该探测器便是采用双机冗余接口的方式搭载了两台IBM P series服务器。</p>
+<p><img src="http://outwcl4zh.bkt.clouddn.com/6.jpg" alt="f6"><br>   机遇号火星探测器</p>
+<p>  如果说宕机是偶尔的风雨，那么不宕机才是服务器支撑起整个互联网行业的脊梁。文章最后，用一张表来为大家总结一下为什么服务器能够不宕机。</p>
+<p><img src="http://outwcl4zh.bkt.clouddn.com/7.jpg" alt="f7"></p>
+<p>  永不宕机在生活中或许只是一个神话，并非每台服务器都能陪你到老。在经历了太多的风霜后，宕机在所难免。我们不是不会宕机，只是在努力不想让你们看见，谁让我们的名字叫做“服务”呢。</p>
+<p>文章转载自<a href="http://blog.sina.com.cn/s/blog_162fcae490102wf94.html">大篆科技</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/资源分享/">资源分享</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/认知提升/">认知提升</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/Webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/Webpack.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.924Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/Webpack.html">Webpack学习笔记</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> Webpack学习笔记：</strong> <Excerpt in index | 首页摘要></p>
+<h1 id="什么是Webpack？"><a href="#什么是Webpack？" class="headerlink" title="什么是Webpack？"></a>什么是Webpack？</h1><p>Webpack的中文叫法–我更愿意叫它“前端自动化构建工具”，是用来进行模块化加载并且打包的，它能把各种资源，例如图片、js文件、css预处理语言等等，统统进行处理，打包成符合生产环境部署的前端资源。</p>
+<p>模块化的问题解决之后，webpack 就能把各种资源模块打包合并成一个文件输出给浏览器。在打包的过程中还能对这些资源进行处理，比如压缩减少体积，把 sass 编译成 css, coffee 编译成 js。所以它在某些程度上，跟 grunt/gulp 的功能有些相同。<br><img src="http://outwcl4zh.bkt.clouddn.com/webpack.jpg" alt="Webpack工作模式"></p>
+<h1 id="与grunt-gulp的区别"><a href="#与grunt-gulp的区别" class="headerlink" title="与grunt/gulp的区别"></a>与grunt/gulp的区别</h1><p>grunt/gulp 强调的是前端开发的工作流程，我们可以通过配置一系列的 task，定义 task 处理的事务（例如文件压缩合并、雪碧图、启动 server、版本控制等），然后定义执行顺序，来让 grunt/gulp 执行这些 task，从而构建项目的整个前端开发流程。<br><img src="http://outwcl4zh.bkt.clouddn.com/gulp+grunt.png" alt="grunt/gulp"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/relative" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/relative.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.914Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/relative.html">编程相关-杂（Relative）</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 编程相关-杂（Relative）：</strong> <Excerpt in index | 首页摘要><br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">li</span>&gt; vscode&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">&lt;<span class="built_in">li</span>&gt; <span class="built_in">atom</span>&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">&lt;<span class="built_in">li</span>&gt; webstrom&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">&lt;<span class="built_in">li</span>&gt;sublime的插件问题&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">&lt;<span class="built_in">li</span>&gt;emmet&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">emmet插件的简单使用规则：div.<span class="built_in">demo</span>#only*<span class="number">3</span>&gt;p[<span class="built_in">style</span>=<span class="string">"background-color:orange;width:100px;height:100px;"</span>]</span><br><span class="line">div&gt;(p^span.<span class="built_in">demo</span>#only&#123;内容&#125;)</span><br><span class="line">ul&gt;<span class="built_in">li</span>&#123;a$&#125;*<span class="number">10</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Sublime-Text-3-快捷键精华版"><a href="#Sublime-Text-3-快捷键精华版" class="headerlink" title="Sublime Text 3 快捷键精华版:"></a>Sublime Text 3 快捷键精华版:</h1><p>Ctrl+Shift+P：打开命令面板<br>Ctrl+P：搜索项目中的文件<br>Ctrl+G：跳转到第几行<br>Ctrl+W：关闭当前打开文件<br>Ctrl+Shift+W：关闭所有打开文件<br>Ctrl+Shift+V：粘贴并格式化<br>Ctrl+D：选择单词，重复可增加选择下一个相同的单词<br>Ctrl+L：选择行，重复可依次增加选择下一行<br>Ctrl+Shift+L：选择多行<br>Ctrl+Shift+Enter：在当前行前插入新行<br>Ctrl+X：删除当前行<br>Ctrl+M：跳转到对应括号<br>Ctrl+U：软撤销，撤销光标位置<br>Ctrl+J：选择标签内容<br>Ctrl+F：查找内容<br>Ctrl+Shift+F：查找并替换<br>Ctrl+H：替换<br>Ctrl+R：前往 method<br>Ctrl+N：新建窗口<br>Ctrl+K+B：开关侧栏<br>Ctrl+Shift+M：选中当前括号内容，重复可选着括号本身<br>Ctrl+F2：设置/删除标记<br>Ctrl+/：注释当前行<br>Ctrl+Shift+/：当前位置插入注释<br>Ctrl+Alt+/：块注释，并Focus到首行，写注释说明用的<br>Ctrl+Shift+A：选择当前标签前后，修改标签用的<br>F11：全屏<br>Shift+F11：全屏免打扰模式，只编辑当前文件<br>Alt+F3：选择所有相同的词<br>Alt+.：闭合标签<br>Alt+Shift+数字：分屏显示<br>Alt+数字：切换打开第N个文件<br>Shift+右键拖动：光标多不，用来更改或插入列内容<br>鼠标的前进后退键可切换Tab文件<br>按Ctrl，依次点击或选取，可需要编辑的多个位置<br>按Ctrl+Shift+上下键，可替换行<br>选择类<br>Ctrl+D 选中光标所占的文本，继续操作则会选中下一个相同的文本。<br>Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中并更改所有相同的变量名、函数名等。<br>Ctrl+L 选中整行，继续操作则继续选择下一行，效果和 Shift+↓ 效果一样。<br>Ctrl+Shift+L 先选中多行，再按下快捷键，会在每行行尾插入光标，即可同时编辑这些行。<br>Ctrl+Shift+M 选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。<br>Ctrl+M 光标移动至括号内结束或开始的位置。<br>Ctrl+Enter 在下一行插入新行。举个栗子：即使光标不在行尾，也能快速向下插入一行。<br>Ctrl+Shift+Enter 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。<br>Ctrl+Shift+[ 选中代码，按下快捷键，折叠代码。<br>Ctrl+Shift+] 选中代码，按下快捷键，展开代码。<br>Ctrl+K+0 展开所有折叠代码。<br>Ctrl+← 向左单位性地移动光标，快速移动光标。<br>Ctrl+→ 向右单位性地移动光标，快速移动光标。<br>shift+↑ 向上选中多行。<br>shift+↓ 向下选中多行。<br>Shift+← 向左选中文本。<br>Shift+→ 向右选中文本。<br>Ctrl+Shift+← 向左单位性地选中文本。<br>Ctrl+Shift+→ 向右单位性地选中文本。<br>Ctrl+Shift+↑ 将光标所在行和上一行代码互换（将光标所在行插入到上一行之前）。<br>Ctrl+Shift+↓ 将光标所在行和下一行代码互换（将光标所在行插入到下一行之后）。<br>Ctrl+Alt+↑ 向上添加多行光标，可同时编辑多行。<br>Ctrl+Alt+↓ 向下添加多行光标，可同时编辑多行。<br>编辑类<br>Ctrl+J 合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。<br>Ctrl+Shift+D 复制光标所在整行，插入到下一行。<br>Tab 向右缩进。<br>Shift+Tab 向左缩进。<br>Ctrl+K+K 从光标处开始删除代码至行尾。<br>Ctrl+Shift+K 删除整行。<br>Ctrl+/ 注释单行。<br>Ctrl+Shift+/ 注释多行。<br>Ctrl+K+U 转换大写。<br>Ctrl+K+L 转换小写。<br>Ctrl+Z 撤销。<br>Ctrl+Y 恢复撤销。<br>Ctrl+U 软撤销，感觉和 Gtrl+Z 一样。<br>Ctrl+F2 设置书签<br>Ctrl+T 左右字母互换。<br>F6 单词检测拼写<br>搜索类<br>Ctrl+F 打开底部搜索框，查找关键字。<br>Ctrl+shift+F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。<br>Ctrl+P 打开搜索框。举个栗子：1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。<br>Ctrl+G 打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。<br>Ctrl+R 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。<br>Ctrl+： 打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。<br>Ctrl+Shift+P 打开命令框。场景栗子：打开命名框，输入关键字，调用sublime text或插件的功能，例如使用package安装插件。<br>Esc 退出光标多行选择，退出搜索框，命令框等。<br>显示类<br>Ctrl+Tab 按文件浏览过的顺序，切换当前窗口的标签页。<br>Ctrl+PageDown 向左切换当前窗口的标签页。<br>Ctrl+PageUp 向右切换当前窗口的标签页。<br>Alt+Shift+1 窗口分屏，恢复默认1屏（非小键盘的数字）<br>Alt+Shift+2 左右分屏-2列<br>Alt+Shift+3 左右分屏-3列<br>Alt+Shift+4 左右分屏-4列<br>Alt+Shift+5 等分4屏<br>Alt+Shift+8 垂直分屏-2屏<br>Alt+Shift+9 垂直分屏-3屏<br>Ctrl+K+B 开启/关闭侧边栏。<br>F11 全屏模式<br>Shift+F11 免打扰模式</p>
+<h1 id="微信小程序的一些简单简介："><a href="#微信小程序的一些简单简介：" class="headerlink" title="微信小程序的一些简单简介："></a>微信小程序的一些简单简介：</h1><p>微信小程序中没有关联或者引入标签，只能靠相同的命名来产生关联，比如：index.wxml–index.wxss–index.js–index.json;只能命名相同的名字，然后微信页面就会自动找相同名字来进行关联了。自动进行绑定关联，根据命名把一些东西捆绑在一起。<br>rpx：就是最开始是为了不让在苹果手机上失真而人为设置的一种与真实的px（像素）所在不同手机上的换算关系。所以rpx也就具有了根据不同屏幕进行自适应的功能了。<br>wxml上并没有通配符选择器，但是有json配置文件。没有body标签，但是有pages标签就相当于html中的body标签了。<br>wxml中有很多强大的内置标签，也就是人为封装的组件，恩，很强大的。例如：轮播图组件<swiper>标签，下面有<swiper-item>，<swiper>上有autoplay属性，并伴随着interval=”时间”，是否采用衔接滑动circular=”true”;<br>图标<icon>组件：上面有不同的类型：type=’success/info/..’ color=”color”;<br>地图<map>组件：map组件上还有很多其他的标签和属性方法。总之很强大了！</p>
+<p>wxml没有dom节点，不能像JavaScript一样操作dom元素。但是wxml给了我们一个数据绑定的.js文件。里面有page({});函数调用的形式。通过调用page()这个函数，来注册了一个页面，通过改变page()这个函数来影响UI层面的东西。page()函数里面有一些函数来监听页面的渲染。<br>生命周期函数：<code>onLoad:function(options){}</code>–监听页面加载。<br>生命周期函数：<code>onReady:function(){}</code>–监听页面初次渲染完成。<br>生命周期函数：<code>onShow:function(){}</code>–监听页面显示<br>生命周期函数：<code>onHide:function(){}</code>–监听页面隐藏<br>生命周期函数：<code>onUnload:function(){}</code>–监听页面卸载<br>生命周期函数执行的顺序为：页面先加载触发<code>onLoad</code>函数；再调用<code>onShow</code>函数；之后再调用onReady函数。</p>
+<p>两个层—一个给用户看的视图层，另一个应用层js操作视图层。<br>首先是视图层的初始化init..和应用层的创建creat..一个实例<br>视图层向应用层要一些初始化是数据。切换页面，那么这个页面生命周期就结束了，调用<code>onUnload</code>函数。this就代表这个页面实例。</p>
+<h2 id="编写微信小程序的简单步骤："><a href="#编写微信小程序的简单步骤：" class="headerlink" title="编写微信小程序的简单步骤："></a>编写微信小程序的简单步骤：</h2><p>首先会在app.json文件下查找我们所配置的东西，创建的页面，页面之间的关联还有页面的导航栏（最顶上的一栏）的设置和底边的tabpar分页的切换设置等等都是在这儿实现的。在app.json中配置好了主页面和分页面之后就可以开始编写代码了。<br>如何在微信地图上添加功能按钮：因为在地图上添加<code>&lt;button&gt;</code>按钮是显示不出来的，因为map组件的层级永远在最上面，只能用map组价提供好的controls属性，配合监听对control的点击的回调函数。然后在.js文件中有wx.getSystemInfo这个方法监听设备信息来获取需要设置的相应数据。<br>bindcontroltap，在onShow函数内定义一个app-map执行器上下文（类似canvas的执行期上下文），这个执行器上下文中有一个方法是moveToLocaltion方法，定义一个movetoCenter方法就是执行moveToLocation方法的，然后在switch case中，case到指定的controlId就调用定义好的movetoCenter方法。</p>
+<p>模拟假数据的一个很好用的网站，easy-mock网站，恩，很有年头了。简单的使用：直接进去没有用户名他直接会让你登录，没有的话就会直接帮你注册成功了。注册成功直接创建项目就行了。非常简单就能使用的。假数据写成JSON形式的，然后窗口打开，复制窗口URL地址，然后就能使用这个假数据了。</p>
+<p><a href="http://easy-mock.com/mock/5983e3d1a1d30433d852e683/ofo/getbike">http://easy-mock.com/mock/5983e3d1a1d30433d852e683/ofo/getbike</a></p>
+<h2 id="a-和-a-的区别："><a href="#a-和-a-的区别：" class="headerlink" title="a++ 和 ++a 的区别："></a>a++ 和 ++a 的区别：</h2><pre><code>他们都是已经执行了代码，也就是都已经加一了。但是++a是显示的加上去了，也就是说显示出来了，但是a++是到下一次执行才显示出来，但是上一次的代码已经执行了。ok？
+</code></pre><h2 id="命名上的一些英文单词："><a href="#命名上的一些英文单词：" class="headerlink" title="命名上的一些英文单词："></a>命名上的一些英文单词：</h2><p>wrapper：包装；<br>navigation：航行（学），航海（术），海上交通；<br>contain：内容；<br>footer: 页脚；<br>header： 页头；<br>未完待续…</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/others/">others</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

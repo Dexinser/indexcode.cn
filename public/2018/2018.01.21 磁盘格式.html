@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>磁盘格式 | To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="磁盘格式：  好久没更博客了，虽然没什么人看，但是作为练习自己写作能力的锻炼和提升，也不能荒废我的博客更新哈~说一下我最近的个人动态吧~ 现在学校放假有两个星期了，学校一放假就跑到实习公司来实习了，一进公司报到当天就给我配置了2015年的mac pro顶配版，不得不说真是开心哈~而且是2017年产的新开封的哦~不要羡慕哦~哈哈哈，你们以后工作也会有的。然后新进公司第一周就一直在熟悉mac本的一些">
+<meta name="keywords" content="认知提升">
+<meta property="og:type" content="article">
+<meta property="og:title" content="磁盘格式">
+<meta property="og:url" content="http://indexcode.cn/2018/2018.01.21 磁盘格式.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="磁盘格式：  好久没更博客了，虽然没什么人看，但是作为练习自己写作能力的锻炼和提升，也不能荒废我的博客更新哈~说一下我最近的个人动态吧~ 现在学校放假有两个星期了，学校一放假就跑到实习公司来实习了，一进公司报到当天就给我配置了2015年的mac pro顶配版，不得不说真是开心哈~而且是2017年产的新开封的哦~不要羡慕哦~哈哈哈，你们以后工作也会有的。然后新进公司第一周就一直在熟悉mac本的一些">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-21T14:39:41.630Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="磁盘格式">
+<meta name="twitter:description" content="磁盘格式：  好久没更博客了，虽然没什么人看，但是作为练习自己写作能力的锻炼和提升，也不能荒废我的博客更新哈~说一下我最近的个人动态吧~ 现在学校放假有两个星期了，学校一放假就跑到实习公司来实习了，一进公司报到当天就给我配置了2015年的mac pro顶配版，不得不说真是开心哈~而且是2017年产的新开封的哦~不要羡慕哦~哈哈哈，你们以后工作也会有的。然后新进公司第一周就一直在熟悉mac本的一些">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2018/2018.01.21 磁盘格式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/2018.01.21 磁盘格式.html" class="article-date">
+      <time datetime="2018-01-21T13:31:30.848Z" itemprop="datePublished">2018-01-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      磁盘格式
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/资源分享/">资源分享</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/认知提升/">认知提升</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 磁盘格式：</strong> <Excerpt in index | 首页摘要></p>
+<p>好久没更博客了，虽然没什么人看，但是作为练习自己写作能力的锻炼和提升，也不能荒废我的博客更新哈~<br>说一下我最近的个人动态吧~ 现在学校放假有两个星期了，学校一放假就跑到实习公司来实习了，一进公司报到当天就给我配置了2015年的mac pro顶配版，不得不说真是开心哈~而且是2017年产的新开封的哦~不要羡慕哦~哈哈哈，你们以后工作也会有的。然后新进公司第一周就一直在熟悉mac本的一些基础操作，没办法，谁让我没用过这种高大上的苹果笔记本呢。我是刚把Windows系统的笔记本用到稍微熟练一点儿，就让我接触mac真是有点儿不熟悉呢，不过经过一周的操作训练，越来越觉的mac的人性化，怪不得办公的大公司的白领啦、管理者啦、领导啦什么的，都喜欢用苹果本办公呢，真的比Windows好用多了，当然了，这只是我个人的一些浅显小想法，大家不同意就当我没说，我的人生阅历还是很少，不能确定说的对哈~</p>
+<p>好了，接下来就来说一下写这篇博客的由来吧~换上了mac本之后，看到了mac自带的时间机器，感觉好高大上啊，可以自动保存快照，想什么时候回退到哪儿都行，真是太强大的一个功能了。虽然这个说是不占用mac上剩余的内存，不过我还是担心影响我的笔记本日常所使用的性能，万一影响我的使用体验都不好，在说了我也有一个自己的硬盘，为什么不用我自己的硬盘当作是Time Machien的保存磁盘呢；想到就去做了，第二天就把我的磁盘带过来了，兴致勃勃的插上去却让我失望了，居然是只能读的权限，然后我才知道Windows下的保存文件格式与mac下的保存文件格式是不同的。啊啊啊，要想用做mac的时间机器的御用磁盘必须先把磁盘数据全部格式化了，但是我的磁盘上还有好多我都珍贵的资源呢，怎么能删除掉呢，所以只能先把数据保存到其他的地方，到时候把磁盘的格式改回来在存进去。然后就又把磁盘带回去了，把数据拷贝到了我的Windows电脑上，然后在mac上把磁盘格式化了，终于能用作备份磁盘了，真是好不容易啊。但是这样的话又变成了磁盘只能在mac上用了，所以我索性把我的1T硬盘，分成3个区，一个单独的用作mac数据备份区，另两个一个用作Windows存放数据区，另一个用作mac存放数据区。这样总算大功告成了吧，谁知道原来我把Windows上使用的存放数据格式给改成了Fat32格式的，不是我想要的NTFS格式的，但是这个时候我已经把原先的数据都已经导回来了，实在不想再折腾了，啊啊啊，好伤心啊！接下来就让我介绍一下他俩的区别吧~</p>
+<h1 id="FAT32与NTFS的区别"><a href="#FAT32与NTFS的区别" class="headerlink" title="FAT32与NTFS的区别"></a>FAT32与NTFS的区别</h1><p>在推出FAT32文件系统之前，通常PC机使用的文件系统是FAT16。像基于MS-DOS，Win 95等系统都采用了FAT16文件系统。在Win 9X下，FAT16支持的分区最大为2GB。我们知道计算机将信息保存在硬盘上称为“簇”的区域内。使用的簇越小，保存信息的效率就越高。在FAT16的情况下，分区越大簇就相应的要增大，存储效率就越低，势必造成存储空间的浪费。并且随着计算机硬件和应用的不断提高，FAT16文件系统已不能很好地适应系统的要求。在这种情况下，推出了增强的文件系统FAT32。同FAT16相比，FAT32主要具有以下特点：</p>
+<ol>
+<li>同FAT16相比FAT32最大的优点是可以支持的磁盘大小达到2TB（2047GB），但是不能支持小于512MB的分区。基于FAT32的Win 2000可以支持分区最大为32GB；而基于 FAT16的Win 2000支持的分区最大为4GB。</li>
+<li>由于采用了更小的簇，FAT32文件系统可以更有效率地保存信息。如两个分区大小都为2GB，一个分区采用了FAT16文件系统，另一个分区采用了FAT32文件系统。采用FAT16的分区的簇大小为32KB，而FAT32分区的簇只有4KB的大小。这样FAT32就比FAT16的存储效率要高很多，通常情况下可以提高15%。</li>
+<li>FAT32文件系统可以重新定位根目录和使用FAT的备份副本。另外FAT32分区的启动记录被包含在一个含有关键数据的结构中，减少了计算机系统崩溃的可能性。<br>NTFS文件系统<br>NTFS文件系统是一个基于安全性的文件系统，是Windows NT所采用的独特的文件系统结构，它是建立在保护文件和目录数据基础上，同时照顾节省存储资源、减少磁盘占用量的一种先进的文件系统。使用非常广泛的Windows NT 4.0采用的就是NTFS 4.0文件系统，相信它所带来的强大的系统安全性一定给广大用户留下了深刻的印象。Win 2000采用了更新版本的NTFS文件系统??NTFS 5.0，它的推出使得用户不但可以像Win 9X那样方便快捷地操作和管理计算机，同时也可享受到NTFS所带来的系统安全性。<br>NTFS 5.0的特点主要体现在以下几个方面：</li>
+<li>NTFS可以支持的分区(如果采用动态磁盘则称为卷)大小可以达到2TB。而Win 2000中的FAT32支持分区的大小最大为32GB。</li>
+<li>NTFS是一个可恢复的文件系统。在NTFS分区上用户很少需要运行磁盘修复程序。NTFS通过使用标准的事物处理日志和恢复技术来保证分区的一致性。发生系统失败事件时，NTFS使用日志文件和检查点信息自动恢复文件系统的一致性。</li>
+<li>NTFS支持对分区、文件夹和文件的压缩。任何基于Windows的应用程序对NTFS分区上的压缩文件进行读写时不需要事先由其他程序进行解压缩，当对文件进行读取时,文件将自动进行解压缩；文件关闭或保存时会自动对文件进行压缩。</li>
+<li>NTFS采用了更小的簇,可以更有效率地管理磁盘空间。在Win 2000的FAT32文件系统的情况下,分区大小在2GB～8GB时簇的大小为4KB；分区大小在8GB～16GB时簇的大小为8KB；分区大小在16GB～32GB时,簇的大小则达到了16KB。而Win 2000的NTFS文件系统，当分区的大小在2GB以下时,簇的大小都比相应的FAT32簇小;当分区的大小在2GB以上时(2GB～2TB),簇的大小都为4KB。相比之下，NTFS可以比FAT32更有效地管理磁盘空间，最大限度地避免了磁盘空间的浪费。</li>
+<li>在NTFS分区上,可以为共享资源、文件夹以及文件设置访问许可权限。许可的设置包括两方面的内容：一是允许哪些组或用户对文件夹、文件和共享资源进行访问；二是获得访问许可的组或用户可以进行什么级别的访问。访问许可权限的设置不但适用于本地计算机的用户,同样也应用于通过网络的共享文件夹对文件进行访问的网络用户。与FAT32文件系统下对文件夹或文件进行访问相比，安全性要高得多。另外,在采用NTFS格式的Win 2000中,应用审核策略可以对文件夹、文件以及活动目录对象进行审核，审核结果记录在安全日志中，通过安全日志就可以查看哪些组或用户对文件夹、文件或活动目录对象进行了什么级别的操作，从而发现系统可能面临的非法访问,通过采取相应的措施，将这种安全隐患减到最低。这些在FAT32文件系统下,是不能实现的。</li>
+<li>在Win 2000的NTFS文件系统下可以进行磁盘配额管理。磁盘配额就是管理员可以为用户所能使用的磁盘空间进行配额限制，每一用户只能使用最大配额范围内的磁盘空间。设置磁盘配额后，可以对每一个用户的磁盘使用情况进行跟踪和控制，通过监测可以标识出超过配额报警阈值和配额限制的用户，从而采取相应的措施。磁盘配额管理功能的提供，使得管理员可以方便合理地为用户分配存储资源，避免由于磁盘空间使用的失控可能造成的系统崩溃，提高了系统的安全性。</li>
+<li>NTFS使用一个“变更”日志来跟踪记录文件所发生的变更。</li>
+</ol>
+<h1 id="小提示-选取FAT32和NTFS的建议"><a href="#小提示-选取FAT32和NTFS的建议" class="headerlink" title="小提示(选取FAT32和NTFS的建议)"></a>小提示(选取FAT32和NTFS的建议)</h1><p>在系统的安全性方面，NTFS文件系统具有很多FAT32文件系统所不具备的特点，而且基于NTFS的Win 2000运行要快于基于FAT32的Win 2000；而在与Win 9X的兼容性方面，FAT32优于NTFS。所以在决定Win 2000中采用什么样的文件系统时应从以下几点出发：</p>
+<ol>
+<li>计算机是单一的Win 2000系统，还是采用多启动的Win 2000系统；</li>
+<li>本地安装的磁盘的个数和容量；</li>
+<li>是否有安全性方面的考虑等。<br>基于以上的考虑，如果要在Win 2000中使用大于32GB的分区的话，那么只能选择NTFS格式。如果计算机作为单机使用，不需要考虑安全性方面的问题，更多地注重与Win 9X的兼容性，那么FAT32是最好的选择。如果计算机作为网络工作站或更多的追求系统的安全性，而且可以在单一的Win 2000模式下运行，强烈建议所有的分区都采用NTFS格式；如果要兼容以前的应用，需要安装Win 9X或其它的操作系统，建议做成多启动系统，这就需要两个以上的分区，一个分区采用NTFS格式，另外的分区采用FAT32格式，同时为了获得最快的运行速度建议将Win 2000的系统文件放置在NTFS分区上，其它的个人文件则放置在FAT32分区中。<br>回答字数10000字以内<br>参考资料：<br>如果您的回答是从其他地方引用，请表明出处。</li>
+</ol>
+<hr>
+<h1 id="FAT分区与NTFS分区有什么区别？"><a href="#FAT分区与NTFS分区有什么区别？" class="headerlink" title="FAT分区与NTFS分区有什么区别？"></a>FAT分区与NTFS分区有什么区别？</h1><h2 id="NTFS"><a href="#NTFS" class="headerlink" title="NTFS"></a>NTFS</h2><p>在选择 NTFS 时可以使用的功能有：<br>Active Directory，可用来方便地查看和控制网络资源。<br>域，它是 Active Directory 的一部分，在简化管理的同时，依然可以使用域来调整安全选项。域控制器需要 NTFS 文件系统。<br>文件加密，它极大地增强了安全性。<br>可以对单个文件设置权限，而不仅仅是对文件夹进行设置。<br>稀疏文件，这些是由应用程序创建的非常大的文件，以这种方式创建的文件只受磁盘空间的限制。也就是，NTFS 只为写入的文件部分分配磁盘空间。<br>远程存储，通过使可移动媒体（如磁带）更易访问，从而扩展了硬盘空间。<br>磁盘活动恢复记录，可帮助您在断电或发生其他系统问题时，尽快地还原信息。<br>磁盘配额，可用来监视和控制单个用户使用的磁盘空间量。<br>可更好地支持大驱动器，NTFS 支持的最大驱动容量比 FAT 支持的容量大得多，但随着驱动器容量得增大，NTFS 的性能并不随之降低，而 FAT 的性能却急速下降。<br>这只是最新版 NTFS 的部分功能列表。有关新功能的详细信息，请参阅 Windows 2000 Advanced Server 的新特性。<br>安装程序可以方便地将分区转换为新版的 NTFS，即使该分区以前使用的是 FAT 或 FAT32 文件系统，这种转换可保持文件的完整性（与格式化分区不同）。安装程序通过从检查现有的文件系统开始运行。如果文件系统是 NTFS，转换会自动发生。如果是 FAT 或 FAT32，安装程序可让您选择是否要将它们转换为 NTFS。如果不想保留文件，且有一个 FAT 或 FAT32 分区，建议使用 NTFS 格式化该分区，而不是转换 FAT 或 FAT32 文件系统。格式化分区会删除该分区上所有的数据，但使用 NTFS 格式化的分区与从 FAT 或 FAT32 转换来的分区相比，磁盘碎片较少，且性能更快。<br>但是使用 NTFS 依然有缺点，不论该分区是用 NTFS 格式化还是从以前的文件系统转换而来。在安装完成之后，也可以使用 Convert.exe 转换分区的文件系统。有关 Convert.exe 的详细信息，在结束安装之后，单击“开始”，再单击“运行”，键入 cmd 并按回车键键即可查阅它的信息。在命令窗口，键入 help convert，然后按回车键。FAT 和 FAT32<br>FAT 和 FAT32 是可选的文件系统选项。如果必须将计算机安装为有时使用以前的操作系统（有时使用 Windows 2000），则将要使用这些文件系统。其他信息，请参阅：<br>决定计算机是否包含多个操作系统<br>多个操作系统和文件系统的兼容性<br>包含 Windows NT 4.0 和 Windows 2000 Advanced Server 的计算机<br>在 NTFS、FAT 和 FAT32 间选择<br>有关 FAT 和 FAT32 之间区别的详细信息，请参阅在 NTFS、FAT 和 FAT32 间选择中的表格。如果要在 FAT 和 FAT32 之间做出选择，基本的标准是安装分区的大小。如果分区容量是 2 GB 或更大，应使用 FAT32 而不是 FAT 分区。<br>注意<br>Windows 2000 支持任意大小的由 Windows 95 或 Windows 98 创建的 AT32 卷。但是，Windows 2000 格式化的 FAT32 卷最大容量只能达到 32 GB。NTFS 是更好的选择，可应用在容量大于 32 GB 的卷上。<br>如果在安装过程中，选择使用 FAT 格式化分区，且该分区大于 2 GB，那么安装程序会自动用 FAT32 文件系统格式化。<br>在 NTFS、FAT 和 FAT32 间选择<br>可以为 Windows 2000 Advanced Server 计算机的磁盘分区选择下列之一的文件系统：NTFS、FAT 和 FAT32。NTFS 是推荐的文件系统。FAT 和 FAT32 彼此相似，但与 FAT 相比，FAT32 可用在容量较大的磁盘上。（最容易使用大磁盘的文件系统是 NTFS。）本节介绍的信息可帮助您比较这些文件系统，有关每种文件系统的其他信息，请参阅：<br>NTFS</p>
+<p>##FAT 和 FAT32<br>NTFS 与 FAT 和 FAT32 相比，它是最强大的文件系统。Windows 2000 Advanced Server 包括新版本的 NTFS，它支持各种新功能（包括 Active Directory），而域、用户帐户和其他重要的安全特性都需要 Active Directory 功能。<br>安装程序可以方便地将分区转换为新版的 NTFS，即使该分区以前使用的是 FAT 或 FAT32 文件系统，这种转换可保持文件的完整性（与格式化分区不同）。如果不想保留文件，且有一个 FAT 或 FAT32 分区，建议使用 NTFS 格式化该分区，而不是转换 FAT 或 FAT32 文件系统。格式化分区会删除该分区上所有的数据，但使用 NTFS 格式化的分区与从 FAT 或 FAT32 转换来的分区相比，磁盘碎片较少，且性能更快。<br>但是使用 NTFS 依然有缺点，不论该分区是用 NTFS 格式化还是从以前的文件系统转换而来。在安装完成之后，也可以使用 Convert.exe 转换分区的文件系统。有关 Convert.exe 的详细信息，在结束安装之后，单击“开始”，再单击“运行”，键入 cmd 并按回车键即可查阅它的信息。在命令窗口，键入 help convert，然后按回车键。<br>注意<br>只有通过选择 NTFS 作为您的文件系统，才能使用诸如 Active Directory 和基于域的安全性等重要功能。<br>有一种情况可能需要将 FAT 或 FAT32 选为您的文件系统。如果需要让计算机有时运行早期的操作系统，有时运行 Windows 2000，则需要将 FAT 或 FAT32 分区作为硬盘上的主（或启动）分区。这是因为早期的操作系统（只有一个例外），都无法访问使用最新版 NTFS 格式化的分区。例外是带有 Service Pack 4 或更高版本的 Windows NT 4.0，它可以访问使用最新版 NTFS 格式化的分区，但也有一些限制。Windows NT 4.0 无法访问那些用在 Windows NT 4.0 发布时，还没出现的 NTFS 功能存储的文件。详细信息，请参阅：<br>决定计算机是否包含多个操作系统<br>多个操作系统和文件系统的兼容性<br>但对于其他包含多个操作系统的情况，推荐的文件系统依然是 NTFS。<br>下面的表格介绍了每个文件系统与各种操作系统的兼容性。<br>NTFS FAT FAT32<br>运行 Windows 2000 的计算机可以访问 NTFS 分区上的文件。运行带有 Service Pack 4 或更高版本的 Windows NT 4.0计算机可能可以访问某些文件。其他操作系统则无法访问。 可以通过 MS-DOS、所有版本的 Windows、 Windows NT、 Windows 2000 和 OS/2 访问。 只能通过 Windows 95 OSR2、Windows 98 和 Windows 2000 访问。<br>下表比较了每个文件系统支持的磁盘和文件大小。<br>NTFS FAT FAT32<br>推荐最小的容量为 10 MB，<br>推荐实际最大的容量为 2 TB，并可支持更大的容量。<br>无法用在软盘上。<br>容量可从软盘大小到最大 4 GB。<br>不支持域。<br>容量从 512 MB 到 2 TB。<br>在 Windows 2000 中，可以格式化一个不超过 32 GB 的 FAT32 卷。<br>不支持域。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2018/2018.01.21 磁盘格式.html">磁盘格式</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Dexinser 的个人博客">Dexinser</a></p>
+        <p><span>发布时间:</span>2018年01月21日 - 21时31分</p>
+        <p><span>最后更新:</span>2018年01月21日 - 22时39分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/2018.01.21 磁盘格式.html" title="磁盘格式">http://indexcode.cn/2018/2018.01.21 磁盘格式.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://indexcode.cn/2018/2018.01.21 磁盘格式.html　　作者: Dexinser" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2018/2018.01.28 The Tipping Point.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          The Tipping Point
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2017/12/2017.12.08 Amour.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Amour-影评</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FAT32与NTFS的区别"><span class="toc-number">1.</span> <span class="toc-text">FAT32与NTFS的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小提示-选取FAT32和NTFS的建议"><span class="toc-number">2.</span> <span class="toc-text">小提示(选取FAT32和NTFS的建议)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FAT分区与NTFS分区有什么区别？"><span class="toc-number">3.</span> <span class="toc-text">FAT分区与NTFS分区有什么区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#NTFS"><span class="toc-number">3.1.</span> <span class="toc-text">NTFS</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+    <style>
+        .toc {
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $(".toc li a").mouseover(function() {
+                var title = $(this).attr('href');
+                $(this).attr("title", title);
+            });
+        })
+    </script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'cytgVLEw0',
+      conf: '3dd585905d0465ff1e65d0823df3763e'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2018/2018.01.28 The Tipping Point.html" title="上一篇: The Tipping Point">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2017/12/2017.12.08 Amour.html" title="下一篇: Amour-影评">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.28 The Tipping Point.html">The Tipping Point</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.21 磁盘格式.html">磁盘格式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.08 Amour.html">Amour-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.05 js中一些方法的比较与区别.html">Js中一些相似方法/属性的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 彗星来的那一夜-影评.html">彗星来的那一夜-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 寂静岭-影评.html">寂静岭-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 狩猎-影评.html">狩猎-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.25 JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.22-变化-个人感悟.html">变化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.19-分享-幸存者偏见.html">幸存者偏见</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16 vue数据交互.html">Vue</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16-学习笔记.html">JavaScript学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.12-前端开发相关.html">前端开发相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.10-智力题总结.html">智力题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.9-前端面试.html">前端面试总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.09 诗与远方.html">诗与远方</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/练习题.html">前端练习题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/滕王阁的修建者--滕王李元婴.html">说说滕王阁的修建者——“混蛋王爷”李元婴</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/正则表达式.html">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/框架.html">框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/杂.html">杂记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/有感而记.html">有感而记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/星巴克.html">从星巴克的商业模式中看出几个问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/后端网络笔记.html">后端网络笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端基础题总结.html">前端基础题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/人生启迪发人深省.html">人生启迪</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/事件.html">绑定事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/专业必备技能.html">计算机发展+Git简单使用+markdown简单语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/What is the server.html">那年那器那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Webpack.html">Webpack学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/relative.html">编程相关-杂（Relative）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/npm.html">Npm相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Math.floor()方法.html">Math.floor()等方法的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js笔记.html">Js笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js模式-读书笔记.html">Js模式读书笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/jQuery.html">JQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/important Ideas.html">编程方法小汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/DOM.html">浏览器之DOM</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS技巧.html">CSS小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3中transform的加速问题.html">使用CSS3开启GPU硬件加速提升网站动画渲染性能</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-选择器的使用.html">CSS3选择器的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-简介.html">CSS3新增加的功能和属性方法--之选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-动画的使用.html">CSS3动画的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/code.html">Html标签举例</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/book.html">Book</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.3-This is us-TV.html">This Is Us</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.2-第一次就把事情做好.html">第一次就把事情做好！</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.1-CSS3-景深详解.html">CSS3---景深详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.29-科学上网.html">科学上网</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.28-win10系统相关.html">Win10计算机系统相关系列问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端算法代码实现.html">前端算法JavaScript代码实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.26今日事，古人的智慧.html">今日事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.17个人日记.html">个人日记</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

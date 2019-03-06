@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+<meta property="og:type" content="website">
+<meta property="og:title" content="To die or not to die, this is a question~">
+<meta property="og:url" content="http://indexcode.cn/index.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="To die or not to die, this is a question~">
+<meta name="twitter:description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-2017/11/JavaScript之V8引擎" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/JavaScript之V8引擎.html" class="article-date">
+      <time datetime="2019-02-23T10:46:16.889Z" itemprop="datePublished">2019-02-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/JavaScript之V8引擎.html">JavaScript之V8引擎</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>JavaScript之V8引擎</strong>     <Excerpt in index | 首页摘要><br>V8是由拉里·佩奇、谢尔盖·布林创办的以搜索引擎和线上广告技术闻名、全球最大的网络公司Google研发的开源JavaScript浏览器引擎，用于Google Chrome中。<br>V8在执行之前将JavaScript代码编译成机器码让计算机识别执行，而非字节码或者直译它，以此来提升效能，JavaScript程序与V8引擎的速度可以媲美二进制编译。在高性能JavaScript一书中作者有比较V8引擎与其他语言的执行速度，作者列成了图表很清楚的显示出JavaScript引擎V8不俗的执行速度。</p>
+<p>V8是Google Chrome浏览器内置的JavaScript脚本引擎。<br>Google Chrome使用V8的API，但引擎的内核部分是独立于浏览器之外的。<br>V8引擎编译和执行JavaScript源代码。<br>速度是V8引擎追求的主要设计目标之一，它把JavaScript代码直接编译成机器码运行，比起传统的“中间代码 + 解释器”的引擎，优势不言而喻。<br>V8引擎的团队说Chrome对脚本的解析和执行速度是Firefox和Safari的10倍，是IE的56倍。当然了，自夸自家的瓜甜，都是这样的嘛~最近不是新出了Safari又比Google Chrome快了80%的速度吗~但是只是因为Safari更新的比较快，优化了最新的ES6，所以与之前未做优化的Chrome相比快了不少~也是真能吹牛哈~</p>
+<hr>
+<p>正是由于V8的高性能，所以基于nodejs开发的引擎就是V8引擎。</p>
+<hr>
+<p>V8 是一个全新的 JavaScript 引擎，它在设计之初就以高效地执行大型的 JavaScript 应用程序为目的。V8的JavaScript渲染引擎亮点在于更快速更强壮的JavaScript解析。V8是一个非常反传统的JavaScript引擎，它能够在后台动态的对JS的对象进行分类——一个在其他高级语言中很常见但JS本身不支持的特性。V8对JS的解析不是基于反复loop源代码进行解释而是直接将JS代码编译成机器码运行。换句话说，V8引擎实际上可以看做是JS的扩展和编译器——而传统上类似于JS的解释型语言恰恰是不需要编译器的。最后，高级语言的内存管理效能一直是决定其运行效率的重要因素，而当前的JS虚拟机在这方面做的比较基本，对内存的回收也非常保守。V8使用的是非常强势的内存管理策略，一切在运行堆栈里无用的数据都会被强行回收，从而可以大大提高JS代码的运行效率。<br>在一些性能测试中，V8 比 Internet Explorer 的 JScript 、Firefox 中的 SpiderMonkey 以及 Safari 中的 JavaScriptCore 要快上数倍。如果你的 web 程序的瓶颈在于 JavaScript 的运行效率，用 V8 代替你现在的 JavaScript 引擎很可能可以提升你的程序的运行效率。具体会有多大的性能提升依赖于程序执行了多少 JavaScript 代码以及这些代码本身的性质。比如，如果你的程序中的函数会被反复执行很多遍的话，性能提升通常会比较大，反过来，如果代码中有很多不同的函数并且都只会被调用一次左右，那么性能提升就不会那么明显了。</p>
+<p>和Mozilla的SpiderMonkey一样，Google Chrome浏览器的JavaScript引擎Google V8也是一个开源的独立引擎，可内嵌于任何C++工程之中。</p>
+<blockquote>
+<p>速度是V8追求的主要设计目标之一，它把JavaScript代码直接编译成机器码运行，比起传统的“中间代码+解释器”的引擎，优势不言而喻。在SunSpider测试中，V8的综合表现是最好的。据说Mozilla正在开发的TraceMonkey比V8还要快20%左右，可惜尚未完工。</p>
+</blockquote>
+<h1 id="JavaScript的发展"><a href="#JavaScript的发展" class="headerlink" title="JavaScript的发展"></a>JavaScript的发展</h1><blockquote>
+<p>Netscape Navigator 在 90 在年代中期对 JavaScript 进行了集成，这让网页开发人员对 HTML 页面中诸如 form 、frame 和 image 之类的元素的访问变得非常容易。由此 JavaScript 很快成为了用于定制控件和添加动画的工具，到 90 年代后期的时候，大部分的 JavaScript 脚本仅仅完成像“根据用户的鼠标动作把一幅图换成另一幅图”这样简单的功能。</p>
+<p>随着最近 AJAX 技术的兴起，JavaScript 现在已经变成了实现基于 web 的应用程序（例如我们自己的 Gmail）的核心技术。JavaScript 程序从聊聊几行变成数百 KB 的代码。JavaScript 被设计于完成一些特定的任务，虽然 JavaScript 在做这些事情的时候通常都很高效，但是性能已经逐渐成为进一步用 JavaScript 开发复杂的基于 web 的应用程序的瓶颈。</p>
+<p>V8 是一个全新的 JavaScript 引擎，它在设计之初就以高效地执行大型的 JavaScript 应用程序为目的。在一些性能测试中，V8 比 Internet Explorer 的 JScript 、Firefox 中的 SpiderMonkey 以及 Safari 中的 JavaScriptCore 要快上数倍。如果你的 web 程序的瓶颈在于 JavaScript 的运行效率，用 V8 代替你现在的 JavaScript 引擎很可能可以提升你的程序的运行效率。具体会有多大的性能提升依赖于程序执行了多少 JavaScript 代码以及这些代码本身的性质。比如，如果你的程序中的函数会被反复执行很多遍的话，性能提升通常会比较大，反过来，如果代码中有很多不同的函数并且都只会被调用一次左右，那么性能提升就不会那么明显了。其中的原因在你读过这份文档余下的部分之后就会明白了。</p>
+</blockquote>
+<h1 id="V8-的性能提升主要来自三个关键部分："><a href="#V8-的性能提升主要来自三个关键部分：" class="headerlink" title="V8 的性能提升主要来自三个关键部分："></a>V8 的性能提升主要来自三个关键部分：</h1><ol>
+<li>快速属性访问</li>
+<li>动态机器码生成</li>
+<li>高效的垃圾收集</li>
+</ol>
+<h2 id="快速属性访问"><a href="#快速属性访问" class="headerlink" title="快速属性访问"></a>快速属性访问</h2><p>JavaScript 是一门动态语言，属性可以在运行时添加到或从对象中删除。这意味着对象的属性经常会发生变化。大部分 JavaScript 引擎都使用一个类似于字典的数据结构来存储对象的属性，这样每次访问对象的属性都需要进行一次动态的字典查找来获取属性在内存中的位置。这种实现方式让 JavaScript 中属性的访问比诸如 Java 和 Smalltalk 这样的语言中的成员变量的访问慢了许多。成员变量在内存中的位置离对象的地址的距离是固定的，这个偏移量由编译器在编译的时候根据对象的类的定义决定下来。因此对成员变量的访问只是一个简单的内存读取或写入的操作，通常只需要一条指令即可。</p>
+<p>为了减少 JavaScript 中访问属性所花的时间，V8 采用了和动态查找完全不同的技术来实现属性的访问：动态地为对象创建隐藏类。这并不是什么新的想法，基于原型的编程语言 Self 就用 map 来实现了类似的功能（参见 An Efficient Implementation of Self, a Dynamically-Typed Object-Oriented Language Based on Prototypes ）而且JavaScript在创建之初因为是赶时间赶出来的（10天的时间，而且还是Brendan Eich为了应付公司安排的任务的~），所以也正是借鉴了很多语言的长处，也就是上面所说的self语言和C语言等等（有一句话说的好：与其说我爱JavaScript，不如说我恨她；她是C语言和Self语言一夜情的产物。十八世纪英国文学家约翰逊博士说得好：“她的优秀之处并非原创，她的原创之处并不优秀”）。在 V8 里，当一个新的属性被添加到对象中时，对象所对应的隐藏类会随之改变。</p>
+<p>下面我们用一个简单的 JavaScript 函数来加以说明：</p>
+<p><code>function Point(x, y) {
+    this.x = x;
+    this.y = y;
+}</code></p>
+<p>当 new Point(x, y) 执行的时候，一个新的 Point 对象会被创建出来。如果这是 Point 对象第一次被创建，V8 会为它初始化一个隐藏类，不妨称作 C0。因为这个对象还没有定义任何属性，所以这个初始类是一个空类。到这个时候为止，对象 Point 的隐藏类是 C0。</p>
+<p>map_trans_a<br>执行函数 Point 中的第一条语句（this.x = x;）会为对象 Point 创建一个新的属性 x。此时，V8 会：<br>在 C0 的基础上创建另一个隐藏类 C1，并将属性 x 的信息添加到 C1 中：这个属性的值会被存储在距 Point 对象的偏移量为 0 的地方。<br>在 C0 中添加适当的类转移信息，使得当有另外的以其为隐藏类的对象在添加了属性 x 之后能够找到 C1 作为新的隐藏类。此时对象 Point 的隐藏类被更新为 C1。</p>
+<ol>
+<li>map_trans_b<br>执行函数 Point 中的第二条语句（this.y = y;）会添加一个新的属性 y 到对象 Point 中。同理，此时 V8 会：<br>在 C1 的基础上创建另一个隐藏类 C2，并在 C2 中添加关于属性 y 的信息：这个属性将被存储在内存中离 Point 对象的偏移量为 1 的地方。<br>在 C1 中添加适当的类转移信息，使得当有另外的以其为隐藏类的对象在添加了属性 y 之后能够找到 C2 作为新的隐藏类。此时对象 Point 的隐藏类被更新为 C2。</li>
+<li>map_trans_c<br>咋一看似乎每次添加一个属性都创建一个新的隐藏类非常低效。实际上，利用类转移信息，隐藏类可以被重用。下次创建一个 Point 对象的时候，就可以直接共享由最初那个 Point 对象所创建出来的隐藏类。例如，如果又一个 Point 对象被创建出来了：<br>一开始 Point 对象没有任何属性，它的隐藏类将会被设置为 C0。<br>当属性 x 被添加到对象中的时候，V8 通过 C0 到 C1 的类转移信息将对象的隐藏类更新为 C1 ，并直接将 x 的属性值写入到由 C1 所指定的位置（偏移量 0）。<br>当属性 y 被添加到对象中的时候，V8 又通过 C1 到 C2 的类转移信息将对象的隐藏类更新为 C2，并直接将 y 的属性值写入到由 C2 所指定的位置（偏移量 1）。</li>
+</ol>
+<p>尽管 JavaScript 比通常的面向对象的编程语言都要更加动态一些，然而大部分的 JavaScript 程序都会表现出像上述描述的那样的运行时高度结构重用的行为特征来。使用隐藏类主要有两个好处：属性访问不再需要动态字典查找了；为 V8 使用经典的基于类的优化和内联缓存技术创造了条件。</p>
+<h2 id="动态机器码生成"><a href="#动态机器码生成" class="headerlink" title="动态机器码生成"></a>动态机器码生成</h2><p>V8 在第一次执行 JavaScript 代码的时候会将其直接编译为本地机器码，而不是使用中间字节码的形式，因此也没有解释器的存在。属性访问由内联缓存代码来完成，这些代码通常会在运行时由 V8 修改为合适的机器指令。</p>
+<p>在第一次执行到访问某个对象的属性的代码时，V8 会找出对象当前的隐藏类。同时，V8 会假设在相同代码段里的其他所有对象的属性访问都由这个隐藏类进行描述，并修改相应的内联代码让他们直接使用这个隐藏类。当 V8 预测正确的时候，属性值的存取仅需一条指令即可完成。如果预测失败了，V8 会再次修改内联代码并移除刚才加入的内联优化。</p>
+<p>例如，访问一个 Point 对象的 x 属性的代码如下：</p>
+<p>point.x</p>
+<p>在 V8 中，对应生成的机器码如下：</p>
+<p><code>; ebx = the point objectcmp [ebx, &lt;hidden class offset&gt;], &lt;cached hidden class&gt;
+jne &lt;inline cache miss&gt;
+mov eax, [ebx, &lt;cached x offset&gt;]</code></p>
+<p>如果对象的隐藏类和缓存的隐藏类不一样，执行会跳转到 V8 运行系统中处理内联缓存预测失败的地方，在那里原来的内联代码会被修改以移除相应的内联缓存优化。如果预测成功了，属性 x 的值会被直接读出来。</p>
+<p>当有许多对象共享同一个隐藏类的时候，这样的实现方式下属性的访问速度可以接近大多数动态语言。使用内联缓存代码和隐藏类实现属性访问的方式和动态代码生成和优化的方式结合起来，让大部分 JavaScript 代码的运行效率得以大幅提升。</p>
+<h2 id="高效的垃圾回收机制"><a href="#高效的垃圾回收机制" class="headerlink" title="高效的垃圾回收机制"></a>高效的垃圾回收机制</h2><p>V8 会自动回收不再被对象使用的内存，这个过程通常被称为“垃圾收集（Garbage Collection）”。为了保证快速的对象分配和缩短由垃圾收集造成的停顿，并杜绝内存碎片，V8 使用了一个 stop-the-world, generational, accurate 的垃圾收集器，换句话说，V8 的垃圾收集器：</p>
+<ol>
+<li>在执行垃圾回收的时候会中断程序的执行。</li>
+<li>大部分情况下，每个垃圾收集周期只处理整个对象堆的一部分，这让程序中断造成的影响得以减轻。</li>
+<li>总是知道内存中所有的对象和指针所在的位置，这避免了非 accurate 的垃圾收集器中普遍存在的由于错误地把对象当作指针而造成的内存溢出的情况。</li>
+</ol>
+<p>在 V8 中，对象堆被分成两部分：用于为新创建的对象分配空间的部分和用于存放在垃圾收集周期中生存下来的那些老的对象的部分。如果一个对象在垃圾收集的过程中被移动了，V8 会更新所有指向这个对象的指针到新的地址。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/认知提升/">认知提升</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2018/2018.01.28 The Tipping Point" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/2018.01.28 The Tipping Point.html" class="article-date">
+      <time datetime="2018-01-28T04:03:24.113Z" itemprop="datePublished">2018-01-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/2018.01.28 The Tipping Point.html">The Tipping Point</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> The Tipping Point：</strong> <Excerpt in index | 首页摘要></p>
+<p>《引爆点》这本书是格拉德威尔在2000年出版的。一经出版就火爆全球，书中介绍的“引爆点”和流行三法则，已经成为当下的商业理论新经典。<br>思考是这本书的主旋律，作者对生活中的一些常见现象，并没有去听从各种专家所说的，不能让人信服的观点，例如：经济学家所说的是由于经济的好转所以就是年代的纽约市犯罪行为的减少；犯罪学家所说的是由于纽约市警察局的警力部署的加强所导致的犯罪行为的减少等等。作者深入思考了这些社会现象之后，认为那些专家所说的理由并不能成为形成这种现象的原因，进而自己来进行寻找和探索，由此而诞生的这本书，进而解读我们社会中的一些流行事件的原因，真的是让我们这些读者打开思想的大门，教给我们各种新奇规律的同时，也教给了我们思考问题的方式和方法。<br>书中的很多著名的专家学者在开篇点评这本书，看完这本书之后重新看这些评语，真是另一种感受：格拉德威尔不愧为2005年《时代》杂志评为世界最有影响力的100人之一，普通人的回答，很少能超出几个大脑早已作出的界定，如：亚当斯密的“看不见的手”、凯恩斯的“调控”、哈耶克的“自发生成秩序”、马克思的辩证唯物主义和历史唯物主义、弗洛伊德的心理分析…而变革者则提出理解世界的新方法：凯恩斯对亚当斯密进行修补；弗洛伊德另辟蹊经；毕加索挑战马蒂斯；爱因斯坦修订牛顿为大自然的“立法”，德鲁克对组织进行研究，提出“知识工人”与受雇阶层的理论。本质上，格拉德威尔与上面提到的为人是一类人，也是一个有新意的变革者。书中开创性的提出了很多名词：流行三法则（个别人物法则[联系员、内行和推销员—保罗·里维尔骑马夜行]、附着力法则[影响事情的主要原因跟我们所想的不一样，往往是很微小的因素所形成的—金盒子广告和打破伤风疫苗、芝麻街和蓝狗线索]、环境威力法则[人们往往会在心里对一个人有一种印象，而往往忽视了环境的不同造成的影响因素；而在事实与我们印象中的不同时我们又会找一个我们自己所能够理解的方式来解释，而保留对一个人印象的唯一性；思维定势中的我们往往又会夸大一些环境因素对我们的影响，例如：家庭因素对我们的影响等等，其实并没有那么大的影响—流言、破窗理论、地铁涂鸦、地铁逃票…]）</p>
+<p>引爆点教给了我们什么道理？就像作者总结的一样总共有三个。</p>
+<h1 id="集中有限的力量，全力以赴。"><a href="#集中有限的力量，全力以赴。" class="headerlink" title="集中有限的力量，全力以赴。"></a>集中有限的力量，全力以赴。</h1><p>我们大多数人做事，一般都是差不多的思维模式，相同的老办法。而往往这种老方法有时候并不是最优的，这种方法可能会包含着太多的浪费我们有限的资源的情况。思维定式之下，我们很难跳出这种限制，而格拉德威尔的这本书中就教给了我们很多方法，去找出事情的引爆点，往往就能付出最小的代价做成很多事情。美国独立战争时期，保罗·里维尔骑马夜行是成功的，但是另一个方向出发的威廉·戴维斯却是失败的，他没有成为历史上有名的人物…取巧之计用在这儿挺合适的，在编程中我们想要成长我们必须要取巧，各种自动化工具的使用，让电脑代替我们去处理重复繁琐的事情；在生活中取巧是我们做事情之前先要想到这件事情成功的引爆点在哪儿，尽量用最少的资源完成事情，不加选择地付出努力并非总是可行的，我们要尽可能的找到到达终点的捷径，以达到事半功倍的效果。</p>
+<h1 id="世界并非是我们一厢情愿的直觉中的世界"><a href="#世界并非是我们一厢情愿的直觉中的世界" class="headerlink" title="世界并非是我们一厢情愿的直觉中的世界"></a>世界并非是我们一厢情愿的直觉中的世界</h1><p>我们总是在杂乱与黑暗之中行事，所以造成了很多的不必要的步骤。我们所认知的范畴限制了我们所看待世界的方式和误解我们所接触到的超出我们理解范围的事情。以抽象方式被表述成形象的社会问题，我们解决起来将会毫无困难。人类思维的特殊之处，在于我们能很好的处理同类之间复杂的关系。我们遇到问题的第一想法是先看一下我们的大脑中有没有储存以前类似的相关问题，类比之前的类似问题来进行处理现在所遇到的问题，但是我们又往往会忽略当下的条件下的不同，或是局限与我们知识储备的不足，处理当下的事情进而使用了错误的方法。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/读书笔记/">读书笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/认知提升/">认知提升</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2018/2018.01.21 磁盘格式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/2018.01.21 磁盘格式.html" class="article-date">
+      <time datetime="2018-01-21T13:31:30.848Z" itemprop="datePublished">2018-01-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/2018.01.21 磁盘格式.html">磁盘格式</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 磁盘格式：</strong> <Excerpt in index | 首页摘要></p>
+<p>好久没更博客了，虽然没什么人看，但是作为练习自己写作能力的锻炼和提升，也不能荒废我的博客更新哈~<br>说一下我最近的个人动态吧~ 现在学校放假有两个星期了，学校一放假就跑到实习公司来实习了，一进公司报到当天就给我配置了2015年的mac pro顶配版，不得不说真是开心哈~而且是2017年产的新开封的哦~不要羡慕哦~哈哈哈，你们以后工作也会有的。然后新进公司第一周就一直在熟悉mac本的一些基础操作，没办法，谁让我没用过这种高大上的苹果笔记本呢。我是刚把Windows系统的笔记本用到稍微熟练一点儿，就让我接触mac真是有点儿不熟悉呢，不过经过一周的操作训练，越来越觉的mac的人性化，怪不得办公的大公司的白领啦、管理者啦、领导啦什么的，都喜欢用苹果本办公呢，真的比Windows好用多了，当然了，这只是我个人的一些浅显小想法，大家不同意就当我没说，我的人生阅历还是很少，不能确定说的对哈~</p>
+<p>好了，接下来就来说一下写这篇博客的由来吧~换上了mac本之后，看到了mac自带的时间机器，感觉好高大上啊，可以自动保存快照，想什么时候回退到哪儿都行，真是太强大的一个功能了。虽然这个说是不占用mac上剩余的内存，不过我还是担心影响我的笔记本日常所使用的性能，万一影响我的使用体验都不好，在说了我也有一个自己的硬盘，为什么不用我自己的硬盘当作是Time Machien的保存磁盘呢；想到就去做了，第二天就把我的磁盘带过来了，兴致勃勃的插上去却让我失望了，居然是只能读的权限，然后我才知道Windows下的保存文件格式与mac下的保存文件格式是不同的。啊啊啊，要想用做mac的时间机器的御用磁盘必须先把磁盘数据全部格式化了，但是我的磁盘上还有好多我都珍贵的资源呢，怎么能删除掉呢，所以只能先把数据保存到其他的地方，到时候把磁盘的格式改回来在存进去。然后就又把磁盘带回去了，把数据拷贝到了我的Windows电脑上，然后在mac上把磁盘格式化了，终于能用作备份磁盘了，真是好不容易啊。但是这样的话又变成了磁盘只能在mac上用了，所以我索性把我的1T硬盘，分成3个区，一个单独的用作mac数据备份区，另两个一个用作Windows存放数据区，另一个用作mac存放数据区。这样总算大功告成了吧，谁知道原来我把Windows上使用的存放数据格式给改成了Fat32格式的，不是我想要的NTFS格式的，但是这个时候我已经把原先的数据都已经导回来了，实在不想再折腾了，啊啊啊，好伤心啊！接下来就让我介绍一下他俩的区别吧~</p>
+<h1 id="FAT32与NTFS的区别"><a href="#FAT32与NTFS的区别" class="headerlink" title="FAT32与NTFS的区别"></a>FAT32与NTFS的区别</h1><p>在推出FAT32文件系统之前，通常PC机使用的文件系统是FAT16。像基于MS-DOS，Win 95等系统都采用了FAT16文件系统。在Win 9X下，FAT16支持的分区最大为2GB。我们知道计算机将信息保存在硬盘上称为“簇”的区域内。使用的簇越小，保存信息的效率就越高。在FAT16的情况下，分区越大簇就相应的要增大，存储效率就越低，势必造成存储空间的浪费。并且随着计算机硬件和应用的不断提高，FAT16文件系统已不能很好地适应系统的要求。在这种情况下，推出了增强的文件系统FAT32。同FAT16相比，FAT32主要具有以下特点：</p>
+<ol>
+<li>同FAT16相比FAT32最大的优点是可以支持的磁盘大小达到2TB（2047GB），但是不能支持小于512MB的分区。基于FAT32的Win 2000可以支持分区最大为32GB；而基于 FAT16的Win 2000支持的分区最大为4GB。</li>
+<li>由于采用了更小的簇，FAT32文件系统可以更有效率地保存信息。如两个分区大小都为2GB，一个分区采用了FAT16文件系统，另一个分区采用了FAT32文件系统。采用FAT16的分区的簇大小为32KB，而FAT32分区的簇只有4KB的大小。这样FAT32就比FAT16的存储效率要高很多，通常情况下可以提高15%。</li>
+<li>FAT32文件系统可以重新定位根目录和使用FAT的备份副本。另外FAT32分区的启动记录被包含在一个含有关键数据的结构中，减少了计算机系统崩溃的可能性。<br>NTFS文件系统<br>NTFS文件系统是一个基于安全性的文件系统，是Windows NT所采用的独特的文件系统结构，它是建立在保护文件和目录数据基础上，同时照顾节省存储资源、减少磁盘占用量的一种先进的文件系统。使用非常广泛的Windows NT 4.0采用的就是NTFS 4.0文件系统，相信它所带来的强大的系统安全性一定给广大用户留下了深刻的印象。Win 2000采用了更新版本的NTFS文件系统??NTFS 5.0，它的推出使得用户不但可以像Win 9X那样方便快捷地操作和管理计算机，同时也可享受到NTFS所带来的系统安全性。<br>NTFS 5.0的特点主要体现在以下几个方面：</li>
+<li>NTFS可以支持的分区(如果采用动态磁盘则称为卷)大小可以达到2TB。而Win 2000中的FAT32支持分区的大小最大为32GB。</li>
+<li>NTFS是一个可恢复的文件系统。在NTFS分区上用户很少需要运行磁盘修复程序。NTFS通过使用标准的事物处理日志和恢复技术来保证分区的一致性。发生系统失败事件时，NTFS使用日志文件和检查点信息自动恢复文件系统的一致性。</li>
+<li>NTFS支持对分区、文件夹和文件的压缩。任何基于Windows的应用程序对NTFS分区上的压缩文件进行读写时不需要事先由其他程序进行解压缩，当对文件进行读取时,文件将自动进行解压缩；文件关闭或保存时会自动对文件进行压缩。</li>
+<li>NTFS采用了更小的簇,可以更有效率地管理磁盘空间。在Win 2000的FAT32文件系统的情况下,分区大小在2GB～8GB时簇的大小为4KB；分区大小在8GB～16GB时簇的大小为8KB；分区大小在16GB～32GB时,簇的大小则达到了16KB。而Win 2000的NTFS文件系统，当分区的大小在2GB以下时,簇的大小都比相应的FAT32簇小;当分区的大小在2GB以上时(2GB～2TB),簇的大小都为4KB。相比之下，NTFS可以比FAT32更有效地管理磁盘空间，最大限度地避免了磁盘空间的浪费。</li>
+<li>在NTFS分区上,可以为共享资源、文件夹以及文件设置访问许可权限。许可的设置包括两方面的内容：一是允许哪些组或用户对文件夹、文件和共享资源进行访问；二是获得访问许可的组或用户可以进行什么级别的访问。访问许可权限的设置不但适用于本地计算机的用户,同样也应用于通过网络的共享文件夹对文件进行访问的网络用户。与FAT32文件系统下对文件夹或文件进行访问相比，安全性要高得多。另外,在采用NTFS格式的Win 2000中,应用审核策略可以对文件夹、文件以及活动目录对象进行审核，审核结果记录在安全日志中，通过安全日志就可以查看哪些组或用户对文件夹、文件或活动目录对象进行了什么级别的操作，从而发现系统可能面临的非法访问,通过采取相应的措施，将这种安全隐患减到最低。这些在FAT32文件系统下,是不能实现的。</li>
+<li>在Win 2000的NTFS文件系统下可以进行磁盘配额管理。磁盘配额就是管理员可以为用户所能使用的磁盘空间进行配额限制，每一用户只能使用最大配额范围内的磁盘空间。设置磁盘配额后，可以对每一个用户的磁盘使用情况进行跟踪和控制，通过监测可以标识出超过配额报警阈值和配额限制的用户，从而采取相应的措施。磁盘配额管理功能的提供，使得管理员可以方便合理地为用户分配存储资源，避免由于磁盘空间使用的失控可能造成的系统崩溃，提高了系统的安全性。</li>
+<li>NTFS使用一个“变更”日志来跟踪记录文件所发生的变更。</li>
+</ol>
+<h1 id="小提示-选取FAT32和NTFS的建议"><a href="#小提示-选取FAT32和NTFS的建议" class="headerlink" title="小提示(选取FAT32和NTFS的建议)"></a>小提示(选取FAT32和NTFS的建议)</h1><p>在系统的安全性方面，NTFS文件系统具有很多FAT32文件系统所不具备的特点，而且基于NTFS的Win 2000运行要快于基于FAT32的Win 2000；而在与Win 9X的兼容性方面，FAT32优于NTFS。所以在决定Win 2000中采用什么样的文件系统时应从以下几点出发：</p>
+<ol>
+<li>计算机是单一的Win 2000系统，还是采用多启动的Win 2000系统；</li>
+<li>本地安装的磁盘的个数和容量；</li>
+<li>是否有安全性方面的考虑等。<br>基于以上的考虑，如果要在Win 2000中使用大于32GB的分区的话，那么只能选择NTFS格式。如果计算机作为单机使用，不需要考虑安全性方面的问题，更多地注重与Win 9X的兼容性，那么FAT32是最好的选择。如果计算机作为网络工作站或更多的追求系统的安全性，而且可以在单一的Win 2000模式下运行，强烈建议所有的分区都采用NTFS格式；如果要兼容以前的应用，需要安装Win 9X或其它的操作系统，建议做成多启动系统，这就需要两个以上的分区，一个分区采用NTFS格式，另外的分区采用FAT32格式，同时为了获得最快的运行速度建议将Win 2000的系统文件放置在NTFS分区上，其它的个人文件则放置在FAT32分区中。<br>回答字数10000字以内<br>参考资料：<br>如果您的回答是从其他地方引用，请表明出处。</li>
+</ol>
+<hr>
+<h1 id="FAT分区与NTFS分区有什么区别？"><a href="#FAT分区与NTFS分区有什么区别？" class="headerlink" title="FAT分区与NTFS分区有什么区别？"></a>FAT分区与NTFS分区有什么区别？</h1><h2 id="NTFS"><a href="#NTFS" class="headerlink" title="NTFS"></a>NTFS</h2><p>在选择 NTFS 时可以使用的功能有：<br>Active Directory，可用来方便地查看和控制网络资源。<br>域，它是 Active Directory 的一部分，在简化管理的同时，依然可以使用域来调整安全选项。域控制器需要 NTFS 文件系统。<br>文件加密，它极大地增强了安全性。<br>可以对单个文件设置权限，而不仅仅是对文件夹进行设置。<br>稀疏文件，这些是由应用程序创建的非常大的文件，以这种方式创建的文件只受磁盘空间的限制。也就是，NTFS 只为写入的文件部分分配磁盘空间。<br>远程存储，通过使可移动媒体（如磁带）更易访问，从而扩展了硬盘空间。<br>磁盘活动恢复记录，可帮助您在断电或发生其他系统问题时，尽快地还原信息。<br>磁盘配额，可用来监视和控制单个用户使用的磁盘空间量。<br>可更好地支持大驱动器，NTFS 支持的最大驱动容量比 FAT 支持的容量大得多，但随着驱动器容量得增大，NTFS 的性能并不随之降低，而 FAT 的性能却急速下降。<br>这只是最新版 NTFS 的部分功能列表。有关新功能的详细信息，请参阅 Windows 2000 Advanced Server 的新特性。<br>安装程序可以方便地将分区转换为新版的 NTFS，即使该分区以前使用的是 FAT 或 FAT32 文件系统，这种转换可保持文件的完整性（与格式化分区不同）。安装程序通过从检查现有的文件系统开始运行。如果文件系统是 NTFS，转换会自动发生。如果是 FAT 或 FAT32，安装程序可让您选择是否要将它们转换为 NTFS。如果不想保留文件，且有一个 FAT 或 FAT32 分区，建议使用 NTFS 格式化该分区，而不是转换 FAT 或 FAT32 文件系统。格式化分区会删除该分区上所有的数据，但使用 NTFS 格式化的分区与从 FAT 或 FAT32 转换来的分区相比，磁盘碎片较少，且性能更快。<br>但是使用 NTFS 依然有缺点，不论该分区是用 NTFS 格式化还是从以前的文件系统转换而来。在安装完成之后，也可以使用 Convert.exe 转换分区的文件系统。有关 Convert.exe 的详细信息，在结束安装之后，单击“开始”，再单击“运行”，键入 cmd 并按回车键键即可查阅它的信息。在命令窗口，键入 help convert，然后按回车键。FAT 和 FAT32<br>FAT 和 FAT32 是可选的文件系统选项。如果必须将计算机安装为有时使用以前的操作系统（有时使用 Windows 2000），则将要使用这些文件系统。其他信息，请参阅：<br>决定计算机是否包含多个操作系统<br>多个操作系统和文件系统的兼容性<br>包含 Windows NT 4.0 和 Windows 2000 Advanced Server 的计算机<br>在 NTFS、FAT 和 FAT32 间选择<br>有关 FAT 和 FAT32 之间区别的详细信息，请参阅在 NTFS、FAT 和 FAT32 间选择中的表格。如果要在 FAT 和 FAT32 之间做出选择，基本的标准是安装分区的大小。如果分区容量是 2 GB 或更大，应使用 FAT32 而不是 FAT 分区。<br>注意<br>Windows 2000 支持任意大小的由 Windows 95 或 Windows 98 创建的 AT32 卷。但是，Windows 2000 格式化的 FAT32 卷最大容量只能达到 32 GB。NTFS 是更好的选择，可应用在容量大于 32 GB 的卷上。<br>如果在安装过程中，选择使用 FAT 格式化分区，且该分区大于 2 GB，那么安装程序会自动用 FAT32 文件系统格式化。<br>在 NTFS、FAT 和 FAT32 间选择<br>可以为 Windows 2000 Advanced Server 计算机的磁盘分区选择下列之一的文件系统：NTFS、FAT 和 FAT32。NTFS 是推荐的文件系统。FAT 和 FAT32 彼此相似，但与 FAT 相比，FAT32 可用在容量较大的磁盘上。（最容易使用大磁盘的文件系统是 NTFS。）本节介绍的信息可帮助您比较这些文件系统，有关每种文件系统的其他信息，请参阅：<br>NTFS</p>
+<p>##FAT 和 FAT32<br>NTFS 与 FAT 和 FAT32 相比，它是最强大的文件系统。Windows 2000 Advanced Server 包括新版本的 NTFS，它支持各种新功能（包括 Active Directory），而域、用户帐户和其他重要的安全特性都需要 Active Directory 功能。<br>安装程序可以方便地将分区转换为新版的 NTFS，即使该分区以前使用的是 FAT 或 FAT32 文件系统，这种转换可保持文件的完整性（与格式化分区不同）。如果不想保留文件，且有一个 FAT 或 FAT32 分区，建议使用 NTFS 格式化该分区，而不是转换 FAT 或 FAT32 文件系统。格式化分区会删除该分区上所有的数据，但使用 NTFS 格式化的分区与从 FAT 或 FAT32 转换来的分区相比，磁盘碎片较少，且性能更快。<br>但是使用 NTFS 依然有缺点，不论该分区是用 NTFS 格式化还是从以前的文件系统转换而来。在安装完成之后，也可以使用 Convert.exe 转换分区的文件系统。有关 Convert.exe 的详细信息，在结束安装之后，单击“开始”，再单击“运行”，键入 cmd 并按回车键即可查阅它的信息。在命令窗口，键入 help convert，然后按回车键。<br>注意<br>只有通过选择 NTFS 作为您的文件系统，才能使用诸如 Active Directory 和基于域的安全性等重要功能。<br>有一种情况可能需要将 FAT 或 FAT32 选为您的文件系统。如果需要让计算机有时运行早期的操作系统，有时运行 Windows 2000，则需要将 FAT 或 FAT32 分区作为硬盘上的主（或启动）分区。这是因为早期的操作系统（只有一个例外），都无法访问使用最新版 NTFS 格式化的分区。例外是带有 Service Pack 4 或更高版本的 Windows NT 4.0，它可以访问使用最新版 NTFS 格式化的分区，但也有一些限制。Windows NT 4.0 无法访问那些用在 Windows NT 4.0 发布时，还没出现的 NTFS 功能存储的文件。详细信息，请参阅：<br>决定计算机是否包含多个操作系统<br>多个操作系统和文件系统的兼容性<br>但对于其他包含多个操作系统的情况，推荐的文件系统依然是 NTFS。<br>下面的表格介绍了每个文件系统与各种操作系统的兼容性。<br>NTFS FAT FAT32<br>运行 Windows 2000 的计算机可以访问 NTFS 分区上的文件。运行带有 Service Pack 4 或更高版本的 Windows NT 4.0计算机可能可以访问某些文件。其他操作系统则无法访问。 可以通过 MS-DOS、所有版本的 Windows、 Windows NT、 Windows 2000 和 OS/2 访问。 只能通过 Windows 95 OSR2、Windows 98 和 Windows 2000 访问。<br>下表比较了每个文件系统支持的磁盘和文件大小。<br>NTFS FAT FAT32<br>推荐最小的容量为 10 MB，<br>推荐实际最大的容量为 2 TB，并可支持更大的容量。<br>无法用在软盘上。<br>容量可从软盘大小到最大 4 GB。<br>不支持域。<br>容量从 512 MB 到 2 TB。<br>在 Windows 2000 中，可以格式化一个不超过 32 GB 的 FAT32 卷。<br>不支持域。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/资源分享/">资源分享</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/认知提升/">认知提升</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/12/2017.12.08 Amour" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/12/2017.12.08 Amour.html" class="article-date">
+      <time datetime="2017-12-08T02:07:39.257Z" itemprop="datePublished">2017-12-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/12/2017.12.08 Amour.html">Amour-影评</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>Amour-影评</strong>   <Excerpt in index | 首页摘要><br>我今年23岁，在我的这有限的人生阅历中，只经历过一次亲人的离世–我的姥爷。昨天看完了法国2012年上映的电影《Amour》，让我有很大的感触，也让我回想起了我的姥爷。人生生老病死本是常态，但是当一个人慢慢变老，而由变老带来的一系列问题真的是很让人无奈又不甘心的吧！与天斗，与地斗，与人斗，最后变成了与自己斗！<br>影片中的两位主人公都是已经退休的80多岁的音乐老师，本来在安享晚年的时候，却横遭变故，女主角Anne毫无征兆的突然中风，而后右半身偏瘫，直至最后的卧床不起..而后是男主角Georges照顾Anne的一系列平常的事情，但是也正是在平常的生活中才能见证两个人的感情..以及各自的心理变化，到最后男主的妥协..<br>这部电影讲的太过于真实，以至于直敲心灵深处。看完这部电影就像影片中男主角说他小时候看过的电影一样，看的过程中很触动感情，看完之后再回想的时候更是一发不可收拾。昨天晚上看完这部电影，今天早上再回想起来的时候眼泪更是止不住的留下来，真的跟男主角说的一样..难道这也是导演做的对这部电影的铺垫吗？<br>这部电影从头到尾都是平铺直叙式的拍摄方式，背景音乐也只是再特定的时候才用到了钢琴曲，我不敢去看第二遍了，所以这是我大概的记忆，不知道对不对。没有生活中的大起大落，只是平常生活中的平平淡淡的像极了平常人的老年生活，但是也正是这样，才直指人内心深处的感触，才能激起泪腺啊！才让我对爱有了更为真实的定义。</p>
+<h1 id="女主角的心理历程"><a href="#女主角的心理历程" class="headerlink" title="女主角的心理历程"></a>女主角的心理历程</h1><p>从一开始的病情征兆的出现，女主角对自己的病情很害怕，因为是80对岁的人了，做手术风险很高，对一般人来说几乎没什么风险的手术，都年纪很大的女主角来说风险很高了。影片中男主角也说到了做手术的风险很低，但是不巧的是女主角正好是那风险很低的5%的一部分里。做完手术后身体半瘫，从刚开始的难以接受，自尊心受到了极大的打击，乃至于男主角有一天去参加一个朋友的葬礼，提前回来之后发现女主角倒在开着的窗台下面，男主角没有问为什么会发生这样的事，他应该也能猜到Anne的想法，觉得自己是一个累赘，不如一死了之。再到Anne看相册时说的一句话：人生真是太过漫长了。听到这儿，Georges不知该说什么，明白了Anne的心思。</p>
+<p>片中的一幕死亡引起了不少观众的非议，这不禁让我想起“安乐死”的议题。笔者所在的荷兰是最早通过“安乐死”的国家，“安乐死”其实是对生者权利和意愿的尊重。电影中的这一幕，有区别，却也有类同。许多观众无法对片中展示的价值观进行认同，其实我看《Amour》的时候，当乔治拿起枕头时，也先是吃惊，不解，随后心中却升起无尽的悲凉。电影中的细节已经无数次提醒观众：Anne去意已决，当George回家看到Anne跌坐在窗口，Anne已有了跳楼离世之心；当Anne翻起相册时，她不是已经说过，人生之于她，已经太过于漫长了么？当她彻夜喊着“痛”，喊着“妈妈”时，她难道不是已经无法再忍受下去了么？当George给Anne喂汤时，她莫非不也是无法接受最后的怜悯了么？巴掌打在Anne的脸上，却也重重打在了George的心上，这样下去的苟延残喘，只会带来互相伤害，保姆已经用梳头和镜子彻底摧毁了Anne仅剩的一点点自尊心，他又能带给她什么呢？</p>
+<p>于是我泪流满面，明白了George的用意，与其让爱人痛苦着死去，不如让她快乐地活在他心里。一辈子的相濡以沫，又怎么会不懂得爱人的心意呢？那些只看到“谋杀”的观众，恐怕涉世未深，对“爱”无法理解吧。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人分享/">个人分享</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/影评/">影评</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/12/2017.12.05 js中一些方法的比较与区别" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/12/2017.12.05 js中一些方法的比较与区别.html" class="article-date">
+      <time datetime="2017-12-05T14:49:20.251Z" itemprop="datePublished">2017-12-05</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/12/2017.12.05 js中一些方法的比较与区别.html">Js中一些相似方法/属性的区别</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>Js中一些相似方法/属性的区别</strong>   <Excerpt in index | 首页摘要></p>
+<h1 id="forEach-与-map-方法比较"><a href="#forEach-与-map-方法比较" class="headerlink" title="forEach 与 map 方法比较"></a>forEach 与 map 方法比较</h1><p>forEach()和map()两个方法都是ECMA5中Array引进的新方法，主要作用是对数组的每个元素都执行一次所提供的函数，但是它们之间还是有区别的。jQuery也有一个方法$.each(),长得和forEach()有点像，功能也类似。但是从本质上还是有很大的区别的。</p>
+<p>`//forEach<br>array.forEach(callback(currentValue, index, array){<br>    //do something<br>}, this)</p>
+<p>//或者<br>array.forEach(callback(currentValue, index, array){<br>    //do something<br>})　　</p>
+<p>//map:<br>var new_array = arr.map(callback[, thisArg])　</p>
+<p>//$.each()<br>$(selector).each(function(index,element))  //注意参数的顺序`</p>
+<p>callback: 为数组中每个元素执行的函数,该函数接收三个参数，</p>
+<p><strong>参数一：当前数组中元素；参数二：索引； 参数三：当前数组。</strong></p>
+<p><strong>this：可选，执行会掉时候，this的指向。</strong></p>
+<hr>
+<p>区别：</p>
+<ol>
+<li><p>forEach()返回值是undefined，不可以链式调用。</p>
+</li>
+<li><p>map()返回一个新数组，原数组不会改变。</p>
+</li>
+<li><p>没有办法终止或者跳出forEach()循环，除非抛出异常，所以想执行一个数组是否满足什么条件，返回布尔值，可以用一般的for循环实现，或者用Array.every()或者Array.some();</p>
+</li>
+<li><p>$.each()方法规定为每个匹配元素规定运行的函数，可以返回 false 可用于及早停止循环。</p>
+</li>
+</ol>
+<hr>
+<p>Array 在 Javascript 中是一个对象， Array 的索引是属性名。<br>事实上， Javascript 中的 “array” 有些误导性， Javascript 中的 Array 并不像大部分其他语言的数组。首先， Javascript 中的 Array 在内存上并不连续，其次， Array 的索引并不是指偏移量。<br>实际上， Array 的索引也不是 Number 类型，而是 String 类型的。我们可以正确使用如 arr[0] 的写法的原因是语言可以自动将 Number 类型的 0 转换成 String 类型的 “0” 。<br>所以，在 Javascript 中从来就没有 Array 的索引，而只有类似 “0” 、 “1” 等等的属性。有趣的是，每个 Array 对象都有一个 length 的属性，导致其表现地更像其他语言的数组。<br>但为什么在遍历 Array 对象的时候没有输出 length 这一条属性呢？那是因为 for-in 只能遍历“可枚举的属性”， length 属于不可枚举属性，实际上， Array 对象还有许多其他不可枚举的属性。</p>
+<p>map可以做链式操作，forEach不可以，<br>for不用担心兼容性的问题，还有可以break跳出循环，是基础循环，可以有for…in,foo…of,for(let i=0;i&lt;len;i++)等。可以用continue和break控制<br>forEach是for(let i=0;i&lt;len;i++)的缩写，不支持continue和break，可以return来控制循环，forEach是不能退出循环本身的<br>map循环当前可循环对象，并且返回新的可循环对象，而forEach没有返回值<br>forEach只有在火狐和谷歌浏览器中Array有这个方法，在IE中就米有，需要用prototype手动添加这个方法。</p>
+<h1 id="类数组与数组的区别"><a href="#类数组与数组的区别" class="headerlink" title="类数组与数组的区别"></a>类数组与数组的区别</h1><p>类数组对象：<br>console.log(typeof a);//object 注意：数组也是对象哦<br>console.log(a); //  Object {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81} 很明显对象啊<br>console.log(a.length); //undefined  区别就在这了  类数组对象没有长度的属性和数组的方法<br>console.log(Object.prototype.toString.call(a));//[object Object]<br>数组对象：<br>console.log(typeof b);//object<br>console.log(b);//  [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]  很明显数组啊<br>console.log(b.length); //8<br>console.log(Object.prototype.toString.call(b));//[object Array]</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/12/2017.12.04 彗星来的那一夜-影评" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/12/2017.12.04 彗星来的那一夜-影评.html" class="article-date">
+      <time datetime="2017-12-04T08:23:38.187Z" itemprop="datePublished">2017-12-04</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/12/2017.12.04 彗星来的那一夜-影评.html">彗星来的那一夜-影评</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>彗星来的那一夜-影评</strong>   <Excerpt in index | 首页摘要></p>
+<p><strong>想象一下我们生活在一个多平行空间中，有无数个平行空间中的我们，每做一个选择就会在另一个平行世界中发生另一种我们的人生..</strong></p>
+<p>转载一篇我认可的影评吧，不看这篇影评我都注意不到电影中的这些细微之处的细节。转载自–豆瓣   <a href="https://movie.douban.com/review/7109306/">原文地址</a></p>
+<ol>
+<li>全片的关键词是片名“Coherence”，而不是“薛定谔的猫”</li>
+</ol>
+<p>我得说，原片名《Coherence》比中文译名《彗星来的那一夜》逼格高很多。</p>
+<p>Coherence，直译就是“相干性”。经典物理中最简单的定义就是：这是一种让两列波产生干涉的性质。而在量子物理中，coherence可以从很多种角度去定义，后面再讲。</p>
+<p>我不同意有人说的这是一部披着科幻外衣的人文片。相反，这片子的科学内核硬得很。用“Coherence”作片名，就说明编剧对量子物理的了解已经超过了简单卖弄一下“薛定谔的猫”这个概念或是不管三七二十一拿过“平行世界”的概念就来用的水平。我倒觉得最后女主黑化，展现“人性”的那一段，反而是副主题而已。</p>
+<p>那么，“薛定谔的猫”和“平行世界”有什么关系？Coherence在这里又是什么含义？</p>
+<p>简单来说，“薛定谔的猫”不是“平行世界”导致的结果。“平行世界”只是用来诠释“薛定谔的猫”的理论之一，更通行的说法是“多世界诠释” （many-worlds interpretation）。</p>
+<p>这部片子其实是在量子力学的多世界诠释是正确的设定下，描写了“多世界”（平行世界）发生相干（coherence）时发生的事。</p>
+<p>“薛定谔的猫”，让很多人迷惑的多半是在人开门观察之前，猫所处的那种不死不活又死又活的状态。其实，这种状态虽然诡异，但理论上总可以用一个波函数来表示。这个波函数在物理学家眼中具有很好的性质，因为它随时间的变化遵循薛定谔方程。门一开，“诡异”的状态立刻解除，我们得到了一个确定的状态：死或者活。开门瞬间猫的状态改变了，这意味着猫的波函数也有了一个突变，这个突变几乎是瞬时的，且不遵循薛定谔方程，是一种看上去由我们的观察（测量）而导致的突如其来的变化——这种由测量导致的突变才是更诡异的地方。</p>
+<p>这种突变的本质是什么？就是量子力学如何诠释的问题了。两种最流行的诠释就是：哥本哈根诠释和多世界诠释。</p>
+<p>哥本哈根诠释的核心在于波函数会“塌缩”，也就是测量瞬间，波函数以一定概率“突变”到一个确定的状态。在这种诠释下，不存在“平行世界”。猫死掉或是活着，完全是我们所在的唯一的宇宙里发生的一个随机的现象。</p>
+<p>而在多世界诠释里，开门之前，一切和哥本哈根诠释一样。开门的一瞬间，波函数并没有塌缩，但宇宙却一分为二。在一个宇宙里猫是死的，在另一个宇宙里猫是活的。关键是，活猫的宇宙和死猫的宇宙在很短的时间里就“退相干”（decoherence)了，因此，这两个宇宙不会重叠——或者说它们退相干的速度非常之快，以至于一个宇宙中的人不可能觉察另一个宇宙的存在。</p>
+<p>很明显，这部片子讨论的不是猫在开门之前的又死又活的状态（刘慈欣的《球状闪电》讨论的倒是这个），而是“开门之后”发生的事情。影片的设定里，量子力学的多世界诠释是正确的，而哥本哈根诠释是不正确的。因此，开门之后，各种可能的宇宙同时产生。只不过彗星发挥了神奇的作用，将这些可能的宇宙保持在一个相干的状态，里面的人可以看到甚至进入另一个宇宙。</p>
+<p>其实，这一点在Hugh读那本书的时候已经说的很明白了。因此，最后天亮，彗星解体，世界看似回到正常的时候，发生的也不是“塌缩”，而是多世界之间“退相干”了。</p>
+<p>结论：很多评论里都在用薛定谔的猫来解释这片子，其实这片子跟薛定谔的猫那种又死又活的状态没有什么关系。全片没有任何地方发生了“塌缩”，即使到最后天亮了一切看似恢复正常了，也不代表其他平行宇宙塌缩掉了。而只是说明所有的平行宇宙都退相干了，不再处于coherence的状态了。</p>
+<p>所以，那诡异的一夜，发生的事情，就是平行宇宙间的coherence，以此作片名，还是相当精准的。</p>
+<p>——————————————————————</p>
+<ol>
+<li>谁制造了平行世界？</li>
+</ol>
+<p>个人理解，彗星可能开了个头（有的宇宙里Hugh的手机裂了，有的没有），但绝大多数的平行世界都是那八个人自己制造的。</p>
+<p>回到薛定谔的猫。宇宙的分裂和平行世界的产生，都是由“开门观察”这一行为造成的。也就是说，一次“测量”可能的结果有多少种，就会造成多少个平行世界。</p>
+<p>讨论这部电影的时候，我们当然不必太过拘泥于“测量”的精确定义。我们只要记住，当他们每一次就某件事做出选择，他们就制造出了对应这个选择不同结果的平行宇宙。</p>
+<p>一开头宇宙就分裂了，有的宇宙里Hugh的手机裂了，有的世界里没有（最后打成一团的时候就看到了）。 这个分裂的原因没有明说，可能是彗星。</p>
+<p>而其中一次明显的人为选择，就是Hugh选择创可贴的种类。两种选择，制造出两个平行宇宙。</p>
+<p>第二次明显的人为选择，就是荧光棒的颜色。主视角的那个世界里他们选了蓝色，于是就必然有选择红色和绿色的平行世界在他们作出选择的时刻同时产生。所以，在这个蓝色荧光棒宇宙里，在他们做出新的选择之前，他们出去看到的另一个宇宙里的自己手里拿的荧光棒必然是不同的颜色——比如红色。</p>
+<p>如果就此止步，两种创可贴的选择造成两个平行世界，这两个平行世界里又各自有三种荧光棒的选择，于是这里就有2乘3也就是6个平行世界。</p>
+<p>接下来就疯狂了。他们八个人要用骰子人为制造随机性来标记自己。要知道，8个人掷骰子，每个人有6种可能，于是总共有6的8次方种可能的排列组合，这么一来，他们在之前的6个平行世界的每一个世界里又一下子制造出了6的8次方个平行宇宙，再加上照片的选择和随机物品的选择，这样下来平行宇宙的数量就多到令人发指的几千万个了。</p>
+<p>所以，这么细抠下来，片子里平行宇宙的总数并不是一开始就有许多个，而是随着他们的选择一次次增长的。</p>
+<p>另一个角度也可以说，让角色们做出不同的选择，不光是为了标记各个宇宙让观众不至于晕菜，事实上，每一个选择都创造了新的平行宇宙，是剧情向前推进的重要节点。</p>
+<p>进一步想，其实除了前面那些很明显的选择，还有许多暗含的选择比如去不去贴那个留言，Mike去不去给自己留威胁信，要不要去把另一个自己揍一顿，等等。再比如一开始，停电之后要不要出去看，这是一个很重要的选择。很显然，女主最后进入的那个“幸福”的平行世界里，他们没有选择出去看，可以注意到那个世界里Hugh的头上没有创可贴。</p>
+<p>所以，如果我们画出一幅平行世界的“进化树”的话，第一个很大的早期节点就是“要不要出去看”。选择不出去看的那个平行宇宙是一大分支，之后一切太平，没有因为选择产生新的分叉; 而选择了出去看的平行宇宙是另一个大分支，在其上又因为荧光棒、创可贴、骰子和随机物品的各种选择迅速地产生大量的分叉。</p>
+<p>甚至可以猜测，那个“幸福”的平行世界是早在女主选择是否要放弃那个替补席位的时候就已经分裂出去的平行宇宙。这个宇宙早就分裂了，比那个晚上才产生的诸多宇宙“辈份”高得多。</p>
+<p>而这颗彗星的作用，就是让这些本应该在非常短的时间里就退相干的平行宇宙保持长时间的相干状态。相干的表现，就是不同平行宇宙中的人可以看到、进入并且最终互相影响彼此的历史进程。</p>
+<p>这颗彗星能把宏观世界的相干态保持那么长时间，研究量子计算的人肯定很感兴趣。</p>
+<p>————————————————————————</p>
+<ol>
+<li>各个平行世界之间的时间差与因果链。</li>
+</ol>
+<p>有人也许会说，只有在别的宇宙里面掷完骰子把东西放进箱子以后才可能让Amir捡回那个箱子来啊。也就是说有的宇宙比别的宇宙时间进程快的多，那么到底是哪一家掷的骰子制造了平行宇宙呢？</p>
+<p>我的答案是每一家都创造了平行宇宙，每一家也都是被别人创造的。平行世界之间存在时间差，并不能推翻之前所说“选择产生平行宇宙”的假设。</p>
+<p>平行宇宙存在时间差应该是很自然的结果。比如一个宇宙里你选择了走路去约会，另一个宇宙里你选择开车。结果走路比较快，准时到达，开车的宇宙里你被堵了半天，迟到了。于是，两个宇宙里你们见面的时间不同，见面以后再做下一个选择的时间和之后的进程（比如女朋友是否同意跟你啪啪啪）当然也就不同了。</p>
+<p>前面说了，因为coherence，那个晚上，不同平行宇宙中的人互相影响了彼此的历史进程。再细想下去，正是因为它们互相影响，才会导致里面的人去作出选择，而这些选择又是产生其他平行宇宙的原因。于是我们陷入了这么一个因果关系的怪圈：</p>
+<p>作出选择——产生平行宇宙——平行宇宙互相影响——作出选择——产生平行宇宙——平行宇宙互相影响——……</p>
+<p>而且，这个怪圈的存在形式不是简单地一个圈，而是在几百万个平行宇宙之间互相交织、错综复杂的网状结构。</p>
+<p>更有意思的是，正是因为他们对确定性的追求，造成了更大的不确定性：</p>
+<p>那么多平行宇宙造成困扰——想到掷骰子确定自己——掷骰子创造了更多的平行宇宙——有那么多的平行宇宙让他们感到困扰——想到用掷骰子来区别自己……</p>
+<p>所以，当你投身其中，事件的先后是永远理不清的，这些平行宇宙共享一段互相交错而又自洽的历史。平行宇宙之间不仅不分彼此，而且不分先后。在这个自洽历史包含着的所有宇宙里，这八个人都会去做那几件关键的事——必然会扔骰子，Amir必然会去拍那张照片，必然会去选某种颜色的荧光棒……这些“关键事件”在哪个宇宙里发生在先，哪个宇宙里发生在后，根本不重要。这些平行宇宙是自己的因，也是自己的果。如果在某一个宇宙中他们不去做这些选择中的某一项，那么这个宇宙就会脱离这个自洽历史，而剩下的所有宇宙的历史自洽性依然不受影响。</p>
+<p>所以，里面有一个角色说的话很好：我们总觉得另一个平行世界里的我们是”dark version”, 但是, “What if we are the dark version?”这句话显然是编剧想要把主题提升到人性的层面，但也说明一点：影片的拍摄必然要选取某个平行世界做为主视角，而我们要记住所有的平行世界都是平权的。既然这些平行宇宙在空间上通过那一块黑暗地带交织在了一起，那么它们的时间线互相纠缠，都不再保持独立和线性，也就是一件很自然的事情了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/影评/">影评</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人分享/">个人分享</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/12/2017.12.04 寂静岭-影评" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/12/2017.12.04 寂静岭-影评.html" class="article-date">
+      <time datetime="2017-12-04T08:11:48.756Z" itemprop="datePublished">2017-12-04</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/12/2017.12.04 寂静岭-影评.html">寂静岭-影评</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>寂静岭-影评</strong>   <Excerpt in index | 首页摘要></p>
+<p>看完电影寂静岭之后想自己写一篇影评但是由于自己腹中实在没有什么干货，写不出来~~~（还是得多看书啊）<br>从网上看到了一篇讲解的非常全面的影评，看了这个影评才感觉电影中的好多东西都没有理解到位~转载到自己的博客上，以后想回看方便一些~</p>
+<p>转载自–豆瓣 <a href="http://blog.sina.com.cn/s/blog_6707d64e0100h50g.html">原文地址</a></p>
+<p>本文从2006年底笔者看过该片到完成该文，共看过该电影三次，构思并创作全文大约用了半年的时间。<br>现作者本人将原文全部发于豆瓣，特此说明。</p>
+<p>2006年4月，由曾经指导过电影《狼族盟约》的法国著名导演克里斯多夫·甘斯（Christophe Gans)制作的恐怖电影《寂静岭》（英文名《Silent Hill》,中国台湾译为《沉默之丘》），在上映三天内就突破了2000万美元大关。作为同样是由同名计算机游戏改编的电影，《寂静岭》一雪《生化危机》和《古墓丽影》等影片的前耻，受到游戏玩家的一致好评，《寂静岭》也由此成为了电影界和以游戏改编的电影中里程碑式的作品。</p>
+<p>尽管《寂静岭》获得了巨大的成功，但是仍有对其批评的声音。例如就有新闻认为《寂静岭》是一部“恶评如潮”但却票房高的影片（听起来怎么像在评价某些中国“大片”？），还有影评人称“看不懂”《寂静岭》，更有人想象力颇为丰富地将《寂静岭》与《无极》相比并认为其是一路货色。其实在文化全球化和后现代的今天，出现让每个人都拍手叫好的电影几乎是不可能的，何况还有那么多别有用心哗众取宠的人和不明就里盲从潮流的大众。《生化危机》和《古墓丽影》仅就电影本身来说，我个人认为并非“烂片”。而之所以它们被大加诛伐，就是因为与原游戏脱节严重，批评它们的人也多以游戏玩家为主。《寂静岭》之所以被玩家看好，就是因为它很真实地还原了同名游戏中推理解谜的特点和血腥、肮脏、恐怖、压抑的环境气氛。何况无论是电影还是游戏，《寂静岭》都绝对不是一个简单的、为渲染恐怖而生的“鬼域”或“血腥美学”，它是一个充满深刻人文内涵的地方，包括宗教、道德、哲学、性等多种元素和象征、隐喻、暗示等多种手法。因而对于没有玩过《寂静岭》这部系列游戏（截止拍电影时已有四部《寂静岭》游戏，现已出第五部）的人或者对这些不了解的人来说，“看不懂”实属正常。<br>既然有人说“有一千个观众就有一千个哈姆雷特，所以有一千个观众就有一千个寂静岭”，那么现在就让我们回到寂静岭：</p>
+<p>寂静岭的世界观：“三元论”、“二元论”与“二元主义”<br>看过《寂静岭》的人可能都应该感受到电影中不止存在着一个空间。对于寂静岭究竟有几个空间的问题，普遍存在“已死论”、“二元论”和“三元论”三种观点。持“已死论”（也就是认为寂静岭就是“阴间”，进入寂静岭中的人实际已在片头车祸中死亡）的观众可能是“没看懂”电影或者受到一句被错误翻译的台词字幕——“你们都已经死了”（实际应为“你们都已经被诅咒了”）的误导。“三元论”则是广受支持的一种观点，更有文章用“黄澄澄”、“灰蒙蒙”、“黑漆漆”三个词简明而传神地概括了寂静岭的三个世界。但是我认为，虽然寂静岭存在三个世界，但是“三元论”这个说法却是不准确的。<br>首先可以区分一下寂静岭的三个世界都是什么：<br>1.真实世界：就是真实的世界，在这个世界中的寂静岭就是一个被废弃的小镇，即“黄澄澄”的世界，这是由于电影中多数表现真实的白天都采用了一种温暖阳光的色调。<br>2.“表世界”：即“灰蒙蒙”的世界，就是女主人公罗丝（Rose）在车祸醒来后发现自己身处的世界，仿佛冬天的样子，实际上是由恶魔化之后的阿莱莎（Alessa)用邪恶的力量营造的世界，将一切“罪有应得”的人困在了里面。<br>3.“里世界”：即“黑漆漆”的世界，就是表世界响过警报之后不定期转化后的世界，一派血腥、肮脏的景象并有各种怪物出没，实际是阿莱莎内心痛苦和压抑的反映并由其邪恶的力量和仇恨的情绪控制。表世界和里世界都是从《寂静岭》游戏中借鉴来的概念。<br>存在三个世界这一点似乎没有问题了。但经过分析之后，我们会发现，如果从“次元对立”的角度看，那么只有两个对立的空间。在这之前，要看一个概念：二元主义。<br>“二元主义”（Dualism)在哲学中作为一种思想通常指承认两种根本的，不可再分且互异的元素，它们彼此冲突或者相互补充，又分为将这两种基本要素应用于认识活动中的“认识论意义上的二元主义”和用于解释一切广义上的客观现象的“形而上学意义上的二元主义”。“二元主义”本身也是西方历史文化自我否定式的发展规律自近代以来的产物，是对中世纪基督教唯灵主义的否定。<br>寂静岭的世界本身就存在表里世界的二元对立，这样以来加上真实世界，似乎“三元论”是成立了。但是对立的表里世界二者却不能同时与真实世界构成对立。因为寂静岭的世界要么是表世界要么是里世界，二者相互转化不能并存，所以导致要么是真实世界与表世界共同存在且对立，要么是真实世界与里世界共同存在且对立，无法存在真实世界、表世界、里世界同时存在并且对立的情况。需要说明的是，在里世界中的教堂只是由于信仰的原因使怪物无法进入而已，它并不具备表世界的特征，因而不是表世界，只能算里世界中的一个特殊地点；而阿莱莎所在医院的地下室也只是表世界里的一个特殊地点而已，还不能因为医院地下室有怪物和黑漆一片就认为那是里世界，因为表世界也有怪物，而地下室没有光自然是一片黑；而游戏《寂静岭》中表里世界的创造、形成原因与电影中不同，也不能作为解释电影《寂静岭》的依据。所以可以得出结论，寂静岭确实存在三个世界，但是从“对立”的角度看，只有二元对立。因而《寂静岭》中的世界观是存在三个世界的“二元论”，或者也可以认为实际只存在两个世界：真实的世界和变化着的寂静岭的世界。作为西方带有宗教题材的恐怖片，《寂静岭》也没有脱离二元主义的规律。<br>其实片中的这种二元对立在电影一开始就已经暗示了，那就是罗丝的女儿莎仁（Sharon)梦游时险些摔下悬崖的镜头，构成了上下的对立，水上和水下的对立，真实世界与虚幻世界的对立，善良的莎仁与阿莱莎的邪恶面的对立，甚至原来是水下世界却存在幻境中的烈火这样水与火的对立。当阿莱莎的邪恶面从悬崖上高速下坠的镜头出现时，我承认确实被吓到了，虽然据说这个停留的镜头只持续了0.7秒，但是那恐怖的笑容着实让人一震，真很难想象到可爱的阿莱莎的形象与这个恐怖的邪恶的阿莱莎是同一个小演员出演的！实在不得不佩服她的演技！</p>
+<p>三个阿莱莎：<br>影片中就“小女孩”的角色问题，可能有人梳理不清阿莱莎、莎仁等人物的关系，参照一些公认的定论，我们可以明确有三个不同形式的“阿莱莎”存在。<br>1.阿莱莎：即在三十多年前被施以火刑的小女孩，也是后来在教堂进行屠杀的“终极怪物”，从她后来的身形可以的知她一直处于生长中。<br>2.阿莱莎的邪恶面：即引发罗丝车祸的人影，后来一直引导罗丝追踪、解谜，以燃烧的形式消失并在医院地下室与罗丝融为一体的小女孩，以一身阿莱莎当年穿的蓝紫色校服出现。她就是阿莱莎被严重烧伤后，在医院极度的恐惧和仇恨所产生的邪恶力量形象的具体化，她使阿莱莎拥有了恶魔的力量。<br>3.阿莱莎的善良面：即罗丝的女儿莎仁，由阿莱莎以分娩的形式产出，并由阿莱莎的邪恶面送出到真实世界的修道院，后由罗丝领养（由此得知阿莱莎的邪恶面有自由穿行于三个世界之间的能力）。有人根据阿莱莎曾被强奸过这一情节认为莎仁是阿莱莎的亲生女儿，这根本就是缺乏基本生活逻辑：以当时阿莱莎的年龄不可能有生育能力，另外以莎仁的年龄看，阿莱莎不可能怀孕二十年再生孩子，而莎仁一再梦游想回寂静岭就是受到神秘力量的召唤，回去与阿莱莎的邪恶面“结合”。</p>
+<p>《寂静岭》中的人文内涵<br>《寂静岭》的人文内涵很大一部分来源于宗教元素的存在。就在片头罗丝发疯般寻找莎仁并最后与赶来的丈夫抱在一起时，画面背景就出现了一个亮着灯的十字架，为什么那边不出来一些别的东西呢？比如亮着灯的摩天轮？亮着灯的建筑？因为这本来就是一个暗示，告诉你本片涉及的宗教题材。而罗丝带莎仁去寂静岭的路上出现的一块牌子，镜头特地在上面停留，上面的内容是，“Do you not know that we will judge angels?Do you not konw that the saints will judge the world？（岂不知我们要审判天使么？岂不知教徒要审判世界么？）”这些句子本来就是《圣经·哥林多前书》中的内容，原文是“Do you not know that the saints will judge the world? And if you are to judge the world, are you not competent to judge trivial cases?Do you not know that we will judge angels? How much more the things of this life!（岂不知教徒要审判世界么？若世界为你们所审，难道你们不配审判这最小的事么？岂不知我们要审判天使么？何况今生的事呢？）”这就是在预示她们此去寂静岭的前景，被一群自宗教偏执狂“审判”，但是最终却是在暗示整个影片的结尾，就是魔鬼对教徒进行的审判，那些为恶而自认为正义的人，最终会被上帝抛弃——别告诉我你没有注意到牌子的外形就是一本书，别告诉我你看见那书的外形没有想到那是《圣经》！还有罗丝在寂静岭学校时候，门框上文字的一个镜头：“The foes of the righteous will be condemned.”这是《圣经·诗篇》中的内容，原文为：“Evil will slay the wicked；the foes of the righteous will be condemned（恶必害死恶人；恨恶义人的，必被定罪）。”已经不用多说了，那些自以为信仰上帝的人的命运，被定罪审判，已经再一次提前告知观众了。<br>从电影中我们可以得知，寂静岭是1974年11月因为地下煤矿的火灾而被废弃的小镇，至今地下的锅炉和矿脉还在燃烧着熊熊大火，因而寂静岭的空气中飘浮着致命的污染物。这一点在真实世界中表现的不明显。而在表世界则表现为似乎是不断落下来的“雪”，后来罗丝发现其实那是飘落的“煤灰”。而《圣经》中的《圣约翰启示录》是怎样描写“地狱”的呢？“它是一个永久的火湖，它的空气来自祸害的煤炭，光来自闪烁的火焰。夜晚一片漆黑，被诅咒之人的处所毒蛇横行。他们的希望是绝望。啊，永生之死！无生之生！啊，无尽的痛苦！”《圣经·福音书》中耶稣对地狱的描绘中也有“火是不灭的”字样。<br>里世界那些残破的墙壁，锈迹斑斑的管道和门，铁制的楼梯，转动的风扇，不知从何处产生的铿锵作响的金属撞击声和烟雾或蒸汽，似乎只存在铁黑和火红这两种颜色的压抑环境，正是大机器生产的工业时代的再现！这都是电影在以后工业时代的艺术风格对没落的工业时代以一种末世的悲凉形象进行的渲染。<br>对于《寂静岭》来说，后工业时代的艺术风格只是它的表象，《圣经》中的宗教隐喻才是它的实质。在里世界被开启之后，教堂中的教徒们祈祷所要阻止的也正是《圣经》中的“末日审判”，或电影中所谓的“天启”的到来。<br>《寂静岭》中的怪物也是一大看点。它们的外形和特征等都是严重烧伤的阿莱莎恐惧、痛苦、仇恨、愤怒心理的形象具体化之后的表现。无论电影中还是游戏中，这些怪物都不是仅为了引起恐怖的视觉效果而往“怎么丑陋怎么设计”出来的产物，宗教内涵与性暗示足以使这些怪物受到弗洛伊德信徒们的鼎礼膜拜！<br>罗丝进入里世界后首先看到的第一个恐怖景象就是一张铁床上的物体，具体是什么我看了好几次也没看出来，据说是一个死得很惨的人，这是对游戏场景的一个还原。罗丝后来发现铁丝网墙上挂着的是一个穿着“防护服”的教徒（人还活着）。如果我没有看错，他已经断了一只手，而且他就是以十字架的形式挂在那里（又是一个宗教暗示）。接下来冒出的那些还处于半燃烧残骸状态的怪物，就从它们的形体大小和发出类似孩童的嘶叫声音的角度看，其实它们就是当年在学校欺负阿莱莎的同学，这些孩子在被阿莱莎拥有的邪恶力量引发的火灾烧成焦炭以后，就以这种怪物的恐怖方式存在于里世界中。<br>第二个出场的怪物被游戏玩家称为“紧身衣”，也是电影中表世界出现的唯一怪物。从它被女警察西比尔用枪击毙时喷出的红血基本可以推测出那是一个被困在自己皮肤里的人。据说在拍摄这个怪物时也是用真人穿上无臂的紧身衣然后再用电脑合成的。这个怪物是游戏《寂静岭2》中男主角长年自我束缚在生病妻子身边痛苦心理的写照，搬到这里一样也可以有合理的解释。因为阿莱莎受到火刑时也被强制束缚。其实在这里我们可否认为“紧身衣”也具有某种性暗示的意义？阿莱莎被强奸这是片中的事实，而这个无臂的怪物光溜的躯体本身就像一个可以来回行走的男性生殖器。这个怪物就是阿莱莎被强奸时恐惧和痛苦心态的形象具体化。而怪物本身可以喷射出带有强腐蚀性的液体可否被看作是还不谙世事的阿莱莎对男人精液的恐惧印象？后来这个极具性暗示外形的怪物确实喷出了这些液体，而且是向女性喷射的，别告诉我你看不出这里的意思… …<br>从厕所中爬出来的怪物，就是当年阿莱莎被同学欺负躲进厕所后强奸了她的清洁工，电影中两次用身份牌上的名字柯林（Colin）暗示出他与怪物的关系。这个怪物被以扭曲的形式用铁丝网捆绑，应该是阿莱莎以被强奸时的心理对其的报复。而怪物的眼睛被铁丝网蒙住则是阿莱莎对柯林强奸时看了她身体的惩罚。只有怪物身上的输液瓶让人觉得奇怪，也可能是对游戏细节的尊重。怪物爬行时手臂所及之处会产生藤蔓般的血管并伴有毒泡产生，它不断“吐舌头”的动作则是性暗示的标志，而按照它那样两腿被高高吊起地爬行方式，每爬动一次，生殖器就会被严重摩擦，让它经受如此的痛苦也是阿莱莎对他的报复。<br>在罗丝于里世界的镜头中，出现很多笼子中倒挂的成年男性的尸体。为什么都是成年男人，我只能用阿莱莎本身是私生女、从小没有父亲所以很少接触男人，后来又被男人强奸而导致她对男性产生了极不信任感和仇视来解释了。随着罗丝下楼梯的镜头我发现其中一具男尸是没有生殖器的（被割去了？），或许这也就是因为上述原因导致阿莱莎对男人的报复。也是因为这种不信任和仇视也是阿莱莎没有将罗丝的丈夫拉入寂静岭世界的原因。而那些被倒挂的尸体，其实在《圣经》中的《彼得启示录》中就有很容易找到的答案。那里描写的地狱里被惩罚的人以不同罪恶的原因被施以不同的刑罚，但是被“吊起来”或“倒挂”却是很共同的一种。其实寂静岭的里世界就是“地狱”！<br>之后，多灾多难的罗丝遇上了一大群圣甲虫或被称为“人面虫”的怪物。三个来不及逃跑的教徒被虫子吃掉，看来他们身上看似结实厚实的防护服也不怎么样，顶多应该能抵挡下表世界“紧身衣”怪物喷出的毒液。关于这些虫子的来历，有人认为是阿莱莎重伤时被甲虫咬过或感觉身上像被甲虫咬的感觉幻化出的，其实这些都是没有任何根据的，至少电影中没有这些情节。认为虫子是阿莱莎以前同学的说法也似乎有些牵强，而且我没有怎么看出甲虫的脸怎么像人脸。其实这些虫子就是圣甲虫，古埃及神话中被认为是太阳神科何普拉的化身（当然，古埃及神话中太阳神不止他一个），原因是古埃及人看见这些乌黑的甲虫反射的阳光就认为它们是太阳神的化身。有人认为这些虫子是尸虫而不是圣甲虫，其实这点并不矛盾，因为古埃及人确实将这种被认为能避免尸体受到恶灵侵害的虫子倒入棺材。圣甲虫在古埃及神话中的另一意义就是“复活”，在电影中它们它们代表了经受火刑之后几乎死掉的阿莱莎“复活”时产生的仇恨。或者也可以揣摩一下这些虫子的宗教隐喻，《圣经·福音书》中耶稣对地狱的描述中就提到了地狱中“虫是不死的”（圣甲虫可以随着寂静岭表里世界的转换而复生），而《圣经》中《彼得启示录》更写到了迫害正义之士的人要“站在火焰中”，“受到不死之虫的吞噬”，而谋杀犯和帮凶则“被扔进满是恶毒害虫的狭小之地，他们受到那些生物的折磨，不停痛苦地扭动着。黑云一般的害虫向他们频频袭来。被谋杀之人的灵魂在一旁站立，目睹自己仇人受罚，并对他们说道，主啊，你的惩罚公正无比。”以上内容有没有让人想起那三个教徒被圣甲虫吃掉时候的场面？这些人里哪个当时不是想烧死阿莱莎的谋杀犯，哪个不是女教主克蕾丝（Ghristabella）的帮凶呢？<br>接下来出场的就是极具视觉冲击力的“大铁头”怪物了。这个在游戏《寂静岭2》中代表南主角自身的暴力倾向和对罪孽的自我审判的象征，据说其典型的特征“三角铁头”来源于寂静岭历史上美国南北战争时期一座监狱中的刽子手形象。在电影中，这个拖着沉重步伐游走于里世界并且见人就杀的怪物也着实让人感到恐怖和震撼。其极具男性特征的粗壮躯体正表达了阿莱莎复仇的渴望，之所以阿莱莎会被同学欺负、被强奸、被施以火刑而无法反抗，就是以为内她是一个弱小的女孩，而如此强悍的外形则正好符合阿莱莎复仇的条件。有人曾对电影里三角头的武器由游戏中极具性暗示作用的长矛换成大刀而感到遗憾，但是我觉得这大可不必，因为根据弗洛伊德的理论，不仅是长矛，一切长形、凸起、竖起、坚硬有穿刺力的物体，尤其是武器本身都是极具性暗示的。当罗丝和女警察西比尔（Cybil）在小屋的铁门后面躲避铁头怪物的剧情里，当铁头怪物用极具性暗示作用的大刀“刺破”关着两个“女性”的铁门，并将已经“进入”铁门的大刀来回“搅动”时，这里的“大刀”、“小屋”、“铁门”、大铁头伸进来的“手”和“门闩”，甚至被放进来的几只圣甲虫本身就带上了弗洛伊德性暗示的暧昧色彩。再联想到大铁头在教堂门前因为安娜（Anna）曾经向阿莱莎的生母扔石头而石头而将安娜撕成两半的情节里，你说铁头怪物你要撕就撕好了，为什么还要把安娜衣服扒光了再撕呢？大铁头扒人家衣服时干净利落地简直有几分强奸的神韵，这是否是阿莱莎对自己被强奸的报复呢？弗洛伊德又在微笑了… …<br>就那把大刀看，似乎《圣经》也要来分一杯羹。《圣约翰启示录》中写到末日审判中，羔羊（本指耶稣，在电影中能否是对柔弱的阿莱莎的暗喻？）揭开七印，倾斜出愤怒（此处与电影一致），放出四个人，第一个被赐予“冠冕”（铁制三角吗？），第二个被赐予大刀… …看来这下，上帝要与弗洛伊德一起微笑了。<br>那群护士怪物，本来也是游戏《寂静岭2》中男主角长期性压抑的产物或者《寂静岭1》中阿莱莎对医院的反感的产物，在电影中就只能解释为阿莱莎得到邪恶力量时由于极度愤怒而将身边的人都杀死并变成怪物，从片中也可以得知当年寂静岭的大火也确实烧死了一些无辜的人。那个没有眼睛的红衣护士是因为好奇而看了重伤之后阿莱莎后被阿莱莎挖去了眼睛并一直照顾阿莱莎的生活。护士怪物们用利器相互切杀并不是自相残杀，而是感觉到身边有人但却因为无光（片中说到它们只对光有反应）的反应而已，而这些护士怪物走路时的动作被誉为“痉挛芭蕾”，据说她们都是由艳舞女郎和爵士舞蹈家扮演。<br>在教堂最后那场稍显“华丽”的屠杀中，被罗丝（或者说阿莱莎的邪恶面）的血腐蚀的教堂地板上，真正的阿莱莎从满是暗红色烈火和钢铁设备的地下出现了。她在杀死克蕾丝教主的时候，很明显可以看见，最早刺进其身体的铁丝网是从裙子下面伸入直接刺进下体的，这又是一个明显的性暗示。从克蕾丝那身蓝紫色的衣着与阿莱莎就读学校学生校服的颜色一致我们可以得知克蕾丝有可能是那所学校的老师，如果要宣传一种宗教，那么从孩子抓起完全是可能的，何况在西方并不是没有教会学校。那么也就是说孩子们认为阿莱莎是女巫除了有片中提到“父母的灌输”以外，很有可能有克蕾丝老师的教唆和命令。其中克蕾丝找阿莱莎的生母谈话时曾关门推走了几个好奇的学生，由此得知她们谈话的地点就是学校，能在学校召见家长的，除了老师还有谁呢？而正是因为学生们被克蕾丝唆使欺负阿莱莎，她才会躲进厕所而遭强奸，因而完全可以得知阿莱莎这样杀死克蕾丝是对其行为导致自己遭到强奸的报复。最后，阿莱莎将克蕾丝一分为二，正是让其知道阿莱莎受火刑而痛苦地分裂为一个善良体和一个邪恶体的感受，所谓以其人之道还其人之身，而教堂这场屠杀正是犹太教末世论和条顿化基督教对最后审判日观念的体现，或许走进寂静岭就是打开了《圣经》。<br>其实片中众多的性暗示除了可以从阿莱莎的经历解释外，也可以从影片导演的话看出一些内容——“我喜欢女人，喜欢和美国婊子做爱。我想拍一部到处都是性感女人的电影，没一个男人。我不想处理和男人有关的东西。”只是可怜了这些女演员们一次又一次成为了导演们“意淫”的对象。</p>
+<p>对于《寂静岭》中杂项的解释试探：<br>1.寂静岭中的真实世界与表世界，真实世界与里世界都可以以一定方式联系，此处可以从罗丝给丈夫的电话，女警察发给总部的求救，丈夫闻到罗丝的香水味得知。<br>2.阿莱莎是通过自己邪恶面造成的车祸的方式，用神秘的力量将罗丝和女警察拉进寂静岭表世界空间里的，这可以从很多相关资料中得到证明。女警察很有可能是阿莱莎故意拉进寂静岭以用来保护罗丝完成任务的。女警察跟踪母女俩的原因是女警察曾去寂静岭调查过一个杀人狂将一男孩塞进煤矿通风管道的案件，进而对想去被废弃小镇的大人加小孩的组合加以怀疑。对于有资料认为曾有克蕾丝身边一个塑料女模特是暗指女警察这点不予支持，我认为之所以有这种想法是因为女警察头发短而塑料人正好没头发导致看起来相似而已，而且到不如说那塑料是在暗指克蕾丝自己，被控制在寂静岭而又不自知的“傀儡”。<br>3.注意女警察的名字，西比尔，英文为“Cybil”，乍看来就是一个普通的英文名字而已。但是英文中“女巫”一词，除了常用的“witch”以外，还有两个词，分别是“sybil”和“sibyl”，为女巫、女算命师和女预言师的意思。有没有发现，其实这两个词中第一个词与女警察的名字“Cybil”只相差了一个首字母而且它们的发音是一致的？有没有发现第二个词“sibyl”仅仅是把第一个词“sybil”中间的两个字母“y”和“i”调换了一下位置，而且它的发音也与“Cybil”一致呢？也就是说，女警察的名字本身就是“女巫”或者说被设定为“女巫”的谐音，这又是一个暗示，暗示女警察Cybil被烧死（与女巫被处死的方式一致）的结果。<br>4.真实世界转换与表世界怪物出现时会造成收音机、手机等电子产品噪音这点是对游戏的还原，无科学解释。<br>5.里世界经常出现的风扇的喻义：一个是工业生产本身必须的通风设备，也是后工业艺术风格的元素，也是里世界压抑的工业运行声音的来源，也是对里世界就是“绞肉机”的暗示，而且也有宗教观点认为地狱的运行就是“铁轮”来回转动的原因。<br>6.教徒们用来对表里世界转换的报警工具是笼子里的鸟，这也是今天用于监测煤矿一氧化碳含量的工具。<br>7.片中寂静岭的世界周围都是悬崖，这也是被困在这个空间里的人跑不出去的原因。即使能跑出去，另外的地方也是表世界也是表世界的延伸，会转成里世界，所以不如老老实实呆在教堂里避难。<br>8.不支持片头NATHAN旅馆下的“DRUGS”（药的意思，也指毒品）是对小镇贩毒的暗示。这是游戏里的情节，电影中没有交代。这最多就是对游戏的还原，如果是暗示也只能是暗示教徒们对他们宗教的信仰如吸毒一般。<br>9.片中出现的男警察就是当年在寂静岭从火刑架上救下阿莱莎的男警察，因为是好人，所以没有被阿莱莎困在寂静岭世界的空间里。<br>10.罗丝拿到画的信箱号是111，后来在旅馆中找到火刑画后面的房间（就是当年阿莱莎受火刑的房间）也是111，一处明显的暗示。<br>11.女警察护送罗丝下电梯时与几个穿防护服的教徒发生打斗，她曾经将一人隔着防护服打得头部直接喷血，这样的人还能再爬起来对女警察进行殴打，我觉得施瓦辛格也不行！坚定为硬伤！<br>12.不清楚这点应该如何解释：片中已经告知，阿莱莎拥有邪恶力量引发的大火使寂静岭废弃是在1974年，罗丝来寂静岭已经是2006年，中间已经有32年时间。但是从片中克蕾丝前后32年的模样我们可以发现她几乎没有什么变化，也就是说有可能被困在寂静岭的人已经停止生长了，因为从寂静岭表世界建筑的破旧可以得知如果不是有年头的话是不会出现这种情况的。而且认为安娜就是阿莱莎以前同学的说法也是不可能的，因为她怎么看也就二十多岁，绝对不像三十多岁或者四十多岁的人，1974年可能她还没有出生呢。而阿莱莎只可能把迫害过她的教徒拉进她的空间，因此看来教徒从1974年以来就停止生长是正确的，而奇怪的是最后屠杀时的阿莱莎本体却已经是成年人的体形了，可以可见她却是一直生长的。疑问就在于即使人不生长了，但是片中的人还是得出来找食物的，在寂静岭那样的环境中任何种植和食品加工都是不可能的，我们也看到安娜找的都是一些以前寂静岭剩下的食品罐头。但是请注意！什么罐头的保质期能保证32年呢？寂静岭里又有多少罐头能供那么多人维持32年呢？而且寂静岭里的人的水又从哪里来的？自来水厂肯定是一片废墟了，片中说寂静岭边的河也被绝壁隔住了。里世界似乎下雨，但是里世界的雨水能喝吗？即使能喝，能供应这么多人吗？里世界的雨水会不会随着世界的转化一样消失掉？如果说寂静岭的人是被“延缓”而不是被“停止”以解释教徒的年龄的话，那么当年解救过阿莱莎的男警察又怎么解释呢？假设1974年他只有20岁，2006年他也有52岁了，但是片中他最多三十多岁而已，他不在寂静岭的世界怎么年龄也被“延缓”了呢？<br>13.罗丝带着阿莱莎开车回家，虽然出了寂静岭，世界也仍是一片灰色，来寂静岭的路上热闹的加油站也空无一人。回到家时，电影用罗丝在灰蒙蒙的寂静岭与丈夫所在的黄澄澄的真实世界的反复交替出现来说明罗丝其实是被永远困在了寂静岭的表世界里。原因很简单，当时的莎仁其实是阿莱莎的邪恶面通过对视与莎仁融为一体之后的人，或者说，莎仁已经不存在了。没有发现回家后的莎仁有一种成人的眼神，并且仿佛从来没有来过自己的家一样，进屋之后有种好奇感？阿莱莎就是因为曾经被自己的生母抛弃给教徒，而从罗丝这里感受到真正母爱，而想把罗丝永远困在寂静岭的世界里以独享母爱！“莎仁”上车之后吸手指的动作就是在使用神秘力量，她吸手指之后，原本不能发动的汽车发动了。有文章认为车是从悬崖上“飞”出去的，我觉得不是，从车经过悬崖的画面明显可以发现原来的绝壁上已经出现了一座桥梁，这也是车上的莎仁吸手指使用神秘力量延伸出来的结果，最后表世界的空间被一直延伸到罗丝的家。我认为，劫难之后的罗丝其实已经知道自己的女儿不是原来的莎仁了，也知道自己将永远被困在寂静岭的表世界，否则她怎么就上去去试图开动这辆之前已经开过但却无效的车呢？罗丝原本也知道寂静岭四周是无路可走的虚悬，怎么就敢开车往外走呢？原因就是她知道“莎仁”或者说阿莱莎不会让车掉进悬崖而一定会让自己开车出寂静岭。世界仍是一片灰色和加油站的空落罗丝不可能没有察觉，最后她进屋后直愣地望着沙发，就是她感觉到了自己丈夫的存在，但却也知道这种“两个空间”的存在是咫尺天涯了。其实者这一切都是阿莱莎安排好的，她将自己的善良面莎仁送出寂静岭险恶的地方被人收养，长大到自己受火刑的年龄再招回寂静岭，复仇并完成合体，然后独享母爱。</p>
+<p>寂静岭所要表达的主题：<br>1.母爱：体现在罗丝面对如此艰险的环境还义无返顾地寻找女儿，阿莱莎的生母无论在里世界还是在最后审判中都安然无恙。女警察一句“在孩子的眼中，母亲就是上帝”和罗丝对其的引用，以及女警察被烧死时也喊母亲、都揭示了这一点。<br>2.后工业时代：一如美国甚至世界各国在后工业时代没落的工业城市，寂静岭也象征一个时代的终结。<br>3.宗教反思：阿莱莎是因为私生女所以才被当地的“邪教”组织所不容，类似的还有旧中国某些某些地区女人未婚先孕就要被淹死的陋习。美国本身是一个新教国家，而中世纪天主教在欧洲烧死的“女巫”则不计其数，无数无辜的人被以各种名义施以火刑处死，沦为宗教狂热和愚昧的牺牲品。最荒谬的更有1474年巴塞尔城曾因为一只公鸡下蛋（公鸡中的战斗机？）被视为“女巫”而烧死！美国本身在成立之前也有从欧洲大陆来的各种教派，导致今天美国各种名目繁多的宗教组织。在美国建国前的混乱状态，各教派都认为对方是“异端”，结果就是更多人因为“异端”或“女巫”被推上火刑架。所以《寂静岭》不仅是基督教新教对天主教的反思，也是美国新教本身对自己的反思，一如阿莱莎生母说：“我们的信仰是我们的掘墓人。”<br>4.对善恶的思考：电影中借男警察之口道出“魔鬼也有自己的正义”，如果正义用邪恶的手段摧毁邪恶，那么它究竟是正义还是邪恶？究竟什么是善和恶？是否存在一个绝对的标准？<br>5.赎罪/审判之地：这本来是游戏《寂静岭2》所要表达的主题，在这里同样适用。寂静岭其实就是每个人心中的道德底线，是每个人最后都要受到的自我拷问。那些做了坏事的人最终都要被最后审判，赎罪的方式就是接受审判，就像电影中那些教徒，那些为恶又自我开脱而不自知的人，早晚都要受到魔鬼的最后审判！<br>寂静岭是一个恐怖、压抑而又充满魅力的地方，我不知道为什么我给文章标题鬼使神差地写上了“带我回到寂静岭”，仿佛我曾经去过，或许那里对人的内心有种神秘的感召力。李安导演在奥斯卡获奖时曾经说人人心中都有一座断臂山，如果真是这样的话，那么我认为每个人心中也有一座寂静岭，那是每个人心中的自我审判，是每个人最后都要回到的地方..</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/影评/">影评</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人分享/">个人分享</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/12/2017.12.04 狩猎-影评" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/12/2017.12.04 狩猎-影评.html" class="article-date">
+      <time datetime="2017-12-04T06:52:50.182Z" itemprop="datePublished">2017-12-04</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/12/2017.12.04 狩猎-影评.html">狩猎-影评</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>狩猎-影评</strong>   <Excerpt in index | 首页摘要><br>好几天没更博了，想着总要写点儿什么，锻炼一下我的写作能力，嘿嘿嘿~<br>不得不说的是，这几天我过的很爽哈，一下看了好几天的电影，都是名气很高的电影，看完电影之后就想着写一下影评抒发一下我的看法~不过自己的文笔不太好，所以就转载一篇吧~</p>
+<p>看完了《狩猎》，这是一部丹麦的电影；导演托马斯·温特伯格，曾是丹麦电影学院有史以来最年轻的入学学生，而且表现出色。</p>
+<p>影片最让我动容的是对人性的刻画。好了，就让我转载一个我所认同的影评吧~ <a href="https://movie.douban.com/review/5818670/">原文地址</a></p>
+<p>一部寒冷彻骨的电影。不温不火的叙事和冷静理智镜头之中酝酿了近乎绝望的压抑、狂躁与寒冷，这部丹麦电影就像北欧的冬天一样寒冷，在颤栗中毫不留情的在人性与社会道德划上深入骨头的一刀。</p>
+<p>这部电影的观影过程绝对不是一个愉快的过程，片中酝酿的一种冷而近乎绝望的氛围让整部电影张力饱满，郁结到近乎暴戾的怨气充斥胸腔，让人意志中的理智与情感大乱阵脚，剧情爆炸式的张力让整部电影的氛围处在一种极其微妙、一触即发的精确位置，而这种微妙张力来源于人内心之间的斗争。所谓三人成虎，但这部电影不仅仅是一个三人成虎的故事，儿童在影片中游离于天使与恶魔之间的设置，让这个三人成虎的故事变得更加深刻和让人不寒而栗，西方国家对儿童的保护和重视也在此片中可见一斑，孩子的话往往是纯真而无意的，但是这种无意的“孩子话”要是沾上社会道德禁区，并被误解，那纯真便可以变成剧毒的毒药，很遗憾，影片中的主人公就是一个不幸中毒的倒霉蛋，孩子自然可以不为自己的话负责，短浅的人生阅历让他们在社会的地位中一无所有，而对于一个成年人来说，社会中的一席之地近乎可以是他们的全部，当这些被毁灭时，就意味着个人的社会性被抹掉，对于一个有理智成年人来说，这是一种变相的谋杀。片中男主角的反应似乎略显迟钝，自我维护也是到了最后才迸发，可是细心的可以发现，在铺垫段落，男主角与孩子的互动之中，与女朋友的交往之中，我看到了男主角身上隐隐约约的被动性格，这种人，往往木讷而善良。</p>
+<p>孩子算社会中的特殊的弱势群体，他们在生理和心理上都不成熟，保护自我的能力薄弱，所以一旦发生疑似侵犯儿童的事，社会群体总是会毫无保留的站在孩子的这一端而群起攻之，但是当这种社会性的毫无保留被曲解和误用的时候，孩子就由天使变成了魔鬼，孩子尚未健全的人格和辨识力让社会常规、合理的解决途径在此无路可通，于是他们的话往往带来巨大的破坏性，影片中卢卡斯的生活就被一两句近似胡话的童呓毁灭，但毁灭过程最大的破坏力并不是由孩子直接带来的，而是由社会群体的排斥和异化所带来的，人毕竟还是群居动物，当一个人被孤立和异化的时候，这种隔阂带来的对人的伤害是巨大的，更何况这种排斥和有意的异化是冤屈的，影片的张力便是建立在这种排斥和冤屈的对立上，精准到位的把这种恶毒的人际对立和人物内心的崩塌完美的展现了出来。谣言猛于虎，而当社会伦理禁区的谣言来自天真的孩子，这种破坏力则更加猛烈，影片中，在丑闻和随之而来的各种谣言面前，社会群体之间的对立逐渐变得立体而猛烈，从开始的将信将疑留有余地，到最后近乎整个社会群体的排斥，影片在似乎平静的氛围中酝酿下了更大的恶意，当观众以男主角为第一人称带入故事时，这种慢慢酝酿而来的恶意和仇恨近乎可以演化成反社会的暴戾情绪，一股积郁的愤怒迟迟无法爆炸最终竟成了彻骨的寒意。</p>
+<p>影片的前半个小时感觉有点云里雾里不知所云，切入过慢，但是一过这个节点，影片便开始展开其爆炸性的张力，导演对镜头的处理平静而理智，就像影片中主人公开始对自己理智的克制一样，但是到了后半段，主人公的理智开始摇晃时，影片的镜头仍然平静如初，这种镜头内的躁动和镜头外的平静理智，让观众产生一种由内及外的愤怒，甚至萌生反社会的暴戾情绪，正是因为镜头冷峻的袖手旁观与故事内的爆炸张力产生的强烈对比，为主人公鸣不平却无可奈何而产生的强烈观影共鸣，带来了极大的带入感和精准的人物塑造。本片的导演托马斯•温特伯格轻松的把观众的情绪玩弄于鼓掌之中，这正是这位丹麦导演的功力所在。这种沉重的社会题材电影往往可以给人带来更多的思考，不论是去年的《爱》还是以往的更多欧洲社会题材电影。影片最让我印象深刻的是在教堂的一幕，男主角非常讽刺来到教堂这个乞求救赎的地方，顶着上帝普世之爱的光环这或许是唯一能让他这个“罪人”和一社区“善人”平静共处一室的地方，当孩子们用天使般的声音开始唱圣诞颂歌时，这种恶与纯真的巨大反差让男主角的理智处于崩溃边缘，但是终究理智还是没有崩溃，这种人社会性的属性永远也抹不去，不然他会去绕过卡拉的爸爸，直接对孩子下手，理智告诉卢卡斯孩子是无辜的，卢卡斯只能找卡拉的爸爸出气，我想这是终究个错误的判断，因为最后的一幕非常明确的说明了，这整个闹剧最大的罪魁祸首，并不是卡拉，也不是卡拉做出错误判断的父亲，而是卢卡斯所处的这整个社会的偏见，影片结尾成人仪式非常值得玩味，猎枪的承接和周遭暧昧不清的笑容让人寒颤，成年意味着力量和责任，而也意味着代价，社会族群可以这样接纳你，给予你一定的位置，也可以迅速的像对卢卡斯那般，残忍的把你除名。电影最后那意味深长的一枪是谁开的其实并不重要，它最大的价值便是打醒那些做梦的人，而背后的开枪者，只是一个模糊的轮廓，导演的意图很明确，这个轮廓是为所有人设计的。</p>
+<p>“狩猎”这个片名有一定的意味，显然卢卡斯就是社会群体森林中那只被追猎的麋鹿，毫无防备，甚至心怀感激的袒露在黑暗森林之中，无数躲在暗中的猎人可以中伤他，而最后那惊人心魄的一枪，既可以视为恶意的中伤，也可视为善意的警告，但想要表达的暗示都是同一点：走吧，这片森林再也不欢迎你了。这种无意引起的社会群体对个人的排斥，让人看清社会的部分阴暗面貌，深刻见底，暂时不提娈童的恶，说说群体性的排斥，在浩荡历史上，这种多数人对少数人偏见和迫害又能少到哪去？从异教徒到同性恋，从布鲁诺到图灵，这种恶毒的幽灵一直活着，至今伊朗仍对同性恋处予恶毒的石刑，别以为它们离我们很远很远，即使到了今天，它仍然活生生在我们周围匍匐着，无法忽略卡拉作为导火索在事件中起的恶劣作用，但是最可恶的并不是孩子，而是那群虚伪的，带有偏见的，先入为主的，自封卫道士的傲慢大人们，要知道无知并不是文明最大的障碍，傲慢才是。影片的所谓的刻意其实并不过分，这种滑稽天方夜谭似的连锁事件时刻在我们所处的世界上演，如果你细心留意。感谢最后的一枪把我所有的幻想和美好愿景都打了个粉碎。心中郁结已久的戾气最后居然被这突然而来的枪声惊吓冻结成了冰块，一股彻骨的寒意弥漫全身。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/影评/">影评</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人分享/">个人分享</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

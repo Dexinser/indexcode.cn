@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>正则表达式 | To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="正则表达式：  正则表达式   就是个规则  是个对象RegExp正则表达式的作用：匹配特殊字符或有特殊搭配原则的字符的最佳选择。 两种创建方法：直接量var reg = /pattern/;或者var reg = new RegExp(&amp;#39;pattern&amp;#39;);但是也可以不加new，但是这就相当于直接把RegExp(‘pattern’)拷贝过来了。而且也可以在()里面添加一个已经设">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://indexcode.cn/2017/11/正则表达式.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="正则表达式：  正则表达式   就是个规则  是个对象RegExp正则表达式的作用：匹配特殊字符或有特殊搭配原则的字符的最佳选择。 两种创建方法：直接量var reg = /pattern/;或者var reg = new RegExp(&amp;#39;pattern&amp;#39;);但是也可以不加new，但是这就相当于直接把RegExp(‘pattern’)拷贝过来了。而且也可以在()里面添加一个已经设">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-28T07:07:16.184Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="正则表达式：  正则表达式   就是个规则  是个对象RegExp正则表达式的作用：匹配特殊字符或有特殊搭配原则的字符的最佳选择。 两种创建方法：直接量var reg = /pattern/;或者var reg = new RegExp(&amp;#39;pattern&amp;#39;);但是也可以不加new，但是这就相当于直接把RegExp(‘pattern’)拷贝过来了。而且也可以在()里面添加一个已经设">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2017/11/正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/正则表达式.html" class="article-date">
+      <time datetime="2017-11-09T10:31:50.102Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      正则表达式
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 正则表达式：</strong> <Excerpt in index | 首页摘要></p>
+<h1 id="正则表达式-就是个规则-是个对象"><a href="#正则表达式-就是个规则-是个对象" class="headerlink" title="正则表达式   就是个规则  是个对象"></a>正则表达式   就是个规则  是个对象</h1><p><strong>RegExp正则表达式的作用：匹配特殊字符或有特殊搭配原则的字符的最佳选择。</strong></p>
+<p>两种创建方法：直接量<code>var reg = /pattern/;</code>或者<code>var reg = new RegExp(&#39;pattern&#39;);</code>但是也可以不加new，但是这就相当于直接把RegExp(‘pattern’)拷贝过来了。而且也可以在()里面添加一个已经设置好的正则规则。如：<code>reg = /abc/;  var reg1 = new RegExp(reg);</code>这个reg1就跟reg一样了。 <strong>推荐用直接量。</strong></p>
+<p><strong>\n换行</strong><br><strong>\r行节束缚</strong>    windows系统上是他们两个的一起作用的,一个回车就相当于\r\n  lunix上只有一个换行符,也就是只有\n<br>\t一个制表符，一个缩进，可以设置一个缩进等于几个空格</p>
+<p><strong>\</strong> 转义字符的作用还有，如果你想打印或者使用特殊字符的话就在前面加上转义字符，让特殊符号回归成本来的意义。</p>
+<p>如果想写特殊的格式，多行字符串，就在字符串每一行的结尾加上转义的字符就行了。可如果是字符串的话在每一行的结尾加上+号也是可以的。比如：</p>
+<figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">div</span> = document.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">div</span>.innerHTML = <span class="string">"\</span></span><br><span class="line"><span class="string">	&lt;div&gt;\</span></span><br><span class="line"><span class="string">		&lt;span&gt;邓宝宝很萌&lt;/span&gt;\</span></span><br><span class="line"><span class="string">	&lt;/div&gt;\</span></span><br><span class="line"><span class="string">"</span></span><br></pre></td></tr></table></figure>
+<p>另一种：</p>
+<figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> <span class="keyword">div</span> = document.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">div</span>.innerHTML = <span class="string">"&lt;div&gt;"</span> +</span><br><span class="line">			   <span class="string">"&lt;span&gt;邓宝宝很萌&lt;/span&gt;"</span> +</span><br><span class="line">			<span class="string">"&lt;/div&gt;"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = /abcde/;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"123abcdeabcdeabcde"</span>;</span><br></pre></td></tr></table></figure>
+<p>reg.test(str);判断str里面是否有abcde的字符串；返回值为true<br>str.match(reg);跟上面的方法正好相反。这是字符串上的方法，找字符串上符合正则表达式reg的方法。</p>
+<h1 id="在后面加上i-g-m"><a href="#在后面加上i-g-m" class="headerlink" title="在后面加上i g m"></a><strong>在后面加上i g m</strong></h1><p>i  表示忽略大小写ignoreCase;<br>g  表示全局找符合条件的，但是不会识别特殊符的Globle,不加g的话匹配一个就停了。全局匹配。<br>m  表示可识别多行匹配了,match;<br>例如：多行匹配<br>  <code>var reg = /^a/g
+  var str = &quot;abc\nabc&quot;;
+  str.match(reg);</code><br>结果为一个a；但是第二个a也是符合条件的，想要第二个也匹配出来就要在后面添加一个m就能多行匹配了。查找开头为a 的话识别不了两个a，但是加上m就能识别了。</p>
+<p><code>reg = /^a/</code> 就相当于一个开头是a的字符串规则。</p>
+<h1 id=""><a href="#" class="headerlink" title="[]"></a>[]</h1><p><code>var reg = /[abcd][bcde]/</code>  第一个里面就是查找符合第一位的条件的，[a-z]代表从a到z的字母。[^a-z]代表查找任何不在条件的字符。还可以[a-z0-9]里面写好几个条件的。[]是第一位满足什么条件，ASCII码  A 65； a 97；因为中间有26个字母之外还有一些特殊符号呢。eg：<br> <code>var reg = /[^a-g][1-9]/g;
+ var str = &quot;ah2dfsa&quot;;
+ str.match(reg);</code><br>结果为：h2；<br>在[]里的^号是非的意思，就是取反的意思。</p>
+<h1 id="-1"><a href="#-1" class="headerlink" title="()"></a>()</h1><p>()在正则表达式中的意义：reg = /(abc|bcd)d/g;|代表或者的意思；()代表连着后面的条件的，可以代表和的意思。必须是abc或者bcd连着之后的d的满足条件的字符。<br>eg：<br><code>reg = /(abc|bcd)d/g;
+var str = &quot;abcdbcdddsahf&quot;;
+ str.match(reg);</code><br>结果为：”abcd”  “bcdd”;</p>
+<h1 id="元字符：一些表达式的缩写形式；"><a href="#元字符：一些表达式的缩写形式；" class="headerlink" title="元字符：一些表达式的缩写形式；"></a>元字符：一些表达式的缩写形式；</h1><p>.   所有的都包括；[^\r\n];<br>\d  查找数字;就相当于[0-9];<br>\D  查找非数字；就相当于[^0-9];<br>\w  查找单词字符；word；就相当于[A-z0-9_]<br>\W  查找非单词字符；就相当于[^w]<br>\s  查找空白字符；代表一切空白；[\t\n\f\r\v ]<br>\S  查找非空白字符；[^s]<br>\b  匹配单词边界；单词边界的意思；空格之后就是单词边界了；<br>\B  匹配非单词边界；非单词边界；<br>\O  查找NUL字符；<br>\n  查找换行符；<br>\f  查找换页符；<br>\r  查找回车符；<br>\t  查找制表符；<br>\v  查找垂直制表符；<br>\xxx    查找以八进制数xxx规定的字符；<br>\xdd    查找以十六进制dd规定的字符；<br>\uxxxx  查找以十六进制数xxxx规定的Unicode字符；<br>eg：<br><code>var reg = /[\u5000-\u6000]/g;
+var str = &quot;邓宝宝&quot;；  邓u90df  宝u5d00
+str.match(reg);</code><br>结果为：”宝”  “宝” ；</p>
+<h1 id="贪心匹配原则：正则表达式能匹配多个就不匹配少个。"><a href="#贪心匹配原则：正则表达式能匹配多个就不匹配少个。" class="headerlink" title="贪心匹配原则：正则表达式能匹配多个就不匹配少个。"></a>贪心匹配原则：正则表达式能匹配多个就不匹配少个。</h1><p><strong>量词：</strong><br>n+    匹配人格包含至少一个n的字符串；<br>n*    匹配任何包含零个或多个n的字符串；<br>n?    匹配任何包含零个或一个n的字符串；<br>n{X}   匹配包含X个n的序列的字符串；<br>n{X,Y}  匹配包含X至Y个n的序列的字符串；<br>n{X,}   匹配包含至少X个b的序列的字符串；<br>n$      匹配任何结尾为n的字符串；<br>^n      匹配任何开头为n的字符串；<br>?=n     匹配任何其后紧接指定字符串n的字符串；<br>?!n     匹配任何其后没有紧接指定字符串n的字符串；</p>
+<p><code>var reg = /^abc$/g;
+var str = &quot;abcabc&quot;
+str.match(reg);</code></p>
+<p>返回结果：null;</p>
+<h1 id="写一个正则表达式，检验字符串首尾是否含有数字？"><a href="#写一个正则表达式，检验字符串首尾是否含有数字？" class="headerlink" title="写一个正则表达式，检验字符串首尾是否含有数字？"></a>写一个正则表达式，检验字符串首尾是否含有数字？</h1><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">reg</span> = /(^\<span class="keyword">d</span>)|(\<span class="keyword">d</span>$)/gi;</span><br><span class="line"><span class="keyword">var</span> str = '123abc321';</span><br><span class="line">str.<span class="built_in">match</span>(<span class="keyword">reg</span>);  或  <span class="keyword">reg</span>.<span class="keyword">test</span>(str);</span><br></pre></td></tr></table></figure>
+<p>返回结果为：true；</p>
+<h1 id="写一个正则表达式，检验字符串首和尾是否含有数字？"><a href="#写一个正则表达式，检验字符串首和尾是否含有数字？" class="headerlink" title="写一个正则表达式，检验字符串首和尾是否含有数字？"></a>写一个正则表达式，检验字符串首和尾是否含有数字？</h1><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">reg</span> = /^\<span class="keyword">d</span>[\s\S]*\<span class="keyword">d</span>$/<span class="keyword">g</span>;   表达全集的方法有很多哦~</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"123abc           \n def321"</span>;</span><br><span class="line">str.<span class="built_in">match</span>(<span class="keyword">reg</span>);   或   <span class="keyword">reg</span>.<span class="keyword">test</span>(str);</span><br></pre></td></tr></table></figure>
+<h1 id="RegExp-对象上的一些属性：（reg-属性）"><a href="#RegExp-对象上的一些属性：（reg-属性）" class="headerlink" title="RegExp 对象上的一些属性：（reg.属性）"></a>RegExp 对象上的一些属性：（reg.属性）</h1><p>global：  RegExp对象是否具有标志g。 返回值为：true或者false<br>ignoreCase:  RegExp对象是否具有标志i。<br>lastIndex： 一个整数，标示开始下一次匹配的字符位置。<br>multiline： RegExp对象是否具有标志m。<br>source: 正则表达式的源文本。  能把本源打出来。</p>
+<h1 id="RegExp-对象上的方法：（reg-方法）"><a href="#RegExp-对象上的方法：（reg-方法）" class="headerlink" title="RegExp 对象上的方法：（reg.方法）"></a>RegExp 对象上的方法：（reg.方法）</h1><p>compile: 编译正则表达式。（没用）<br>exec： 检索字符串中指定的值。返回找到的值，并确定其位置。execute执行CEO中的E。和str上的match方法有点儿相似。不加全局匹配g的话就完全一样了。加上g才上这个方法的实际用处。这个方法使用时重复调用一次一次匹配才能体现出来哦~  内部能够识别游标的位置。reg.lastIndex 就是游标的位置，输出结果就是当前游标的位置。这个方法就是给exec这个方法用的。可以手动改游标的位置。必须有全局匹配g。没有g游标不会动的。</p>
+<p><code>var reg = /a/g;
+var str = &quot;ababab&quot;;
+console.log(reg.exec(str));</code><br>结果为:[“a”, index: 0, input: “ababab”]<br><code>console.log(reg.lastIndex);</code>输出当前游标位置；<br>结果为：1<br><code>console.log(reg.exec(str));</code><br>结果为:[“a”, index: 2, input: “ababab”]<br>console.log(reg.lastIndex); 输出当前游标位置；<br>结果为：3<br><code>console.log(reg.exec(str));</code><br>结果为:[“a”, index: 4, input: “ababab”]<br><code>console.log(reg.lastIndex);</code>输出当前游标位置；<br>结果为：5</p>
+<p><strong>test：</strong> 检索字符串中指定的值。返回true 或 false。</p>
+<h1 id="支持正则表达式的String对象上的方法：（str-方法）"><a href="#支持正则表达式的String对象上的方法：（str-方法）" class="headerlink" title="支持正则表达式的String对象上的方法：（str.方法）"></a>支持正则表达式的String对象上的方法：（str.方法）</h1><p>search： 检索与正则表达式相匹配的值。查找位置的方法，返回的是调用该方法的位置，没有的话返回-1。<br><code>var reg = /abc/g;
+var str = &quot;123abcd&quot;;
+str.search(reg);</code></p>
+<h1 id="—–-gt-子表达式"><a href="#—–-gt-子表达式" class="headerlink" title="()—–&gt;  子表达式"></a>()—–&gt;  子表达式</h1><p><code>var reg = /abc(d)/g;</code>  能把子表达式中记录的内容通过match的方法返回出来；<br><code>var str = &quot;123abcd&quot;;</code><br><code>console.log(str.match(reg))</code>打印出来的结果比在控制台里调试str.match(reg)<br>的结果要多一点儿(多了满足条件是光标的索引，也就是search方法，还有就是str全部的信息)。因为console会返回这个类数组的全部信息。<code>str.match(reg)</code>只是返回这个方法的实际结果。<br>这个返回的结果中就包括有子表达式的内容。<br><strong>match： 找到一个或多个正则表达式的匹配。</strong></p>
+<p><strong>replace： 替换与正则表达式匹配的子串。</strong></p>
+<p><code>var str = &quot;xyyx&quot;;
+str.replace(&#39;x&#39;, &#39;a&#39;);</code><br>这个是把字符串中的第一个x替换成a；不过改变的不是原来的字符串哦~ 因为原来的字符串是原始值，任何原始值都是不可改变的，这里又用到了包装类的知识点哦~系统内部隐式创建一个字符串但是用完就删除了，没有了，找不到了。这里的话只能通过console.log(str.replace(‘x’, ‘a’))查看这个方法。结果为：ayyx。那这么说的话这个方法还有用处吗？有用啊，可以var一个变量保存啊。匹配的只有一个哦~这里没有全局匹配的功能，没有加g的功能。想要全变了，可以用正则表达式写console.log(str.replace(/x/g, ‘a’));结果为：ayya。</p>
+<h1 id="写一个正则表达式把原来的-xxyy-形式的-对调过来成为-yyxx的形式。"><a href="#写一个正则表达式把原来的-xxyy-形式的-对调过来成为-yyxx的形式。" class="headerlink" title="写一个正则表达式把原来的 xxyy 形式的 对调过来成为 yyxx的形式。"></a>写一个正则表达式把原来的 xxyy 形式的 对调过来成为 yyxx的形式。</h1><p><code>var reg = /(\w)\1(\w)\2/g;</code><br><code>var str = &quot;123aabb321&quot;;</code><br><code>console.log(str.replace(reg, &#39;$2$2$1$1&#39;));</code><br>结果为: “123bbaa321”<br>这里的$1代表的就是第一个子表达式引用到的内容，$2就是第二个子表达式引用到的内容。单独$什么也不是哦~   第二个参数还能填一个函数，例如：<code>console.log(str.replace(reg, function($, $1, $2){}))</code>，系统怕单纯的正则不够你用所以就给你用函数来调用满足一些复杂的要求，所以这个函数最后返回的一定还是一个字符串，系统内部给你写好了传的参数，你直接传进去就行。function中的参数第一个用$代替一下，是正则表达式匹配到的整体内容。第二个参数$1就是第一个子表达式的内容，$2就是第二个子表达式的内容。</p>
+<h1 id="把命名的名称改成小驼峰式写法；"><a href="#把命名的名称改成小驼峰式写法；" class="headerlink" title="把命名的名称改成小驼峰式写法；"></a>把命名的名称改成小驼峰式写法；</h1><p><code>var str = &quot;the-first-name&quot;;
+var reg = /-(\w)/g;
+console.log(str.replace(reg, function ($, $1) {
+  return $1.toUpperCase();
+}));</code><br>打印结果为：theFirstName;</p>
+<p>写出一个正则表达式满足xxyy形式的方法：这个时候必须用到子表达式了。(\w)\1 这个是第一个位置的子表达式，代表的意义就是对第一个字子表达式的重复引用。(\w)\2 这个是第二个位置的子表达式，代表的意义就是对第二个子表达式的重复引用。所以xxyy形式的正则表达式形式如下：<br><code>var reg = /(\w)\1(\w)\2/g;
+var str = &quot;aabbccdddddddd&quot;;
+str.match(reg);</code><br>控制台打印结果：(3)[“aabb”, “ccdd”, “dddd”];从当前光标所在位置继续查找下一位的。</p>
+<p>写出一个正则表达式满足 xyyx 的形式。<br><code>var reg = /(\w)(\w)\2\1/g;
+var str = &quot;abbabccd&quot;;
+console.log(str.match(reg));</code><br>控制台打印结果为：(2)[“abba”];  看清楚了小伙子~</p>
+<p><code>var reg = /(\w)(\w)\2\1\2\1/g;
+var str = &quot;abbabadeeded&quot;;
+console.log(str.match(reg));</code><br>控制台打印结果为：(2)[“abbaba”, “deeded”];</p>
+<h1 id="一对方法来回转换："><a href="#一对方法来回转换：" class="headerlink" title="一对方法来回转换："></a>一对方法来回转换：</h1><p> 字符串上的方法：<br>split(‘-‘):  把字符串分割为字符串数组。默认是逗号。</p>
+<p> 数组上的方法：<br>join(‘-‘): 把数组中的每一项的值按照所给定的符号分成字符串。默认是逗号。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2017/11/正则表达式.html">正则表达式</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Dexinser 的个人博客">Dexinser</a></p>
+        <p><span>发布时间:</span>2017年11月09日 - 18时31分</p>
+        <p><span>最后更新:</span>2017年11月28日 - 15时07分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/11/正则表达式.html" title="正则表达式">http://indexcode.cn/2017/11/正则表达式.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://indexcode.cn/2017/11/正则表达式.html　　作者: Dexinser" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2017/11/滕王阁的修建者--滕王李元婴.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          说说滕王阁的修建者——“混蛋王爷”李元婴
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2017/11/框架.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">框架</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正则表达式-就是个规则-是个对象"><span class="toc-number">1.</span> <span class="toc-text">正则表达式   就是个规则  是个对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在后面加上i-g-m"><span class="toc-number">2.</span> <span class="toc-text">在后面加上i g m</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">3.</span> <span class="toc-text">[]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-1"><span class="toc-number">4.</span> <span class="toc-text">()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#元字符：一些表达式的缩写形式；"><span class="toc-number">5.</span> <span class="toc-text">元字符：一些表达式的缩写形式；</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#贪心匹配原则：正则表达式能匹配多个就不匹配少个。"><span class="toc-number">6.</span> <span class="toc-text">贪心匹配原则：正则表达式能匹配多个就不匹配少个。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写一个正则表达式，检验字符串首尾是否含有数字？"><span class="toc-number">7.</span> <span class="toc-text">写一个正则表达式，检验字符串首尾是否含有数字？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写一个正则表达式，检验字符串首和尾是否含有数字？"><span class="toc-number">8.</span> <span class="toc-text">写一个正则表达式，检验字符串首和尾是否含有数字？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RegExp-对象上的一些属性：（reg-属性）"><span class="toc-number">9.</span> <span class="toc-text">RegExp 对象上的一些属性：（reg.属性）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RegExp-对象上的方法：（reg-方法）"><span class="toc-number">10.</span> <span class="toc-text">RegExp 对象上的方法：（reg.方法）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#支持正则表达式的String对象上的方法：（str-方法）"><span class="toc-number">11.</span> <span class="toc-text">支持正则表达式的String对象上的方法：（str.方法）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#—–-gt-子表达式"><span class="toc-number">12.</span> <span class="toc-text">()—–>  子表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写一个正则表达式把原来的-xxyy-形式的-对调过来成为-yyxx的形式。"><span class="toc-number">13.</span> <span class="toc-text">写一个正则表达式把原来的 xxyy 形式的 对调过来成为 yyxx的形式。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#把命名的名称改成小驼峰式写法；"><span class="toc-number">14.</span> <span class="toc-text">把命名的名称改成小驼峰式写法；</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一对方法来回转换："><span class="toc-number">15.</span> <span class="toc-text">一对方法来回转换：</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+    <style>
+        .toc {
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $(".toc li a").mouseover(function() {
+                var title = $(this).attr('href');
+                $(this).attr("title", title);
+            });
+        })
+    </script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'cytgVLEw0',
+      conf: '3dd585905d0465ff1e65d0823df3763e'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2017/11/滕王阁的修建者--滕王李元婴.html" title="上一篇: 说说滕王阁的修建者——“混蛋王爷”李元婴">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2017/11/框架.html" title="下一篇: 框架">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.28 The Tipping Point.html">The Tipping Point</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/2018.01.21 磁盘格式.html">磁盘格式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.08 Amour.html">Amour-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.05 js中一些方法的比较与区别.html">Js中一些相似方法/属性的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 彗星来的那一夜-影评.html">彗星来的那一夜-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 寂静岭-影评.html">寂静岭-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/2017.12.04 狩猎-影评.html">狩猎-影评</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.25 JavaScript之V8引擎.html">JavaScript之V8引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.22-变化-个人感悟.html">变化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.19-分享-幸存者偏见.html">幸存者偏见</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16 vue数据交互.html">Vue</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.16-学习笔记.html">JavaScript学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.12-前端开发相关.html">前端开发相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.10-智力题总结.html">智力题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.9-前端面试.html">前端面试总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.09 诗与远方.html">诗与远方</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/练习题.html">前端练习题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/滕王阁的修建者--滕王李元婴.html">说说滕王阁的修建者——“混蛋王爷”李元婴</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/正则表达式.html">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/框架.html">框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/杂.html">杂记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/有感而记.html">有感而记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/星巴克.html">从星巴克的商业模式中看出几个问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/后端网络笔记.html">后端网络笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端基础题总结.html">前端基础题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/人生启迪发人深省.html">人生启迪</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/事件.html">绑定事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/专业必备技能.html">计算机发展+Git简单使用+markdown简单语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/What is the server.html">那年那器那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Webpack.html">Webpack学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/relative.html">编程相关-杂（Relative）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/npm.html">Npm相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/Math.floor()方法.html">Math.floor()等方法的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js笔记.html">Js笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/js模式-读书笔记.html">Js模式读书笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/jQuery.html">JQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/important Ideas.html">编程方法小汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/DOM.html">浏览器之DOM</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS技巧.html">CSS小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3中transform的加速问题.html">使用CSS3开启GPU硬件加速提升网站动画渲染性能</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-选择器的使用.html">CSS3选择器的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-简介.html">CSS3新增加的功能和属性方法--之选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/CSS3-动画的使用.html">CSS3动画的使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/code.html">Html标签举例</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/book.html">Book</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.3-This is us-TV.html">This Is Us</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.2-第一次就把事情做好.html">第一次就把事情做好！</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/2017.11.1-CSS3-景深详解.html">CSS3---景深详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.29-科学上网.html">科学上网</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.28-win10系统相关.html">Win10计算机系统相关系列问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/前端算法代码实现.html">前端算法JavaScript代码实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.26今日事，古人的智慧.html">今日事</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/2017.10.17个人日记.html">个人日记</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

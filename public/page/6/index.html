@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+<meta property="og:type" content="website">
+<meta property="og:title" content="To die or not to die, this is a question~">
+<meta property="og:url" content="http://indexcode.cn/page/6/index.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="To die or not to die, this is a question~">
+<meta name="twitter:description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-2017/11/CSS3中transform的加速问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/CSS3中transform的加速问题.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.804Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/CSS3中transform的加速问题.html">使用CSS3开启GPU硬件加速提升网站动画渲染性能</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 使用CSS3开启GPU硬件加速提升网站动画渲染性能 </strong> <Excerpt in index | 首页摘要></p>
+<p>今天再来说一下CSS3中的新特性，transform。说他之前先来解释图片中的两个格式的区别：PNG8和PNG24。</p>
+<h1 id="png8"><a href="#png8" class="headerlink" title="png8"></a>png8</h1><p>每一张“png8”图像，都最多只能展示256种颜色，所以“png8”格式更适合那些颜色比较单一的图像，例如纯色、logo、图标等；因为颜色数量少，所以图片的体积也会更小；</p>
+<h1 id="png-24"><a href="#png-24" class="headerlink" title="png 24"></a>png 24</h1><p>每一张“png24”图像，可展示的颜色就远远多于“png8”了，最多可展示的颜色数量可多达1600万；所以“png24”所展示的图片颜色会更丰富，图片的清晰度也会更好，图片质量更高，当然图片的大小也会相应增加，所以“png24”的图片比较适合像摄影作品之类颜色比较丰富的图片；</p>
+<p>所以一些网站如果需要加载一些很大的PNG24类型的图片的话，那么图片加载的时间就会有点长甚至导致网站出现卡顿现象，进而影响用户体验。我们如何解决这个问题呢？或者说如何优化这个麻烦呢？这就需要我们今天要说到的CSS3中的transform属性了。为什么添加这个属性之后就会提升性能呢？因为为动画DOM元素添加CSS3样式-webkit-transform:transition3d(0,0,0)或-webkit-transform:translateZ(0);，这两个属性都会开启GPU硬件加速模式，从而让浏览器在渲染动画时从CPU转向GPU，其实说白了这是一个小伎俩，也可以算是一个Hack，-webkit-transform:transition3d和-webkit-transform:translateZ其实是为了渲染3D样式，但我们设置值为0后，并没有真正使用3D效果，但浏览器却因此开启了GPU硬件加速模式。<br>　　这种GPU硬件加速在当今PC机及移动设备上都已普及，在移动端的性能提升是相当显著地，所以建议大家在做动画时可以尝试一下开启GPU硬件加速。</p>
+<p>当然也可以这样开启所有浏览器的GPU硬件加速：</p>
+<blockquote>
+<p>-webkit-transform: translateZ(0);<br>-moz-transform: translateZ(0);<br>-ms-transform: translateZ(0);<br>-o-transform: translateZ(0);<br>transform: translateZ(0);</p>
+</blockquote>
+<p>或者：</p>
+<blockquote>
+<p>-webkit-transform: translate3d(0,0,0);<br>-moz-transform: translate3d(0,0,0);<br>-ms-transform: translate3d(0,0,0);<br>-o-transform: translate3d(0,0,0);<br>transform: translate3d(0,0,0);</p>
+</blockquote>
+<p>但是我们要注意的是：开启GUI加速之后，会出现一些意想不到的BUG问题。当你有多个position:absolute;元素添加-webkit-transform:transition3d(0,0,0);开启GPU硬件加速之后，会有几个元素凭空消失，调试许久无果遂Google之，国内暂时没有人发表过关于这类问题的文章，于是在国外网站找呀找，找到了很多与我遇到同样问题的人，但都没有真正靠谱的解决办法，这可能是跟添加-webkit-transform之后chrome尝试使用GPU硬件加速有关系。<br>在使用-webkit-transform尝试对很多DOM元素编写3D动画时，尽量不要对这些元素及他们的父元素使用position:absolute/fixed。(其实这种情况很难避免)</p>
+<p>通过-webkit-transform:transition3d/translateZ开启GPU硬件加速之后，有些时候可能会导致浏览器频繁闪烁或抖动，可以尝试以下办法解决之：</p>
+<blockquote>
+<p>-webkit-backface-visibility:hidden;<br>-webkit-perspective:1000;</p>
+</blockquote>
+<p>通过-webkit-transform:transition3d/translateZ开启GPU硬件加速的适用范围：</p>
+<ol>
+<li>使用很多大尺寸图片(尤其是PNG24图)进行动画的页面。</li>
+<li>页面有很多大尺寸图片并且进行了css缩放处理，页面可以滚动时。</li>
+<li>使用background-size:cover设置大尺寸背景图，并且页面可以滚动时。(详见: <a href="https://coderwall.com/p/j5udlw">https://coderwall.com/p/j5udlw</a> )</li>
+<li>编写大量DOM元素进行CSS3动画时(transition/transform/keyframes/absTop&amp;Left)</li>
+<li>使用很多PNG图片拼接成CSS Sprite时</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/CSS3-选择器的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/CSS3-选择器的使用.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.793Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/CSS3-选择器的使用.html">CSS3选择器的使用方法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><p>增加了可以使用正则匹配属性名的方法：<br>E[att^=“val”] {…}  选择匹配元素E, 且E元素定义了属性att, 其属性值以val开头的任何字符串<br>E[att$=“val”]{…}选择匹配元素E, 且E元素定义了属性att, 其属性值以val结尾的任何字符串<br>E[att*=“val”]{…}选择匹配元素E, 且E元素定义了属性att, 其属性值任意位置出现了“val”。即属性值包含了“val”，位置不限。</p>
+<h2 id="初级伪类选择器：伪类用于向某些选择器添加特殊的效果。"><a href="#初级伪类选择器：伪类用于向某些选择器添加特殊的效果。" class="headerlink" title="初级伪类选择器：伪类用于向某些选择器添加特殊的效果。"></a>初级伪类选择器：伪类用于向某些选择器添加特殊的效果。</h2><h3 id="1-root-根标签选择器"><a href="#1-root-根标签选择器" class="headerlink" title="1.root 根标签选择器"></a>1.root 根标签选择器</h3><p>“:root”选择器等同于<html>元素，简单点说：<br>:root{background:orange}<br>html{background:orange}<br>得到的效果等同<br>建议使用:root（xml等）</p>
+<h3 id="2-not-否定选择器"><a href="#2-not-否定选择器" class="headerlink" title="2.not 否定选择器"></a>2.not 否定选择器</h3><p>用法和jQuery 中的not类似，可以排除某些特定条件的元素<br>div:not([class=“demo”]){<br>background-color:red;<br>}<br>意思为除了class为demo的div以外，所有的div的背景颜色都变红</p>
+<h3 id="3-empty-空标签选择器"><a href="#3-empty-空标签选择器" class="headerlink" title="3.empty 空标签选择器"></a>3.empty 空标签选择器</h3><p>用来选择没有内容的元素、不在文档树中的元素，这里的没有内容指的是一点内容都没有，哪怕是一个空格。</p>
+<h3 id="4-target-目标元素选择器"><a href="#4-target-目标元素选择器" class="headerlink" title="4.target 目标元素选择器"></a>4.target 目标元素选择器</h3><p>用来匹配被location.hash 选中的元素(即锚点元素)<br>选择器可用于选取当前活动的目标元素，被设置为锚点的元素被锚点之后就可以显示相应的css样式。</p>
+<h3 id="5-first-child-第一个子元素"><a href="#5-first-child-第一个子元素" class="headerlink" title="5.:first-child 第一个子元素"></a>5.:first-child 第一个子元素</h3><p>:last-child 最后一个子元素<br>:nth-child(){} 第xxx个子元素，n代表变量自然数<br>:nth-last-child(){}  从后往前数<br>以上四个选择器均有弊端，即如果当前位置元素不是前面所修饰的元素，那么无效<br>注：其父元素的第 N 个子元素，不论元素的类型。</p>
+<h3 id="6-first-of-type-第一个子元素"><a href="#6-first-of-type-第一个子元素" class="headerlink" title="6.:first-of-type 第一个子元素"></a>6.:first-of-type 第一个子元素</h3><p>:last-of-type 最后一个子元素<br>:nth-of-type(){} 第xxx个子元素，n代表变量自然数<br>:nth-last-of-type(){}  从后往前数<br>此种选择器，限制了类型，即在所修饰元素的类型下选择特定位置的元素。</p>
+<h3 id="7-only-child-唯一子元素选择器"><a href="#7-only-child-唯一子元素选择器" class="headerlink" title="7 :only-child  唯一子元素选择器"></a>7 :only-child  唯一子元素选择器</h3><p>选择是独生子的子元素，即该子元素不能有兄弟元素，它的父元素只有他一个直接子元素。<br>注意：选择的元素是独生子子元素，而非有唯一子元素的父元素。<br>:only-of-type<br>如果要选择第某类特定的子元素(p) 在兄弟节点中是此类元素唯一个的话 就需要用到这个属性了</p>
+<h3 id="8-enabled-可用的元素-disabled-不可用的元素"><a href="#8-enabled-可用的元素-disabled-不可用的元素" class="headerlink" title="8 :enabled  可用的元素   :disabled 不可用的元素"></a>8 :enabled  可用的元素   :disabled 不可用的元素</h3><p>在web的表单中，有些表单元素有可用（“enabled”）和不可用（“disabled”）状态，比如输入框，密码框，复选框等。在默认情况下，这些表单元素都处在可用状态。那么我们可以通过伪类选择器 enabled 进行选择，disabled则相反。</p>
+<h3 id="9-checked-选择框的被选中状态"><a href="#9-checked-选择框的被选中状态" class="headerlink" title="9:checked  选择框的被选中状态"></a>9:checked  选择框的被选中状态</h3><p>注：checkbox, radio 的一些默认状态不可用属性进行改变，如宽高颜色。</p>
+<h3 id="10-read-only-选中只读的元素"><a href="#10-read-only-选中只读的元素" class="headerlink" title="10:read-only  选中只读的元素"></a>10:read-only  选中只读的元素</h3><p>eg:<code>&lt;input type=“text” readonly=“readonly”/&gt;</code><br>:read-write 选中非只读的元素<br>eg:<code>&lt;input type=“text”/&gt;</code></p>
+<h5 id="扩张内容：伪类与伪元素的区别"><a href="#扩张内容：伪类与伪元素的区别" class="headerlink" title="扩张内容：伪类与伪元素的区别"></a>扩张内容：伪类与伪元素的区别</h5><blockquote>
+<p>伪类的效果可以通过添加一个实际的类来达到。<br>伪元素的效果则需要通过添加一个实际的元素才能达到。<br>这也是为什么他们一个称为伪类，一个称为伪元素的原因。</p>
+</blockquote>
+<h2 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h2><p>CSS3对伪元素进行了一定的调整，在以前的基础上增加了一个:也就是现在变成了::first-letter,::first-line,::before,::after<br>另外还增加了一个::selection</p>
+<h3 id="1-selection"><a href="#1-selection" class="headerlink" title="1.::selection"></a>1.::selection</h3><p>“::selection” 选择器是用来匹配突出显示的文本（用鼠标选择文本的时候）。浏览器默认情况下，用鼠标选择网页文本是以“蓝色的北京，白色的字体”显示的。<br>属性：user-select: none;<br>注：火狐下必须加-moz-<br>-moz-::selection</p>
+<h2 id="条件选择"><a href="#条件选择" class="headerlink" title="条件选择"></a>条件选择</h2><p>E &gt; F  an F element child of an E element<br>直接子元素<br>E + F an F element immediately preceded by an E element<br>后面的紧挨着的兄弟节点<br>E ~ F an F element preceded by an E element<br>后面的兄弟节点</p>
+<pre><code>Author:By--Dexinser
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/必备知识/">必备知识</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/CSS3-简介" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/CSS3-简介.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.782Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/CSS3-简介.html">CSS3新增加的功能和属性方法--之选择器</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="CSS3—选择器"><a href="#CSS3—选择器" class="headerlink" title="CSS3—选择器"></a>CSS3—选择器</h1><p>提供了更加强大且精准的选择器，提供多种背景填充方案，可以实现渐变颜色，可以改变元素的形状、角度等，可以加阴影效果，报纸布局，弹性盒子，ie6混杂模式的盒模型，新的计量单位，动画效果等等等…</p>
+<p>  在CSS3的一些新特性或方法还没正式使用之前，有一些浏览器商为了竞争用户使用人数或者说是为了一些商业目的，在CSS3还没有正式通过使用时就在自家的浏览器上实现了CSS3新出的功能。而这些浏览器商为了显示出这是自家的浏览器上实现的CSS3新功能，所以他们就在新实现的CSS3功能的属性之前加上了自家的标志。添加的前缀标志如下：<br>  在编写CSS3样式时，不同的浏览器可能需要不同的前缀。它表示该CSS属性或规则尚未成为W3C标准的一部分，是浏览器的私有属性，虽然目前较新版本的浏览器都是不需要前缀的，但为了更好的向前兼容前缀还是少不了的。</p>
+<h3 id="以CSS3新属性border-radius为例："><a href="#以CSS3新属性border-radius为例：" class="headerlink" title="以CSS3新属性border-radius为例："></a>以CSS3新属性border-radius为例：</h3><blockquote>
+<p>-webkit-border-radius<br>Chrome和Safari</p>
+<p>-moz-border-radius<br>Firefox</p>
+<p>-ms-border-radius<br>IE</p>
+<p>-o-border-radius<br>Opera</p>
+</blockquote>
+<p>CSS3新添加的属性方法有哪些?</p>
+<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>添加圆角 – border-radius 这是一个复合属性，分别为代表左上角、右上角、右下角、左下角；而且他们的所代表的左上角还是一个小的复合属性，又可以分成x轴和y轴的偏移量。 还有一种写法border-radius： 1em 2em 3em 4em / 2em 3em 4em 5em;</p>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>添加盒子阴影 –  box-shadow  这也是一个复合属性，是添加盒子阴影的方法。<br>box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];  []里面的属性代表可以省略的属性。需要注意的是最后的一个可选属性即投影方式默认是outset投影方式，如果想设置成默认向外投影方式的话，一定注意不要把这个属性值写上去，写上去的话就不好使了，就没有阴影了，但是如果想改变投影方式为其他的形式需要写上去的。同一盒子，可以同时加多个阴影，阴影之间用“,”隔开。</p>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p>添加文本阴影  text-shadow<br>语法<br>text-shadow:X-Offset Y-Offset blur color;<br>X-Offset：表示阴影的水平偏移距离，其值为正值时阴影向右偏移，反之向左偏移；<br>Y-Offset：是指阴影的垂直偏移距离，如果其值是正值时，阴影向下偏移，反之向上偏移<br>Blur：是指阴影的模糊程度，其值不能是负值，如果值越大，阴影越模糊，反之阴影越清晰，如果不需要阴影模糊可以将Blur值设置为0；<br>Color：是指阴影的颜色，其可以使用rgba色。</p>
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p>颜色值RGBA  再原先RGB的基础上添加了透明度这一参数。</p>
+<h2 id="5"><a href="#5" class="headerlink" title="5"></a>5</h2><p>CSS3的渐变分为两种<br>1）线性渐变（linear - to）<br>语法: linear-gradient([direction], color [percent], color [percent], …)<br>[] 内为选填<br>direction角度的单位为 “deg” 也可以用to bottom, to left, to top left等的方式来表达<br>2）径向渐变（radial - at）<br>语法:radial-gradient(shape at position, color [percent] , color, …)<br>shape:放射的形状，可以为原型circle，可以为椭圆ellipse<br>position: 圆心位置，可以两个值，也可以一个，如果为一个时，第二个值默认center 即 50%。值类型可以为，百分数，距离像素，也可以是方位值(left,top…); /<em>x 轴主半径 y轴次半径</em>/</p>
+<h2 id="6"><a href="#6" class="headerlink" title="6"></a>6</h2><p>文字边界换行<br>word-wrap:normal|break-word;</p>
+<h2 id="7"><a href="#7" class="headerlink" title="7"></a>7</h2><p>可以下载网上的好看的字体想要引入的话就用下面的方式把下载到包用到我们的网页上，字体的包有很多格式，有的浏览器不支持某一种格式的话就换一种：<br><code>font-face
+@font-face{
+font-family:”myFirstFont”;
+src:url(&#39;Sansation_Light.ttf&#39;),
+url(‘Sansation_Light.eot&#39;) format(‘eot’)；下载前面的优先选用
+}
+@font-face {
+    font-family: &#39;diyfont&#39;;
+    src: url(&#39;diyfont.eot&#39;); /* IE9+ */
+    src: url(&#39;diyfont.eot?#iefix&#39;) format(&#39;embedded-opentype&#39;), /* IE6-IE8 */
+         url(&#39;diyfont.woff&#39;) format(&#39;woff&#39;), /* chrome、firefox */
+         url(&#39;diyfont.ttf&#39;) format(&#39;truetype&#39;), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+         url(&#39;diyfont.svg#fontname&#39;) format(&#39;svg&#39;); /* iOS 4.1- */
+}</code><br><a href="http://www.w3cplus.com/content/css3-font-face">字体</a> (字体包下载地址)<br><a href="www.dafont.com">字体</a> (字体包下载地址)</p>
+<h2 id="8"><a href="#8" class="headerlink" title="8"></a>8</h2><p>border-image方法–边框应用背景<br>border-image: url(xxx.png)  number<br>               stretch 很好理解就是拉伸，有多长拉多长。有多远“滚”多远<br>               repeat (和4角上 同等大小图片进行平铺  当边框中间区域长度不是4角图片大小的整数倍时 会被切割)<br>               铺满(round)(4角上的图片 进行拉伸平铺  不会被切割)<br>（共三个参数）<br>number 为截取指定图片四周的宽度作为border的背景填充部分(截取图可按border-width 大小伸缩), number为一个数字时是复合写法。最后一个属性为border-image的展示策略</p>
+<h2 id="9"><a href="#9" class="headerlink" title="9"></a>9</h2><p>背景图片起始位置background-origin<br>语法：<br>background-origin ： border-box | padding-box | content-box;<br>参数分别表示背景图片是从边框，还是内边距（默认值），或者是内容区域开始显示。</p>
+<h2 id="10"><a href="#10" class="headerlink" title="10"></a>10</h2><p>裁剪背景图片background-clip<br>语法：<br>background-clip ： border-box | padding-box | content-box | no-clip<br>参数分别表示从边框、或内填充，或者内容区域向外裁剪背景。no-clip表示不裁切，和参数border-box显示同样的效果。background-clip默认值为border-box。<br>text : background-clip : text ;<br>从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果。这个很炫哦~~<br>注意：webkit独有属性，且必须配合text-fill-color属性<br><code>-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+text-fill-color:-webkit-background-clip;
+-webkit-background-clip: text;
+-webkit-text-fill-color:transparent;</code></p>
+<h2 id="11"><a href="#11" class="headerlink" title="11"></a>11</h2><p>背景图片尺寸background-size<br>设置背景图片的大小，以长度值或百分比显示，还可以通过cover和contain来对图片进行伸缩。<br>语法：<br>background-size: auto | &lt;长度值&gt; | &lt;百分比&gt; | cover | contain<br>取值说明：</p>
+<ol>
+<li>auto：默认值，不改变背景图片的原始高度和宽度；</li>
+<li>&lt;长度值&gt;：成对出现如200px 50px，将背景图片宽高依次设置为前面两个值，当设置一个值时，将其作为图片宽度值来等比缩放；</li>
+<li>&lt;百分比&gt;：0％~100％之间的任何值，将背景图片宽高依次设置为所在元素宽高乘以前面百分比得出的数值，当设置一个值时同上；</li>
+<li>cover：用一张图片铺满整个背景，如果比例不符，则截断图片</li>
+<li>contain：尽量让背景内，存在一整张图片</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/必备知识/">必备知识</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/CSS3-动画的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/CSS3-动画的使用.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.761Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/CSS3-动画的使用.html">CSS3动画的使用方法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="CSS3动画的使用方法"><a href="#CSS3动画的使用方法" class="headerlink" title="CSS3动画的使用方法"></a>CSS3动画的使用方法</h1><h2 id="形状变换-—-高级动画基础"><a href="#形状变换-—-高级动画基础" class="headerlink" title="形状变换  —   高级动画基础"></a>形状变换  —   高级动画基础</h2><h3 id="transform-–-可以实现元素的形状、角度、位置等的变化。"><a href="#transform-–-可以实现元素的形状、角度、位置等的变化。" class="headerlink" title="transform – 可以实现元素的形状、角度、位置等的变化。"></a>transform – 可以实现元素的形状、角度、位置等的变化。</h3><p>他的值有很多种：</p>
+<h4 id="旋转："><a href="#旋转：" class="headerlink" title="旋转："></a>旋转：</h4><p>rotate(); 以x/y/z为轴进行旋转，默认为z<br>rotatex(), rotatey(), rotatez(), rotate3d(x, y, z, angle) x, y, z —&gt;</p>
+<h4 id="缩放："><a href="#缩放：" class="headerlink" title="缩放："></a>缩放：</h4><p>scale(); 以x/y为轴进行缩放<br>scale(x, y) 接受两个值，如果第二参数未提供，则第二个参数使用第一个参数的值<br>scalex(),scaley() 值是数字表示倍数，不加任何单位<br>scalez()<br>scale3d()  scale3d(sx,sy,sz)</p>
+<h4 id="扭曲："><a href="#扭曲：" class="headerlink" title="扭曲："></a>扭曲：</h4><p>skew(); 对元素进行倾斜扭曲<br>skew(x, y);接受两个值，第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0<br>skewx(), skewy()</p>
+<h4 id="平移："><a href="#平移：" class="headerlink" title="平移："></a>平移：</h4><p>translate(); 可以移动距离,相对于自身位置。<br>translate(x, [y])<br>translatex(),translatey(),translatez(),translate3d(x, y, z)  正规的写法是XYZ都应该是大写的。括号里面的值可以是像素(px, %)  当不知道元素自身的宽高是应该用这个百分比法来进行居中处理(-50%,-50%);</p>
+<h4 id="transform-origin-变换原点"><a href="#transform-origin-变换原点" class="headerlink" title="transform-origin 变换原点"></a>transform-origin 变换原点</h4><p>任何一个元素都有一个中心点，<br>默认情况下，其中心点是居于元素x轴和y轴的50%处。配合缩放的方法来使用，根据中心点的位置进行缩放。</p>
+<h4 id="transition-过渡动画"><a href="#transition-过渡动画" class="headerlink" title="transition  过渡动画"></a>transition  过渡动画</h4><p>transition  属性是css3的一个复合属性，主要包括一下几个子属性<br>transition-property:指定过渡或动态模拟的css属性<br>transition-duration:指定过渡所需要的时间<br>transition-timing-function:指定过渡函数<br>transition-delay:指定开始出现的延迟时间</p>
+<p>transition  过渡动画可以参与过渡的属性</p>
+<h4 id="animation-–-动画铺垫"><a href="#animation-–-动画铺垫" class="headerlink" title="animation – 动画铺垫"></a>animation – 动画铺垫</h4><p>动画关键帧<br>@keyframes </p>
+<p>animation 动画会按照keyframes 关键帧里面指定的帧状态而过渡执行。<br>0% - 100% 代表动画的时间过渡<br>@keyframes demoMove{<br>0%{ background-color:red;}<br>10%{ background-color:green;}<br>20%{ background-color:white;}<br>50%{ width:200px;}<br>100%{ height:200px;}</p>
+<p>animation 属性为css3的复合属性，主要包括以下子属性<br>animation-name:  此属性为执行动画的 keyframe 名<br>animation-duration:此属性为动画执行的时间<br>animation-timing-function:指定过渡函数速率<br>animation-delay: 执行延迟时间<br>animation-direction: normal/reverse/alternate/alternate-reverse;<br>animation-iteration-count:infinite/number;<br>animation-fill-mode:forwards/backwards/both/none;</p>
+<p>animation-iteration-count:<br>            属性主要用来定义动画的播放次数。<br>            n 播放次数<br>            infinite 无限次<br>       animation-direction:<br>            属性主要用来设置动画播放方向<br>            normal  默认值。动画按正常播放。    测试 »<br>            reverse 动画反向播放。 测试 »<br>            alternate   动画在奇数次（1、3、5…）正向播放，在偶数次（2、4、6…）反向播放。    测试 »<br>            alternate-reverse   动画在奇数次（1、3、5…）反向播放，在偶数次（2、4、6…）正向播放。    测试 »</p>
+<p>animation-play-state:<br>            属性主要用来控制元素动画的播放状态。<br>            running 播放<br>            paused  暂停<br>       animation-fill-mode:<br>            属性定义在动画开始之前和结束之后发生的操作。主要具有四个属性值：<br>            none:<br>                默认值，表示动画将按预期进行和结束，在动画完成其最后一帧时，动画会反转到初始帧处</p>
+<pre><code>forwards:
+    表示动画在结束后继续应用最后的关键帧的位置
+backwards:
+    会在向元素应用动画样式时迅速应用动画的初始帧
+both:
+    元素动画同时具有forwards和backwards效果
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/必备知识/">必备知识</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/code" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/code.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.750Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/code.html">Html标签举例</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> Html标签举例：</strong> <Excerpt in index | 首页摘要></p>
+<h2 id="html标签举例"><a href="#html标签举例" class="headerlink" title="html标签举例"></a>html标签举例</h2><p>这是我最最开始学习HTML的时候保存下来的第一个HTML文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html:hyperText markup language! --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-cmn,en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span>    <span class="comment">&lt;!-- gb2312 gbk unicode utf:8-bit unicode transformation format万国码 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>京东，惊动世界!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- SEO  搜索引擎爬虫在html中写的lang=“zh-cmn,en”&lt;meta name="description" content="一段幸福的婚姻"&gt;</span></span><br><span class="line"><span class="comment">	&lt;meta name="keywords" content="王宝强，马蓉"&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>成段落展示1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>成段落展示2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>head标题1自带加粗<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>head标题3自带加粗<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">strong</span>&gt;</span>加粗1<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="comment">&lt;!-- &lt;b&gt;加粗&lt;/b&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">em</span>&gt;</span>斜体1<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="comment">&lt;!-- &lt;i&gt;斜体2&lt;/i&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address</span>&gt;</span>段落加加粗<span class="tag">&lt;/<span class="name">address</span>&gt;</span><span class="comment">&lt;!-- &lt;b&gt;&lt;em&gt;段落加斜体&lt;/em&gt;&lt;/b&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">del</span>&gt;</span>原价50元 <span class="tag">&lt;/<span class="name">del</span>&gt;</span><span class="comment">&lt;!-- html不能掺和css的功能，样式、结构、功能相分离 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>相当于容器，没功能，没样式，自成段落<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- 容器里面东西多的话加功能比较方便，规格化和绑定操作 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>容器<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 空格在编辑器中被认为是文字分隔符 --&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--  html编码,空格 --&gt;</span>&amp;nbsp;</span><br><span class="line">   <span class="comment">&lt;!-- html编码，大于小于号 --&gt;</span>&amp;gt;div&amp;lt;</span><br><span class="line">   <span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="comment">&lt;!-- 单独出现的标签，和meta标签也是单独出现的，没有尾标签，既然是尾标签那写的内容就的写在标签内，包住内容，这是换行标签，相当于回车 --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">"I"</span> <span class="attr">reversed</span>=<span class="string">"reversed"</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">li</span>&gt;</span>west world<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">li</span>&gt;</span>big bang<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">li</span>&gt;</span>journey to the west<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">ul</span> <span class="attr">type</span>=<span class="string">"square"</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">li</span>&gt;</span>衣服<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">li</span>&gt;</span>鞋包<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">li</span>&gt;</span>帽子<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">li</span>&gt;</span>眼镜<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">ul</span>&gt;</span><span class="comment">&lt;!-- 很重要的，但凡是导航栏就是用ul做的，配合css样式做出来的 div配合span也能做，不过不好，为了维护下来比较方便，人为规范--&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;img style="width:100px;" src="china.jpg" alt="这是中国高清地图" title="China map"&gt; --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--1.网上的url</span></span><br><span class="line"><span class="comment">   2.本地的绝对路径</span></span><br><span class="line"><span class="comment">   3.本地的相对路径  --&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- 注释的功能：1.注释记载下来 2.锁定错误，检查错误，挑错--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span>&gt;</span>百度一下<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="comment">&lt;!-- 超链接功能hyperlink    来源于anchor汽车抛锚，起初是当锚点作用的 --&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- a标签的功能有：1.超链接  2.锚点   3.协议限定符  就是用javescript在herf里写代码例如：herf=javescript:while(1)&#123;alert('中毒了，哦也！！！')&#125;   4.自动调用电话或者邮件功能 --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:100px;height: 100px;background-color:black;"</span> <span class="attr">id</span>=<span class="string">"only"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#only"</span>&gt;</span>原来你在这儿呢，找到你了吧！<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"0px"</span> <span class="attr">cellpadding</span>=<span class="string">"100px"</span> <span class="attr">cellspacing</span>=<span class="string">"0px"</span> <span class="attr">style</span>=<span class="string">"width:800px;height: 400px;"</span>&gt;</span><span class="comment">&lt;!-- border边线cellpadding內边距cellspacing表格空隙 --&gt;</span></span><br><span class="line">   	   <span class="tag">&lt;<span class="name">tr</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">   	   	 <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"3"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   	   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">   	   	 <span class="tag">&lt;<span class="name">td</span>&gt;</span>2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   	   	 <span class="tag">&lt;<span class="name">td</span>&gt;</span>2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   	   	 <span class="tag">&lt;<span class="name">td</span>&gt;</span>2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   	   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">   	   	 <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   	   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- 写一个网站就需要一个服务器，网站就在服务器里面的一个地址，用户访问这个网站的话就需要下载这个网站的文件，但是用表格做的网页的话浏览器的加载方式是全部下载完并且执行，完成渲染之后才能展示这个网页。所以加载太慢用户体验差就不用了 --&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- 前端fe(front end engnieer) 后端rd form前端向后端要信息的功能,发送信息的method中有俩值get|post,给谁后端发送信息的地址action。发送信息必要的2个东西：数据名(name)和数据值(用户提交的数据).有很多input组件，是单标签，里面必须有属性映衬type--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"get"</span> <span class="attr">action</span>=<span class="string">"file:///file:///E:/duyi/message.html"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">             username:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"请输入关键字"</span> <span class="attr">style</span>=<span class="string">"color:#999"</span> <span class="attr">onfocus</span>=<span class="string">"if(this.value=='请输入关键字')&#123;this.value='';this.style.color='#424242'&#125;"</span> <span class="attr">onblur</span>=<span class="string">"if(this.value=='')&#123;this.value='请输入关键字';this.style.color='#999'&#125;"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">          	  password:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!-- &lt;h1&gt;你们喜欢吃啥水果？(单选框)&lt;/h1&gt;</span></span><br><span class="line"><span class="comment">         &lt;p&gt;1.Apple&lt;input type="radio" name="fruit" value="苹果"&gt;&lt;/input&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">         &lt;p&gt;2.orange&lt;input type="radio" name="fruit" value="橙子"&gt;&lt;/input&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">         &lt;p&gt;3.banana&lt;input type="radio" name="fruit" value="香蕉"&gt;&lt;/input&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">      &lt;input type="submit"&gt;&lt;/input&gt;</span></span><br><span class="line"><span class="comment">      &lt;h1&gt;你有什么喜欢的运动？(多选)&lt;/h1&gt;</span></span><br><span class="line"><span class="comment">      &lt;p&gt;1.跑步&lt;input type="checkbox" name="yundong" value="paobu"&gt;&lt;/input&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">      &lt;p&gt;2.骑行&lt;input type="checkbox" name="yundong" value="qixing"&gt;&lt;/input&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">      &lt;p&gt;3.旅游&lt;input type="checkbox" name="yundong" value="lvyou"&gt;&lt;/input&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">      &lt;input type="submit"&gt;&lt;/input&gt;</span></span><br><span class="line"><span class="comment">      &lt;h1&gt;CHOOSE YOUR SEX!&lt;/h1&gt;</span></span><br><span class="line"><span class="comment">      &lt;p&gt;</span></span><br><span class="line"><span class="comment">         1.female&lt;input type="radio" name="sex" value="female" checked="checked"&gt;&lt;/input&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">      &lt;p&gt;</span></span><br><span class="line"><span class="comment">         2.male&lt;input type="radio" name="sex" value="male" checked="checked"&gt;&lt;/input&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">      &lt;input type="submit"&gt;&lt;/input&gt; --&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">h1</span>&gt;</span>直辖市<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"直辖市"</span>&gt;</span></span><br><span class="line">      	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"beijing"</span>&gt;</span>北京市<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">      	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"beijing"</span>&gt;</span>上海市<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">      	<span class="tag">&lt;<span class="name">option</span>&gt;</span>天津市<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">select</span>&gt;</span>   <span class="comment">&lt;!-- 下拉菜单，选择用户所在省份,不用填value，填了以value为主，选票可以作弊.. --&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>`</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span>`</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/book" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/book.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.724Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/book.html">Book</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> Book：</strong> <Excerpt in index | 首页摘要><br>我作为一个过来人(笑cry)，告诫你们年轻人，晚上不要熬夜，白天要好好学习，一定要多读书。。。<br>《钢铁是怎样炼成的》为何如此出名？他告诉我们的道理不就是：生命只有一次，一定不要虚度光阴，世间好玩的事情太多，永远不要让虚妄的东西迷住了你的双眼，要努力探索新的知识，书山有路勤为径，学海无涯苦做舟；我也希望：当我到老年回收往事时，能不因我年少的虚度光阴而悔恨，不因碌碌无为而懊恼，我能展现最睿智的笑容，笑着对我的儿孙们说，爷爷这一辈子知足了！笑着合上我的双眼，满意的离开人世~</p>
+<p>年轻人在一定要注意身体，身体是革命的本钱，就算要玩游戏，就玩玩与现实中真正的人一块玩游戏，不要太过沉迷玩儿手机游戏或者电脑游戏。多出去走走，看看人世间的美好山河，多与人交流，感受人与人之间的淳朴之情。我这辈子的一大憾事就是不能把这个世界转遍了啊！！！希望你们可以做到哦~~~</p>
+<p>早上多运动，记得吃早饭，不要睡懒觉，更不要不睡觉，晚上好好睡觉，白天好好学习。<br>永远不要满足于目前自身所具备的一点小才能，要不断求知，不断探索，世界上未知的东西如此之多，我都有点儿懊恼我为什么不能把这些东西全学完了呢？哎，让我再活500年，我要把全世界上的东西全部学完！！！我还不要睡觉，我要学习，我还不要死去，我要学习，我还不要吃饭，我要学习…生而为人已是我这辈子最大的满足，我还有什么不知足的，有爱我的家人，爷爷奶奶爸爸妈妈哥哥嫂嫂弟弟妹妹，我有这么多疼我爱我关心我懂我…的亲人，我真的是世界上最幸福的人~~~哈哈哈。好开心</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人随笔/">个人随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/book/">book</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/2017.11.3-This is us-TV" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/2017.11.3-This is us-TV.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.701Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/2017.11.3-This is us-TV.html">This Is Us</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>This Is Us</strong> <Excerpt in index | 首页摘要></p>
+<h1 id="People-don’t-forget-their-20s"><a href="#People-don’t-forget-their-20s" class="headerlink" title="People don’t forget their 20s."></a>People don’t forget their 20s.</h1><p>说一下This is us 这部美剧吧！刚刚把昨天更新的S02E06看完了。这一集中讲述的挺真实的，讲的是兄妹三人在人生20s中遇到的种种挫折。兰德尔虽然在事业上获得了巨大的成功，成为了我们所说的成功人士，但是也有这个时期的烦恼或者说是压力，对任何事情都感到很茫然，除了工作。因为他的Tessa马上就要来到他的面前了，他害怕做不好一个父亲的职责..</p>
+<blockquote>
+<p>Eastern wisdom is kind of a thing.<br>G(Garuda): -I will tell you one thing. I have five kids. And before first one was born, I was all questions, too. Can I? Will I? But they don’t tell you is that babies come with the answers. They come out, they look up at you, and you at them, and…they tell you who you are. You’ll see. Tomorrow you’ll have all the answers you need.</p>
+</blockquote>
+<p>凯文和凯特过的都不好，凯文刚刚从父亲的阴影中走出来，而凯特依然沉浸在失去父亲的悲伤中，迟迟的不能走出悲伤接受事实..而丽贝卡也依然沉浸在过去之中，怀念着过去的丈夫..主要讲的是孩子们在人生中的20s这个时间段内所遇到的挫折..而捱过这段难熬的是家人之间的陪伴，又一次深深的被这部暖心剧所感动了。</p>
+<h1 id="Happening-for-us-in-the-20s"><a href="#Happening-for-us-in-the-20s" class="headerlink" title="Happening for us in the 20s."></a>Happening for us in the 20s.</h1><blockquote>
+<p>Kevin: -Crushing the 20s.<br>Kate: -Crushing the 20s.<br>Kevin: -Bam. I haven’t had an audition in, like, six months.<br>Kate: -The new guy is married.<br>Kevin: -Real–oh.<br>Kate: -Thanks. Have a little more.<br>Kevin: -Okay. Married, huh?<br>Kate: -Yeah.But he’s nice, which makes it harder. He asks questions. He knows my class schedule.<br>Kevin: -I mean, come on, that’s, you know, that’s-that’s a..that’s a low bar.<br>Kate: -You really haven’t had an audition in six months?<br>Kevin: -No, it’s been more like a year, actually. Where are you at? I mean, what are you…You still sitting in your car, eating fast food, staring at where the house used to be? He’s gone. Okey? And he’s not coming back, and even if you sit there in the exact same spot that you were when he left, he’s not…coming back.<br>Kate: -I know.<br>Kevin: -And he wouldn’t want you to stay. Not if there was nothing for you there. You know what he’d want for you? Everything.<br>Kate: -Yeah, for you, too.<br>Kevin: -You know, maybe I’ll take an acting class. I know it’s…Or join a crappy improv troupe. I guess I could do that.<br>Kate: -That’s the spirit. Yes. I bet you’re hilarious.<br>Kevin: -I’m probably a pretty funny guy.</p>
+</blockquote>
+<h1 id="Life-is-not-end-this-monent-is-a-new-begining"><a href="#Life-is-not-end-this-monent-is-a-new-begining" class="headerlink" title="Life is not end, this monent is a new begining."></a>Life is not end, this monent is a new begining.</h1><blockquote>
+<p>Rebecca: -Hi, little boy. I’m sorry it took me so long to get over here. I was really nervous to meet you. See…I talked to my other babies over there the whole time they were inside of me. But you weren’t there, so…I want to come and introduce myself. And say hello and let you hear my voice.</p>
+<p>Rebecca: -Hi, little sweet girl. I want to properly welcome you to the world. You are.. beautiful. Oh, my godness. I mean, all babies are beautiful, but you…you are Randall and Beth beautiful. And that is special. You know…I’ve been here before, Tess. You think you’re at the beginning of your journey, right? But you also began a long time age. Do you know that? ‘Cause I was there, and somebody else was there, too. Somebody really good. And we lost a baby, and we thought it was an ending, but…it was also a beginning.’</p>
+<p>Rebecca: -Do you see those guys over there? That’s your brother and sister. That’s Kevin and Kate. And the man, the sweet man who fed you this afternoon. That’s your dad.</p>
+<p>Rebecca: -And life has a middle, too, and middles can be the hardest because…that’s when you can get really lost. But middles can be beginning sometimes. And if you’re lucky, you can have it all. And you…are lucky. You are the luckiest, prettiest, sweetest baby ever named after a ceiling fan.</p>
+<p>Rebecca: -I think I…forgot to introduce myself. I’m your mom.</p>
+<p>Rebecca: -You know, I thought my journey had come to an end, but I don’t know. I don’t know. Maybe…maybe we’re both at out next beginning.</p>
+</blockquote>
+<p>Always be a good man. Cause life is amazing. You don’t know what is the time of moving coming.<br>生活如此美好，引无数英雄竞折腰。</p>
+<p>慢慢都会变好的~~~</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/moving/">moving</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TV/">TV</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/2017.11.2-第一次就把事情做好" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/2017.11.2-第一次就把事情做好.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.677Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/2017.11.2-第一次就把事情做好.html">第一次就把事情做好！</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>第一次就把事情做好！</strong> <Excerpt in index | 首页摘要></p>
+<p>今天早上第一节上的是质量管理的课程。质量管理学的郝红军老师马上就要退休了，我们好像是他的最后一届的学生了，想到这个，真的是有点儿伤感…因为这个老师真的是太好了，无论是从做人上还是做事上，都教给了我们很多道理。说几个印象最深的事情吧！</p>
+<ol>
+<li><p>真正的老师<br>记得有次课上，课堂作业是每一组的小组成员上前简单介绍一下本次作业中的各小组成员分工和作业内容。有一个小组做的调查是：论当代大学生的上课缺勤情况分析。小组成员在介绍发生这种事情的原因时，先说明了关于学生自身的原因，后又说了关于老师的原因；老师方面的原因中说到了：老师对待学生不公平、老师责任心差、老师讲课不生动毫无生趣和老师性格特点方面的一些问题等等。说到这里，质量管理学的老师拍着胸脯大声地说到：我作为一个老师，敢说我决定没有那些问题，我对待每一个学生肯定不会有偏差，我对得起老师这两个字！！！在我的印象中，他真的是这样的一个老师。虽然这学期的课程中，数质量管理学的老师留的作业多，任务重；但是，他是真心实意的想让我们学习到一些真正的东西，毫不保留的教给我们一些重要的道理。</p>
+</li>
+<li><p>精神上的鼓励<br>从我见到质量管理学老师的第一面开始，看到的都是一个乐观豁达，不断进取的一个精神头高涨的和蔼可亲的老师。真的，不管你什么时候见到他，他总是笑眯眯的样子，真的是让人有种亲切的感觉。上课的时候声音洪亮，做事的时候非常认真；对于自己不懂的地方，敢于承认自己的不足；没有一些老师的那种架子，但是他真的非常有实力哦~在质量管理学这方面，一直在学习，不像其他的老师，教的每一届的学生都是一样的教材，一样的内容，从来不去学习新得知识，这样的老师你怎么还能教给学生那种自学的能力呢？你自己都没有做到不断充实自己，而且是在你自己的专业领域中，你又有什么资格去指导别人呢？他教给我们的不止书本上的知识，作为一个快要退休的老师，有着丰富经历与见解的优秀教师，他总是会告诉我们一些生活中的道理，给我们指导人生的方向；遇见这种老师也真是我们的幸运吧！</p>
+</li>
+<li><p>道理语录<br>该回到写这篇文章的目的了。一次就把事情做好！出自我的质量管理学老师。他说，不光在在这门课程中要这样做，在生活中也要这样做。做事情的时候，要在首次就做好，考虑放方方面面真的不容易，所以我们就要做充分的准备。胸有成竹之时，万事可破之日！</p>
+</li>
+</ol>
+<p>哎~感叹一下吧，为什么这门课非要开在大四呢？说真的，因为目前大部分的同学都在紧张的准备考研或者找工作，根本不能全身心的投入到当前的学习当中，往往是顾得了这头，顾不了那头了，所以更有可能的是两件事都干不好呢！这也只是我的一个小小的吐槽，优秀的人，不论多少件事都能有条不紊的处理好，总归自己是一个平常人，做不到统筹兼备啊！所以就该更加的努力咯！加油吧！大学马上就要结束了，好好珍惜当下的课程吧！尤其是还有这么好的老师的时候，努力努力再努力，没有把你压垮的挫折都会成为你成长中的丰富养料~</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/others/">others</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人感悟/">个人感悟</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

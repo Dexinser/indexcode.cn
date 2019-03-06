@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+<meta property="og:type" content="website">
+<meta property="og:title" content="To die or not to die, this is a question~">
+<meta property="og:url" content="http://indexcode.cn/page/7/index.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="To die or not to die, this is a question~">
+<meta name="twitter:description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-2017/11/2017.11.1-CSS3-景深详解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/2017.11.1-CSS3-景深详解.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.661Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/2017.11.1-CSS3-景深详解.html">CSS3---景深详解</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>CSS3---景深详解</strong> <Excerpt in index | 首页摘要></p>
+<p>今天回顾一下我之前学习到的CSS3中的一些属性方法，感觉生疏了很多，技术种东西还是得多看、多练啊。要不然真是‘士别三日，当刮目相看’啊~我认识他，他不认识我了！哈哈哈，好了，下面我们就来回顾一下CSS3中比较好玩的一个属性方法—景深。说到景深这个词，他其实来源于摄影行业中的专业词汇，正好我也比较喜欢摄影<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br></pre></td><td class="code"><pre><span class="line">维基百科中是这样解释的：</span><br><span class="line"></span><br><span class="line">&gt; **景深**（英语：Depth of field, DOF）景深是指相机对焦点前后相对清晰的成像范围。在光学中，尤其是录影或是摄影，是一个描述在空间中，可以清楚成像的距离范围。虽然透镜只能够将光聚到某一固定的距离，远离此点则会逐渐模糊，但是在某一段特定的距离内，影像模糊的程度是肉眼无法察觉的，这段距离称之为景深。当焦点设在超焦距处时，景深会从超焦距的一半延伸到无限远，对一个固定的光圈值来说，这是最大的景深。</span><br><span class="line"></span><br><span class="line">而在计算机中我们的视点是屏幕前方，也就是说景深越大，那么这个元素离我们越远。CSS3中这个属性的设置是：</span><br><span class="line"></span><br><span class="line">`.stage&#123;</span><br><span class="line">    perspective: 500px;</span><br><span class="line">&#125;`</span><br><span class="line"></span><br><span class="line">应用景深的元素成为“舞台元素”，舞台元素的所有后代元素都会受到他的影响，__如果后代中的元素也添加了perspective属性，效果会叠加而不是覆盖！__</span><br><span class="line"></span><br><span class="line">**需要额外注意的事项：rotateX()和translateX()、rotateZ()和translateZ()方法默认都是顺时针方向旋转的，而rotateY()和translateY()方法默认是逆时针旋转的。旋转之后的位移一般都是用transitionZ()来进行的，矩形面的正方向朝向哪儿就朝那方向进行平移的运动。**</span><br><span class="line"></span><br><span class="line">代码如下：</span><br><span class="line"></span><br><span class="line">`&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;demo&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;up&quot;&gt;Up&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;down&quot;&gt;Down&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;front&quot;&gt;Front&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;back&quot;&gt;Back&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;left&quot;&gt;Left&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;right&quot;&gt;Right&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;`</span><br><span class="line"></span><br><span class="line">`* &#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper &#123;</span><br><span class="line">    perspective: 500px;</span><br><span class="line">    border: 2px dashed rgba(0, 0, 0, 1);</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo &#123;</span><br><span class="line">    transform-style: preserve-3d;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;</span><br><span class="line">    animation: move 8s linear infinite;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo div &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    opacity: 0.6;</span><br><span class="line">    left: 50%;</span><br><span class="line">    top: 50%;</span><br><span class="line">    margin-left: -100px;</span><br><span class="line">    margin-top: -100px;</span><br><span class="line">    text-align: center;</span><br><span class="line">    font-size: 50px;</span><br><span class="line">    font-weight: 900;</span><br><span class="line">    line-height: 200px;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .up &#123;</span><br><span class="line">    transform: translateY(-100px) rotateX(90deg);</span><br><span class="line">    background-color: rgba(0, 0, 255, .8);</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .down &#123;</span><br><span class="line">    background-color: rgba(0, 255, 0, .8);</span><br><span class="line">    transform: translateY(100px) rotateX(-90deg);</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .front &#123;</span><br><span class="line">    background-color: rgba(255, 0, 0, .8);</span><br><span class="line">    transform: translateZ(100px) rotateY(0deg);</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .back &#123;</span><br><span class="line">    background-color: rgba(122,122, 122, .8);</span><br><span class="line">    transform: translateZ(-100px) rotateY(180deg);</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .left &#123;</span><br><span class="line">    background-color: rgba(255, 255, 0, .8);</span><br><span class="line">    transform: translateX(-100px) rotateY(-90deg);</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .right &#123;</span><br><span class="line">    background-color: rgba(0, 255, 255, .8);</span><br><span class="line">    transform: translateX(100px) rotateY(90deg);</span><br><span class="line">&#125;</span><br><span class="line">@keyframes move &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        transform: rotateX(0) rotateY(0) rotateZ(0);</span><br><span class="line">    &#125;</span><br><span class="line">    30% &#123;</span><br><span class="line">        transform: rotateX(360deg) rotateY(180deg) rotateZ(180deg)</span><br><span class="line">    &#125;</span><br><span class="line">    60% &#123;</span><br><span class="line">        transform: rotateX(180deg) rotateY(360deg) rotateZ(180deg);</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;`</span><br><span class="line"></span><br><span class="line">上面的是方法是没有按照之前说的旋转之后的位移用transitionZ()来实现的。所以上面的方法在实现上有点儿难理解。其实要想用CSS3组成矩形，可以用rotate旋转配合transition平移组合出很多种方法的。</span><br><span class="line"></span><br><span class="line">下面就用我之前说的旋转之后用transitionZ()来进行平移这种方法来完成。DOM结构还是之前的结构，CSS样式代码如下：</span><br><span class="line"></span><br><span class="line">`* &#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper &#123;</span><br><span class="line">    perspective: 500px;</span><br><span class="line">    border: 2px dashed rgba(0, 0, 0, 1);</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo &#123;</span><br><span class="line">    transform-style: preserve-3d;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;</span><br><span class="line">    animation: move 8s linear infinite;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo div &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    opacity: 0.6;</span><br><span class="line">    left: 50%;</span><br><span class="line">    top: 50%;</span><br><span class="line">    margin-left: -100px;</span><br><span class="line">    margin-top: -100px;</span><br><span class="line">    text-align: center;</span><br><span class="line">    font-size: 50px;</span><br><span class="line">    font-weight: 900;</span><br><span class="line">    line-height: 200px;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .up &#123;</span><br><span class="line">    transform: rotateX(90deg) translateZ(100px);</span><br><span class="line">    background-color: rgba(0, 0, 255, .8);</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .down &#123;</span><br><span class="line">    background-color: rgba(0, 255, 0, .8);</span><br><span class="line">    transform: rotateX(-90deg) translateZ(100px);</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .front &#123;</span><br><span class="line">    background-color: rgba(255, 0, 0, .8);</span><br><span class="line">    transform: rotateY(0deg) translateZ(100px);</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .back &#123;</span><br><span class="line">    background-color: rgba(122,122, 122, .8);</span><br><span class="line">    transform: rotateY(180deg) translateZ(100px);</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .left &#123;</span><br><span class="line">    background-color: rgba(255, 255, 0, .8);</span><br><span class="line">    transform: rotateY(-90deg) translateZ(100px);</span><br><span class="line">&#125;</span><br><span class="line">.wrapper .demo .right &#123;</span><br><span class="line">    background-color: rgba(0, 255, 255, .8);</span><br><span class="line">    transform: rotateY(90deg) translateZ(100px);</span><br><span class="line">&#125;</span><br><span class="line">@keyframes move &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        transform: rotateX(0) rotateY(0) rotateZ(0);</span><br><span class="line">    &#125;</span><br><span class="line">    30% &#123;</span><br><span class="line">        transform: rotateX(360deg) rotateY(180deg) rotateZ(180deg)</span><br><span class="line">    &#125;</span><br><span class="line">    60% &#123;</span><br><span class="line">        transform: rotateX(180deg) rotateY(360deg) rotateZ(180deg);</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;`</span><br><span class="line"></span><br><span class="line">这种方法比较简单，不用去考虑方向的问题了，因为每次旋转之后的平移方向都是不一样的。</span><br><span class="line"></span><br><span class="line">好了，以上就是今天的分享内容了。总之，技术还是要多用啊~很多牛人的厉害之处并不是他们有多聪明，而是他们有正确的方法和学习习惯，懂得积少成多不抛弃不放弃，从最简单的入手而且深入对技术底层原理的探讨与思考，技术永远不要只停留在使用层面，而要去深入的研究底层的原理，这样，终有一日我们也会成为一个技术大牛的~共勉</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端知识点/">前端知识点</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/10/2017.10.29-科学上网" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/10/2017.10.29-科学上网.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.635Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/10/2017.10.29-科学上网.html">科学上网</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 科学上网 </strong> <Excerpt in index | 首页摘要></p>
+<h1 id="墙外的世界总是吸引我们啊"><a href="#墙外的世界总是吸引我们啊" class="headerlink" title="墙外的世界总是吸引我们啊~"></a>墙外的世界总是吸引我们啊~</h1><p>前几天也提了一下，就是最近因为十九大的原因，国内大大小小的翻墙工具都不能用了，就算有极个别的能用的速度也大大不如以前了。而我之前一直用的好好的蓝灯，居然也挂掉了！！！悲催啊~因为之前一直在用蓝灯，非常方便的可以在墙内墙外随意转，但是电脑里唯一的一个翻墙工具挂掉之后我就连备选方案都没有了。我能怎么办呢？只能去网上再找一条通往墙外的世界的通道咯！可是网上关于翻墙的东西居然都不见了，在知乎上搜索翻墙，被告知是敏感词汇，没有出现任何结果，百度搜索结果也是这样的，之前所有的关于翻墙的文章都被清理干净了！这一下让我慌了，看来这次禁网不简单啊！有人说十九大胜利闭幕之后11月份就能科学上网了，之前的翻墙软件就会恢复了…但是我看这架势估计够呛能再给你恢复了啊~理想很丰满，但是显示很骨感啊！有希望是好的，但是不要太过期望好结果哦~不然失望就越大咯！<br>好了，又说了一堆废话（哈哈哈）！接下来就讲一下现阶段如何科学上网吧。最好的方法就是尝试用I2P补种或者自己搭建SS/SSR；</p>
+<p>[id]:  ‘github address’</p>
+<p>今天看了一篇博文，里面提到了：</p>
+<blockquote>
+<p>强烈建议大家移除 CNNIC 根证书。方法在这：<a href="https://github.com/chengr28/RevokeChinaCerts">移除方法</a><br>CNNIC：中国互联网络信息中心（China Internet Network Information Center）</p>
+</blockquote>
+<h3 id="I2P"><a href="#I2P" class="headerlink" title="I2P"></a>I2P</h3><p>I2P（Invisible Internet Project即“隐形网计划”），是一项混和授权的匿名网络项目。I2P网络是由I2P路由器以大蒜路由方式组成的表层网络，建立于其上的应用程序可以安全匿名的相互通信。它可以同时使用UDP及TCP协议，支持UPnP映射。其应用包括匿名上网、聊天、撰写博客和档案传输。<br>大蒜路由（Garlic routing）是洋葱路由的一个变体。而洋葱路由（英语：Onion routing）为一种在电脑网络上匿名沟通的技术。在洋葱路由的网络中，消息一层一层的加密包装成像洋葱一样的数据包，并经由一系列被称作洋葱路由器的网络节点发送，每经过一个洋葱路由器会将数据包的最外层解密，直至目的地时将最后一层解密，目的地因而能获得原始消息。而因为通过这一系列的加密包装，每一个网络节点（包含目的地）都只能知道上一个节点的位置，但无法知道整个发送路径以及原发送者的地址。而洋葱路由是由洋葱路由器来发送的，简单的说洋葱路由器就是一个类似于P2P原理的代理服务器，所有安装了洋葱路由的用户既是代理服务器的使用者也是代理服务器的提供者。洋葱路由器是由志愿者，花费自己的带宽建立起来的。洋葱路由器是一个工具集，各类组织和个人可以用它来增强自己在互联网上的安全性。 洋葱路由器 能够匿名化你的 Web 浏览与发布、即时通讯、IRC、SSH 和其他使用 TCP 协议的应用。 洋葱路由器同时提供了一个平台，软件开发人员能够在上面构建具有内建匿名性、安全性与隐私保护特性的新的应用程序。洋葱路由器的目标是抵御流量分析，流量分析是一种对网络的监视行为，这种行为会威胁个人的匿名与隐私，商业活动与业务关系的保密和国家的安全。通信在一个由称作洋葱路由器的服务器所构建的分布式网络上传输， 保护你以避免网站收集你的兴趣爱好，本地的、甚至是洋葱路由器上的窃听者阅读你的数据、了解你所访问的站点。<br>我们现在已经知道了被称作洋葱路由的原因在于消息一层一层的加密包装成被称作洋葱数据包的数据结构，层数取决于到目的地中间会经过的节点数，每经过一个节点层会将数据包的最外层解密，因此任一个节点都无法同时知晓这个消息最初与最终的目的地，使发送者达到匿名的效果。为了发送洋葱数据包，发送消息者会从“目录节点”（directory node）提供的列表中选取一些节点，并以这些规划出一条被称作“链”（chain）或“线路”（circuit）的发送路径，这条路径将为传输数据包所用。为了确保发送者的匿名性，任一节点都无法知道在链中自己的前一个节点是发送者还是链上的另一节点；同理，任一节点也无法知道在链中自己的下一节点是目的地还是链上另一节点。只有链上的最后一个节点知道自己是链上最终节点，该节点被称作“出口节点”（exit node）。洋葱路由网络使用非对称加密，发送者从目录节点获得一把公开密钥，用之将要发送的消息加密并发送给链上的第一个节点，该节点又被称作入口节点（entry node）；其后与之创建连接和共享密钥。创建连接后发送者就可以通过这条连接发送加密过的消息至链上的第二个节点，该消息将只有第二个节点可以解密；当第二个节点收到此消息后，便会与前一个节点也就是入口节点同样的创建连接，使发送者的加密连接延伸到它，但第二个节点并不晓得前一个节点在链中的身份。之后按照同样原理，发送者通过入口节点和第二个节点的这条加密连接将只有第三个节点能解密的消息发送给第三个节点，第三节点同样的与第二个节点创建连接；借由重复相同的步骤，发送者能产生一条越来越长的连接，但在性能上仍有限制。当链上的连接都创建后，发送者就可以通过其发送数据并保持匿名性。当目的地回送数据时，链上的节点会通过同一条连接将数据回传，且一样对数据层层加密，但加密的顺序与发送者完全相反；原发送者收到目的地回传的数据时，将仅剩最内一层加密，此时对其解密就可拿到目的地回送的消息。<br>传统互联网不被认为具有匿名性的一个理由为互联网服务供应商具有纪录和追踪各电脑间的连接能力；例如当有人访问一个特定网站时，往来的信息内容如密码等，虽然能通过像是HTTPS等加密连接方式保护让其他人无法得知内容，但是连接本身却仍会有纪录，包含何时创建连接，多少数据量被发送等。洋葱路由虽然能创建并隐藏两电脑之间的连接，使两者之间并无一个可分辨的直接连接，但仍会有上述的连接纪录问题。流量分析可借由搜索连接纪录的连接时间和数据传输量来试图判别潜在的一对发送者与接收者；例如当有人发送51KB的数据到一个未知的电脑，三秒后另一未知的电脑发送51KB的数据给一个特定的网站，则可以推断此人可能与该网站曾创建连接。此外还有一些原因可以让流量分析更加有效，包含节点的损坏或离开网络，以及当链已经因为定期重建而改变，但有些链上节点却仍在追踪此前创建的会话等。<br>大蒜路由是洋葱路由的一种变体，其结合了I2P网络并将多份消息加密打包在一起，使其更难被攻击者以流量分析的方式破解。它将传输的原始数据拆散为加密数据包通过多条隧道交叉疏散传递，令攻击者的流量分析难上加难。在洋葱路由中一条或多条数据流的上传与下载共用一条隧道，而这种路由方式的上传与下载隧道相互独立而且两个方向上的隧道数量都可能&gt;1，所以被称为大蒜路由。<br>与洋葱路由的电路交换（Circuit Switching）相比，大蒜路由也称为封包交换（Packet Switching）方式。大蒜路由是I2P与Tor及其他隐私/加密网络的主要区别之一。</p>
+<p>I2P是可伸缩性强，具有自我组织与恢复能力的包切换匿名网络。其上运行有多种不同的匿名安全程序，各程序可以自行决定匿名性、延迟、流量平衡而不用考虑混淆式路由网络的具体实现。它们的数据活动可以与现有的I2P用户的匿名数据相混合。目前可用的程序包括全部典型的Internet应用 - 匿名网页浏览（Eepproxy），匿名网站（Eepsite），匿名博客与内容聚合（Syndie），匿名聊天（通过IRC、Jabber、I2P-QTMessanger），匿名文件传输（I2PSnark，Robert），匿名文件分享（I2Phex, iMule），匿名电子邮件（I2PMail+susiMail），匿名新闻组，及其他开发中的程序。与自由网或GNUnet上内容发布网络不同，I2P所提供的服务具有更强的交互性 - 从常规的Web搜索引擎，到论坛，博客，数据站点再到无需安装Tor / 自由网即可访问其中内容的网关。</p>
+<p>I2P做为消息机制为基础的中间件与这些匿名性程序协同工作 - 程序要求发送数据给某一加密标识（目标），I2P来处理并保证数据安全匿名的到达目标。I2P还带有易用的流封装库，可将I2P匿名消息转换为可靠有序的数据流传输，提供基于TCP协议的拥堵控制算法解决网络程序的宽带延迟问题。I2P同时有简易的SOCKS代理接口可以将现有的网络程序绑定于I2P网络中。这样做的意义并不大因为几乎所有普通应用程序都会向网络暴露有碍匿名性的敏感数据，除非对程序进行全面审计。为了方便使用，I2P为各种语言提供了一系列API，从而充分利用I2P的资源。</p>
+<p>I2P被设计为其他程序可以使用的匿名网络层。这些运行于I2P上的程序有的被捆绑在I2P的安装包中，有的需要自行下载。I2P控制台是一个Web界面，可以通过浏览器管理I2P路由器的运行，类似于现在大多数家用路由器的管理方式。</p>
+<p>接下来看一下另一种方法吧：自己搭建SS/SSR</p>
+<h3 id="自己搭建SS-SSR"><a href="#自己搭建SS-SSR" class="headerlink" title="自己搭建SS/SSR"></a>自己搭建SS/SSR</h3><p>这个就自己去网上找教程吧~这里就不赘述咯~哈哈哈。给大家推荐一个教程吧。讲的挺细的，小白应该都能看懂的~但是推荐购买国外的服务器，比较便宜哦~ <a href="http://www.wuzuowei.net/7998.html">搭建SS/SSR教程</a></p>
+<p><strong>另外给大家推荐一篇博文，里面福利多多哦~~~</strong><br><a href="https://www.bennythink.com/all-platform-scientific-internet-all-in-one.html">全平台科学上网工具集合</a><br>里面包括你知道的，你不知道的各个工具，真是大饱眼福咯~~<br>Lantern、XX-Net、VPNGate、Psiphon3、Tor、i2P、Shadowsocks/ShadowsocksR、v2ray、goproxy、firefly 等。</p>
+<p>好了，就分享这么多啦~睡了睡了！好困啊！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/others/">others</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/资源分享/">资源分享</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/10/2017.10.28-win10系统相关" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/10/2017.10.28-win10系统相关.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.549Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/10/2017.10.28-win10系统相关.html">Win10计算机系统相关系列问题</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> Win10计算机系统相关系列问题 </strong> <Excerpt in index | 首页摘要></p>
+<p>前两天做了一下计算机系统，把我从买笔记本到现在一直在用的win7旗舰版系统升级成了win10系统了。这几天用着感觉还不错，主要是因为之前用win7系统的体验太差的缘故吧！win7系统开机速度实在太慢了，时间4分多钟，你敢信？一直懒得升级系统，一直拖到现在，终于升级完成了。做了一下系统也有挺多收获的，今天就总结一下这几天关于计算机操作系统方面学到的知识吧~<br>首先呢，先说明一下Windows系统与Linux系统相比，并没有那么的不堪；好多人都说Windows系统，用着用着就变慢了，而Linux操作系统却没有这个问题；所以好多用Windows系统的童鞋们都非常的向往Linux系统，想着有money了赶紧入手一台…其实这个并不是因为Windows操作系统做的不好，而是作为普罗大众的我们不去了解计算机系统的底层知识，只是一味的听信别人的一家之言，然后再结合我们的真实遭遇，就信口开河的也去散播这些谣言~哈哈哈，想想其实我以前也是这个样子的~嗯，又让我相信了知识改变命运这个神圣真理了。<br>好了，说了这么多了，让我们来看一下为什么Windows系统用着用着就慢了呢？而Linux系统却没有这种问题呢？这是因为这两个系统的内核有本质区别，Windows使用近似微内核的结构，外围驱动有相当一部分是通过注册services项目的方式加载的，所以，新增硬件、新装软件如果有sys文件需要加载，就要通过services项，导致开机时Windows内核代码加载时间会慢慢变长！回过头来再说一下这个services项是什么东东呢？Windows系统是通过注册表来存储系统和应用程序的设置信息的。早在Windows 3.0推出OLE技术的时候，注册表就已经出现。随后推出的Windows NT是第一个从系统广泛使注册表的操作系统。但是，从Microsoft Windows 95操作系统开始，注册表才真正成为Windows用户经常接触的内容，并在其后的操作系统中继续沿用至今。而这个services就是注册表中程序设置信息所存放的位置，在这个文件夹下的信息，有一些是开机启动项，有一些是开始之后延迟启动的。下载的一些应用程序需要添加到注册表里他的配置信息才能使用，但是有的程序我们卸载完成后，并不会销毁这些注册表里面的东西，所以说我们的笔记本就会慢慢变慢了。并不是这些定西不能删除，而是那些应用程序并没有设置删除选项，或者一些病毒类的软件故意篡改注册表信息导致电脑出现一系列的问题。<br>而Linux系统采用的是宏内核结构，大部分驱动都包含在内核里，我相信Linux用户不会没事干去重编自己的内核玩，所以Linux内核加载时间是固定的。那么使用很长的时间计算机的开机时间也不会有特别明显的变化。</p>
+<p>顺带吐槽一下win10系统中我认为一些不足的地方吧。就是新建文本文档的编码方式依然不是utf-8格式编码的，曾经被这种格式坑的很惨，所以记忆犹新。为什么都到了win10系统了，文本文档还不是utf-8呢？哎，以后还得注意这个问题啊~</p>
+<p>重装系统之后，一些要重新配置的程序和文件，如：GitHub、个人博客，最让我感到难过的是，Google账号登不上去了，以前在浏览器中保存好的书签全都同步不了了，我在想什么时候才能让我们重新科学上网呢。十九大也胜利闭幕了，我们的科学上网时间是不是也快到来了呢？感觉这次的事情好像并没有那么简单的样子呢~</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/资源分享/">资源分享</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机系统/">计算机系统</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/前端算法代码实现" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/前端算法代码实现.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.538Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/前端算法代码实现.html">前端算法JavaScript代码实现</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 前端算法JavaScript代码实现 </strong> <Excerpt in index | 首页摘要></p>
+<h1 id="金山WPS公司前端笔试算法题"><a href="#金山WPS公司前端笔试算法题" class="headerlink" title="金山WPS公司前端笔试算法题"></a>金山WPS公司前端笔试算法题</h1><p>今天是金山WPS公司在哈尔滨理工大学举办宣讲会的日子，宣讲会结束之后就进行了前端开发工程师的笔试。虽然我参加的宣讲会不多，做的笔试题更少，但是以前参加的每家公司出的笔试题都不是纯前端的题，总是会参杂一些计算机系统、数据库等等方面的知识，而今天做的这个笔试题却是纯前端的题，并且还都是前端基础题；虽然是基础题，看着这些题都知道甚至可以很熟练的运用，但是真正做起题来还是有点儿拿捏不准。归根结底还是自己的基础功不扎实啊，做起题来才知道自己还欠缺还多底层知识的理解。总之，还是应该多看书、多追究底层实现的原理，不能仅仅追求熟练运用，而应该懂得这是如何实现的。前路漫漫，还得更加努力才行啊！加油吧，少年~</p>
+<p>说了这么多，说一下遇到的问题吧，最后一道编程题的解题思路和答案。</p>
+<p>问题：实现两个有序数组的合并。</p>
+<p><code>function merge(left, right) {
+    var lLen = left.length,
+        rLen = right.length,
+        il = 0,
+        ir = 0,
+        res = [],
+        mid = [];
+    while(il &lt; lLen &amp;&amp; rl &lt; rLen) {
+        if(left[il] &gt; right[ir]) {
+            res.push(right[ir++])
+        }else{
+            res.push(left[il++])
+        }
+    }
+    mid = left[il] ? left.slice(il) : right.slice(ir);
+    return res.concat(mid);
+}</code><br>很简单的就实现了两个有序数组的合并。<br>是不是很简单呢？</p>
+<h1 id="JavaScript算法"><a href="#JavaScript算法" class="headerlink" title="JavaScript算法"></a>JavaScript算法</h1><p>既然说到排序了，那我们就来说一下JavaScript的排序算法的代码实现吧！</p>
+<ol>
+<li>冒泡排序<br>最最基础的是什么算法呢？当然是众所周知的冒泡排序算法了~<br>那就先来实现一下它吧！</li>
+</ol>
+<p><code>function bubbleSort(arr) {
+    var len = arr.length;
+    for(let i = 0; i &lt; len; i++) {
+        for(let j = 0; j &lt; len - 1 - i; j++) {
+            if(arr[j] &gt; arr[j+1]) {
+                var temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    return arr;
+}</code><br>用代码实现了冒泡排序，我们现在回过头来看看冒泡排序的时间复杂度吧~首先，冒泡排序用到的排序方法是穷举算法，也就是每一个数都要两两进行比较。这可以说是最容易让人理解的算法了，但是简单易懂换回的是计算机的处理效率的大大下降。因为计算量是很大的，所以这个算法的时间复杂度也是最大的；所以学习这个算法的目的也就是让我们去避免用到它，用高效的算法来替代它。<br>时间复杂度：O(n²)的时间复杂度。</p>
+<ol>
+<li>选择排序<br>选择排序是表现最稳定的排序算法之一了，与冒泡排序一样用到的都是穷举算法。<br>代码如下：</li>
+</ol>
+<p><code>function selectionSort(arr){
+    var len = arr.length;
+    var minIndex, temp;
+    for(let i = 0; i &lt; len - 1; i++) {
+        minIndex = i;
+        for(let j = i + 1; j &lt; len; j++) {
+            if(arr[j] &lt; arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+    return arr;
+}</code></p>
+<p>与冒泡排序的方法类似，但是这个是从头开始排列的；应该尽量避免使用这个算法，因为这个也是最浪费性能的一个算法。<br>时间复杂度：O(n²)的时间复杂度。</p>
+<ol>
+<li>插入排序<br>插入排序：类似打布克牌的时候新起上的牌放到手中已有的有序队列中；从当前手中牌的末尾开始比较，插入满足条件的位置中。<br>代码如下：</li>
+</ol>
+<p><code>funciton insertionSort(arr) {
+    var len = arr.length;
+    var perIndex, current;
+    for(let i = 1; i &lt; len; i++) {
+        preIndex = i - 1;
+        current = arr[i];
+        while(preIndex &gt;= 0 &amp;&amp; arr[preIndex] &gt; current) {
+            arr[preIndex + 1] = arr[preIndex];
+            preIndex--;
+        }
+        arr[preIndex + 1] = current;
+    }
+    return arr;
+}</code></p>
+<p>插入算法的时间复杂度：最差的情况下为O(n²)，即等于冒泡排序和选择排序的复杂度，但是一般不可能是最差的情况的，所以这个算法想比骄傲前两个来说性能上稍微提高了一点儿。既是时间复杂度&lt;=O(n²)。</p>
+<ol>
+<li>希尔排序<br>希尔排序：是插入排序的一种更高效的实现；它与插入排序的不同之处在于，他会优先比较距离较远的元素。希尔排序的核心在于间隔排序的设定。既可以提前设定好间隔序列，也可以动态的定义间隔序列。动态定义间隔序列的算法是《算法（第4版）》的合著者Robert Sedgewick提出的。在这里，我就是用了这种方法。<br>代码如下：</li>
+</ol>
+<p><code>function shellSort(arr) {
+    var len = arr.length,
+        temp,
+        gap =  1;
+    while(gap &lt; len / 3) {
+        gap = gap * 3 + 1;
+    }
+    for(gap; gap &gt; 0; gap = Math.floor(gap / 3)) {
+        for(let i = gap; i &lt; len; i++) {
+            temp = arr[i];
+            for(var j = i - gap; j &gt; 0 &amp;&amp; arr[j] &gt; temp; j -= gap) {
+                arr[j + gap] = arr[j];
+            }
+            arr[j + gap] = temp;
+        }
+    }
+    return arr;
+}</code></p>
+<p>时间复杂度：相比较上一种方法-插入排序，希尔排序自己定义好了间隔序列，这样就手动的排除了插入排序中最差的可能发生概率，进一步至少减少了1/4的比较运算相对于冒泡和选择排序而说。所以这是一种较优的算法。这个算法用到的思想就有点儿归并排序算法的影子了。接下来就让我们来看下一种算法-归并排序吧~</p>
+<ol>
+<li>归并排序（合并排序）<br>作为一种典型的分而治之的算法思想，归并排序的实现有两种方法：<br>-自上而下的递归（递归方法可以用迭代重写）<br>-自下而上的迭代</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/算法/">算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试/">笔试</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/10/2017.10.26今日事，古人的智慧" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/10/2017.10.26今日事，古人的智慧.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.528Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/10/2017.10.26今日事，古人的智慧.html">今日事</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 今日事：</strong> <Excerpt in index | 首页摘要></p>
+<h1 id="古人的智慧"><a href="#古人的智慧" class="headerlink" title="古人的智慧"></a>古人的智慧</h1><p>人们啊，有时候总是在错误的时间从事正确的事情，等我们到达了正确的时间却错过了我们应该从事的正确的事情，但是并不能说这是一个悲哀的事实，也许正是因为这样，才让我们明白了一些现实中的人生道理：珍惜当下，努力做好当下的事情，不要因为目前自身眼界的限制而看轻一些事情、道理、知识、人脉、友情、爱情、亲情等等的一些东西。为什么我会有这种感慨呢？因为正在走向而立之年，懂得了很多人情世故，稍微成长了一些吧；回想走过的路总是会叹息过去的自己的目光是如此的短浅，目之所及的浅显的道理都看不懂，可是如今再看目前的现阶段的自己，又何尝不是那个时候的有一个自己呢？所以说，不要怕或者说不要懊恼当下无知的自己，只要低下头，不停的前行，努力做好目前所应处理的问题，不要小看遇到的任何小问题，认真的处理好。质的成长永远都不是一瞬间就能做到的，古人说的好：不积小流无以成江海；不积硅步无以至千里；书山有路勤为径，学海无涯苦作舟；我认同这两句句中的坚持，我也非常认同坚持真的是一个人成功的关键，要想成功所必须要具备的品质。我想说的是什么呢？古人没有手机，没有电话，没有电脑，没有火车和飞机，但是他们追求的不是现代社会中经济的增长，他们追求的是哲学中真正的值得我们深思的问题，有些人穷其一生都在追求的东西，我们从哪儿来，我们生存的意义是什么，我们要到哪儿去？对啊，那个时候的人思想的很深刻，得出来很多真理名言，我们受国家义务教育这么多年，那些我们年少时，不屑一看、一读、一背的东西，显示中到头来总会给我们以深刻的打击，只有这个时候我们才认识到古人的智慧，所以说，骚年，多读书吧，少玩游戏，少浪费时间在一些不必要的事情上，纯粹点儿追求一些值得你追求的东西、你喜欢的东西、兴致所在才能坚持下去，才有可能成就一番伟业！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人感受/">个人感受</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人日记/">个人日记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/10/2017.10.17个人日记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/10/2017.10.17个人日记.html" class="article-date">
+      <time datetime="2017-11-09T10:31:49.468Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/10/2017.10.17个人日记.html">个人日记</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 个人日记：</strong> <Excerpt in index | 首页摘要></p>
+<h1 id="端正心态"><a href="#端正心态" class="headerlink" title="端正心态"></a>端正心态</h1><p>利用好时间，现在已经大四了，在大学里所剩的时间不多了，好好珍惜如今在学校的日子吧；身边的同学、老师，毕业之后可能再见就不知什么时候了；如今正是青春年华，你最好的时候，应该好好提升自己，充实自己；应届毕业生，现在说以后的成就，以后的梦想还是太早了，每个人都是相似的，你毕业不知所措，你毕业迷茫，对未来充满期待也好，对未来充满恐惧也罢，每个人都是差不多的感觉，也许我们现在的感知或者对未来的梦想是不真实的，因为我们并没有真正的在社会上历练过，有人说进入社会就会见到人与人之间的黑暗，见识到你以前所感到不可思议的东西，你不敢想象的事情的发生，不论怎样，我知道，只要我坚持初心，不忘了做人的基本准则，做好自己就好，能向人们传递一下感恩之心最好了，不能做到回报社会，起码我们应该做好我们自己，不忘初心，方得始终。</p>
+<h1 id="努力努力再努力"><a href="#努力努力再努力" class="headerlink" title="努力努力再努力"></a>努力努力再努力</h1><p>永远不要满足与当下自己所取得的小成就，不要羡慕别人所取得的成就，羡慕嫉妒恨真不是什么好的习惯哦~坚持自己选择的路，不是有一句话说的好吗？自己选择的路，就算是跪着、哭着、痛着也要走完；当然了，能够享受着最好了；累的时候就想一下这条路上的大牛们都在做什么，人家都在奋斗，你又有什么理由偷懒呢？最怕的就是你什么都不是还不思进取，永远记住比你厉害的人还比你努力，你怎么好意思去偷懒呢？</p>
+<h1 id="不要说脏话"><a href="#不要说脏话" class="headerlink" title="不要说脏话"></a>不要说脏话</h1><p>有些人以说脏话为荣，我也不知道你的脑回路是什么样子的？就算是最好的朋友之间，难道除了脏话就不能有文明的话代表你的情感，抒发你的感受了吗？尤其受不了的是有些女生以说脏话为荣，好像说出来之后你的形象就立马高大上了是的？哎，别人怎么样，我不管也管不着，管好自己就好，管好你在意的人就好，希望我们都能在素养上得到提升吧！中国文化传承，礼仪上的传承是很重要的，我还后悔大学选修课没有选修礼仪的课程呢！以后自己学吧~</p>
+<h1 id="兴趣"><a href="#兴趣" class="headerlink" title="兴趣"></a>兴趣</h1><p>有一句话说的好，兴趣是最大的老师；一个工作如果你失去了最初的兴趣，那这件工作也就到此终止了，就算你为了生活强撑下去到时最后的结局也不会太过美好的，我希望我能坚持我如今的兴趣，找到自己心仪的工作，按照我目前的规划前行，但是人生哪有那么美好呢？人生不如意事十之八九，学会处理好发生的意外才能快乐的生活，见识了人间的冷暖，才能够更好的享受人生！永远不要为自己所做出的坏事找借口，说什么以前也有人这么对过你，所以你现在就这么对别人！no，永远不要成为这样的人，好吗？做一个自己小时候想成为的人吧！你还记得吗？</p>
+<h1 id="晚安"><a href="#晚安" class="headerlink" title="晚安"></a>晚安</h1><p>多么美好的世界啊~生活本没有什么意义，但是我身边的亲人朋友们给了我生活的意义，让我发现生活中的阳光快乐竟是如此之多，我每时每刻都很珍惜流过的时光，感觉时间过得好快，朋友相处的时间太短，匆匆离别不是为了伤感，知识为了让我们以更好的姿态相聚，那时我们心与心的距离更短！加油吧！朋友们，人生太短，找到自己的目标不容易，那我们为什么不去实现他呢~加油，你的背后永远有一群支持你的人！永远不要怀疑自己，坚持自己的路你就胜利了。晚安世界~</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人日记/">个人日记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人日记/">个人日记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

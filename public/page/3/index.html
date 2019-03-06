@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>To die or not to die, this is a question~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+<meta property="og:type" content="website">
+<meta property="og:title" content="To die or not to die, this is a question~">
+<meta property="og:url" content="http://indexcode.cn/page/3/index.html">
+<meta property="og:site_name" content="To die or not to die, this is a question~">
+<meta property="og:description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="To die or not to die, this is a question~">
+<meta name="twitter:description" content="分享Web前端开发，自我提升，前端工程师必备技能使用方法等的原创或者转载文章~">
+  
+    <link rel="alternative" href="/atom.xml" title="To die or not to die, this is a question~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Dexinser</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/资源分享/">资源分享</a></li>
+                        
+                            <li><a  href="/categories/学习笔记/">学习笔记</a></li>
+                        
+                            <li><a  href="/categories/基础方法分享/">基础方法分享</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/book/" style="font-size: 12.5px;">book</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/个人分享/" style="font-size: 15px;">个人分享</a> <a href="/tags/个人感悟/" style="font-size: 12.5px;">个人感悟</a> <a href="/tags/个人日记/" style="font-size: 12.5px;">个人日记</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/历史故事/" style="font-size: 10px;">历史故事</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/商业问题/" style="font-size: 10px;">商业问题</a> <a href="/tags/学习笔记/" style="font-size: 12.5px;">学习笔记</a> <a href="/tags/影视人生/" style="font-size: 12.5px;">影视人生</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/思维能力/" style="font-size: 10px;">思维能力</a> <a href="/tags/杂/" style="font-size: 10px;">杂</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/笔试/" style="font-size: 10px;">笔试</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/计算机系统/" style="font-size: 10px;">计算机系统</a> <a href="/tags/认知提升/" style="font-size: 17.5px;">认知提升</a> <a href="/tags/诗与远方/" style="font-size: 10px;">诗与远方</a> <a href="/tags/资源分享/" style="font-size: 10px;">资源分享</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://my.csdn.net/my/mycsdn">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/u/dexinser">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/c1794d13eba9/timeline">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">走在路上，看风景，品人生；世间美好如此之多，何必去想那些不开心的事儿呢~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Dexinser</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpeg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Dexinser</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不想成为架构师的程序员不是一个好的程序员~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/资源分享/">资源分享</a></li>
+                
+                    <li><a href="/categories/学习笔记/">学习笔记</a></li>
+                
+                    <li><a href="/categories/基础方法分享/">基础方法分享</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/Dexinser" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5223005381/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-2017/11/2017.11.09 诗与远方" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/2017.11.09 诗与远方.html" class="article-date">
+      <time datetime="2017-11-09T10:31:50.135Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/2017.11.09 诗与远方.html">诗与远方</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 诗与远方：</strong> <Excerpt in index | 首页摘要></p>
+<h2 id="个人随笔："><a href="#个人随笔：" class="headerlink" title="个人随笔："></a>个人随笔：</h2><p>总有一代人会实现我们的梦想；<br>100多年前，在梁启超的海船上又曾复活了：“纵有千古，横有八荒，前途似海，来日方长。美哉我少年中国，与天不老！壮哉我中国少年，与国无疆！”</p>
+<p>一个人最重要的不是拥有多少财富，和拥有多大的房子，最重要的是拥有深厚的学识和崇高的思想道德。         -康震点评《陋室铭》</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人随笔/">个人随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/诗与远方/">诗与远方</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/练习题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/练习题.html" class="article-date">
+      <time datetime="2017-11-09T10:31:50.124Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/练习题.html">前端练习题</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 前端练习题：</strong> <Excerpt in index | 首页摘要></p>
+<h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><ol>
+<li><p>var str = false + 1;<br>document.write(str);<br>结果为：1        （false会发生隐式类型转换成数值类型的0）</p>
+</li>
+<li><p>var demo = false == 1;<br>document.write(demo);<br>结果为：false  （同第一题）</p>
+</li>
+<li><p>if(typeof(a) &amp;&amp; - true + (+ undefined) + “”) {<br>   document.write(‘基础扎实’);<br>}<br>结果为：基础扎实   （typeof()是唯一一个使用未经声明的变量，不报错的方法，并且它的六个返回结果都是字符串类型的；””空字符串起连接作用）</p>
+</li>
+<li><p>if(11 + “11” * 2 == 33) {<br> document.write(‘基础扎实’);<br>}<br>结果为：基础扎实     （运算符的优先级比较，先算乘除再算加减。等号优先级最低。牢记字符串的连接作用。）</p>
+</li>
+<li><p>!!” “ + !!”” - !!false || document.write(‘你觉得能打印，你就是猪’);<br>结果为：1</p>
+<h2 id="预编译"><a href="#预编译" class="headerlink" title="预编译"></a>预编译</h2></li>
+<li><p>function bar() {<br> return foo;<br> foo = 10;<br> function foo() {</p>
+<p> }<br> var foo = 11;<br>}<br>document.write(bar());<br>结果为：function foo() {};     （牢记函数预编译的四部）</p>
+</li>
+<li><p>function bar() {<br> foo = 10;<br> function foo() {};<br> var foo = 11;<br> return foo;<br>}<br>console.log(bar());<br>结果为：11                     （牢记函数预编译的四部）</p>
+</li>
+<li><p>a = 100;<br> function demo(e) {<br> function e() {}<br> arguments[0] = 2;<br> document.write(e);<br> if(a) {</p>
+<pre><code>var b = 123;
+function c() { 
+}    
+</code></pre><p> }<br> var c;<br> a = 10;<br> var a;<br> document.write(b);<br> f = 123;<br> document.write(c);<br> document.write(a);<br> }<br> var a;<br> demo(1);<br> document.write(a);<br> document.write(f);<br>结果为：2 undefined undefined 10 100 123     （全局变量有两种，第一种就是直接定义在全局中的变量，第二种就是没用var直接定义出来的变量。if里面不能定义函数，以前可以，现在不合法，但是也不会报错）</p>
+</li>
+</ol>
+<h2 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h2><ol>
+<li>function test(a, b) {<br> console.log(a, b);<br>}(1, 2);<br>结果：不报错，返回结果为：2。        （因为会把最后小括号当成随意写在文本中的，另外会返回括号里面最后的数）</li>
+</ol>
+<h2 id="new问题"><a href="#new问题" class="headerlink" title="new问题"></a>new问题</h2><ol>
+<li>运行test()和new test()的结果分别是什么？<br>var a = 5;<br>function test() {<br> a = 0;<br> alert(a);<br> alert(this.a);<br> var a;<br> alert(a);<br>}<br>结果为：test执行结果为0、5、0   new test结果为0、undefined、0</li>
+</ol>
+<ol>
+<li><p>分析下面的JavaScript代码段：<br> function employee(name, code) {</p>
+<pre><code>this.name = &quot;wangli&quot;;
+this.code = &quot;A001&quot;;
+</code></pre><p> }<br> newemp = new employee(“zhangming”,’A002’);<br> document.write(“雇员姓名:” + newemp.name + “<br>“);<br> document.write(“雇员代号:” + newemp.code + “<br>“);<br>输出的结果是(  ).(选择一项)<br>A. 雇员姓名:wangli  雇员代码:A001<br>B. 雇员姓名:zhangming  雇员代码:A002<br>C. 雇员姓名:null, 雇员代码:null<br>D. 代码有错误，无输出结果<br>答案是：A     （因为根本就没有进行赋值、没用到传进去的参数、写死了，定式的，生成多少个都是这样的。如果想进行赋值的话应该写成  this.name = name,this.code = code）</p>
+</li>
+<li><p>var str = “abc”;<br>str += 1;<br>var test = typeof(str);<br>if(test.length == 6) {<br> test.sign = “typeof的返回值可能为String”;<br>}<br>document.write(test.sign);<br>结果为：undefined  (str先+=1得字符串形式的abc1.然后typeof(str)返回值是字符串形式的string，test是原始值，所以访问他的.length会形成包装类，test的长度确实是6，所以能走进if循环里。包装类保存不出来。)</p>
+</li>
+</ol>
+<ol>
+<li>function Person(name, age, sex) {<br> var a = 0;<br> this.name = name;<br> this.age = age;<br> this.sex = sex;<br> function sss() {<pre><code>a++;
+document.write(a);
+</code></pre> }<br> this.say = sss;<br>}<br>var oPerson = new Person();<br>oPerson.say();<br>oPerson.say();<br>var oPerson1 = new Person();<br>oPerson1.say();<br>结果为：1、2、1      (注意：题中的this.say = sss把sss保存出来了，与Person形成闭包 )    </li>
+</ol>
+<ol>
+<li><p>var x = 1;<br>if(function f() {}) {<br> x += typeof f;<br>}<br>console.log(x);<br>结果为：1undefined    （boolean值为false的只有6个，上题中的不属于那六个，所以肯定能走进if语句中。typeof是唯一一个使用未经声明的变量不报错的方法）</p>
+</li>
+<li><p>(function(x) {<br> delete x;<br> return;<br>})(1);</p>
+</li>
+</ol>
+<p>结果为：undefined     （可配置性。delete只能删除对象上的属性，比如在全局上定义一个 var a = 123；虽然a就相当于是window上的一个属性，但是delete window.a是删不了的。但是你要是在全局上就定义window.a = 123;或者 a = 123； delete a;结果就为真，可以删除的。这也就是可配置性一说！）</p>
+<ol>
+<li>var h = function a() {<br> return 23;<br>}<br>typeof a();<br>结果为：报错a is not defined</li>
+</ol>
+<p>重点中的重点！<br>  typeof (new Array).<strong>proto</strong>.constructor()<br>结果为：”object”     解析：先算括号里面的，再算点。优先级顺序。形式上又有typeof的两种形式的用法。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/滕王阁的修建者--滕王李元婴" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/滕王阁的修建者--滕王李元婴.html" class="article-date">
+      <time datetime="2017-11-09T10:31:50.113Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/滕王阁的修建者--滕王李元婴.html">说说滕王阁的修建者——“混蛋王爷”李元婴</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="说说滕王阁的修建者——“混蛋王爷”李元婴"><a href="#说说滕王阁的修建者——“混蛋王爷”李元婴" class="headerlink" title="说说滕王阁的修建者——“混蛋王爷”李元婴"></a>说说滕王阁的修建者——“混蛋王爷”李元婴</h1><p>说到江西南昌的滕王阁，即使没去过的人，也一定听过它的大名，号称江南三大名楼之首，尤其是唐初诗人王勃的《滕王阁赋》，更让它名扬天下，其中的诗句“落霞与孤鹜齐飞，秋水共长天一色”流传至今。但历史上的滕王阁其实有三处，最早修建是山东滕州的滕王阁（已被毁，待复建），其次是江西南昌的滕王阁（知名度最高），最后修建是四川阆中的滕王阁。这三处滕王阁的修建者都是同一个人——即唐初的滕王李元婴。</p>
+<p><img src="http://outwcl4zh.bkt.clouddn.com/%E6%BB%95%E7%8E%8B%E9%98%81" alt="滕王阁"><br>现在位于江西南昌的滕王阁</p>
+<p>李元婴在历史上的知名度并不高，但要是说到他的父亲唐高祖李渊和他的哥哥唐太宗李世民，却是大家非常熟悉的历史人物。李渊共有二十二个儿子，除了隐太子李建成、唐太宗李世民等，还有这个最小的儿子李元婴。李元婴出生于公元630年，也就是贞观三年，这个时候的李渊早已禅让退位，年纪也64岁了，却也不耽误生孩子。贞观十三年，才十岁的李元婴被哥哥唐太宗封为滕王，封地在今天的山东滕州。<br>成年后，李元婴按照唐朝的制度，前往封地就蕃。只是这位王爷没有造福地方，相反却是骄奢淫逸、横征暴敛、大兴土木，引起了当地极大的民愤。根据相关的史书记载，李元婴在地方并无政绩可言，而是终日飞鹰走狗、声色犬马。据说他经常带着大队的人马在自己的领地内骑马打猎，甚至把忙于劳作的农民当靶子，玩弹弓射击，以此取乐，唐高宗李治为此还专门写信劝诫这位比自己小很多的皇叔不要用弹弓射人。<br>在生活作风方面，李元婴也是个十足的混蛋。他的王府里面不仅妻妾众多，而且特别青睐下属们的漂亮妻子。据说，在滕王李元婴待过的地方，下属官员们都明白这个“潜规则”，会自觉把自己的妻子送到王府，供这位王爷玩乐，若是不送的，则免不了被李元婴无故刁难和诬陷。<br>这位弄得“民怨沸腾”又“官怨沸腾”的贪败王爷，自然是皇帝最头疼的对象。唐太宗在位时期，对这位幺弟的各种混蛋行为往往是睁一只眼闭一只眼。唐高宗即位后，对这位小皇叔，或是当面警告，或是写信劝诫，实在没办法了，就一贬再贬，进行惩罚。先是贬到苏州，再到洪州（今江西南昌），后来又到隆州（今四川阆中），只是李元婴恶习不改，依旧我行我素，无法无天。<br>虽然品行恶劣，但李元婴却有很高的艺术造诣，这自然与他从小的宫廷艺术熏陶有关。据说他“善画”，而且“工于蛱蝶”，由此留下了著名的“滕派蝶画”。除此之外，他还非常钟情于建筑艺术，每到一处就广邀天下的能工巧匠，大肆修建行宫、楼阁。永徽四年（653年），他选址赣江之滨，修起了一座高插云天的楼阁，这就是王勃笔下的滕王阁了，为后人的宝贵的历史文化遗产。转载自 百家好 –我爱读历史</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/历史故事/">历史故事</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/历史故事/">历史故事</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/正则表达式.html" class="article-date">
+      <time datetime="2017-11-09T10:31:50.102Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/正则表达式.html">正则表达式</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 正则表达式：</strong> <Excerpt in index | 首页摘要></p>
+<h1 id="正则表达式-就是个规则-是个对象"><a href="#正则表达式-就是个规则-是个对象" class="headerlink" title="正则表达式   就是个规则  是个对象"></a>正则表达式   就是个规则  是个对象</h1><p><strong>RegExp正则表达式的作用：匹配特殊字符或有特殊搭配原则的字符的最佳选择。</strong></p>
+<p>两种创建方法：直接量<code>var reg = /pattern/;</code>或者<code>var reg = new RegExp(&#39;pattern&#39;);</code>但是也可以不加new，但是这就相当于直接把RegExp(‘pattern’)拷贝过来了。而且也可以在()里面添加一个已经设置好的正则规则。如：<code>reg = /abc/;  var reg1 = new RegExp(reg);</code>这个reg1就跟reg一样了。 <strong>推荐用直接量。</strong></p>
+<p><strong>\n换行</strong><br><strong>\r行节束缚</strong>    windows系统上是他们两个的一起作用的,一个回车就相当于\r\n  lunix上只有一个换行符,也就是只有\n<br>\t一个制表符，一个缩进，可以设置一个缩进等于几个空格</p>
+<p><strong>\</strong> 转义字符的作用还有，如果你想打印或者使用特殊字符的话就在前面加上转义字符，让特殊符号回归成本来的意义。</p>
+<p>如果想写特殊的格式，多行字符串，就在字符串每一行的结尾加上转义的字符就行了。可如果是字符串的话在每一行的结尾加上+号也是可以的。比如：</p>
+<figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">div</span> = document.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">div</span>.innerHTML = <span class="string">"\</span></span><br><span class="line"><span class="string">	&lt;div&gt;\</span></span><br><span class="line"><span class="string">		&lt;span&gt;邓宝宝很萌&lt;/span&gt;\</span></span><br><span class="line"><span class="string">	&lt;/div&gt;\</span></span><br><span class="line"><span class="string">"</span></span><br></pre></td></tr></table></figure>
+<p>另一种：</p>
+<figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> <span class="keyword">div</span> = document.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">div</span>.innerHTML = <span class="string">"&lt;div&gt;"</span> +</span><br><span class="line">			   <span class="string">"&lt;span&gt;邓宝宝很萌&lt;/span&gt;"</span> +</span><br><span class="line">			<span class="string">"&lt;/div&gt;"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = /abcde/;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"123abcdeabcdeabcde"</span>;</span><br></pre></td></tr></table></figure>
+<p>reg.test(str);判断str里面是否有abcde的字符串；返回值为true<br>str.match(reg);跟上面的方法正好相反。这是字符串上的方法，找字符串上符合正则表达式reg的方法。</p>
+<h1 id="在后面加上i-g-m"><a href="#在后面加上i-g-m" class="headerlink" title="在后面加上i g m"></a><strong>在后面加上i g m</strong></h1><p>i  表示忽略大小写ignoreCase;<br>g  表示全局找符合条件的，但是不会识别特殊符的Globle,不加g的话匹配一个就停了。全局匹配。<br>m  表示可识别多行匹配了,match;<br>例如：多行匹配<br>  <code>var reg = /^a/g
+  var str = &quot;abc\nabc&quot;;
+  str.match(reg);</code><br>结果为一个a；但是第二个a也是符合条件的，想要第二个也匹配出来就要在后面添加一个m就能多行匹配了。查找开头为a 的话识别不了两个a，但是加上m就能识别了。</p>
+<p><code>reg = /^a/</code> 就相当于一个开头是a的字符串规则。</p>
+<h1 id=""><a href="#" class="headerlink" title="[]"></a>[]</h1><p><code>var reg = /[abcd][bcde]/</code>  第一个里面就是查找符合第一位的条件的，[a-z]代表从a到z的字母。[^a-z]代表查找任何不在条件的字符。还可以[a-z0-9]里面写好几个条件的。[]是第一位满足什么条件，ASCII码  A 65； a 97；因为中间有26个字母之外还有一些特殊符号呢。eg：<br> <code>var reg = /[^a-g][1-9]/g;
+ var str = &quot;ah2dfsa&quot;;
+ str.match(reg);</code><br>结果为：h2；<br>在[]里的^号是非的意思，就是取反的意思。</p>
+<h1 id="-1"><a href="#-1" class="headerlink" title="()"></a>()</h1><p>()在正则表达式中的意义：reg = /(abc|bcd)d/g;|代表或者的意思；()代表连着后面的条件的，可以代表和的意思。必须是abc或者bcd连着之后的d的满足条件的字符。<br>eg：<br><code>reg = /(abc|bcd)d/g;
+var str = &quot;abcdbcdddsahf&quot;;
+ str.match(reg);</code><br>结果为：”abcd”  “bcdd”;</p>
+<h1 id="元字符：一些表达式的缩写形式；"><a href="#元字符：一些表达式的缩写形式；" class="headerlink" title="元字符：一些表达式的缩写形式；"></a>元字符：一些表达式的缩写形式；</h1><p>.   所有的都包括；[^\r\n];<br>\d  查找数字;就相当于[0-9];<br>\D  查找非数字；就相当于[^0-9];<br>\w  查找单词字符；word；就相当于[A-z0-9_]<br>\W  查找非单词字符；就相当于[^w]<br>\s  查找空白字符；代表一切空白；[\t\n\f\r\v ]<br>\S  查找非空白字符；[^s]<br>\b  匹配单词边界；单词边界的意思；空格之后就是单词边界了；<br>\B  匹配非单词边界；非单词边界；<br>\O  查找NUL字符；<br>\n  查找换行符；<br>\f  查找换页符；<br>\r  查找回车符；<br>\t  查找制表符；<br>\v  查找垂直制表符；<br>\xxx    查找以八进制数xxx规定的字符；<br>\xdd    查找以十六进制dd规定的字符；<br>\uxxxx  查找以十六进制数xxxx规定的Unicode字符；<br>eg：<br><code>var reg = /[\u5000-\u6000]/g;
+var str = &quot;邓宝宝&quot;；  邓u90df  宝u5d00
+str.match(reg);</code><br>结果为：”宝”  “宝” ；</p>
+<h1 id="贪心匹配原则：正则表达式能匹配多个就不匹配少个。"><a href="#贪心匹配原则：正则表达式能匹配多个就不匹配少个。" class="headerlink" title="贪心匹配原则：正则表达式能匹配多个就不匹配少个。"></a>贪心匹配原则：正则表达式能匹配多个就不匹配少个。</h1><p><strong>量词：</strong><br>n+    匹配人格包含至少一个n的字符串；<br>n*    匹配任何包含零个或多个n的字符串；<br>n?    匹配任何包含零个或一个n的字符串；<br>n{X}   匹配包含X个n的序列的字符串；<br>n{X,Y}  匹配包含X至Y个n的序列的字符串；<br>n{X,}   匹配包含至少X个b的序列的字符串；<br>n$      匹配任何结尾为n的字符串；<br>^n      匹配任何开头为n的字符串；<br>?=n     匹配任何其后紧接指定字符串n的字符串；<br>?!n     匹配任何其后没有紧接指定字符串n的字符串；</p>
+<p><code>var reg = /^abc$/g;
+var str = &quot;abcabc&quot;
+str.match(reg);</code></p>
+<p>返回结果：null;</p>
+<h1 id="写一个正则表达式，检验字符串首尾是否含有数字？"><a href="#写一个正则表达式，检验字符串首尾是否含有数字？" class="headerlink" title="写一个正则表达式，检验字符串首尾是否含有数字？"></a>写一个正则表达式，检验字符串首尾是否含有数字？</h1><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">reg</span> = /(^\<span class="keyword">d</span>)|(\<span class="keyword">d</span>$)/gi;</span><br><span class="line"><span class="keyword">var</span> str = '123abc321';</span><br><span class="line">str.<span class="built_in">match</span>(<span class="keyword">reg</span>);  或  <span class="keyword">reg</span>.<span class="keyword">test</span>(str);</span><br></pre></td></tr></table></figure>
+<p>返回结果为：true；</p>
+<h1 id="写一个正则表达式，检验字符串首和尾是否含有数字？"><a href="#写一个正则表达式，检验字符串首和尾是否含有数字？" class="headerlink" title="写一个正则表达式，检验字符串首和尾是否含有数字？"></a>写一个正则表达式，检验字符串首和尾是否含有数字？</h1><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">reg</span> = /^\<span class="keyword">d</span>[\s\S]*\<span class="keyword">d</span>$/<span class="keyword">g</span>;   表达全集的方法有很多哦~</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"123abc           \n def321"</span>;</span><br><span class="line">str.<span class="built_in">match</span>(<span class="keyword">reg</span>);   或   <span class="keyword">reg</span>.<span class="keyword">test</span>(str);</span><br></pre></td></tr></table></figure>
+<h1 id="RegExp-对象上的一些属性：（reg-属性）"><a href="#RegExp-对象上的一些属性：（reg-属性）" class="headerlink" title="RegExp 对象上的一些属性：（reg.属性）"></a>RegExp 对象上的一些属性：（reg.属性）</h1><p>global：  RegExp对象是否具有标志g。 返回值为：true或者false<br>ignoreCase:  RegExp对象是否具有标志i。<br>lastIndex： 一个整数，标示开始下一次匹配的字符位置。<br>multiline： RegExp对象是否具有标志m。<br>source: 正则表达式的源文本。  能把本源打出来。</p>
+<h1 id="RegExp-对象上的方法：（reg-方法）"><a href="#RegExp-对象上的方法：（reg-方法）" class="headerlink" title="RegExp 对象上的方法：（reg.方法）"></a>RegExp 对象上的方法：（reg.方法）</h1><p>compile: 编译正则表达式。（没用）<br>exec： 检索字符串中指定的值。返回找到的值，并确定其位置。execute执行CEO中的E。和str上的match方法有点儿相似。不加全局匹配g的话就完全一样了。加上g才上这个方法的实际用处。这个方法使用时重复调用一次一次匹配才能体现出来哦~  内部能够识别游标的位置。reg.lastIndex 就是游标的位置，输出结果就是当前游标的位置。这个方法就是给exec这个方法用的。可以手动改游标的位置。必须有全局匹配g。没有g游标不会动的。</p>
+<p><code>var reg = /a/g;
+var str = &quot;ababab&quot;;
+console.log(reg.exec(str));</code><br>结果为:[“a”, index: 0, input: “ababab”]<br><code>console.log(reg.lastIndex);</code>输出当前游标位置；<br>结果为：1<br><code>console.log(reg.exec(str));</code><br>结果为:[“a”, index: 2, input: “ababab”]<br>console.log(reg.lastIndex); 输出当前游标位置；<br>结果为：3<br><code>console.log(reg.exec(str));</code><br>结果为:[“a”, index: 4, input: “ababab”]<br><code>console.log(reg.lastIndex);</code>输出当前游标位置；<br>结果为：5</p>
+<p><strong>test：</strong> 检索字符串中指定的值。返回true 或 false。</p>
+<h1 id="支持正则表达式的String对象上的方法：（str-方法）"><a href="#支持正则表达式的String对象上的方法：（str-方法）" class="headerlink" title="支持正则表达式的String对象上的方法：（str.方法）"></a>支持正则表达式的String对象上的方法：（str.方法）</h1><p>search： 检索与正则表达式相匹配的值。查找位置的方法，返回的是调用该方法的位置，没有的话返回-1。<br><code>var reg = /abc/g;
+var str = &quot;123abcd&quot;;
+str.search(reg);</code></p>
+<h1 id="—–-gt-子表达式"><a href="#—–-gt-子表达式" class="headerlink" title="()—–&gt;  子表达式"></a>()—–&gt;  子表达式</h1><p><code>var reg = /abc(d)/g;</code>  能把子表达式中记录的内容通过match的方法返回出来；<br><code>var str = &quot;123abcd&quot;;</code><br><code>console.log(str.match(reg))</code>打印出来的结果比在控制台里调试str.match(reg)<br>的结果要多一点儿(多了满足条件是光标的索引，也就是search方法，还有就是str全部的信息)。因为console会返回这个类数组的全部信息。<code>str.match(reg)</code>只是返回这个方法的实际结果。<br>这个返回的结果中就包括有子表达式的内容。<br><strong>match： 找到一个或多个正则表达式的匹配。</strong></p>
+<p><strong>replace： 替换与正则表达式匹配的子串。</strong></p>
+<p><code>var str = &quot;xyyx&quot;;
+str.replace(&#39;x&#39;, &#39;a&#39;);</code><br>这个是把字符串中的第一个x替换成a；不过改变的不是原来的字符串哦~ 因为原来的字符串是原始值，任何原始值都是不可改变的，这里又用到了包装类的知识点哦~系统内部隐式创建一个字符串但是用完就删除了，没有了，找不到了。这里的话只能通过console.log(str.replace(‘x’, ‘a’))查看这个方法。结果为：ayyx。那这么说的话这个方法还有用处吗？有用啊，可以var一个变量保存啊。匹配的只有一个哦~这里没有全局匹配的功能，没有加g的功能。想要全变了，可以用正则表达式写console.log(str.replace(/x/g, ‘a’));结果为：ayya。</p>
+<h1 id="写一个正则表达式把原来的-xxyy-形式的-对调过来成为-yyxx的形式。"><a href="#写一个正则表达式把原来的-xxyy-形式的-对调过来成为-yyxx的形式。" class="headerlink" title="写一个正则表达式把原来的 xxyy 形式的 对调过来成为 yyxx的形式。"></a>写一个正则表达式把原来的 xxyy 形式的 对调过来成为 yyxx的形式。</h1><p><code>var reg = /(\w)\1(\w)\2/g;</code><br><code>var str = &quot;123aabb321&quot;;</code><br><code>console.log(str.replace(reg, &#39;$2$2$1$1&#39;));</code><br>结果为: “123bbaa321”<br>这里的$1代表的就是第一个子表达式引用到的内容，$2就是第二个子表达式引用到的内容。单独$什么也不是哦~   第二个参数还能填一个函数，例如：<code>console.log(str.replace(reg, function($, $1, $2){}))</code>，系统怕单纯的正则不够你用所以就给你用函数来调用满足一些复杂的要求，所以这个函数最后返回的一定还是一个字符串，系统内部给你写好了传的参数，你直接传进去就行。function中的参数第一个用$代替一下，是正则表达式匹配到的整体内容。第二个参数$1就是第一个子表达式的内容，$2就是第二个子表达式的内容。</p>
+<h1 id="把命名的名称改成小驼峰式写法；"><a href="#把命名的名称改成小驼峰式写法；" class="headerlink" title="把命名的名称改成小驼峰式写法；"></a>把命名的名称改成小驼峰式写法；</h1><p><code>var str = &quot;the-first-name&quot;;
+var reg = /-(\w)/g;
+console.log(str.replace(reg, function ($, $1) {
+  return $1.toUpperCase();
+}));</code><br>打印结果为：theFirstName;</p>
+<p>写出一个正则表达式满足xxyy形式的方法：这个时候必须用到子表达式了。(\w)\1 这个是第一个位置的子表达式，代表的意义就是对第一个字子表达式的重复引用。(\w)\2 这个是第二个位置的子表达式，代表的意义就是对第二个子表达式的重复引用。所以xxyy形式的正则表达式形式如下：<br><code>var reg = /(\w)\1(\w)\2/g;
+var str = &quot;aabbccdddddddd&quot;;
+str.match(reg);</code><br>控制台打印结果：(3)[“aabb”, “ccdd”, “dddd”];从当前光标所在位置继续查找下一位的。</p>
+<p>写出一个正则表达式满足 xyyx 的形式。<br><code>var reg = /(\w)(\w)\2\1/g;
+var str = &quot;abbabccd&quot;;
+console.log(str.match(reg));</code><br>控制台打印结果为：(2)[“abba”];  看清楚了小伙子~</p>
+<p><code>var reg = /(\w)(\w)\2\1\2\1/g;
+var str = &quot;abbabadeeded&quot;;
+console.log(str.match(reg));</code><br>控制台打印结果为：(2)[“abbaba”, “deeded”];</p>
+<h1 id="一对方法来回转换："><a href="#一对方法来回转换：" class="headerlink" title="一对方法来回转换："></a>一对方法来回转换：</h1><p> 字符串上的方法：<br>split(‘-‘):  把字符串分割为字符串数组。默认是逗号。</p>
+<p> 数组上的方法：<br>join(‘-‘): 把数组中的每一项的值按照所给定的符号分成字符串。默认是逗号。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/框架" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/框架.html" class="article-date">
+      <time datetime="2017-11-09T10:31:50.090Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/框架.html">框架</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 框架：</strong> <Excerpt in index | 首页摘要></p>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>react:是Facebook开发的一款JS框架。<br>传统页面从服务器获取数据，显示到浏览器上，用户输入数据传入服务器的时候，随着数据量大增大，越来越难以维护。Facebook认为MVC无法满足他们的扩展需求，由于他们非常巨大的代码库和庞大的组织，使得MVC很快变得非常复杂，每当需要添加一项新的功能或特性时，系统的复杂度就成级数增长，只是代码变得催乳和不可预测，结果导致他们的MVC正在土崩瓦解。认为MVC不适合大规模应用，当系统中有很多的模型和相应的视图时，其复杂度就会迅速扩大，非常难以理解和调试。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人随笔/">个人随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架/">框架</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/杂" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/杂.html" class="article-date">
+      <time datetime="2017-11-09T10:31:50.078Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/杂.html">杂记</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 杂记：</strong> <Excerpt in index | 首页摘要><br>减肥就等于健康，健康不只是你一个人的事情，你的健康对你的家人的影响有时候要远远大于对你自身的影响。所以从现在做起就好好的对自己的健康负责吧！</p>
+<p>认识到人的身体更适应最原始的食物，比如说：水果、绿色蔬菜、豆类、种子、鸡蛋、海产品、纯奶制品等等；而不是随后产生的食物，比如说：谷物、过量喂食的动物产生的肉和化学加工食物等等。</p>
+<p>为什么要减肥：现代社会流行的肥胖、糖尿病和阳痿等问题说明了。今天人类已经违背了人类发展的自然规律。</p>
+<p>减肥必须要养成良好的作息规律：最最重要的是–&gt;我们需要生活周期，这个包括行动和不行动，比如说：清醒和睡眠，警觉和放松，运动和休息，少量饮食和过量饮食，任何因为不断的压力和长期不断的进食（一天进食多次）产生的周期破坏，都会给人类身体的适应生存的能力和表现产生不利的影响。<br>总之，如今人类健康每况愈下，主要是因为：</p>
+<ol>
+<li>每天吃太多的顿数</li>
+<li>不饿的时候也要吃</li>
+<li>吃不应该吃的食物</li>
+<li>在运动和休息之间无法平衡</li>
+<li>对环境和食物供应变化的适应能力较差</li>
+</ol>
+<h2 id="勇士减肥法："><a href="#勇士减肥法：" class="headerlink" title="勇士减肥法："></a>勇士减肥法：</h2><p>勇士减肥法：勇士减肥法是一个三周减肥方案，为了达成个人的减肥目标而特别设定的如下三个步骤：<br>第一步：排毒期，改善身体的排毒的能力，从而帮助肝脏中和那些引起增肥的物质。<br>第二步：适应脂肪燃料期，改进身体，利用脂肪作为能量来源的能力。<br>第三步：适应碳水燃料期，改进身体，利用碳水作为能量的能力。<br>这三步将帮助你，改进你的新陈代谢能力，让你的身体燃脂能力产生质的飞跃。<br>这个方案通过每个阶段不同的饮食方案，指导减肥者启动身体的生存模式，迫使身体去适应和改进利用【碳水和脂肪】燃烧的能力，重建细胞组织，燃烧脂肪和抵抗压力，从而变得更加强壮，更精瘦，更坚韧，这只要通过几个【限制吃】和【放开吃】循环来控制。</p>
+<p>【限制吃】：基于轻断食原理，这个部分在白天（工作时间）执行，要求你进食最少的食物，集中精力避免每次摄入过多的食物，同时也要满足自己的饥饿感，这个部分，你应该吃新鲜的蔬菜和水果，沙拉和一些蛋白质（参考后面的周饮食计划明细）</p>
+<p>【放开吃】：基于“饮食规则”（见后面），这个部分给你足够的自由，让你想吃多少就吃多少，可以吃各种不同口味的食物，但是要知道自己主动停止进食，或者当你感觉到非常舒服的被满足之后，或者当你的饥渴大于饥饿的时候。</p>
+<p>这个方法的原则非常简单明了，这可以作为你一生的饮食方式，你可以根据自己的情况，在这三个步骤中不断的循环，这样你可以吃到你喜欢的食物，同时，你也可以平衡你的新陈代谢，轻松甩掉你的脂肪。</p>
+<p>达到的效果：<br>你不断的燃脂，脂肪不会再生<br>你活力四射<br>你思维更加敏捷<br>你能完成更多的工作<br>自我感觉更加良好<br>看起来更有自信，更加好<br>生活对你就像一场让人兴奋的挑战</p>
+<h2 id="勇士饮食法则："><a href="#勇士饮食法则：" class="headerlink" title="勇士饮食法则："></a>勇士饮食法则：</h2><ol>
+<li>一开始摄入精致美味的食物，比如沙拉、蔬菜、蛋白质，然后摄入高能食物，比如说碳水化合物。</li>
+<li>在你的正餐中，你可以享用所有你喜欢的口味，风味，口感，颜色的食物。</li>
+<li>如果你感觉你更渴了（相对于你的饥饿感），停止进食。</li>
+</ol>
+<p>注意点：<br>.推荐你在吃完一部分正餐之后，休息二十分钟，给自己足够的时间来接受饱腹感的信号，如果20分钟后，你还感觉到饥饿，你可以继续吃。<br>.尽量选择有机食品，特别是牛奶和肉类，避免毒素，化工品和杀虫剂，这些对于减肥和健康都不利。</p>
+<p>勇士减肥法，十条法令：</p>
+<ol>
+<li>白天限制进食</li>
+<li>晚上吃正餐</li>
+<li>摄入必要的营养物质（维他命、矿物质、EFA、氨基酸、益生菌）</li>
+<li>在你的正餐中，你可以享用所有你喜欢的口味，风味，口感，颜色的食物</li>
+<li>前几天，限制动物类食物，排毒</li>
+<li>高蛋白，高脂肪，高碳水，循环</li>
+<li>尽量避免，激素类、杀虫剂、化学添加剂、糖精、代糖、加工葡萄糖等</li>
+<li>不要单独吃碳水</li>
+<li>避免下列错误的食物组合：（1）谷物和糖（2）淀粉、脂肪和糖（3）坚果和谷物（4）碳水和酒精</li>
+<li>给你的身体氨基酸，比如说肉毒碱，半胱氨酸，牛磺酸等</li>
+</ol>
+<h1 id="具体的饮食计划部分："><a href="#具体的饮食计划部分：" class="headerlink" title="具体的饮食计划部分："></a>具体的饮食计划部分：</h1><p>第一步：排毒<br>第一步的主要目的是身体排毒，为了以后的消脂最大化。<br>第一周，你将减少动物类食物，除了一些奶制品和鸡蛋外。<br>白天：限制吃<br>从你起床后就开始到最后晚餐结束，可以根据你自己的作息时间调整，比如说，你5:00点起床，你会睡得很早，你可以根据自己的时间设计自己的一天饮食。</p>
+<p>一天综述：<br>白天【限制吃】期间，不要吃动物蛋白（肉类，鱼类），可以适当吃一些水果，蔬菜，一点点奶制品，也可以吃水煮的熟鸡蛋。</p>
+<p>注意：【限制吃】不代表要进入饥饿状态，你可以每一个小时都吃一些可以吃的食物，不要让你的身体觉得你在剥夺他进食的权利。</p>
+<p>早上：1-2杯室温的水，1个水果（后面有水果清单）咖啡/茶（无糖、可以加点奶）<br>上午：1个水果，或者鲜榨果蔬汁（胡萝卜汁，胡萝卜甜菜，欧芹，芹菜混合汁，原味酸奶，水煮鸡蛋，牛奶，意大利乳清干奶酪或干酪）<br>中午：清汤一碗，沙拉（绿叶蔬菜，西红柿，辣椒，洋葱，黄瓜，蘑菇，豆芽等）、煮熟的鸡蛋（可选）、沙拉调味品：橄榄油，醋（一丢丢，不要白醋）<br>下午茶：酸奶或牛奶或胡萝卜汁或水果</p>
+<p>提示：任何时候你都可以用水果代替沙拉，清汤和鸡蛋。</p>
+<p>晚上【放开吃】<br>晚餐（正餐）：沙拉（必须先吃），沙拉调味品：橄榄油，醋（一丢丢）<br>蒸熟的蔬菜（很多的西兰花，菜花，小洋白菜，西葫芦，胡萝卜，秋葵，蘑菇，菠菜，洋葱）</p>
+<p>豆类（主要蛋白质来源） 推荐小扁豆，绿豆，黑豆，四季豆，鹰嘴豆，毛豆<br>谷物（主要碳水来源） 推荐菰米，黑米，大麦，藜麦，此阶段不要吃小麦。<br>你也可以用一种鹰嘴豆泥和芝麻酱的混合物。</p>
+<p>注意：全麦和豆类的比例是1:1；<br>你也可以加各种芝士，酸奶或者鸡蛋。<br>喝点咖啡和茶没有关系，可以适当加点奶<br>推荐你在吃完一部分正餐之后，休息二十分钟，给自己足够的时间来接受饱腹感的信号，如果而是分钟后，你还感觉到饥饿，你可以继续吃。</p>
+<p>第一周禁止进食所有的糖类食物，可以用日常补剂（后面有补剂清单）<br>运动员最好在锻炼后，是加上恢复餐，比如说酸奶和香蕉，勇士能量棒，或者牛奶。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人随笔/">个人随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂/">杂</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/有感而记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/有感而记.html" class="article-date">
+      <time datetime="2017-11-09T10:31:50.068Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/有感而记.html">有感而记</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 有感而记：</strong> <Excerpt in index | 首页摘要></p>
+<h2 id="个人随笔："><a href="#个人随笔：" class="headerlink" title="个人随笔："></a>个人随笔：</h2><p>突然想到当下的中国，我们这一代人真的是太幸福了，刚才看了《美国最可恨的女人》这部电影，看到了真实的一个美国女人，作为一个五六十年代的无神论者，就那么单枪匹马的与全世界为敌，而且那么的不幸运，一辈子也没有遇见的自己的另一半，在自己毕业之后先后遇见了两次渣男，并且都怀了一次孕，虽然父母也不支持自己生下来这两个孩子，但是她还是毅然决然的生下来了两个儿子，完全没有顾忌自己的糟糕的状况。当时的美国的默认国教就是基督教。因为美国是政教分离的政策，大多数人都是信仰基督教，还有剩下的少部分人是信仰的伊斯兰教，但归根结底的这些教徒都是信仰上帝的存在的。就连历任的美国总统都是说的是愿上帝保护美国！所以美国的民众怎么可以忍受的了别人所说的没有上帝的存在呢？她还是一个有着高学历的法律专业毕业的高材生，她明明可以不管不顾的做一个睁一只眼闭一只眼生活的普通女性，但是她没有，她说既然没有人发声，为什么不能是我呢？她没有作为一个碌碌无为的旁观者，而是站起来并且站在了最显眼的地方，发出了自己的声音，她知道她这样做会带来什么样的后果，但是她还是做了！我为这样一个敢于追求自己心中所发出的声音而奋斗的女性致敬。虽然她在发声之后就成立一个无神论协会，并且在成立协会之后就开始了自己的一点儿小私心，以帮助弱者的名义把募集到的资金占为己有。但是这样更加的体现了作为一个女性作为一个普通人，人性中的弱点，更加的真实了。总之，我很羡慕这样一个坚强的女性，不畏强权，敢于发出自己的声音的这种精神，并且用自己的血肉之躯面对整个国家的力量也丝毫不退缩的勇气。</p>
+<p>优秀的人真是太多太多了，最可恨的是他们还非常的努力！你还能继续忍下去吗？你再不努力奔跑，那你以后怎么孝敬父母，怎么给你爱的人幸福呢？没有伞的孩子必须努力奔跑！加油吧！你不聪明，你也没有后台，你只有靠着你自己的努力一点一点的积累吧！没有什么事情是可以一步就完成的，不积跬步无以至千里，不积小流无以成江河！从现在就开始认真的做每一件事情吧！好吗？<br>树欲静而风不止，子欲养而亲不待！在这个最应该奋斗的年纪，如果堕落了，在本该奋斗的时间你用来休养生息了，那么就算父母有时间等你来孝敬，你有什么本事、你有什么能力、你拿什么东西来孝敬生你养你为你付出一切的父母呢？你啊，老大不小了，这些事情不需要别人非要来说给你听你才知道吧？你从高中第一次毕业没考上一所满意的高等学校的时候就应该很清楚的吧！现在你都大三、马上就要大四了，中间四年多过去了，你自己想想你在这些年里干了些什么有意义的事情呢？舒舒坦坦的过了这么些年也该为自己之后的人生规划一下了吧。记住不要成为别人眼中的失败者，不要成为别人口中的无用之人，更不要成为自己看不起的那类人，不要成为连自己都讨厌的人。努力吧！少年！<br>父母望子成龙，爷爷奶奶希望自己的孩子们幸福快乐，但是谁也帮不了你，只有你自己能救你自己啊，为了家人的寄望、为了亲人的盼望，千万不要成为一个无知、傲慢、懒惰、虚荣、嫉妒、懦弱的失败者！<br>既然目标是那遥远的地平线，就只顾风雨兼程！奔跑吧!摔倒了也要咬紧牙继续前行，记住你的前行路上没有人能扶你一把，没有人能拉你一下，没有人会给你帮助，就算你的腿瘸了，你也只能靠自己踉跄前行！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人随笔/">个人随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/影视人生/">影视人生</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017/11/星巴克" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/11/星巴克.html" class="article-date">
+      <time datetime="2017-11-09T10:31:50.045Z" itemprop="datePublished">2017-11-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2017/11/星巴克.html">从星巴克的商业模式中看出几个问题</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 从星巴克的商业模式中看出几个问题：</strong> <Excerpt in index | 首页摘要></p>
+<h1 id="天下熙熙，皆为利来；天下攘攘，皆为利往。"><a href="#天下熙熙，皆为利来；天下攘攘，皆为利往。" class="headerlink" title="天下熙熙，皆为利来；天下攘攘，皆为利往。"></a>天下熙熙，皆为利来；天下攘攘，皆为利往。</h1><p>最近这几天看到好几条关于星巴克的新闻。讲的是星巴克一年买出40亿+的咖啡，最后的咖啡纸杯的去向，你知道吗？出于好奇，我点开看了看这条向我的手机推送的新闻，点开之后本来想着匆匆浏览一遍就好，但是看了开头就把我的兴趣给提了起来，越看越有趣。给大家一个链接，想看的可以去看看哈~但是我觉得有趣并不能保证你看后也觉得有趣啊~<a href="http://36kr.com/p/5097923.html">星巴克40亿纸杯背后</a><br>这篇新闻中让我动容的不是星巴克的不作为和为了利益不择手段的做法。而是一些人们为了保护环境而自发的组织在一起，并且为了让星巴克减少污染环境而做出的种种努力！他们其中有的人专门为星巴克做了详细的纸杯新材料的设计和开发并且考虑到了与星巴克原先纸杯的经济对比问题，怕的就是星巴克不采取他们的这种最环保的纸杯材料的建议。还有一些人是星巴克的管理层，他们为了地球的环保事业而加入星巴克的环保部门，他们在星巴克的发展历程中发挥了及其重要的作用，但是当他们知道了他们并不能促使星巴克最高领导层接受他们使用最新环保材料纸杯时，毅然决然的选择辞去星巴克中高层管理者的职位。我看到的是这些人发光的目标或者说是崇高的信仰，他们追求的或许在有些人看来是不可思议的，但是我觉得这才是真正的为了自己的追求而不惜付出巨大代价的牺牲精神。<br>也许再过十几年或者用不了这么长的时间，我们自己的国家也会有一群这样的人，他们不会为了自己的利益而做出什么苟且之事，他们胸中含着崇高的社会使命感，高度的社会责任意识，到那个时候，我相信我们的社会一定会变得更加美好。</p>
+<h1 id="公司的管理层"><a href="#公司的管理层" class="headerlink" title="公司的管理层"></a>公司的管理层</h1><p>我想到了吴晓波收集资料总结出来的《大败局》中说到的，中国式企业家，当然了，大败局中总结的是中国改革开放早期到21世纪初的优秀企业家们，他总结到，这些企业家们在处理个人事情和与人交往上，表现出的高情商和高素质让人印象深刻，一点儿都没有那种盛气凌人的气势和让人感到不自如的时候，他们是让人在他们面前很轻松。但是他们在企业活动中所表现出来的雷厉风行和铁血无情也是让别的企业胆寒心颤啊！这种在不同的情景下的两种状态让人感到陌生的同时也让人反思，难道企业家都是这样的吗？不是的，那时的中国的企业发展环境造就了他们这种企业家；那个时候是中国企业发展的黄金期，一个企业家的领头人有多大的胆子有多大，那这个企业的发展规模就能到哪一步！在企业经营中的铁血无情体现的让人心惊胆颤。<br>回过头再来看看国外的企业家是什么样子的，他们或许也是为了利益会动用铁血手段，但是他们有商业的底线。污染地球的环境对他们来说就是不可接受的底线之一了。从这儿看来我们中国的企业家还有很多的路要走啊。</p>
+<h1 id="公司发展"><a href="#公司发展" class="headerlink" title="公司发展"></a>公司发展</h1><p>大公司都是由小公司发展起来的，在小公司发展之初，人们都不会怎么关注的。而一旦小公司过了一个发展高峰并且成长为一个业界的领导者的时候，进入公众的目光之中，那么这个公司高层所做的一切决定都会暴露在大庭广众之下，必须要能受得住人们的指指点点，决不能有特别大的背离道德方面的商业活动，一个公司的企业形象可能就会因为一个小小的道德问题而崩塌，到时候那这个公司不论体量如何，都会成为人们所唾骂的对象，不得不说的是，人们是非常喜欢传一些风言风语的，绯闻，小道消息等等都是人们所感兴趣的内容，一旦你公司的一个决定成为了带有负面信息的内容，那么你就要接受群众们对你的唾骂挑战。而这个时候及时迅速的管理公关活动可能就相当的重要了，必须及时控制住时态的发展，采用有利的公关活动挽留公司形象的崩塌。</p>
+<h1 id="一个商人必须要有坚持的东西–即商业底线"><a href="#一个商人必须要有坚持的东西–即商业底线" class="headerlink" title="一个商人必须要有坚持的东西–即商业底线"></a>一个商人必须要有坚持的东西–即商业底线</h1><p>一个唯利是图的商人是走不远的，看如今的大公司的领头人，无一不是在乎当下的蝇头小利之人，他们都有长远的规划，立足高远才能预测更长远的路径。追求高远才能长存的道理，人们都懂。但是实施起来的难度并没有几个人知道，而且在看得见的利益面前，能忍受的了的人更是所剩无几，一般人们都会被当下的蝇头小利所迷惑，走不了太长远；当得到了当下的小利润时，都会自满而忘记了前进的步伐，被竞争者迎头追上并且打压的好恶还手之力。所以一个优秀的企业家必须要懂得克制，不能只顾眼前的利润，而要从长远来看，追求要高远，这样企业才能长存。底线对一个企业家来说更是如此，不能为了当下的目标而不择手段的截取用户的价值，毫无底线的企业总是失败的最彻底的企业。就算侥幸存活下来，也是让同行的小企业看不起的，自然也是逃脱不掉被淘汰的结局。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/个人感悟/">个人感悟</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/商业问题/">商业问题</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Dexinser
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/dexinser" target="_blank">Blog</a> by Dexinser
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
